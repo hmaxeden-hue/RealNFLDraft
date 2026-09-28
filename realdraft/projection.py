@@ -113,7 +113,8 @@ def _p_play(row) -> tuple[float, str | None]:
 # --- Hauptfunktion ------------------------------------------------------------------------
 
 def project(date: str, boosts: pd.DataFrame | None = None,
-            overrides: pd.DataFrame | None = None, n_sims: int = config.N_SIMS):
+            overrides: pd.DataFrame | None = None, n_sims: int = config.N_SIMS,
+            default_boost: float = 0.0):
     """Gibt (Tabelle pro Spieler, Rating-Simulationen N x P) zurück."""
     sl = features.slate(date)
     tc = features.team_context(sl).set_index("team")
@@ -154,7 +155,7 @@ def project(date: str, boosts: pd.DataFrame | None = None,
                          if sp is not None and "sleeper_id" in pl else np.nan)
     _apply_qb_out(df, qbg)
 
-    df["boost"], df["boost_src"] = 0.0, "fehlt (0 angenommen)"
+    df["boost"], df["boost_src"] = float(default_boost), f"fehlt ({default_boost:.1f} angenommen)"
     if boosts is not None and not boosts.empty:
         b = boosts.set_index("player_id")["boost"]
         hit = df["player_id"].isin(b.index)

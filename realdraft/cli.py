@@ -5,6 +5,7 @@
   project DATUM [--top N]        Projektionen (speichert data/projections/DATUM.csv)
   draft DATUM                    Projektion + Optimierung + Bericht
   result DATUM --draft F [--total X] [--ratings F]   Lernschleife erfassen
+  boostfit DATUM [--apply]       Skalen K/Defense aus den Boosts des Pools schätzen
   calibrate                      Rating-Modell neu fitten + Berichte
 """
 from __future__ import annotations
@@ -31,12 +32,12 @@ def _weather(sl: pd.DataFrame) -> dict:
     return out
 
 
-def _run_projection(date: str):
+def _run_projection(date: str, default_boost: float = 0.0):
     sl = features.slate(date)
     pl = features.slate_players(sl)
     boosts, problems = pool.load_pool(date, pl)
     overrides, p2 = pool.load_overrides(date, pl)
-    proj, sims = projection.project(date, boosts, overrides)
+    proj, sims = projection.project(date, boosts, overrides, default_boost=default_boost)
     config.PROJ_DIR.mkdir(parents=True, exist_ok=True)
     proj.to_csv(config.PROJ_DIR / f"{date}.csv", index=False, float_format="%.3f")
     return sl, proj, sims, problems + p2
@@ -52,7 +53,7 @@ def cmd_slate(a):
 
 
 def cmd_project(a):
-    sl, proj, sims, problems = _run_projection(a.date)
+    sl, proj, sims, problems = _run_projection(a.date, a.default_boost)
     for p in problems:
         print(f"- {p}")
     if a.group:
@@ -61,7 +62,7 @@ def cmd_project(a):
 
 
 def cmd_draft(a):
-    sl, proj, sims, problems = _run_projection(a.date)
+    sl, proj, sims, problems = _run_projection(a.date, a.default_boost)
     print(report.draft_report(a.date, sl, proj, sims, problems, _weather(sl)))
     history.save_pool_snapshot(a.date, proj)
 
@@ -94,6 +95,19 @@ def cmd_result(a):
         print(f"{len(r)} Ratings gespeichert.")
 
 
+def cmd_boostfit(a):
+    pl = _players_for(a.date)
+    boosts, problems = pool.load_pool(a.date, pl)
+    for p in problems:
+        print(f"- {p}")
+    fit, d = calibrate.boost_scale_fit(a.date, boosts)
+    print("Fit:", fit)
+    print(report.md_table(d[["name", "group", "games", "r_hat", "boost", "boost_fit"]]))
+    if a.apply:
+        params = calibrate.apply_boost_scales(fit, d, a.date)
+        print("Übernommen:", params["boost_fits"][-2:])
+
+
 def cmd_calibrate(a):
     params, rep = calibrate.fit_rating_model(write=not a.dry_run)
     print("## Rating-Modell\n" + report.md_table(rep) + "\n")
@@ -113,6 +127,9 @@ def main(argv=None):
         p = sub.add_parser(name)
         p.add_argument("date", help="US-Datum wie in der App, YYYY-MM-DD, oder 'next'")
         p.set_defaults(fn=fn)
+        if name in ("project", "draft"):
+            p.add_argument("--default-boost", type=float, default=0.0,
+                           help="Boost für Spieler, die nicht im Pool stehen (Standard 0)")
         if name == "project":
             p.add_argument("--top", type=int, default=40)
             p.add_argument("--group", help="nur eine Positionsgruppe (QB, RB, WR, TE, K, DL, LB, DB)")
@@ -122,6 +139,10 @@ def main(argv=None):
     p.add_argument("--total", type=float, help="Gesamtscore laut App")
     p.add_argument("--ratings", help="CSV: name,team,rating (alle abgelesenen Spieler)")
     p.set_defaults(fn=cmd_result)
+    p = sub.add_parser("boostfit", help="Rating-Skalen pro Gruppe aus den Pool-Boosts schätzen")
+    p.add_argument("date")
+    p.add_argument("--apply", action="store_true", help="gedämpft ins Rating-Modell übernehmen")
+    p.set_defaults(fn=cmd_boostfit)
     p = sub.add_parser("calibrate")
     p.add_argument("--dry-run", action="store_true")
     p.set_defaults(fn=cmd_calibrate)

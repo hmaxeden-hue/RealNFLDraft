@@ -36,6 +36,13 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
   Effizienz und **Kontext** (Spielstand knapp, Restzeit, "clutch"). Wichtige Plays in engen Spielen
   zählen mehr. → Knappe Spiele (kleiner Spread) sind tendenziell gut für Ratings.
   Das Modell nutzt dafür `closeness_coef`, der noch zu kalibrieren ist.
+- **Der Boost verrät das Saison-Rating.** Die App sagt: "Lower-ranked players get bigger boosts".
+  Am 28.09. lag die Rangkorrelation zwischen Boost und meinem Saison-Rating-Schätzer bei −0.82.
+  `boostfit <datum>` schätzt daraus die relativen Skalen von Kicker und Defense gegenüber der Offense
+  (Fit 28.09.: Kicker ×1.84, Defense ×0.45). Mit `--apply` werden sie gedämpft übernommen, pro Datum einmal.
+  **Das bei jedem neuen Pool laufen lassen**, solange es wenige echte Ratings gibt.
+- Punter sind draftbar und werden von Real bewertet (Mann +1.8 rangiert vor Barkley), sind aber
+  **noch nicht modelliert**. In `/ergebnis` Punter-Ratings mitnehmen.
 - Erste Daten (27.09.): Allen hatte 17.5 PPR (2 Rush-TD, 2 INT) → 2.1. Walker 21.3 PPR → 4.2.
   Maye 3.8 PPR, EPA −14.5 → 0. **PPR überschätzt Spieler mit Turnovers.** Die Skala ist gestaucht.
 - Aktuelles Mapping (`data/model/rating_params.json`, sonst Default in `projection.py`):
@@ -63,7 +70,9 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
 
 1. `/draft [Datum]` vor dem Spieltag, ideal nach dem Final Injury Report (Fr/Sa) und nochmals
    kurz vor dem ersten Kickoff wegen der Inactives (90 Min vorher).
-2. Screenshots des Pools lesen → `data/pools/<datum>.csv` (name,team,pos,boost) → Liste zur Bestätigung zeigen.
+2. Screenshots des Pools lesen → `data/pools/<datum>.csv` (app_order,name,team,boost,app_status) → Liste
+   zur Bestätigung zeigen. Nicht erfasste Spieler: Boost erfragen oder `--default-boost 3.0` als Szenario
+   (unten in der App-Liste stehen meist die +3.0-Spieler). Dann `boostfit <datum> --apply`.
 3. Projektion → News-Recherche (WebSearch) für Top-Kandidaten und alle Flags →
    `data/pools/<datum>_adj.csv` → `draft` → Empfehlung.
 4. Nach dem Spieltag `/ergebnis <datum>`: eigener Draft + möglichst viele Ratings (alle Spieler der
@@ -80,6 +89,7 @@ python -m realdraft project <datum> [--top N] [--group QB]
 python -m realdraft draft <datum>                # Empfehlung + Alternativen + Varianten + Warnungen
 python -m realdraft result <datum> --draft data/results/<datum>_draft.csv --total 18.44 \
                                    [--ratings data/results/<datum>_ratings.csv]
+python -m realdraft boostfit <datum> [--apply]    # Skalen K/Defense aus den Pool-Boosts
 python -m realdraft calibrate [--dry-run]        # Rating-Modell fitten, Formel-/Projektions-/Boost-Berichte
 python -m pytest -q
 ```
@@ -95,7 +105,8 @@ python -m pytest -q
 | `config.py` | alle Parameter (Gewichte, Streuungen, Korrelationen, Schwellen) |
 
 Dateiformate:
-- `data/pools/<datum>.csv`: `name,team,pos,boost`. Namen wie in der App. Spieler ohne Eintrag bekommen Boost 0.
+- `data/pools/<datum>.csv`: `app_order,name,team,boost,app_status` (pos optional). Namen wie in der App.
+  Spieler ohne Eintrag bekommen Boost 0 bzw. `--default-boost`.
 - `data/pools/<datum>_adj.csv`: `name,team,fp,factor,p_play,note`. News-Korrekturen: `fp` setzt die
   FP-Erwartung absolut (z. B. Ersatz-QB startet), `factor` multipliziert sie, `p_play` =
   Einsatzwahrscheinlichkeit. Leere Felder = keine Änderung. **Immer mit Quelle/Grund in `note`.**
@@ -117,3 +128,8 @@ Dateiformate:
 ## Erkenntnisse (Lernschleife – hier kurz fortschreiben)
 
 - 2026-09-27: Formel additiv bestätigt (Diff 0.15). Rating wirkt effizienz- und turnoverlastig, nicht PPR-proportional.
+- 2026-09-28: Die Boosts im PHI/CHI-Pool spiegeln das Saison-Rating (Spearman −0.82). Real bewertet Kicker
+  hoch (Santos +0.3 wie Hurts +0.2) und Tackle-Defender niedrig (Campbell mit 12 IDP/Spiel +2.3 ≈ Odunze mit
+  7 PPR +2.2). Skalen angepasst: K ×1.28, Defense ×0.50. Ausreisser: Darius Cooper (+0.7 trotz 5 PPR,
+  Clutch-Play?) und Malik Muhammad (+1.2). Hauptpick per Robustheitscheck über 27 Skalen-Szenarien
+  gewählt (Baun statt Burden: Burden mit QB-Wechsel und Snaps ↓ = Falle).

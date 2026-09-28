@@ -129,3 +129,65 @@ def formula_checks() -> pd.DataFrame:
         chk = history.formula_check(g, g["app_total"].iloc[0] if g["app_total"].notna().any() else None)
         out.append({"date": date, **chk})
     return pd.DataFrame(out)
+
+
+def boost_scale_fit(date: str, pool: pd.DataFrame) -> tuple[dict, pd.DataFrame]:
+    """Relative Rating-Skalen (Kicker, Defense vs. Offense) aus den Boosts eines Pools.
+
+    App: "Lower-ranked players get bigger boosts" -> Boost fällt mit dem Saison-Rating.
+    Modell: boost ≈ clip(a − c · m_gruppe · r̂, 0, 3), r̂ = Saisonschnitt der mit dem aktuellen
+    Mapping bewerteten Spiele vor `date`. Offense: m = 1. Geschätzt: a, c, m_K, m_DEF.
+    Spieler mit Boost 3.0 sind zensiert (echter Wert ≥ 3).
+    """
+    params = projection.load_rating_params()
+    sch = sources.schedule(config.SEASON)[["game_id", "gameday"]]
+    pg = features.player_games((config.SEASON,)).merge(sch, on="game_id")
+    pg = pg[pg["gameday"] < date]
+    pg["r"] = [float(projection.fp_to_rating(f, g, params)) for f, g in zip(pg["fp"], pg["group"])]
+    season = pg.groupby("player_id").agg(r_hat=("r", "mean"), games=("r", "size"),
+                                         group=("group", "first")).reset_index()
+    d = pool[["player_id", "name", "boost"]].merge(season, on="player_id")
+    d["kind"] = np.where(d["group"] == "K", "K", np.where(d["group"].isin(config.DEFENSE), "DEF", "OFF"))
+    capped = d["boost"] >= config.MAX_PLAYER_BOOST - 1e-9
+
+    def pred(x, df):
+        a, c, mk, md = x[0], np.exp(x[1]), np.exp(x[2]), np.exp(x[3])
+        m = np.select([df["kind"] == "K", df["kind"] == "DEF"], [mk, md], 1.0)
+        return a - c * m * df["r_hat"].to_numpy()
+
+    def loss(x):
+        p = pred(x, d)
+        err = np.where(capped, np.minimum(0, p - 3.0), np.clip(p, 0, 3) - d["boost"].to_numpy())
+        return float(np.sum(err ** 2)) + 0.05 * (x[2] ** 2 + x[3] ** 2)   # leichte Bindung an m = 1
+
+    res = minimize(loss, x0=[3.2, np.log(0.6), 0.0, 0.0], method="Nelder-Mead",
+                   options={"maxiter": 4000, "xatol": 1e-4, "fatol": 1e-6})
+    d["boost_fit"] = np.clip(pred(res.x, d), 0, 3)
+    fit = {"a": round(float(res.x[0]), 2), "c": round(float(np.exp(res.x[1])), 3),
+           "m_K": round(float(np.exp(res.x[2])), 2), "m_DEF": round(float(np.exp(res.x[3])), 2),
+           "n": int(len(d)), "n_uncapped": int((~capped).sum()),
+           "spearman_boost_vs_rhat": round(float(d["boost"].corr(d["r_hat"], method="spearman")), 2)}
+    return fit, d.sort_values("boost")
+
+
+def apply_boost_scales(fit: dict, d: pd.DataFrame, date: str, prior_n: float = 3.0) -> dict:
+    """Skalen gedämpft ins Rating-Modell übernehmen (log-Shrinkage, Gewicht n/(n+prior_n)).
+
+    Pro Pool-Datum nur einmal, sonst würde derselbe Befund doppelt angewendet.
+    """
+    params = json.loads(json.dumps(projection.load_rating_params()))
+    if any(f.get("date") == date for f in params.get("boost_fits", [])):
+        raise SystemExit(f"Boost-Skalen für {date} sind schon übernommen.")
+    for kind, groups in (("K", ["K"]), ("DEF", sorted(config.DEFENSE))):
+        n = int((d["kind"] == kind).sum())
+        w = n / (n + prior_n)
+        m = float(np.exp(w * np.log(fit[f"m_{kind}"])))
+        for g in groups:
+            params["groups"][g]["slope"] = round(params["groups"][g]["slope"] * m, 4)
+            params["groups"][g]["noise"] = round(params["groups"][g]["noise"] * m, 3)
+        params.setdefault("boost_fits", []).append(
+            {"date": date, "kind": kind, "m_fit": fit[f"m_{kind}"], "n": n, "m_applied": round(m, 3)})
+    params["updated"] = _date.today().isoformat()
+    config.MODEL_FILE.parent.mkdir(parents=True, exist_ok=True)
+    config.MODEL_FILE.write_text(json.dumps(params, indent=1, ensure_ascii=False))
+    return params

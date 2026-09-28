@@ -107,8 +107,8 @@ def draft_report(date: str, sl, proj, sims, problems, wx=None) -> str:
     out += ["## Rebound-Kandidaten (Boost ≥ 1) – Chance oder Falle?", md_table(pd.DataFrame({
         "Spieler": reb["name"], "Pos": reb["pos"], "Team": reb["team"], "Boost": reb["boost"],
         "E[Rating]": reb["er"], "FP letzte 3": reb["fp_last3"], "xFP letzte 3": reb["xfp_last3"],
-        "Snaps zuletzt/Schnitt": [f"{a:.0%}/{b:.0%}" if pd.notna(a) and pd.notna(b) else ""
-                                  for a, b in zip(reb["snap_last"], reb["snap_avg"])],
+        "Snaps zuletzt/Schnitt": [f"{a:.0%}/{b:.0%}" if pd.notna(a) and pd.notna(b) and g != "K" else ""
+                                  for a, b, g in zip(reb["snap_last"], reb["snap_avg"], reb["group"])],
         "Signale": reb["flags"]})), ""]
 
     top = proj.assign(v=proj["er"] * (1.6 + proj["boost"])).nlargest(40, "v")
