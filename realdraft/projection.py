@@ -160,6 +160,8 @@ def project(date: str, boosts: pd.DataFrame | None = None,
     if overrides is not None and not overrides.empty:
         for _, o in overrides.iterrows():
             m = df["player_id"] == o["player_id"]
+            if pd.notna(o.get("fp")):
+                df.loc[m, "mu_fp"] = float(o["fp"])
             if pd.notna(o.get("factor")):
                 df.loc[m, "mu_fp"] *= float(o["factor"])
             if pd.notna(o.get("p_play")):
@@ -198,6 +200,9 @@ def _apply_qb_out(df: pd.DataFrame, qbg: pd.DataFrame):
             m = (df["team"] == team) & (df["group"] == grp)
             df.loc[m, "mu_fp"] *= f
             df.loc[m, "note"] = f"QB1 {main_name} fehlt (×{f})"
+        m = (df["opp"] == team) & df["group"].isin(config.DEFENSE)
+        df.loc[m, "mu_fp"] *= config.DEF_VS_BACKUP_QB
+        df.loc[m, "note"] = f"Gegner ohne QB1 (×{config.DEF_VS_BACKUP_QB})"
 
 
 def simulate(df: pd.DataFrame, params: dict, n_sims: int) -> np.ndarray:

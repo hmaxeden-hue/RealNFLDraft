@@ -16,7 +16,7 @@ Erstelle die Draft-Empfehlung für den Spieltag `$ARGUMENTS` (leer → `next`). 
    - Top ~12 nach Wert und **jeder** Kandidat mit Boost ≥ 1: Verletzung/Status, Rolle, QB, Inactives.
    - Rebound-Kandidaten als **Chance** oder **Falle** einstufen (Kriterien in CLAUDE.md).
    - Wetter bei Outdoor-Spielen, falls `slate` keins liefert.
-   - Korrekturen nach `data/pools/<datum>_adj.csv` (`name,team,factor,p_play,note`), immer mit Grund.
+   - Korrekturen nach `data/pools/<datum>_adj.csv` (`name,team,fp,factor,p_play,note`), immer mit Grund.
 6. **Optimierung**: `python -m realdraft draft <datum>`.
 7. **Antwort (Deutsch, kompakt)**:
    - Tabelle Empfehlung: Slot, Spieler, Team, Gegner, Boost, Gesamt-Mult, E[Rating], E[Punkte], Risiko,

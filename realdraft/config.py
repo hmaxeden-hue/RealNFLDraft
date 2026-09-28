@@ -72,6 +72,7 @@ UPSIDE_QUANTILE = 0.95
 # Fällt der Stamm-QB aus: Ersatz-QB mindestens so viele FP, Mitspieler abwerten
 BACKUP_QB_START_FP = 13.0
 QB_OUT_FACTOR = {"WR": 0.85, "TE": 0.88, "RB": 0.94, "K": 0.92}
+DEF_VS_BACKUP_QB = 1.08      # gegnerische Defense profitiert (Sacks, INTs)
 
 # Rebound-Check: Schwellen für Rollen-Alarm
 ROLE_DROP_REL = 0.75         # letzter Snap-/Opportunity-Anteil < 75 % des Schnitts -> Alarm

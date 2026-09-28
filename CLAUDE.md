@@ -96,8 +96,12 @@ python -m pytest -q
 
 Dateiformate:
 - `data/pools/<datum>.csv`: `name,team,pos,boost`. Namen wie in der App. Spieler ohne Eintrag bekommen Boost 0.
-- `data/pools/<datum>_adj.csv`: `name,team,factor,p_play,note`. News-Korrekturen: `factor` multipliziert
-  die FP-Erwartung, `p_play` = Einsatzwahrscheinlichkeit. **Immer mit Quelle/Grund in `note`.**
+- `data/pools/<datum>_adj.csv`: `name,team,fp,factor,p_play,note`. News-Korrekturen: `fp` setzt die
+  FP-Erwartung absolut (z. B. Ersatz-QB startet), `factor` multipliziert sie, `p_play` =
+  Einsatzwahrscheinlichkeit. Leere Felder = keine Änderung. **Immer mit Quelle/Grund in `note`.**
+- Automatisch: Fehlt der Stamm-QB, startet der nächste gesunde QB der Depth Chart (≥ 13 FP),
+  Mitspieler werden abgewertet und die gegnerische Defense aufgewertet (`config.py`). Startet laut
+  News ein anderer QB, das per `_adj.csv` korrigieren.
 - `data/results/<datum>_draft.csv`: `slot,name,team,boost,rating`; `<datum>_ratings.csv`: `name,team,rating`.
 
 ## Datenquellen & Netzwerk

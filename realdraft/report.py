@@ -113,7 +113,9 @@ def draft_report(date: str, sl, proj, sims, problems, wx=None) -> str:
 
     top = proj.assign(v=proj["er"] * (1.6 + proj["boost"])).nlargest(40, "v")
     warn = [f"- **{r['name']}** ({r['team']}): {r['flags']}" for _, r in top.head(25).iterrows()
-            if isinstance(r["status"], str) or r["role_alarm"] or r["qb_change"] or r["note"]]
+            if isinstance(r["status"], str) or r["role_alarm"] or r["qb_change"]]
+    for team, note in proj[proj["note"].str.startswith("QB1")].groupby("team")["note"].first().items():
+        warn.append(f"- **{team}**: {note.split(' (')[0]} → Offense abgewertet, gegnerische Defense aufgewertet")
     lineup_groups = proj.iloc[best]["group"]
     uncal = sorted({g for g in lineup_groups if proj.loc[proj["group"] == g, "calib_n"].iloc[0] < 5})
     if uncal:
