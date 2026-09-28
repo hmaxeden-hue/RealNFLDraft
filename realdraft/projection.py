@@ -156,6 +156,9 @@ def project(date: str, boosts: pd.DataFrame | None = None,
     _apply_qb_out(df, qbg)
 
     df["boost"], df["boost_src"] = float(default_boost), f"fehlt ({default_boost:.1f} angenommen)"
+    # Regel der App: wer diese Saison noch nicht gespielt hat, hat keinen Boost
+    no_games = df["n_games"] == 0
+    df.loc[no_games, "boost"], df.loc[no_games, "boost_src"] = 0.0, "0 (noch kein Saisonspiel)"
     if boosts is not None and not boosts.empty:
         b = boosts.set_index("player_id")["boost"]
         hit = df["player_id"].isin(b.index)

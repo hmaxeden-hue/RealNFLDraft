@@ -12,6 +12,7 @@ Befehle: `/draft [Datum]` (Empfehlung) und `/ergebnis [Datum]` (Lernschleife).
 - Keine Limits: alle 5 dürfen aus einem Team kommen, auch 5 QBs. Kicker und Defense-Spieler sind draftbar.
 - **Lock pro Spiel:** Spieler eines Spiels sind ab dessen Kickoff gesperrt. Spieler aus späteren Spielen
   lassen sich noch draften. Der User draftet meist 5–8 h vor dem Kickoff.
+- Spieler ohne Einsatz in dieser Saison haben **keinen Boost** (0), z. B. Ersatz-QB Keenum am 28.09.
 - Slot-Boost: 2.0 / 1.8 / 1.6 / 1.4 / 1.2. Dazu kommt ein Spieler-Boost von 0 bis +3.0
   (underperformt = hoch, Topform = 0). Boosts basieren auf der **ganzen Saison** und ändern sich
   **nur nach Spielen**, nie vor dem Kickoff.
@@ -71,8 +72,9 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
 1. `/draft [Datum]` vor dem Spieltag, ideal nach dem Final Injury Report (Fr/Sa) und nochmals
    kurz vor dem ersten Kickoff wegen der Inactives (90 Min vorher).
 2. Screenshots des Pools lesen → `data/pools/<datum>.csv` (app_order,name,team,boost,app_status) → Liste
-   zur Bestätigung zeigen. Nicht erfasste Spieler: Boost erfragen oder `--default-boost 3.0` als Szenario
-   (unten in der App-Liste stehen meist die +3.0-Spieler). Dann `boostfit <datum> --apply`.
+   zur Bestätigung zeigen. Nicht erfasste Spieler ohne Saisonspiel haben automatisch Boost 0. Für die
+   übrigen den Boost erfragen oder `--default-boost 3.0` als Szenario rechnen (unten in der App-Liste
+   stehen meist die +3.0-Spieler). Dann `boostfit <datum> --apply`.
 3. Projektion → News-Recherche (WebSearch) für Top-Kandidaten und alle Flags →
    `data/pools/<datum>_adj.csv` → `draft` → Empfehlung.
 4. Nach dem Spieltag `/ergebnis <datum>`: eigener Draft + möglichst viele Ratings (alle Spieler der
