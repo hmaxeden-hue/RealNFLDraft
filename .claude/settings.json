@@ -1,0 +1,21 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -c 'import nflreadpy, scipy' 2>/dev/null || pip install -q -r \"$CLAUDE_PROJECT_DIR/requirements.txt\" >/dev/null 2>&1 || true"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(python -m realdraft:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(pip install -q -r requirements.txt)"
+    ]
+  }
+}
