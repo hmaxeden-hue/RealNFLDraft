@@ -298,13 +298,15 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
     const L = lineupFor(d);
     const total = L.reduce((s, p) => s + p.epts, 0);
     const same = !d.final || d.final.every((f) => d.best.some((b) => b.name === f.name));
-    $("draft-note").textContent = d.final ? "So eingetragen · Stand " + d.generated : "Modell-Optimum · Stand " + d.generated;
+    const preview = !d.final && d.n_pool === 0;
+    $("draft-note").textContent = d.final ? "So eingetragen · Stand " + d.generated
+      : preview ? "Vorschau ohne Boosts · Stand " + d.generated : "Modell-Optimum · Stand " + d.generated;
     $("board").innerHTML = `
       <div class="stat"><span class="label">Erwarteter Score</span><span class="big num">${f1(total)}</span></div>
       ${same ? `<div class="stat"><span class="label">Floor (P25)</span><b class="num">${f1(d.dist.p25)}</b></div>
       <div class="stat"><span class="label">Ceiling (P95)</span><b class="num">${f1(d.dist.p95)}</b></div>` : ""}
       <div class="stat"><span class="label">Pool</span><b class="num">${d.n_pool}</b></div>
-      <span class="status pill pill-accent">${d.final ? "Draft eingetragen" : "Vorschlag"}</span>`;
+      <span class="status pill ${preview ? "risk-mittel" : "pill-accent"}">${d.final ? "Draft eingetragen" : preview ? "Boosts fehlen: Screenshots schicken" : "Vorschlag"}</span>`;
     const max = Math.max(...L.map((p) => p.p90), 1);
     $("slots").innerHTML = L.map((p) => `
       <article class="slot">
