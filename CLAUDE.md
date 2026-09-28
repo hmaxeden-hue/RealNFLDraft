@@ -12,6 +12,11 @@ und die Lernschleife. Nach jedem `draft` bzw. `result`: `python -m realdraft pag
 mit dem Artifact-Tool **mit `url` = obige URL** veröffentlichen (sonst entsteht eine neue Seite).
 Den finalen Draft mit Begründungen vorher in `data/recs/<datum>_final.csv` (`slot,name,reason`) schreiben.
 
+**Sonntags-Routine** „Real Draft Sonntag“ (`trig_01TQYvdHXYuFyLLJjKXj6MZG`), jeden Sonntag 09:58 Uhr (Europe/Zurich),
+startet eine neue Session: Projektion ohne Boosts, News, Vorschau auf der Seite, Nachricht mit Push-Benachrichtigung.
+Der User schickt die Pool-Screenshots dann in genau diese Session, dort geht es mit `/draft` ab Schritt 3 weiter.
+Verwalten unter claude.ai/code/routines. Das Repo muss dort im Routinen-Formular ausgewählt sein.
+
 ## Regeln der App (vom User bestätigt)
 
 - Spieltag = US-Datum in der App ("Sun Sep 27" enthält auch SNF). 5 Spieler aus den Spielen des Tages.
