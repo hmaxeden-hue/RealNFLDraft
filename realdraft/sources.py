@@ -144,16 +144,6 @@ def sleeper_projections(season: int, week: int) -> pd.DataFrame | None:
         return None
 
 
-@lru_cache(maxsize=None)
-def espn_scoreboard(date: str) -> dict | None:
-    """ESPN-Scoreboard (YYYY-MM-DD): aktuelle Linien und Status."""
-    try:
-        d = date.replace("-", "")
-        return _get_json(f"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates={d}")
-    except Exception:
-        return None
-
-
 # Stadion-Koordinaten nach Heimteam (für Wetter bei Outdoor-Spielen)
 STADIUMS = {
     "ARI": (33.528, -112.263), "ATL": (33.755, -84.401), "BAL": (39.278, -76.623),
@@ -193,7 +183,6 @@ def status() -> pd.DataFrame:
     """Welche Quellen sind aus dieser Umgebung erreichbar?"""
     checks = {
         "nflverse (GitHub)": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
-        "ESPN API": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
         "Sleeper API": "https://api.sleeper.app/v1/state/nfl",
         "Open-Meteo": "https://api.open-meteo.com/v1/forecast?latitude=40&longitude=-75&hourly=temperature_2m",
     }

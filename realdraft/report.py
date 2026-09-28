@@ -134,4 +134,5 @@ def projection_table(proj: pd.DataFrame, top: int = 40) -> str:
     return md_table(pd.DataFrame({
         "Spieler": p["name"], "Pos": p["pos"], "Team": p["team"], "vs": p["opp"],
         "Boost": p["boost"], "FP proj": p["mu_fp"], "E[Rating]": p["er"], "P10": p["p10"],
-        "P90": p["p90"], "Wert@1.6": p["Wert"], "Risiko": p["risk"], "Signale": p["flags"]}))
+        "P90": p["p90"], "Wert@1.6": p["Wert"], "Risiko": p["risk"], "Signale": p["flags"]}
+        | ({"Sleeper PPR": p["sleeper_ppr"]} if p["sleeper_ppr"].notna().any() else {})))

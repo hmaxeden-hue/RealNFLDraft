@@ -108,9 +108,10 @@ Dateiformate:
 
 - nflverse (GitHub): Spielplan inkl. Spread/Total, Stats, xFP (ff_opportunity), Snaps, Injury Reports,
   tägliche Depth Charts, Play-by-Play. Funktioniert.
-- ESPN, Sleeper, Open-Meteo: nur mit Netzwerk-Freigabe in der Cloud-Umgebung (Custom-Allowlist:
-  `site.api.espn.com`, `sports.core.api.espn.com`, `api.sleeper.app`, `api.open-meteo.com`).
-  Fehlen sie, laufen Injury-Status und Wetter über nflverse und WebSearch.
+- Sleeper (Status fast in Echtzeit + PPR-Projektion als Zweitmeinung) und Open-Meteo (Wetter): nur mit
+  Netzwerk-Freigabe der Cloud-Umgebung (Custom-Allowlist: `api.sleeper.app`, `api.open-meteo.com`,
+  optional `docs.realapp.link` für die Real-Doku). Fehlen sie, laufen Status und Wetter über
+  nflverse und WebSearch. ESPN ist nicht nötig, weil nflverse Spielplan und Linien liefert.
 - News immer per WebSearch. Aus der Real-App wird **nichts** gescraped, Pool und Boosts kommen vom User.
 
 ## Erkenntnisse (Lernschleife – hier kurz fortschreiben)

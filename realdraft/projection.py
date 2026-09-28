@@ -148,6 +148,10 @@ def project(date: str, boosts: pd.DataFrame | None = None,
         })
     df = pd.DataFrame(rows)
     df["note"] = ""
+    sp = sources.sleeper_projections(config.SEASON, int(sl["week"].max()))
+    df["sleeper_ppr"] = (df["player_id"].map(pl.set_index("player_id")["sleeper_id"].astype(str))
+                         .map(sp.set_index("sleeper_id")["sleeper_proj_ppr"])
+                         if sp is not None and "sleeper_id" in pl else np.nan)
     _apply_qb_out(df, qbg)
 
     df["boost"], df["boost_src"] = 0.0, "fehlt (0 angenommen)"
