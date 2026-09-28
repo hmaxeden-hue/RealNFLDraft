@@ -1,0 +1,447 @@
+<title>NFL Draftbrett</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #eef2ef;
+  --surface: #ffffff;
+  --surface-2: #f6f8f6;
+  --ink: #14201a;
+  --muted: #5b6b62;
+  --line: #d3dcd6;
+  --accent: #0f6b4f;
+  --accent-ink: #ffffff;
+  --accent-soft: #dcefe6;
+  --good: #1f7a45;
+  --good-soft: #dff2e6;
+  --warn: #9a6512;
+  --warn-soft: #f8ecd5;
+  --bad: #b3362b;
+  --bad-soft: #f8e0dc;
+  --track: #e2e8e4;
+  --display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0d1411; --surface: #151f1a; --surface-2: #1a261f; --ink: #e3ebe6; --muted: #8fa197;
+    --line: #26332c; --accent: #45c08f; --accent-ink: #08130e; --accent-soft: #16372a;
+    --good: #5fcf8e; --good-soft: #173323; --warn: #e3b25a; --warn-soft: #3a2d14;
+    --bad: #ef7d70; --bad-soft: #3d1c18; --track: #24302a;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d1411; --surface: #151f1a; --surface-2: #1a261f; --ink: #e3ebe6; --muted: #8fa197;
+  --line: #26332c; --accent: #45c08f; --accent-ink: #08130e; --accent-soft: #16372a;
+  --good: #5fcf8e; --good-soft: #173323; --warn: #e3b25a; --warn-soft: #3a2d14;
+  --bad: #ef7d70; --bad-soft: #3d1c18; --track: #24302a;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 48px; display: grid; gap: 28px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; letter-spacing: .01em; text-wrap: balance; margin: 0; line-height: 1.1; }
+h1 { font-size: 34px; }
+h2 { font-size: 24px; }
+h3 { font-size: 18px; }
+p { margin: 0; }
+.num { font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.label { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+section { display: grid; gap: 12px; }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+/* Kopf */
+header.top { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.brand { display: grid; gap: 2px; }
+.brand .sub { color: var(--muted); font-size: 14px; }
+.day-pick { display: grid; gap: 4px; }
+select, input[type="search"] {
+  font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 8px; padding: 8px 10px; min-height: 40px; max-width: 100%;
+}
+select:focus-visible, input:focus-visible, button:focus-visible, th button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Spiele */
+.games { display: flex; gap: 10px; flex-wrap: wrap; }
+.game { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; display: grid; gap: 2px; min-width: 0; }
+.game .match { font-family: var(--display); font-size: 22px; font-weight: 700; }
+.game .meta { color: var(--muted); font-size: 13px; }
+
+/* Scoreboard */
+.board { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+.board .big { font-family: var(--display); font-size: 56px; font-weight: 700; line-height: .9; color: var(--accent); }
+.board .stat { display: grid; gap: 2px; }
+.board .stat b { font-family: var(--display); font-size: 28px; font-weight: 600; line-height: 1; }
+.board .status { margin-left: auto; align-self: center; }
+
+/* Slots */
+.slots { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.slot { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; align-content: start; }
+.slot-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.slot-no { font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--muted); letter-spacing: .04em; }
+.slot-no b { color: var(--ink); font-size: 20px; }
+.slot .name { font-family: var(--display); font-size: 24px; font-weight: 700; line-height: 1.05; }
+.slot .team { color: var(--muted); font-size: 13px; }
+.kv { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; }
+.kv div { display: grid; }
+.kv b { font-family: var(--display); font-size: 22px; font-weight: 600; line-height: 1.1; }
+.reason { font-size: 13px; color: var(--ink); border-top: 1px solid var(--line); padding-top: 8px; }
+.pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.risk-tief { background: var(--good-soft); color: var(--good); }
+.risk-mittel { background: var(--warn-soft); color: var(--warn); }
+.risk-hoch { background: var(--bad-soft); color: var(--bad); }
+.pill-accent { background: var(--accent-soft); color: var(--accent); }
+.boost { font-weight: 600; color: var(--accent); }
+
+/* Spannweite */
+.range { display: grid; gap: 4px; }
+.range svg { width: 100%; height: 18px; display: block; }
+.range .ticks { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
+
+/* Tabellen */
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; background: var(--surface-2); position: sticky; top: 0; }
+td.r, th.r { text-align: right; }
+tr:last-child td { border-bottom: 0; }
+th button { all: unset; cursor: pointer; }
+th button::after { content: " ↕"; opacity: .4; }
+th button[data-dir="asc"]::after { content: " ↑"; opacity: 1; }
+th button[data-dir="desc"]::after { content: " ↓"; opacity: 1; }
+td .flags { color: var(--muted); font-size: 13px; }
+.lineup-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; }
+
+/* Rechner */
+.calc { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 14px; }
+.calc-picks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.calc-picks label { display: grid; gap: 4px; min-width: 0; }
+.calc-picks select { width: 100%; min-width: 0; }
+.wrap > *, .two-col > * { min-width: 0; }
+.day-pick select { max-width: min(340px, 100%); }
+.more { justify-self: start; font: inherit; font-weight: 600; color: var(--accent); background: var(--accent-soft); border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+.calc-result { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.calc-result .big { font-family: var(--display); font-size: 40px; font-weight: 700; line-height: 1; }
+.delta-pos { color: var(--good); font-weight: 600; }
+.delta-neg { color: var(--bad); font-weight: 600; }
+.formula { font-size: 13px; color: var(--muted); }
+
+/* Filter */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filters input { flex: 1 1 220px; min-width: 0; }
+.filters select { flex: 0 1 180px; min-width: 0; }
+
+/* Warnungen */
+.warnings { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.warnings li { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--warn); border-radius: 8px; padding: 8px 12px; font-size: 14px; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 14px; }
+
+@media (max-width: 980px) {
+  .slots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .two-col { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .slots { grid-template-columns: 1fr; }
+  h1 { font-size: 30px; }
+  .board .big { font-size: 46px; }
+  .board .status { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>Draftbrett</h1>
+      <p class="sub">NFL-Spieltage in Real · 5 Slots, Boost addiert: Punkte = Rating × (Slot + Boost)</p>
+    </div>
+    <label class="day-pick">
+      <span class="label">Spieltag</span>
+      <select id="day"></select>
+    </label>
+  </header>
+
+  <section aria-labelledby="games-h">
+    <h2 id="games-h" hidden>Spiele</h2>
+    <div class="games" id="games"></div>
+  </section>
+
+  <section aria-labelledby="draft-h">
+    <div class="section-head">
+      <h2 id="draft-h">Empfohlener Draft</h2>
+      <span class="muted" id="draft-note"></span>
+    </div>
+    <div class="board" id="board"></div>
+    <div class="slots" id="slots"></div>
+  </section>
+
+  <section aria-labelledby="warn-h">
+    <h2 id="warn-h">Warnungen</h2>
+    <ul class="warnings" id="warnings"></ul>
+  </section>
+
+  <div class="two-col">
+    <section aria-labelledby="var-h">
+      <h2 id="var-h">Varianten</h2>
+      <div class="table-wrap"><table id="variants"></table></div>
+    </section>
+    <section aria-labelledby="alt-h">
+      <h2 id="alt-h">Alternativen pro Slot</h2>
+      <div class="table-wrap"><table id="alts"></table></div>
+    </section>
+  </div>
+
+  <section aria-labelledby="calc-h">
+    <div class="section-head">
+      <h2 id="calc-h">Lineup-Rechner</h2>
+      <span class="muted">Eigene 5 wählen, die Slots werden automatisch nach E[Rating] sortiert.</span>
+    </div>
+    <div class="calc">
+      <div class="calc-picks" id="calc-picks"></div>
+      <div class="calc-result" id="calc-result"></div>
+      <div class="table-wrap"><table id="calc-table"></table></div>
+      <p class="formula">Erwartete Punkte = E[Rating] × (Slot-Boost + Spieler-Boost). Der Spieler-Boost gilt auf jedem Slot gleich, deshalb gehört das höchste E[Rating] auf Slot 1.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="players-h">
+    <div class="section-head">
+      <h2 id="players-h">Alle Spieler</h2>
+      <span class="muted" id="players-count"></span>
+    </div>
+    <div class="filters">
+      <input type="search" id="q" placeholder="Spieler suchen …" aria-label="Spieler suchen">
+      <select id="f-team" aria-label="Team"></select>
+      <select id="f-group" aria-label="Position"></select>
+    </div>
+    <div class="table-wrap"><table id="players"></table></div>
+    <button type="button" class="more" id="more">Alle anzeigen</button>
+  </section>
+
+  <div class="two-col">
+    <section aria-labelledby="hist-h">
+      <h2 id="hist-h">Lernschleife</h2>
+      <div id="history"></div>
+    </section>
+    <section aria-labelledby="model-h">
+      <h2 id="model-h">Rating-Modell</h2>
+      <div class="table-wrap"><table id="model"></table></div>
+      <p class="muted" id="model-note"></p>
+    </section>
+  </div>
+
+  <footer id="footer"></footer>
+</div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function () {
+  const DATA = JSON.parse(document.getElementById("data").textContent);
+  const SLOTS = DATA.slots;
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  const f1 = (n) => (n == null || isNaN(n) ? "–" : Number(n).toFixed(1));
+  const sgn = (n) => (n > 0 ? "+" : "") + Number(n).toFixed(1);
+  const riskPill = (r) => `<span class="pill risk-${esc(r)}">${esc(r)}</span>`;
+  const GROUPS = { QB: "QB", RB: "RB", WR: "WR", TE: "TE", K: "Kicker", DL: "D-Line", LB: "Linebacker", DB: "Secondary" };
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* ohne Speicher weiter */ } },
+  };
+
+  const days = DATA.days;
+  let day = days[0];
+
+  function dateLabel(iso) {
+    const d = new Date(iso + "T12:00:00");
+    return d.toLocaleDateString("de-CH", { weekday: "short", day: "2-digit", month: "2-digit", year: "numeric" });
+  }
+
+  function lineupFor(d) {
+    const byName = Object.fromEntries(d.players.map((p) => [p.name, p]));
+    if (d.final) {
+      const picks = d.final.map((f) => ({ ...byName[f.name], reason: f.reason })).filter((p) => p.name);
+      picks.sort((a, b) => b.er - a.er);
+      return picks.map((p, k) => ({ ...p, slot: k + 1, mult: SLOTS[k] + p.boost, epts: p.er * (SLOTS[k] + p.boost) }));
+    }
+    return d.best.map((p) => ({ ...p, reason: p.why }));
+  }
+
+  function rangeBar(p, max) {
+    const x = (v) => 2 + (Math.max(0, v) / max) * 96;
+    return `<div class="range" aria-label="Spannweite P10 ${f1(p.p10)} bis P90 ${f1(p.p90)}, erwartet ${f1(p.er)}">
+      <svg viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true">
+        <rect x="2" y="7" width="96" height="4" rx="2" fill="var(--track)"></rect>
+        <rect x="${x(p.p10)}" y="7" width="${Math.max(1, x(p.p90) - x(p.p10))}" height="4" rx="2" fill="var(--accent)" opacity=".45"></rect>
+        <rect x="${x(p.er) - 1}" y="3" width="2" height="12" rx="1" fill="var(--accent)"></rect>
+      </svg>
+      <div class="ticks num"><span>P10 ${f1(p.p10)}</span><span>E ${f1(p.er)}</span><span>P90 ${f1(p.p90)}</span></div>
+    </div>`;
+  }
+
+  function renderGames(d) {
+    $("games").innerHTML = d.slate.map((g) => `
+      <div class="game">
+        <span class="match">${esc(g.game)}</span>
+        <span class="meta num">Kickoff ${esc(g.kickoff_ch)} (CH) · ${esc(g.spread)} · O/U ${f1(g.total)}</span>
+        <span class="meta num">Team-Totals ${esc(g.implied)}${g.weather ? " · " + esc(g.weather) : ""}</span>
+      </div>`).join("");
+  }
+
+  function renderDraft(d) {
+    const L = lineupFor(d);
+    const total = L.reduce((s, p) => s + p.epts, 0);
+    const same = !d.final || d.final.every((f) => d.best.some((b) => b.name === f.name));
+    $("draft-note").textContent = d.final ? "So eingetragen · Stand " + d.generated : "Modell-Optimum · Stand " + d.generated;
+    $("board").innerHTML = `
+      <div class="stat"><span class="label">Erwarteter Score</span><span class="big num">${f1(total)}</span></div>
+      ${same ? `<div class="stat"><span class="label">Floor (P25)</span><b class="num">${f1(d.dist.p25)}</b></div>
+      <div class="stat"><span class="label">Ceiling (P95)</span><b class="num">${f1(d.dist.p95)}</b></div>` : ""}
+      <div class="stat"><span class="label">Pool</span><b class="num">${d.n_pool}</b></div>
+      <span class="status pill pill-accent">${d.final ? "Draft eingetragen" : "Vorschlag"}</span>`;
+    const max = Math.max(...L.map((p) => p.p90), 1);
+    $("slots").innerHTML = L.map((p) => `
+      <article class="slot">
+        <div class="slot-head">
+          <span class="slot-no">SLOT <b>${p.slot}</b> · ${SLOTS[p.slot - 1].toFixed(1)}x</span>
+          ${riskPill(p.risk)}
+        </div>
+        <div>
+          <div class="name">${esc(p.name)}</div>
+          <div class="team">${esc(p.pos)} · ${esc(p.team)} vs ${esc(p.opp)}</div>
+        </div>
+        <div class="kv num">
+          <div><span class="label">Boost</span><b class="boost">+${f1(p.boost)}</b></div>
+          <div><span class="label">Gesamt</span><b>${f1(p.mult)}x</b></div>
+          <div><span class="label">E[Rating]</span><b>${f1(p.er)}</b></div>
+          <div><span class="label">E[Punkte]</span><b>${f1(p.epts)}</b></div>
+        </div>
+        ${rangeBar(p, max)}
+        <p class="reason">${esc(p.reason || "")}</p>
+      </article>`).join("");
+    $("warnings").innerHTML = (d.warnings.length ? d.warnings : ["Keine Warnungen."]).map((w) => `<li>${md(w)}</li>`).join("");
+  }
+
+  function renderVariants(d) {
+    $("variants").innerHTML = `<thead><tr><th>Variante</th><th>Slot 1 → 5</th><th class="r">E</th><th class="r">P25</th><th class="r">P95</th></tr></thead><tbody>` +
+      d.variants.map((v) => `<tr><td>${esc(v.label)}</td><td><ol class="lineup-list">${v.lineup.map((n) => `<li>${esc(n)}</li>`).join("")}</ol></td>
+        <td class="r num">${f1(v.mean)}</td><td class="r num">${f1(v.p25)}</td><td class="r num">${f1(v.p95)}</td></tr>`).join("") + "</tbody>";
+    $("alts").innerHTML = `<thead><tr><th>Slot</th><th>statt</th><th>Alternative</th><th class="r">Boost</th><th class="r">Δ Pkt</th></tr></thead><tbody>` +
+      d.alts.map((a) => a.alt.map((x, i) => `<tr>${i === 0 ? `<td rowspan="${a.alt.length}" class="num">${a.slot}</td><td rowspan="${a.alt.length}">${esc(a.out)}</td>` : ""}
+        <td>${esc(x.name)} <span class="muted">${esc(x.team)}</span></td><td class="r num">+${f1(x.boost)}</td><td class="r num">${sgn(x.delta)}</td></tr>`).join("")).join("") + "</tbody>";
+  }
+
+  /* Lineup-Rechner */
+  function renderCalc(d) {
+    const pool = [...d.players].sort((a, b) => b.er * (1.6 + b.boost) - a.er * (1.6 + a.boost));
+    const def = lineupFor(d).map((p) => p.name);
+    let saved = null;
+    try { saved = JSON.parse(store.get("calc-" + d.date) || "null"); } catch (e) { saved = null; }
+    const start = Array.isArray(saved) && saved.length === 5 ? saved : def;
+    const opts = pool.map((p) => `<option value="${esc(p.name)}">${esc(p.name)} · ${esc(p.team)} ${esc(p.pos)} · +${f1(p.boost)} · E ${f1(p.er)}</option>`).join("");
+    $("calc-picks").innerHTML = [0, 1, 2, 3, 4].map((i) => `<label><span class="label">Spieler ${i + 1}</span><select id="calc-${i}">${opts}</select></label>`).join("");
+    start.forEach((n, i) => { const s = $("calc-" + i); if (pool.some((p) => p.name === n)) s.value = n; });
+    const recTotal = lineupFor(d).reduce((s, p) => s + p.epts, 0);
+    const update = () => {
+      const names = [0, 1, 2, 3, 4].map((i) => $("calc-" + i).value);
+      store.set("calc-" + d.date, JSON.stringify(names));
+      const dup = names.length !== new Set(names).size;
+      const picks = names.map((n) => pool.find((p) => p.name === n)).sort((a, b) => b.er - a.er);
+      const rows = picks.map((p, k) => ({ ...p, slot: k + 1, mult: SLOTS[k] + p.boost, epts: p.er * (SLOTS[k] + p.boost) }));
+      const total = rows.reduce((s, p) => s + p.epts, 0);
+      const delta = total - recTotal;
+      $("calc-result").innerHTML = dup
+        ? `<span class="delta-neg">Ein Spieler ist doppelt gewählt.</span>`
+        : `<span class="big num">${f1(total)}</span><span>erwartete Punkte</span>
+           <span class="${delta >= 0 ? "delta-pos" : "delta-neg"} num">${sgn(delta)} gegenüber Empfehlung</span>`;
+      $("calc-table").innerHTML = `<thead><tr><th>Slot</th><th>Spieler</th><th class="r">Boost</th><th class="r">Gesamt</th><th class="r">E[Rating]</th><th class="r">E[Pkt]</th><th>Risiko</th></tr></thead><tbody>` +
+        rows.map((p) => `<tr><td class="num">${p.slot}</td><td>${esc(p.name)} <span class="muted">${esc(p.team)}</span></td><td class="r num">+${f1(p.boost)}</td>
+          <td class="r num">${f1(p.mult)}x</td><td class="r num">${f1(p.er)}</td><td class="r num">${f1(p.epts)}</td><td>${riskPill(p.risk)}</td></tr>`).join("") + "</tbody>";
+    };
+    [0, 1, 2, 3, 4].forEach((i) => $("calc-" + i).addEventListener("change", update));
+    update();
+  }
+
+  /* Spielertabelle */
+  const COLS = [
+    { k: "name", t: "Spieler" }, { k: "pos", t: "Pos" }, { k: "team", t: "Team" },
+    { k: "boost", t: "Boost", r: 1 }, { k: "mu_fp", t: "FP proj", r: 1 }, { k: "er", t: "E[Rating]", r: 1 },
+    { k: "p10", t: "P10", r: 1 }, { k: "p90", t: "P90", r: 1 }, { k: "value", t: "Wert", r: 1 },
+    { k: "risk", t: "Risiko" }, { k: "flags", t: "Signale" },
+  ];
+  let sortKey = "value", sortDir = "desc", showAll = false;
+  const LIMIT = 25;
+  function renderPlayers(d) {
+    const teams = [...new Set(d.players.map((p) => p.team))].sort();
+    const groups = [...new Set(d.players.map((p) => p.group))];
+    $("f-team").innerHTML = `<option value="">Alle Teams</option>` + teams.map((t) => `<option>${esc(t)}</option>`).join("");
+    $("f-group").innerHTML = `<option value="">Alle Positionen</option>` + Object.keys(GROUPS).filter((g) => groups.includes(g)).map((g) => `<option value="${g}">${GROUPS[g]}</option>`).join("");
+    drawPlayers(d);
+  }
+  function drawPlayers(d) {
+    const q = $("q").value.trim().toLowerCase(), team = $("f-team").value, grp = $("f-group").value;
+    let rows = d.players.map((p) => ({ ...p, value: p.er * (1.6 + p.boost) }))
+      .filter((p) => (!q || p.name.toLowerCase().includes(q)) && (!team || p.team === team) && (!grp || p.group === grp));
+    rows.sort((a, b) => {
+      const x = a[sortKey], y = b[sortKey];
+      const c = typeof x === "number" ? x - y : String(x).localeCompare(String(y), "de");
+      return sortDir === "asc" ? c : -c;
+    });
+    $("players-count").textContent = `${rows.length} von ${d.players.length} · Wert = E[Rating] × (1.6 + Boost), also mittlerer Slot`;
+    $("more").hidden = rows.length <= LIMIT;
+    $("more").textContent = showAll ? "Weniger anzeigen" : `Alle ${rows.length} anzeigen`;
+    if (!showAll) rows = rows.slice(0, LIMIT);
+    $("players").innerHTML = `<thead><tr>${COLS.map((c) => `<th class="${c.r ? "r" : ""}"><button type="button" data-k="${c.k}" data-dir="${c.k === sortKey ? sortDir : ""}">${c.t}</button></th>`).join("")}</tr></thead><tbody>` +
+      rows.map((p) => `<tr><td>${esc(p.name)}</td><td>${esc(p.pos)}</td><td>${esc(p.team)}</td>
+        <td class="r num">${p.boost_src === "Pool" || p.boost > 0 ? "+" + f1(p.boost) : `<span class="muted">${f1(p.boost)}</span>`}</td>
+        <td class="r num">${f1(p.mu_fp)}</td><td class="r num"><strong>${f1(p.er)}</strong></td><td class="r num">${f1(p.p10)}</td><td class="r num">${f1(p.p90)}</td>
+        <td class="r num">${f1(p.value)}</td><td>${riskPill(p.risk)}</td><td><span class="flags">${esc(p.flags)}</span></td></tr>`).join("") + "</tbody>";
+    $("players").querySelectorAll("th button").forEach((b) => b.addEventListener("click", () => {
+      const k = b.dataset.k;
+      sortDir = sortKey === k && sortDir === "desc" ? "asc" : "desc";
+      sortKey = k;
+      drawPlayers(day);
+    }));
+  }
+
+  function renderHistory() {
+    const h = DATA.history;
+    if (!h.length) { $("history").innerHTML = `<p class="muted">Noch keine Ergebnisse erfasst.</p>`; return; }
+    $("history").innerHTML = h.map((x) => {
+      const c = x.check;
+      const ok = c.ok === undefined ? "" : c.ok ? `<span class="pill risk-tief">Formel ✓ Diff ${sgn(c.diff)}</span>` : `<span class="pill risk-hoch">Formel ✗ Diff ${sgn(c.diff)}</span>`;
+      return `<div style="display:grid;gap:8px">
+        <div class="section-head"><h3>${esc(dateLabel(x.date))}</h3><span class="num">App ${f1(c.app)} · berechnet ${f1(c.berechnet)} ${ok}</span></div>
+        <div class="table-wrap"><table><thead><tr><th>Slot</th><th>Spieler</th><th class="r">Mult</th><th class="r">Proj.</th><th class="r">Rating</th><th class="r">Punkte</th></tr></thead><tbody>
+        ${x.picks.map((p) => `<tr><td class="num">${p.slot}</td><td>${esc(p.name)} <span class="muted">${esc(p.team)}</span></td><td class="r num">${f1(p.mult)}x</td>
+          <td class="r num">${f1(p.er)}</td><td class="r num"><strong>${f1(p.rating)}</strong></td><td class="r num">${f1(p.points)}</td></tr>`).join("")}
+        </tbody></table></div></div>`;
+    }).join("");
+  }
+
+  function renderModel() {
+    const m = DATA.model;
+    $("model").innerHTML = `<thead><tr><th>Gruppe</th><th class="r">Steigung</th><th class="r">Offset (FP)</th><th class="r">Ratings</th></tr></thead><tbody>` +
+      Object.entries(m.groups).map(([g, v]) => `<tr><td>${GROUPS[g] || g}</td><td class="r num">${Number(v.slope).toFixed(3)}</td><td class="r num">${f1(v.offset)}</td><td class="r num">${v.n_obs ?? 0}</td></tr>`).join("") + "</tbody>";
+    const bf = m.boost_fits.map((b) => `${b.kind === "K" ? "Kicker" : "Defense"} ×${b.m_applied} (${b.date})`).join(", ");
+    $("model-note").textContent = `Rating = max(0, Steigung × (FP − Offset)). ${m.n_ratings} echte Ratings erfasst.` + (bf ? ` Aus den Boosts geschätzt: ${bf}.` : "");
+  }
+
+  function renderDay() {
+    renderGames(day); renderDraft(day); renderVariants(day); renderCalc(day); renderPlayers(day);
+    $("footer").innerHTML = `Stand ${esc(day.generated)} · Daten: nflverse (Spielplan, Linien, Stats, Injuries) · Boosts manuell aus der App · Neue Spieltage mit <code>/draft</code>, Ergebnisse mit <code>/ergebnis</code>.`;
+  }
+
+  $("day").innerHTML = days.map((d, i) => `<option value="${i}">${esc(dateLabel(d.date))} · ${esc(d.slate.map((g) => g.game).join(", "))}</option>`).join("");
+  $("day").addEventListener("change", (e) => { day = days[Number(e.target.value)]; renderDay(); });
+  ["q", "f-team", "f-group"].forEach((id) => $(id).addEventListener("input", () => drawPlayers(day)));
+  $("more").addEventListener("click", () => { showAll = !showAll; drawPlayers(day); });
+  renderHistory(); renderModel(); renderDay();
+})();
+</script>

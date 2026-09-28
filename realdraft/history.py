@@ -45,8 +45,8 @@ def formula_check(picks: pd.DataFrame, app_total: float | None) -> dict:
     tol = float((0.05 * mult).sum() + (0.05 * picks["rating"]).sum()) + 0.01
     res = {"berechnet": round(calc, 2), "app": app_total, "toleranz": round(tol, 2)}
     if app_total is not None:
-        res["diff"] = round(app_total - calc, 2)
-        res["ok"] = abs(app_total - calc) <= tol
+        res["diff"] = round(float(app_total) - calc, 2)
+        res["ok"] = bool(abs(app_total - calc) <= tol)
     return res
 
 

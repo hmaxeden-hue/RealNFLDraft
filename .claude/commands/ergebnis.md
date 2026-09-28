@@ -16,4 +16,6 @@ Erfasse die Ergebnisse des Spieltags `$ARGUMENTS` (leer → letzter Spieltag). H
    Boost-Analyse. Kurz berichten: Was hat das Modell über- oder unterschätzt und warum?
    Taugt ein anderes Proxy (EPA/WPA) besser als FP? Dann Modell anpassen.
 5. Tabelle für den User: eigener Draft mit Projektion vs. tatsächlichem Rating und Punkten.
-6. 1–3 Stichpunkte unter "Erkenntnisse" in CLAUDE.md, dann `git add -A && git commit && git push`.
+6. 1–3 Stichpunkte unter "Erkenntnisse" in CLAUDE.md.
+7. `python -m realdraft page`, `site/index.html` per Artifact-Tool mit `url` aus CLAUDE.md veröffentlichen,
+   dann `git add -A && git commit && git push`.

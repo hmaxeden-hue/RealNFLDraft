@@ -74,7 +74,35 @@ def alternatives_table(proj, lineup, alts) -> str:
     return md_table(pd.DataFrame(rows))
 
 
-def draft_report(date: str, sl, proj, sims, problems, wx=None) -> str:
+def _slate_rows(sl: pd.DataFrame, wx: dict | None) -> list[dict]:
+    rows = []
+    for _, g in sl.iterrows():
+        rows.append({
+            "game": f"{g['away']} @ {g['home']}", "kickoff_ch": g["kickoff_ch"].strftime("%a %d.%m. %H:%M"),
+            "spread": (f"{g['home']} -{g['spread_home']:.1f}" if g["spread_home"] > 0
+                       else f"{g['away']} -{-g['spread_home']:.1f}") if pd.notna(g["spread_home"]) else "",
+            "total": None if pd.isna(g["total"]) else float(g["total"]),
+            "implied": f"{g['away']} {g['away_implied']:.1f} / {g['home']} {g['home_implied']:.1f}"
+            if pd.notna(g["total"]) else "",
+            "roof": g["roof"] or "", "weather": (wx or {}).get(g["game_id"], ""),
+        })
+    return rows
+
+
+def _player_row(r, slot: int | None = None) -> dict:
+    d = {"name": r["name"], "pos": r["pos"], "group": r["group"], "team": r["team"], "opp": r["opp"],
+         "boost": float(r["boost"]), "boost_src": r["boost_src"], "er": round(float(r["er"]), 3),
+         "p10": round(float(r["p10"]), 2), "p90": round(float(r["p90"]), 2),
+         "mu_fp": round(float(r["mu_fp"]), 1), "risk": r["risk"], "flags": r["flags"] or ""}
+    if slot is not None:
+        mult = config.SLOT_MULTS[slot] + r["boost"]
+        d.update({"slot": slot + 1, "mult": round(float(mult), 2), "epts": round(float(r["er"] * mult), 2),
+                  "why": _why(r)})
+    return d
+
+
+def recommendation(date: str, sl, proj, sims, problems, wx=None) -> dict:
+    """Alle Zahlen eines Spieltags als Dict (Grundlage für Bericht und Seite)."""
     er, boost = proj["er"].to_numpy(), proj["boost"].to_numpy()
     best = optimizer.best_lineup(er, boost)
     dist = optimizer.score_distribution(sims, boost, best)
@@ -82,50 +110,73 @@ def draft_report(date: str, sl, proj, sims, problems, wx=None) -> str:
                                             config.SAFE_QUANTILE, config.UPSIDE_QUANTILE,
                                             must_include=best)
     alts = optimizer.swap_alternatives(er, boost, best)
-
-    out = [f"# Draft {date}", "", slate_table(sl, wx), ""]
     n_pool = int((proj["boost_src"] == "Pool").sum())
-    out.append(f"Pool: {n_pool} Spieler mit Boost aus der App, {len(proj)} Spieler projiziert.")
-    if problems:
-        out += ["", "**Zuordnung prüfen:**"] + [f"- {p}" for p in problems]
-
-    out += ["", "## Empfehlung (max. Erwartungswert)", lineup_table(proj, best), "",
-            f"E[Score] **{dist.mean():.1f}** · P25 {np.quantile(dist, .25):.1f} · "
-            f"P95 {np.quantile(dist, .95):.1f}", "",
-            "## Alternativen pro Slot", alternatives_table(proj, best, alts), ""]
-
-    names = lambda L: ", ".join(f"{k+1}. {proj.iloc[i]['name']}" for k, i in enumerate(L))
-    rows = []
-    for key, label in (("mean", "Erwartung"), ("safe", "Sicher (max. P25)"), ("upside", "Upside (max. P95)")):
-        L, mean, qs, qu = variants[key]
-        rows.append({"Variante": label, "Lineup": names(L), "E[Score]": mean, "P25": qs, "P95": qu})
-    out += ["## Varianten", md_table(pd.DataFrame(rows)), ""]
-
-    reb = proj[proj["boost"] >= 1].copy()
-    reb["Wert"] = reb["er"] * (1.6 + reb["boost"])
-    reb = reb.sort_values("Wert", ascending=False).head(12)
-    out += ["## Rebound-Kandidaten (Boost ≥ 1) – Chance oder Falle?", md_table(pd.DataFrame({
-        "Spieler": reb["name"], "Pos": reb["pos"], "Team": reb["team"], "Boost": reb["boost"],
-        "E[Rating]": reb["er"], "FP letzte 3": reb["fp_last3"], "xFP letzte 3": reb["xfp_last3"],
-        "Snaps zuletzt/Schnitt": [f"{a:.0%}/{b:.0%}" if pd.notna(a) and pd.notna(b) and g != "K" else ""
-                                  for a, b, g in zip(reb["snap_last"], reb["snap_avg"], reb["group"])],
-        "Signale": reb["flags"]})), ""]
 
     top = proj.assign(v=proj["er"] * (1.6 + proj["boost"])).nlargest(40, "v")
-    warn = [f"- **{r['name']}** ({r['team']}): {r['flags']}" for _, r in top.head(25).iterrows()
+    warn = [f"**{r['name']}** ({r['team']}): {r['flags']}" for _, r in top.head(25).iterrows()
             if isinstance(r["status"], str) or r["role_alarm"] or r["qb_change"]]
     for team, note in proj[proj["note"].str.startswith("QB1")].groupby("team")["note"].first().items():
-        warn.append(f"- **{team}**: {note.split(' (')[0]} → Offense abgewertet, gegnerische Defense aufgewertet")
-    lineup_groups = proj.iloc[best]["group"]
-    uncal = sorted({g for g in lineup_groups if proj.loc[proj["group"] == g, "calib_n"].iloc[0] < 5})
+        warn.append(f"**{team}**: {note.split(' (')[0]} → Offense abgewertet, gegnerische Defense aufgewertet")
+    uncal = sorted({g for g in proj.iloc[best]["group"]
+                    if proj.loc[proj["group"] == g, "calib_n"].iloc[0] < 5})
     if uncal:
-        warn.append(f"- Rating-Modell für {', '.join(uncal)} noch kaum kalibriert (< 5 echte Ratings).")
+        warn.append(f"Rating-Modell für {', '.join(uncal)} noch kaum kalibriert (< 5 echte Ratings).")
     missing = top[top["boost_src"].str.startswith("fehlt")].head(8)
     if n_pool and len(missing):
-        warn.append("- Boost nicht im Pool (0 angenommen): " + ", ".join(missing["name"]))
+        warn.append("Boost nicht im Pool (0 angenommen): " + ", ".join(missing["name"]))
     if wx is not None and not wx and any(sl["roof"].isin(["outdoors", "open"])):
-        warn.append("- Wetter nicht abrufbar (Open-Meteo blockiert) – per Websuche prüfen.")
-    out += ["## Warnungen", *(warn or ["- keine"])]
+        warn.append("Wetter nicht abrufbar (Open-Meteo blockiert) – per Websuche prüfen.")
+
+    reb = proj[proj["boost"] >= 1].assign(v=lambda d: d["er"] * (1.6 + d["boost"]))
+    reb = reb.sort_values("v", ascending=False).head(12)
+    return {
+        "date": date, "generated": pd.Timestamp.now(tz=config.TZ_USER).strftime("%d.%m.%Y %H:%M"),
+        "slate": _slate_rows(sl, wx), "problems": problems, "n_pool": n_pool, "n_players": len(proj),
+        "best": [_player_row(proj.iloc[i], k) for k, i in enumerate(best)],
+        "dist": {"mean": round(float(dist.mean()), 2), "p25": round(float(np.quantile(dist, .25)), 2),
+                 "p95": round(float(np.quantile(dist, .95)), 2)},
+        "variants": [{"key": key, "label": label, "lineup": [proj.iloc[i]["name"] for i in v[0]],
+                      "mean": round(v[1], 2), "p25": round(v[2], 2), "p95": round(v[3], 2)}
+                     for key, label in (("mean", "Erwartung"), ("safe", "Sicher (max. P25)"),
+                                        ("upside", "Upside (max. P95)"))
+                     for v in [variants[key]]],
+        "alts": [{"slot": k + 1, "out": proj.iloc[i]["name"],
+                  "alt": [{**_player_row(proj.iloc[c]), "delta": round(float(dl), 2)} for c, dl in alts[i]]}
+                 for k, i in enumerate(best)],
+        "rebound": [{**_player_row(r), "fp_last3": None if pd.isna(r["fp_last3"]) else round(float(r["fp_last3"]), 1),
+                     "xfp_last3": None if pd.isna(r["xfp_last3"]) else round(float(r["xfp_last3"]), 1)}
+                    for _, r in reb.iterrows()],
+        "warnings": warn,
+        "players": [_player_row(r) for _, r in proj.sort_values("er", ascending=False).iterrows()],
+    }
+
+
+def draft_report(rec: dict) -> str:
+    out = [f"# Draft {rec['date']}", ""]
+    out.append(md_table(pd.DataFrame([{"Kickoff CH": g["kickoff_ch"], "Spiel": g["game"], "Spread": g["spread"],
+                                        "O/U": g["total"], "Team-Totals": g["implied"], "Dach": g["roof"],
+                                        "Wetter": g["weather"]} for g in rec["slate"]])))
+    out += ["", f"Pool: {rec['n_pool']} Spieler mit Boost aus der App, {rec['n_players']} Spieler projiziert."]
+    if rec["problems"]:
+        out += ["", "**Zuordnung prüfen:**"] + [f"- {p}" for p in rec["problems"]]
+    out += ["", "## Empfehlung (max. Erwartungswert)", md_table(pd.DataFrame([{
+        "Slot": p["slot"], "Spieler": p["name"], "Pos": p["pos"], "Team": p["team"], "vs": p["opp"],
+        "Boost": f"+{p['boost']:.1f}", "Mult": f"{p['mult']:.1f}x", "E[Rating]": p["er"],
+        "Floor–Ceil": f"{p['p10']:.1f}–{p['p90']:.1f}", "E[Pkt]": p["epts"], "Risiko": p["risk"],
+        "Warum": p["why"]} for p in rec["best"]])), "",
+        f"E[Score] **{rec['dist']['mean']:.1f}** · P25 {rec['dist']['p25']:.1f} · P95 {rec['dist']['p95']:.1f}", "",
+        "## Alternativen pro Slot", md_table(pd.DataFrame([{
+            "für Slot": a["slot"], "statt": a["out"], "Alternative": x["name"], "Team": x["team"],
+            "Boost": f"+{x['boost']:.1f}", "E[Rating]": x["er"], "Δ E[Pkt]": x["delta"], "Hinweis": x["flags"]}
+            for a in rec["alts"] for x in a["alt"]])), "",
+        "## Varianten", md_table(pd.DataFrame([{
+            "Variante": v["label"], "Lineup": ", ".join(f"{k+1}. {n}" for k, n in enumerate(v["lineup"])),
+            "E[Score]": v["mean"], "P25": v["p25"], "P95": v["p95"]} for v in rec["variants"]])), "",
+        "## Rebound-Kandidaten (Boost ≥ 1) – Chance oder Falle?", md_table(pd.DataFrame([{
+            "Spieler": r["name"], "Pos": r["pos"], "Team": r["team"], "Boost": r["boost"], "E[Rating]": r["er"],
+            "FP letzte 3": r["fp_last3"], "xFP letzte 3": r["xfp_last3"], "Signale": r["flags"]}
+            for r in rec["rebound"]])), "",
+        "## Warnungen", *([f"- {w}" for w in rec["warnings"]] or ["- keine"])]
     return "\n".join(out)
 
 

@@ -31,4 +31,6 @@ Erstelle die Draft-Empfehlung für den Spieltag `$ARGUMENTS` (leer → `next`). 
    - Warnungen: Questionable/Doubtful, Wetter, News vor Kickoff. Bei mehreren Kickoff-Zeiten sagen,
      welche Picks aus späten Spielen noch getauscht werden können.
    - Hinweis, wenn das Rating-Modell für eine Position noch unkalibriert ist.
-8. **Sichern**: `git add data/ && git commit -m "Draft <datum>" && git push` (Container ist flüchtig).
+8. **Seite**: Finalen Draft mit Begründungen in `data/recs/<datum>_final.csv` (`slot,name,reason`), dann
+   `python -m realdraft page` und `site/index.html` per Artifact-Tool mit `url` aus CLAUDE.md veröffentlichen.
+9. **Sichern**: `git add -A && git commit -m "Draft <datum>" && git push` (Container ist flüchtig).

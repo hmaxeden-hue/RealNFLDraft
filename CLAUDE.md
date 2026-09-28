@@ -6,6 +6,12 @@ Lernschleife. **Antworte immer auf Deutsch, kompakt, lieber Tabellen als Fliesst
 
 Befehle: `/draft [Datum]` (Empfehlung) und `/ergebnis [Datum]` (Lernschleife).
 
+**Seite (Artifact) für den User:** https://claude.ai/artifact/3cb41fpqxLxF2kYarYPvXG
+Sie zeigt alle Spieltage, die Empfehlung, Varianten, Alternativen, einen Lineup-Rechner, alle Spieler
+und die Lernschleife. Nach jedem `draft` bzw. `result`: `python -m realdraft page`, dann `site/index.html`
+mit dem Artifact-Tool **mit `url` = obige URL** veröffentlichen (sonst entsteht eine neue Seite).
+Den finalen Draft mit Begründungen vorher in `data/recs/<datum>_final.csv` (`slot,name,reason`) schreiben.
+
 ## Regeln der App (vom User bestätigt)
 
 - Spieltag = US-Datum in der App ("Sun Sep 27" enthält auch SNF). 5 Spieler aus den Spielen des Tages.
@@ -93,6 +99,7 @@ python -m realdraft result <datum> --draft data/results/<datum>_draft.csv --tota
                                    [--ratings data/results/<datum>_ratings.csv]
 python -m realdraft boostfit <datum> [--apply]    # Skalen K/Defense aus den Pool-Boosts
 python -m realdraft calibrate [--dry-run]        # Rating-Modell fitten, Formel-/Projektions-/Boost-Berichte
+python -m realdraft page                         # site/index.html aus data/recs + Historie
 python -m pytest -q
 ```
 
@@ -105,6 +112,7 @@ python -m pytest -q
 | `pool.py` | Namen aus der App → nflverse-IDs (auch "J. Allen"), Pool + Anpassungen |
 | `history.py` / `calibrate.py` | CSV-Historie, Formel-Check, Fit Rating-Modell, Boost-Analyse |
 | `config.py` | alle Parameter (Gewichte, Streuungen, Korrelationen, Schwellen) |
+| `page.py` + `page_template.html` | Artifact-Seite; Daten aus `data/recs/<datum>.json` (schreibt `draft`) |
 
 Dateiformate:
 - `data/pools/<datum>.csv`: `app_order,name,team,boost,app_status` (pos optional). Namen wie in der App.
@@ -135,3 +143,7 @@ Dateiformate:
   7 PPR +2.2). Skalen angepasst: K ×1.28, Defense ×0.50. Ausreisser: Darius Cooper (+0.7 trotz 5 PPR,
   Clutch-Play?) und Malik Muhammad (+1.2). Hauptpick per Robustheitscheck über 27 Skalen-Szenarien
   gewählt (Baun statt Burden: Burden mit QB-Wechsel und Snaps ↓ = Falle).
+- 2026-09-28: Zwei WRs vom selben Team sind kein Klumpenrisiko. In 2025 lag die Korrelation WR1–WR3 im
+  selben Spiel bei −0.05, WR1–WR2 bei 0.13, QB–WR bei ≈ 0.33. Das Modell überschätzt WR–WR aktuell
+  (0.18, gemeinsamer Team-Faktor). **To-do:** Target-Konkurrenz unter Passempfängern modellieren
+  (negative Komponente), damit Stacks im Upside-Optimierer realistisch bewertet werden.

@@ -7,17 +7,19 @@
   result DATUM --draft F [--total X] [--ratings F]   Lernschleife erfassen
   boostfit DATUM [--apply]       Skalen K/Defense aus den Boosts des Pools schätzen
   calibrate                      Rating-Modell neu fitten + Berichte
+  page                           Seite site/index.html aus allen Spieltagen erzeugen
 """
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
 import pandas as pd
 
-from . import calibrate, config, features, history, pool, projection, report, sources
+from . import calibrate, config, features, history, page, pool, projection, report, sources
 
 
 def _weather(sl: pd.DataFrame) -> dict:
@@ -63,8 +65,11 @@ def cmd_project(a):
 
 def cmd_draft(a):
     sl, proj, sims, problems = _run_projection(a.date, a.default_boost)
-    print(report.draft_report(a.date, sl, proj, sims, problems, _weather(sl)))
+    rec = report.recommendation(a.date, sl, proj, sims, problems, _weather(sl))
+    print(report.draft_report(rec))
     history.save_pool_snapshot(a.date, proj)
+    config.RECS_DIR.mkdir(parents=True, exist_ok=True)
+    (config.RECS_DIR / f"{a.date}.json").write_text(json.dumps(rec, ensure_ascii=False, indent=1))
 
 
 def _players_for(date: str) -> pd.DataFrame:
@@ -108,6 +113,10 @@ def cmd_boostfit(a):
         print("Übernommen:", params["boost_fits"][-2:])
 
 
+def cmd_page(a):
+    print(f"Seite geschrieben: {page.build().relative_to(config.ROOT)}")
+
+
 def cmd_calibrate(a):
     params, rep = calibrate.fit_rating_model(write=not a.dry_run)
     print("## Rating-Modell\n" + report.md_table(rep) + "\n")
@@ -143,6 +152,7 @@ def main(argv=None):
     p.add_argument("date")
     p.add_argument("--apply", action="store_true", help="gedämpft ins Rating-Modell übernehmen")
     p.set_defaults(fn=cmd_boostfit)
+    sub.add_parser("page", help="site/index.html für die Artifact-Seite erzeugen").set_defaults(fn=cmd_page)
     p = sub.add_parser("calibrate")
     p.add_argument("--dry-run", action="store_true")
     p.set_defaults(fn=cmd_calibrate)

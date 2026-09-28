@@ -6,6 +6,8 @@ DATA = ROOT / "data"
 CACHE_DIR = DATA / "cache"          # nicht versioniert
 POOLS_DIR = DATA / "pools"          # Spielerpool + Boosts pro Spieltag (aus Screenshots)
 PROJ_DIR = DATA / "projections"     # Projektionen pro Spieltag
+RECS_DIR = DATA / "recs"            # Empfehlung pro Spieltag (JSON, Grundlage der Seite)
+SITE_FILE = ROOT / "site" / "index.html"
 HISTORY_DIR = DATA / "history"      # Lernschleife (CSV, versioniert)
 MODEL_FILE = DATA / "model" / "rating_params.json"
 
