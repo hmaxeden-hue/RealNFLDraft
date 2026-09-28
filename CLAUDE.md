@@ -12,10 +12,20 @@ und die Lernschleife. Nach jedem `draft` bzw. `result`: `python -m realdraft pag
 mit dem Artifact-Tool **mit `url` = obige URL** veröffentlichen (sonst entsteht eine neue Seite).
 Den finalen Draft mit Begründungen vorher in `data/recs/<datum>_final.csv` (`slot,name,reason`) schreiben.
 
-**Sonntags-Routine** „Real Draft Sonntag“ (`trig_01TQYvdHXYuFyLLJjKXj6MZG`), jeden Sonntag 09:58 Uhr (Europe/Zurich),
-startet eine neue Session: Projektion ohne Boosts, News, Vorschau auf der Seite, Nachricht mit Push-Benachrichtigung.
-Der User schickt die Pool-Screenshots dann in genau diese Session, dort geht es mit `/draft` ab Schritt 3 weiter.
-Verwalten unter claude.ai/code/routines. Das Repo muss dort im Routinen-Formular ausgewählt sein.
+**Routinen** (Europe/Zurich, je eine neue Session mit Push-Benachrichtigung):
+
+| Routine | Zeit | ID |
+|---|---|---|
+| Real Draft Sonntag | So 09:58 | `trig_01TQYvdHXYuFyLLJjKXj6MZG` |
+| Real Draft Donnerstag | Do 14:55 | `trig_01NZE6dQh4F4wbvd1ptbJwQb` |
+| Real Draft Montag | Mo 14:59 | `trig_01CwFEfBDpgCYccSWJrXt1i9` |
+
+Jede Routine rechnet die Projektion ohne Boosts, sucht News und zeigt eine Vorschau auf der Seite. Dann schickt
+sie eine Nachricht. Ohne Spiel am heutigen US-Datum endet sie mit einer Zeile. Der User schickt die
+Pool-Screenshots in genau diese Session, dort geht es mit `/draft` ab Schritt 3 weiter. Verwalten unter
+claude.ai/code/routines. Das Repo muss dort im Routinen-Formular ausgewählt sein. Nicht abgedeckt sind
+Samstags- und Feiertagsspiele (Spätsaison, Thanksgiving, Weihnachten), dafür manuell `/draft`. Nach dem Super
+Bowl die Routinen pausieren.
 
 ## Regeln der App (vom User bestätigt)
 
