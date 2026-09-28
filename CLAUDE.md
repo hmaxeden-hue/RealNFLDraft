@@ -12,7 +12,9 @@ und die Lernschleife. Nach jedem `draft` bzw. `result`: `python -m realdraft pag
 mit dem Artifact-Tool **mit `url` = obige URL** veröffentlichen (sonst entsteht eine neue Seite).
 Den finalen Draft mit Begründungen vorher in `data/recs/<datum>_final.csv` (`slot,name,reason`) schreiben.
 `page` schreibt zusätzlich `site/draftbrett.html`, eine eigenständige Datei für den Desktop. Will der User sie
-haben, schick sie per SendUserFile.
+haben, schick sie per SendUserFile. Dieselbe Datei landet in `docs/index.html` und ist die **öffentliche
+GitHub-Pages-Seite** https://hmaxeden-hue.github.io/RealNFLDraft/. Sie aktualisiert sich, sobald die Datei auf
+`main` gepusht ist (Pages: Deploy from branch, main, /docs). Landet ein Push auf einem `claude/`-Branch, erst mergen.
 
 **Routinen** (Europe/Zurich, je eine neue Session mit Push-Benachrichtigung):
 

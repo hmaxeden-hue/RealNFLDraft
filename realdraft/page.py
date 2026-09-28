@@ -49,7 +49,11 @@ def build() -> Path:
     html = TEMPLATE.read_text().replace("__DATA__", blob)
     config.SITE_FILE.parent.mkdir(parents=True, exist_ok=True)
     config.SITE_FILE.write_text(html)
-    config.STANDALONE_FILE.write_text(standalone(html))
+    full = standalone(html)
+    config.STANDALONE_FILE.write_text(full)
+    config.PAGES_FILE.parent.mkdir(parents=True, exist_ok=True)
+    config.PAGES_FILE.write_text(full)
+    (config.PAGES_FILE.parent / ".nojekyll").touch()
     return config.SITE_FILE
 
 

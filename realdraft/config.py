@@ -9,6 +9,7 @@ PROJ_DIR = DATA / "projections"     # Projektionen pro Spieltag
 RECS_DIR = DATA / "recs"            # Empfehlung pro Spieltag (JSON, Grundlage der Seite)
 SITE_FILE = ROOT / "site" / "index.html"            # Artifact-Version (ohne Dokument-Gerüst)
 STANDALONE_FILE = ROOT / "site" / "draftbrett.html"  # eigenständig, zum Öffnen auf dem Desktop
+PAGES_FILE = ROOT / "docs" / "index.html"            # GitHub Pages (main, Ordner /docs)
 HISTORY_DIR = DATA / "history"      # Lernschleife (CSV, versioniert)
 MODEL_FILE = DATA / "model" / "rating_params.json"
 
