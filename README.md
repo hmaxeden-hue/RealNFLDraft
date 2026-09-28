@@ -1,4 +1,4 @@
-# real-nfl-draft
+# RealNFLDraft
 
 Draft-Empfehlungen für NFL-Spieltage in der App **Real**: Projektion mit nflverse-Daten, exakte
 Lineup-Optimierung (Slot- und Spieler-Boosts additiv), Varianten Sicher/Upside und eine Lernschleife,
