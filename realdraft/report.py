@@ -120,7 +120,7 @@ def draft_report(date: str, sl, proj, sims, problems, wx=None) -> str:
     uncal = sorted({g for g in lineup_groups if proj.loc[proj["group"] == g, "calib_n"].iloc[0] < 5})
     if uncal:
         warn.append(f"- Rating-Modell für {', '.join(uncal)} noch kaum kalibriert (< 5 echte Ratings).")
-    missing = top[top["boost_src"] != "Pool"].head(8)
+    missing = top[top["boost_src"].str.startswith("fehlt")].head(8)
     if n_pool and len(missing):
         warn.append("- Boost nicht im Pool (0 angenommen): " + ", ".join(missing["name"]))
     if wx is not None and not wx and any(sl["roof"].isin(["outdoors", "open"])):

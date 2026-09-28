@@ -47,13 +47,13 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-09-28,00-0039919,Rome Odunze,CHI,PHI,WR,2.200,Pool,7.603,1.423,0.000,3.266,0.990,QB1 Caleb Williams fehlt (×0.85)
 2026-09-28,00-0040024,Darius Cooper,PHI,CHI,WR,0.700,Pool,3.038,0.476,0.000,1.368,0.990,
 2026-09-28,00-0040071,Mac McWilliams,PHI,CHI,DB,0.000,0 (noch kein Saisonspiel),4.656,0.401,0.000,1.052,0.990,keine Spiele 2026; Gegner ohne QB1 (×1.08)
-2026-09-28,00-0040126,Colston Loveland,CHI,PHI,TE,0.000,fehlt (0.0 angenommen),4.875,0.848,0.000,2.206,0.990,Pech -5.5 FP vs xFP; QB1 Caleb Williams fehlt (×0.88)
+2026-09-28,00-0040126,Colston Loveland,CHI,PHI,TE,3.000,Pool,4.875,0.848,0.000,2.206,0.990,Pech -5.5 FP vs xFP; QB1 Caleb Williams fehlt (×0.88)
 2026-09-28,00-0040236,Kyle Monangai,CHI,PHI,RB,0.400,Pool,7.132,1.117,0.000,2.684,0.990,QB1 Caleb Williams fehlt (×0.94)
 2026-09-28,00-0040277,Jahdae Walker,CHI,PHI,WR,3.000,Pool,2.236,0.347,0.000,1.092,0.990,QB1 Caleb Williams fehlt (×0.85)
 2026-09-28,00-0040708,Jihaad Campbell,PHI,CHI,LB,2.300,Pool,8.656,0.930,0.000,2.016,0.990,Gegner ohne QB1 (×1.08)
 2026-09-28,00-0040735,Luther Burden III,CHI,PHI,WR,2.500,Pool,5.677,1.031,0.000,2.495,0.990,QB1 Caleb Williams fehlt (×0.85)
 2026-09-28,00-0040749,Andrew Mukuba,PHI,CHI,DB,0.000,fehlt (0.0 angenommen),4.151,0.331,0.000,0.924,0.990,Gegner ohne QB1 (×1.08)
-2026-09-28,00-0040867,Makai Lemon,PHI,CHI,WR,0.000,fehlt (0.0 angenommen),5.554,0.979,0.000,2.348,0.990,Rolle↓
+2026-09-28,00-0040867,Makai Lemon,PHI,CHI,WR,3.000,Pool,6.109,1.102,0.000,2.587,0.990,Rolle↓; Rolle↓ war nur Target-Dip (Snaps stabil 63 %); mit Goedert + H. Brown out und Smith-Hamstring mehr Snaps erwartet – WR3 aber sehr volatil
 2026-09-28,00-0041051,Zavion Thomas,CHI,PHI,WR,0.000,fehlt (0.0 angenommen),3.671,0.587,0.000,1.620,0.990,QB1 Caleb Williams fehlt (×0.85)
 2026-09-28,00-0041060,Malik Muhammad,CHI,PHI,DB,1.200,Pool,6.381,0.622,0.000,1.491,0.990,
 2026-09-28,00-0041085,Keyshaun Elliott,CHI,PHI,LB,0.000,0 (noch kein Saisonspiel),4.791,0.410,0.000,1.050,0.990,keine Spiele 2026
