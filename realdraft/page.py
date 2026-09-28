@@ -49,4 +49,14 @@ def build() -> Path:
     html = TEMPLATE.read_text().replace("__DATA__", blob)
     config.SITE_FILE.parent.mkdir(parents=True, exist_ok=True)
     config.SITE_FILE.write_text(html)
+    config.STANDALONE_FILE.write_text(standalone(html))
     return config.SITE_FILE
+
+
+def standalone(html: str) -> str:
+    """Vollständiges HTML-Dokument zum lokalen Öffnen (die Artifact-Version bekommt ihr Gerüst beim Veröffentlichen)."""
+    head, body = html.split('<div class="wrap">', 1)
+    return ("<!doctype html>\n<html lang=\"de\">\n<head>\n<meta charset=\"utf-8\">\n"
+            "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n"
+            "<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>\n"
+            f"{head}</head>\n<body>\n<div class=\"wrap\">{body}</body>\n</html>\n")
