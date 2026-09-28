@@ -8,9 +8,10 @@ Erstelle die Draft-Empfehlung für den Spieltag `$ARGUMENTS` (leer → `next`). 
    `python -m realdraft status` (1 Zeile Fazit, welche Quellen fehlen).
 2. **Spielplan**: `python -m realdraft slate <datum|next>` → zeige Spiele, Kickoff (CH-Zeit), Spread, Total.
 3. **Pool**: Liegt `data/pools/<datum>.csv` noch nicht vor, bitte den User um Screenshots der Spieler mit
-   ihren Boosts (mindestens alle mit Boost > 0 und alle Stars). Lies sie aus, schreibe
-   `name,team,pos,boost` und zeige die erkannte Liste kompakt zur Bestätigung. Unklare Namen, Teams oder
-   Boosts nachfragen. **Erst nach OK weiter.**
+   ihren Boosts (die ganze Liste, auch Kicker und Punter). Lies sie aus (Team über das Logo), schreibe
+   `app_order,name,team,boost,app_status` und zeige die erkannte Liste kompakt zur Bestätigung. Unklare
+   Namen, Teams oder Boosts nachfragen. Sind die Screenshots eindeutig, darfst du schon rechnen, die
+   Empfehlung aber nur als vorläufig markieren, bis der User bestätigt.
 4. **Boost-Skalen**: `python -m realdraft boostfit <datum> --apply` (Kicker- und Defense-Skala aus den Boosts).
    **Projektion**: `python -m realdraft project <datum> --top 50`. Prüfe die "Zuordnung prüfen"-Hinweise.
    Fehlen Spieler im Screenshot, zusätzlich mit `--default-boost 3.0` rechnen und die Unterschiede nennen.
