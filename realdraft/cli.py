@@ -8,6 +8,7 @@
   boostfit DATUM [--apply]       Skalen K/Defense aus den Boosts des Pools schätzen
   calibrate                      Rating-Modell neu fitten + Berichte
   page                           Seite site/index.html aus allen Spieltagen erzeugen
+  checklist DATUM [--n 40]       Boost-Checkliste: für welche Spieler der Boost zählt
 """
 from __future__ import annotations
 
@@ -39,10 +40,18 @@ def _run_projection(date: str, default_boost: float = 0.0):
     pl = features.slate_players(sl)
     boosts, problems = pool.load_pool(date, pl)
     overrides, p2 = pool.load_overrides(date, pl)
-    proj, sims = projection.project(date, boosts, overrides, default_boost=default_boost)
-    config.PROJ_DIR.mkdir(parents=True, exist_ok=True)
-    proj.to_csv(config.PROJ_DIR / f"{date}.csv", index=False, float_format="%.3f")
-    return sl, proj, sims, problems + p2
+    proj, sims, scen = projection.project(date, boosts, overrides, default_boost=default_boost)
+    if _started(sl):
+        print("Rückblick: Der Spieltag hat schon begonnen, es wird nichts gespeichert.\n")
+    else:
+        config.PROJ_DIR.mkdir(parents=True, exist_ok=True)
+        proj.to_csv(config.PROJ_DIR / f"{date}.csv", index=False, float_format="%.3f")
+    return sl, proj, sims, scen, problems + p2
+
+
+def _started(sl: pd.DataFrame) -> bool:
+    """Erstes Spiel angepfiffen? Dann bleiben Vorab-Prognosen und Empfehlung unverändert."""
+    return sl["kickoff_et"].min() <= datetime.now(ZoneInfo(config.TZ_APP))
 
 
 def cmd_status(a):
@@ -55,7 +64,7 @@ def cmd_slate(a):
 
 
 def cmd_project(a):
-    sl, proj, sims, problems = _run_projection(a.date, a.default_boost)
+    sl, proj, sims, scen, problems = _run_projection(a.date, a.default_boost)
     for p in problems:
         print(f"- {p}")
     if a.group:
@@ -64,12 +73,33 @@ def cmd_project(a):
 
 
 def cmd_draft(a):
-    sl, proj, sims, problems = _run_projection(a.date, a.default_boost)
-    rec = report.recommendation(a.date, sl, proj, sims, problems, _weather(sl))
+    sl, proj, sims, scen, problems = _run_projection(a.date, a.default_boost)
+    rec = report.recommendation(a.date, sl, proj, sims, problems, _weather(sl), scen)
     print(report.draft_report(rec))
+    if _started(sl):
+        return
     history.save_pool_snapshot(a.date, proj)
     config.RECS_DIR.mkdir(parents=True, exist_ok=True)
     (config.RECS_DIR / f"{a.date}.json").write_text(json.dumps(rec, ensure_ascii=False, indent=1))
+
+
+def cmd_checklist(a):
+    """Welche Boosts braucht es? Stars (für Slot 1–2) plus alle, die mit hohem Boost ins Lineup kämen."""
+    sl, proj, sims, scen, problems = _run_projection(a.date)
+    cand = proj[(proj["n_games"] > 0) & (proj["p_play"] > 0)].copy()   # ohne Saisonspiel: Boost 0 bekannt
+    cand["wert_max"] = cand["er"] * (1.4 + config.MAX_PLAYER_BOOST)
+    stars = cand.nlargest(config.CHECKLIST_STARS, "er")
+    rest = cand[~cand["player_id"].isin(stars["player_id"])].nlargest(a.n - len(stars), "wert_max")
+    cl = pd.concat([stars, rest]).sort_values(["team", "wert_max"], ascending=[True, False])
+    config.POOLS_DIR.mkdir(parents=True, exist_ok=True)
+    cl[["name", "team", "pos"]].to_csv(config.POOLS_DIR / f"{a.date}_checklist.csv", index=False)
+    print(f"Boost-Checkliste {a.date}: {len(cl)} Spieler (Suche in der App). Alle anderen können auch mit "
+          f"+3.0 nicht ins Lineup; ohne Saisonspiel ist der Boost ohnehin 0.\n")
+    print(report.md_table(pd.DataFrame({
+        "Team": cl["team"], "Spieler": cl["name"], "Pos": cl["pos"], "E[Rating]": cl["er"],
+        "P90": cl["p90"], "Wert bei +3.0": cl["wert_max"],
+        "Warum": ["Star (Slot 1–2)" if pid in set(stars["player_id"]) else "nur mit hohem Boost"
+                  for pid in cl["player_id"]]})))
 
 
 def _players_for(date: str) -> pd.DataFrame:
@@ -163,6 +193,10 @@ def main(argv=None):
     p.add_argument("--apply", action="store_true", help="gedämpft ins Rating-Modell übernehmen")
     p.set_defaults(fn=cmd_boostfit)
     sub.add_parser("page", help="site/index.html für die Artifact-Seite erzeugen").set_defaults(fn=cmd_page)
+    p = sub.add_parser("checklist", help="Spieler, deren Boost man für den Draft braucht")
+    p.add_argument("date")
+    p.add_argument("--n", type=int, default=40)
+    p.set_defaults(fn=cmd_checklist)
     p = sub.add_parser("calibrate")
     p.add_argument("--dry-run", action="store_true")
     p.set_defaults(fn=cmd_calibrate)

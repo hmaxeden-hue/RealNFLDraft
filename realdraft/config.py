@@ -76,7 +76,22 @@ UPSIDE_QUANTILE = 0.95
 # Fällt der Stamm-QB aus: Ersatz-QB mindestens so viele FP, Mitspieler abwerten
 BACKUP_QB_START_FP = 13.0
 QB_OUT_FACTOR = {"WR": 0.85, "TE": 0.88, "RB": 0.94, "K": 0.92}
-DEF_VS_BACKUP_QB = 1.08      # gegnerische Defense profitiert (Sacks, INTs)
+DEF_VS_BACKUP_QB = 1.3       # INT-Rate der gegnerischen Defense gegen einen Ersatz-QB
+
+# Turnover-Events der Defender (INT / Fumble Recovery je 10 Real-IDP ≈ 2 Rating-Punkte)
+TO_POINTS = 10.0
+TO_PRIOR_GAMES = {"int": 12.0, "fr": 40.0}   # Shrinkage zur Gruppenrate (FR ist fast reiner Zufall)
+FP_CV_DEF_BASE = {"DL": 1.10, "LB": 0.80, "DB": 0.72}   # Streuung ohne Turnovers (2025: 1.06/.75/.67)
+OPP_INT_SHRINK = 8.0         # Spiele Liga-Schnitt im INT-Faktor des gegnerischen QBs
+OPP_INT_CLIP = (0.7, 1.5)
+TO_OPP_LOAD = 0.25           # schlechter Tag der gegnerischen Offense -> mehr Turnovers
+
+# Szenario-Stacks: Team "dominiert", wenn (T_team - T_opp)/√2 + Spread/13.5 > Schwelle
+SCENARIO_MARGIN = 0.8
+SCENARIO_TOP = 6             # so viele Szenario-Lineups im Bericht (grosse Slates)
+
+# Boost-Checkliste für grosse Slates
+CHECKLIST_STARS = 12
 
 # Rebound-Check: Schwellen für Rollen-Alarm
 ROLE_DROP_REL = 0.75         # letzter Snap-/Opportunity-Anteil < 75 % des Schnitts -> Alarm

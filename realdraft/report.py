@@ -93,7 +93,8 @@ def _player_row(r, slot: int | None = None) -> dict:
     d = {"name": r["name"], "pos": r["pos"], "group": r["group"], "team": r["team"], "opp": r["opp"],
          "boost": float(r["boost"]), "boost_src": r["boost_src"], "er": round(float(r["er"]), 3),
          "p10": round(float(r["p10"]), 2), "p90": round(float(r["p90"]), 2),
-         "mu_fp": round(float(r["mu_fp"]), 1), "risk": r["risk"], "flags": r["flags"] or ""}
+         "mu_fp": round(float(r["mu_fp"]), 1), "risk": r["risk"], "flags": r["flags"] or "",
+         "p_int": round(float(r.get("p_int", 0) or 0), 3)}
     if slot is not None:
         mult = config.SLOT_MULTS[slot] + r["boost"]
         d.update({"slot": slot + 1, "mult": round(float(mult), 2), "epts": round(float(r["er"] * mult), 2),
@@ -101,7 +102,7 @@ def _player_row(r, slot: int | None = None) -> dict:
     return d
 
 
-def recommendation(date: str, sl, proj, sims, problems, wx=None) -> dict:
+def recommendation(date: str, sl, proj, sims, problems, wx=None, scen=None) -> dict:
     """Alle Zahlen eines Spieltags als Dict (Grundlage für Bericht und Seite)."""
     er, boost = proj["er"].to_numpy(), proj["boost"].to_numpy()
     best = optimizer.best_lineup(er, boost)
@@ -109,6 +110,11 @@ def recommendation(date: str, sl, proj, sims, problems, wx=None) -> dict:
     variants = optimizer.enumerate_variants(sims, er, boost, config.VARIANT_POOL,
                                             config.SAFE_QUANTILE, config.UPSIDE_QUANTILE,
                                             must_include=best)
+    scen_l = optimizer.scenario_lineups(sims, er, boost, scen or {})[:config.SCENARIO_TOP]
+    # Upside = höchstes P95 aus Enumeration und Spielausgang-Stacks
+    if scen_l and scen_l[0]["p95"] > variants["upside"][3]:
+        s0 = scen_l[0]
+        variants["upside"] = (s0["lineup"], s0["mean"], s0["p25"], s0["p95"])
     alts = optimizer.swap_alternatives(er, boost, best)
     n_pool = int((proj["boost_src"] == "Pool").sum())
 
@@ -147,6 +153,10 @@ def recommendation(date: str, sl, proj, sims, problems, wx=None) -> dict:
                      "xfp_last3": None if pd.isna(r["xfp_last3"]) else round(float(r["xfp_last3"]), 1)}
                     for _, r in reb.iterrows()],
         "warnings": warn,
+        "scenarios": [{"team": s["team"], "opp": proj.loc[proj["team"] == s["team"], "opp"].iloc[0],
+                       "p_scen": round(s["p_scen"], 3), "lineup": [proj.iloc[i]["name"] for i in s["lineup"]],
+                       "cond_mean": round(s["cond_mean"], 2), "mean": round(s["mean"], 2),
+                       "p25": round(s["p25"], 2), "p95": round(s["p95"], 2)} for s in scen_l],
         "players": [_player_row(r) for _, r in proj.sort_values("er", ascending=False).iterrows()],
     }
 
@@ -172,6 +182,11 @@ def draft_report(rec: dict) -> str:
         "## Varianten", md_table(pd.DataFrame([{
             "Variante": v["label"], "Lineup": ", ".join(f"{k+1}. {n}" for k, n in enumerate(v["lineup"])),
             "E[Score]": v["mean"], "P25": v["p25"], "P95": v["p95"]} for v in rec["variants"]])), "",
+        "## Spielausgang-Stacks (bestes Lineup, wenn ein Team dominiert)", md_table(pd.DataFrame([{
+            "Wenn dominiert": f"{s['team']} (vs {s['opp']})", "Häufigkeit": f"{s['p_scen']:.0%}",
+            "Lineup": ", ".join(f"{k+1}. {n}" for k, n in enumerate(s["lineup"])),
+            "E[Score] dann": s["cond_mean"], "E[Score]": s["mean"], "P95": s["p95"]}
+            for s in rec.get("scenarios", [])])), "",
         "## Rebound-Kandidaten (Boost ≥ 1) – Chance oder Falle?", md_table(pd.DataFrame([{
             "Spieler": r["name"], "Pos": r["pos"], "Team": r["team"], "Boost": r["boost"], "E[Rating]": r["er"],
             "FP letzte 3": r["fp_last3"], "xFP letzte 3": r["xfp_last3"], "Signale": r["flags"]}

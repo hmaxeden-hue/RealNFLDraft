@@ -94,6 +94,21 @@ def enumerate_variants(sims, er, boost, pool_size, safe_q, upside_q, must_includ
     return out
 
 
+def scenario_lineups(sims, er, boost, scen: dict) -> list[dict]:
+    """Pro Team: bestes Lineup für den Fall, dass dieses Team dominiert, bewertet über alle Sims."""
+    out = []
+    for team, mask in scen.items():
+        if mask.sum() < 50:
+            continue
+        er_s = sims[mask].mean(axis=0)
+        lineup = best_lineup(er_s, boost)            # Slot-Reihenfolge nach E[Rating | Szenario]
+        dist = score_distribution(sims, boost, lineup)
+        out.append({"team": team, "p_scen": float(mask.mean()), "lineup": lineup,
+                    "cond_mean": float(dist[mask].mean()), "mean": float(dist.mean()),
+                    "p25": float(np.quantile(dist, 0.25)), "p95": float(np.quantile(dist, 0.95))})
+    return sorted(out, key=lambda x: -x["p95"])
+
+
 def score_distribution(sims, boost, lineup) -> np.ndarray:
     mults = np.asarray(SLOT_MULTS) + np.asarray(boost, float)[lineup]
     return sims[:, lineup] @ mults

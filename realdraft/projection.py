@@ -101,6 +101,33 @@ def _baseline(hist: pd.DataFrame, group: str, pos_rank) -> tuple[float, float, i
     return float(mu), prior, len(cur)
 
 
+def turnover_rates(pg: pd.DataFrame) -> tuple[dict, dict, dict]:
+    """(Gruppenraten INT/FR pro Spiel, Spielerraten, INT-Faktor pro gegnerischem Team)."""
+    d = pg[pg["group"].isin(config.DEFENSE)].assign(
+        int_=lambda x: x["def_interceptions"].fillna(0), fr_=lambda x: x["fumble_recovery_opp"].fillna(0),
+        w=lambda x: np.where(x["season"] == config.SEASON, 1.0, 0.5))
+    starters = d[d["snap_pct"].fillna(0) >= 0.5]
+    group_rate = {g: {"int": float(x["int_"].mean()), "fr": float(x["fr_"].mean())}
+                  for g, x in starters.groupby("group")}
+    player = {}
+    for pid, x in d.groupby("player_id"):
+        grp = x["group"].iloc[0]
+        n = x["w"].sum()
+        player[pid] = {k: (float((x[c] * x["w"]).sum()) + config.TO_PRIOR_GAMES[k] * group_rate[grp][k])
+                       / (n + config.TO_PRIOR_GAMES[k]) for k, c in (("int", "int_"), ("fr", "fr_"))}
+    q = pg[pg["group"] == "QB"].assign(w=lambda x: np.where(x["season"] == config.SEASON, 1.0, 0.3))
+    per_game = q.groupby(["season", "week", "team"], as_index=False).agg(
+        ints=("passing_interceptions", "sum"), w=("w", "first"))
+    league = per_game["ints"].mean()
+    opp = {}
+    for team, x in per_game.groupby("team"):
+        n = x["w"].sum()
+        ratio = np.average(x["ints"], weights=x["w"]) / max(league, 1e-6)
+        k = config.OPP_INT_SHRINK
+        opp[team] = float(np.clip((n * ratio + k) / (n + k), *config.OPP_INT_CLIP))
+    return group_rate, player, opp
+
+
 def _p_play(row) -> tuple[float, str | None]:
     status = row.get("sleeper_status") or row.get("report_status")
     if isinstance(status, str):
@@ -123,6 +150,7 @@ def project(date: str, boosts: pd.DataFrame | None = None,
     qbg = features.team_qb_by_game(pg)
     mf = matchup_factors(pg)
     base_it = _team_base_implied(int(sl["week"].max()))
+    to_group, to_player, opp_int = turnover_rates(pg)
     params = load_rating_params()
     by_player = {pid: d.sort_values(["season", "week"]) for pid, d in pg.groupby("player_id")}
 
@@ -138,13 +166,20 @@ def project(date: str, boosts: pd.DataFrame | None = None,
         match = mf.get((ctx["opp"], grp), 1.0)
         p_play, status = _p_play(p)
         sig = features.rebound_signals(hist[hist["season"] == config.SEASON], grp, qbg, p["team"])
+        lam_int = lam_fr = 0.0
+        mu_fp = mu * env * match
+        if grp in config.DEFENSE:
+            rates = to_player.get(p["player_id"], to_group[grp])
+            lam_fr = rates["fr"]
+            lam_int = rates["int"] * opp_int.get(ctx["opp"], 1.0)
+            mu_fp += config.TO_POINTS * (lam_int - rates["int"])   # Gegner-QB verschiebt die INT-Erwartung
         rows.append({
             "player_id": p["player_id"], "name": p["name"], "team": p["team"], "opp": ctx["opp"],
             "pos": p["position"], "group": grp, "pos_rank": p.get("pos_rank"),
             "kickoff_ch": ctx["kickoff_ch"], "game_id": ctx["game_id"],
             "team_spread": ctx["team_spread"], "implied": ctx["implied"],
             "mu_base": mu, "prior": prior, "n_games": n_cur, "env": env, "matchup": match,
-            "mu_fp": mu * env * match, "p_play": p_play, "status": status,
+            "mu_fp": mu_fp, "lam_int": lam_int, "lam_fr": lam_fr, "p_play": p_play, "status": status,
             "injury": p.get("report_primary_injury"), **sig,
         })
     df = pd.DataFrame(rows)
@@ -177,15 +212,16 @@ def project(date: str, boosts: pd.DataFrame | None = None,
             if pd.notna(o.get("note")):
                 df.loc[m, "note"] = (df.loc[m, "note"] + "; " + str(o["note"])).str.strip("; ")
 
-    sims = simulate(df, params, n_sims)
+    sims, scen = simulate(df, params, n_sims)
     df["er"] = sims.mean(axis=0)
+    df["p_int"] = 1 - np.exp(-df["lam_int"])
     df["p10"] = np.quantile(sims, 0.10, axis=0)
     df["p90"] = np.quantile(sims, 0.90, axis=0)
     df["p_low"] = (sims < 0.5).mean(axis=0)
     df["risk"] = np.select([df["p_low"] < 0.2, df["p_low"] < 0.4], ["tief", "mittel"], "hoch")
     df["flags"] = df.apply(_flags, axis=1)
     df["calib_n"] = df["group"].map(lambda g: params["groups"][g].get("n_obs", 0))
-    return df, sims
+    return df, sims, scen
 
 
 def _apply_qb_out(df: pd.DataFrame, qbg: pd.DataFrame):
@@ -209,11 +245,14 @@ def _apply_qb_out(df: pd.DataFrame, qbg: pd.DataFrame):
             df.loc[m, "mu_fp"] *= f
             df.loc[m, "note"] = f"QB1 {main_name} fehlt (×{f})"
         m = (df["opp"] == team) & df["group"].isin(config.DEFENSE)
-        df.loc[m, "mu_fp"] *= config.DEF_VS_BACKUP_QB
-        df.loc[m, "note"] = f"Gegner ohne QB1 (×{config.DEF_VS_BACKUP_QB})"
+        extra = df.loc[m, "lam_int"] * (config.DEF_VS_BACKUP_QB - 1)
+        df.loc[m, "lam_int"] += extra
+        df.loc[m, "mu_fp"] += config.TO_POINTS * extra
+        df.loc[m, "note"] = f"Gegner ohne QB1 (INT-Rate ×{config.DEF_VS_BACKUP_QB})"
 
 
-def simulate(df: pd.DataFrame, params: dict, n_sims: int) -> np.ndarray:
+def simulate(df: pd.DataFrame, params: dict, n_sims: int) -> tuple[np.ndarray, dict]:
+    """Rating-Simulationen (N x P) und Szenario-Masken {team: Sims, in denen das Team dominiert}."""
     rng = np.random.default_rng(config.RANDOM_SEED)
     games = {g: i for i, g in enumerate(df["game_id"].unique())}
     teams = {t: i for i, t in enumerate(sorted(set(df["team"]) | set(df["opp"])))}
@@ -230,10 +269,18 @@ def simulate(df: pd.DataFrame, params: dict, n_sims: int) -> np.ndarray:
         Z[:, j] = (a_g * G[:, games[r.game_id]] + a_t * T[:, teams[r.team]]
                    + a_o * T[:, teams[r.opp]] + e * rng.standard_normal(n_sims))
     U = sps.norm.cdf(Z)
-    cv = df["group"].map(config.FP_CV).to_numpy()
-    mu = np.maximum(df["mu_fp"].to_numpy(), 0.05)
+    is_def = df["group"].isin(config.DEFENSE).to_numpy()
+    lam_int, lam_fr = df["lam_int"].to_numpy(), df["lam_fr"].to_numpy()
+    # Defender: stetiger Teil (Tackles, PD, Sacks) + seltene Turnover-Events als Poisson-Ereignisse
+    cv = np.where(is_def, df["group"].map(config.FP_CV_DEF_BASE).fillna(1.0), df["group"].map(config.FP_CV))
+    mu = np.maximum(df["mu_fp"].to_numpy() - is_def * config.TO_POINTS * (lam_int + lam_fr), 0.05)
     shape, scale = 1 / cv ** 2, mu * cv ** 2
     fp = sps.gamma.ppf(np.clip(U, 1e-6, 1 - 1e-6), a=shape, scale=scale)
+    if is_def.any():
+        o = np.array([teams[x] for x in df["opp"]])
+        m = np.exp(-config.TO_OPP_LOAD * T[:, o] - config.TO_OPP_LOAD ** 2 / 2)   # E[m] = 1
+        events = rng.poisson(lam_int * m) + rng.poisson(lam_fr * m)
+        fp = fp + np.where(is_def, config.TO_POINTS * events, 0.0)
 
     exits = rng.random((n_sims, P)) < config.P_EARLY_EXIT
     fp = np.where(exits, fp * rng.uniform(0, 0.6, (n_sims, P)), fp)
@@ -244,15 +291,18 @@ def simulate(df: pd.DataFrame, params: dict, n_sims: int) -> np.ndarray:
     noise = df["group"].map(lambda g: params["groups"][g]["noise"]).to_numpy()
     closeness = 1 + params.get("closeness_coef", 0) * (7 - np.minimum(np.abs(df["team_spread"].fillna(3).to_numpy()), 14)) / 7
     rating = np.maximum(0, slope * (fp - offset) + noise * rng.standard_normal((n_sims, P))) * closeness
+    # Spielausgang: eigener minus gegnerischer Offense-Faktor, verschoben um den Spread (SD ~13.5 Punkte)
+    t = np.array([teams[x] for x in df["team"]])
+    o = np.array([teams[x] for x in df["opp"]])
+    margin = (T[:, t] - T[:, o]) / np.sqrt(2) + df["team_spread"].fillna(0).to_numpy() / 13.5
     win_coef = params.get("win_coef", 0.0)
     if win_coef:
-        # Real bewertet Plays im Spielkontext: das Siegerteam bekommt mehr. Sieg-Latente = eigener minus
-        # gegnerischer Offense-Faktor, verschoben um den Spread (Spread-SD ~13.5 Punkte).
-        t = np.array([teams[x] for x in df["team"]])
-        o = np.array([teams[x] for x in df["opp"]])
-        margin = (T[:, t] - T[:, o]) / np.sqrt(2) + df["team_spread"].fillna(0).to_numpy() / 13.5
         rating = rating * (1 + win_coef * np.where(margin > 0, 1.0, -1.0))
-    return np.where(plays, rating, 0.0)
+    scen = {}
+    for team in df["team"].unique():
+        j = int(np.flatnonzero(df["team"].to_numpy() == team)[0])
+        scen[team] = margin[:, j] > config.SCENARIO_MARGIN
+    return np.where(plays, rating, 0.0), scen
 
 
 def _flags(r) -> str:

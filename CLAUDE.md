@@ -108,6 +108,16 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
     der Boost den Spieler nicht.
 - Varianten: **Erwartung** (max. E[Score]) = Hauptempfehlung. **Sicher** = max. P25.
   **Upside** = max. P95, gedacht fürs 20'000er-Feld. Korrelationen (QB+WR gleiches Team) erhöhen das Upside.
+- **Spielausgang-Stacks:** Für jedes Team das beste Lineup im Fall, dass es dominiert (Sieg-Latente aus den
+  Team-Faktoren plus Spread). Ein Einzelspiel hängt am Sieger (28.09.: CHI als Underdog 27:7). Upside nimmt das
+  höchste P95 aus Enumeration und Stacks.
+- **Turnovers der Defender** werden als eigene Poisson-Ereignisse simuliert (INT/FR je 10 Real-IDP ≈ 2 Rating).
+  Die INT-Rate kommt aus der Spielerhistorie (auf die Gruppenrate geschrumpft: DB 0.10, LB 0.043, DL 0.009 pro Spiel),
+  mal dem INT-Faktor des gegnerischen QBs (×1.3 gegen einen Ersatz-QB). Die Seite zeigt die INT-Chance.
+- **Boost-Checkliste** (`checklist`): 12 Stars nach E[Rating] (Slot 1–2) plus alle mit dem höchsten Wert bei +3.0.
+  Bei grossen Slates holt der User nur diese Boosts (Suche in der App).
+- **Rückblick-Sperre:** Hat das erste Spiel des Slates begonnen, speichern `project`/`draft` nichts mehr. Die
+  Vorab-Prognose bleibt damit für die Auswertung unverändert.
 
 ## Wochen-Workflow
 
@@ -136,6 +146,7 @@ python -m realdraft result <datum> --draft data/results/<datum>_draft.csv --tota
 python -m realdraft boostfit <datum> [--apply]    # Skalen K/Defense aus den Pool-Boosts
 python -m realdraft calibrate [--dry-run]        # Rating-Modell fitten, Formel-/Projektions-/Boost-Berichte
 python -m realdraft page                         # site/index.html aus data/recs + Historie
+python -m realdraft checklist <datum> [--n 40]   # Boost-Checkliste für grosse Slates
 python -m pytest -q
 ```
 

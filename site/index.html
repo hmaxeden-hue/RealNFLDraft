@@ -196,6 +196,14 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
     </section>
   </div>
 
+  <section aria-labelledby="scen-h" id="scen-section">
+    <div class="section-head">
+      <h2 id="scen-h">Spielausgang-Stacks</h2>
+      <span class="muted">Bestes Lineup, falls ein Team das Spiel dominiert. Gut für Upside im grossen Feld.</span>
+    </div>
+    <div class="table-wrap"><table id="scen"></table></div>
+  </section>
+
   <section aria-labelledby="calc-h">
     <div class="section-head">
       <h2 id="calc-h">Lineup-Rechner</h2>
@@ -330,6 +338,15 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
     $("warnings").innerHTML = (d.warnings.length ? d.warnings : ["Keine Warnungen."]).map((w) => `<li>${md(w)}</li>`).join("");
   }
 
+  function renderScenarios(d) {
+    const sc = d.scenarios || [];
+    $("scen-section").hidden = !sc.length;
+    $("scen").innerHTML = `<thead><tr><th>Wenn dominiert</th><th class="r">Häufigkeit</th><th>Slot 1 → 5</th><th class="r">E dann</th><th class="r">E gesamt</th><th class="r">P95</th></tr></thead><tbody>` +
+      sc.map((s) => `<tr><td><strong>${esc(s.team)}</strong> <span class="muted">vs ${esc(s.opp)}</span></td><td class="r num">${Math.round(s.p_scen * 100)}%</td>
+        <td><ol class="lineup-list">${s.lineup.map((n) => `<li>${esc(n)}</li>`).join("")}</ol></td>
+        <td class="r num">${f1(s.cond_mean)}</td><td class="r num">${f1(s.mean)}</td><td class="r num">${f1(s.p95)}</td></tr>`).join("") + "</tbody>";
+  }
+
   function renderVariants(d) {
     $("variants").innerHTML = `<thead><tr><th>Variante</th><th>Slot 1 → 5</th><th class="r">E</th><th class="r">P25</th><th class="r">P95</th></tr></thead><tbody>` +
       d.variants.map((v) => `<tr><td>${esc(v.label)}</td><td><ol class="lineup-list">${v.lineup.map((n) => `<li>${esc(n)}</li>`).join("")}</ol></td>
@@ -374,7 +391,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
   const COLS = [
     { k: "name", t: "Spieler" }, { k: "pos", t: "Pos" }, { k: "team", t: "Team" },
     { k: "boost", t: "Boost", r: 1 }, { k: "mu_fp", t: "FP proj", r: 1 }, { k: "er", t: "E[Rating]", r: 1 },
-    { k: "p10", t: "P10", r: 1 }, { k: "p90", t: "P90", r: 1 }, { k: "value", t: "Wert", r: 1 },
+    { k: "p10", t: "P10", r: 1 }, { k: "p90", t: "P90", r: 1 }, { k: "p_int", t: "INT-Chance", r: 1 }, { k: "value", t: "Wert", r: 1 },
     { k: "risk", t: "Risiko" }, { k: "flags", t: "Signale" },
   ];
   let sortKey = "value", sortDir = "desc", showAll = false;
@@ -388,7 +405,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
   }
   function drawPlayers(d) {
     const q = $("q").value.trim().toLowerCase(), team = $("f-team").value, grp = $("f-group").value;
-    let rows = d.players.map((p) => ({ ...p, value: p.er * (1.6 + p.boost) }))
+    let rows = d.players.map((p) => ({ ...p, p_int: p.p_int || 0, value: p.er * (1.6 + p.boost) }))
       .filter((p) => (!q || p.name.toLowerCase().includes(q)) && (!team || p.team === team) && (!grp || p.group === grp));
     rows.sort((a, b) => {
       const x = a[sortKey], y = b[sortKey];
@@ -403,6 +420,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
       rows.map((p) => `<tr><td>${esc(p.name)}</td><td>${esc(p.pos)}</td><td>${esc(p.team)}</td>
         <td class="r num">${p.boost_src === "Pool" || p.boost > 0 ? "+" + f1(p.boost) : `<span class="muted">${f1(p.boost)}</span>`}</td>
         <td class="r num">${f1(p.mu_fp)}</td><td class="r num"><strong>${f1(p.er)}</strong></td><td class="r num">${f1(p.p10)}</td><td class="r num">${f1(p.p90)}</td>
+        <td class="r num">${p.p_int ? Math.round(p.p_int * 100) + "%" : ""}</td>
         <td class="r num">${f1(p.value)}</td><td>${riskPill(p.risk)}</td><td><span class="flags">${esc(p.flags)}</span></td></tr>`).join("") + "</tbody>";
     $("players").querySelectorAll("th button").forEach((b) => b.addEventListener("click", () => {
       const k = b.dataset.k;
@@ -436,7 +454,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
   }
 
   function renderDay() {
-    renderGames(day); renderDraft(day); renderVariants(day); renderCalc(day); renderPlayers(day);
+    renderGames(day); renderDraft(day); renderVariants(day); renderScenarios(day); renderCalc(day); renderPlayers(day);
     $("footer").innerHTML = `Stand ${esc(day.generated)} · Daten: nflverse (Spielplan, Linien, Stats, Injuries) · Boosts manuell aus der App · Neue Spieltage mit <code>/draft</code>, Ergebnisse mit <code>/ergebnis</code>.`;
   }
 

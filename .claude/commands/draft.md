@@ -7,8 +7,11 @@ Erstelle die Draft-Empfehlung für den Spieltag `$ARGUMENTS` (leer → `next`). 
 1. **Setup**: `python -c "import nflreadpy"` scheitert → `pip install -q -r requirements.txt`.
    `python -m realdraft status` (1 Zeile Fazit, welche Quellen fehlen).
 2. **Spielplan**: `python -m realdraft slate <datum|next>` → zeige Spiele, Kickoff (CH-Zeit), Spread, Total.
-3. **Pool**: Liegt `data/pools/<datum>.csv` noch nicht vor, bitte den User um Screenshots der Spieler mit
-   ihren Boosts (die ganze Liste, auch Kicker und Punter). Lies sie aus (Team über das Logo), schreibe
+3. **Pool**: Liegt `data/pools/<datum>.csv` noch nicht vor, bitte den User um die Boosts.
+   - Einzelspiel (1–2 Spiele): Screenshots der ganzen Liste, auch Kicker und Punter.
+   - Grosser Slate: `python -m realdraft checklist <datum>` und dem User die Checkliste zeigen (~40 Spieler,
+     nach Team sortiert). Er sucht sie in der App und schickt die Boosts. Alle anderen können auch mit +3.0
+     nicht ins Lineup; Spieler ohne Saisonspiel haben Boost 0. Lies sie aus (Team über das Logo), schreibe
    `app_order,name,team,boost,app_status` und zeige die erkannte Liste kompakt zur Bestätigung. Unklare
    Namen, Teams oder Boosts nachfragen. Sind die Screenshots eindeutig, darfst du schon rechnen, die
    Empfehlung aber nur als vorläufig markieren, bis der User bestätigt.
@@ -27,7 +30,8 @@ Erstelle die Draft-Empfehlung für den Spieltag `$ARGUMENTS` (leer → `next`). 
    - Tabelle Empfehlung: Slot, Spieler, Team, Gegner, Boost, Gesamt-Mult, E[Rating], E[Punkte], Risiko,
      1–2 Sätze Begründung (Zahlen + News, bei Boost-Spielern Chance/Falle).
    - Pro Slot 2–3 Alternativen mit kurzem Grund, warum knapp dahinter.
-   - Varianten **Sicher** und **Upside** (Upside = für Top-Platzierung im 20'000er-Feld).
+   - Varianten **Sicher** und **Upside** (Upside = für Top-Platzierung im 20'000er-Feld), dazu die
+     **Spielausgang-Stacks** (bestes Lineup, falls ein Team dominiert, v. a. die Underdog-Seite).
    - Warnungen: Questionable/Doubtful, Wetter, News vor Kickoff. Bei mehreren Kickoff-Zeiten sagen,
      welche Picks aus späten Spielen noch getauscht werden können.
    - Hinweis, wenn das Rating-Modell für eine Position noch unkalibriert ist.

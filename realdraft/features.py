@@ -52,7 +52,8 @@ def player_games(seasons=(config.PRIOR_SEASON, config.SEASON)) -> pd.DataFrame:
         keep = ["season", "week", "game_id", "player_id", "player_display_name", "position",
                 "group", "team", "opponent_team", "fp", "turnovers", "attempts", "carries",
                 "targets", "target_share", "passing_epa", "rushing_epa", "receiving_epa",
-                "def_sacks", "def_qb_hits", "def_tackles_solo", "def_interceptions"]
+                "def_sacks", "def_qb_hits", "def_tackles_solo", "def_interceptions",
+                "fumble_recovery_opp", "def_pass_defended", "passing_interceptions"]
         s = s[[c for c in keep if c in s.columns]]
 
         try:
