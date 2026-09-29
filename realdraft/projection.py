@@ -17,18 +17,18 @@ from scipy import stats as sps
 from . import config, features, sources
 
 DEFAULT_RATING_PARAMS = {
-    "note": "rating = max(0, slope * (FP - offset) + noise) * closeness. Start-Heuristik aus "
-            "5 Datenpunkten (Week 3); wird mit `calibrate` auf echte Ratings gefittet.",
+    "note": "rating = max(0, slope * (FP - offset) + noise) * closeness. Offense-Prior aus 5 Ratings "
+            "(27.09.), K/Defense-Prior aus 45 Ratings (28.09., Real-IDP); `calibrate` fittet auf alle Ratings.",
     "closeness_coef": 0.05,
     "groups": {
         "QB": {"slope": 0.25, "offset": 9.0, "noise": 0.8, "n_obs": 2},
         "RB": {"slope": 0.22, "offset": 2.5, "noise": 0.7, "n_obs": 1},
         "WR": {"slope": 0.25, "offset": 2.0, "noise": 0.7, "n_obs": 2},
         "TE": {"slope": 0.25, "offset": 2.0, "noise": 0.7, "n_obs": 0},
-        "K":  {"slope": 0.30, "offset": 3.0, "noise": 0.7, "n_obs": 0},
-        "DL": {"slope": 0.30, "offset": 2.5, "noise": 0.7, "n_obs": 0},
-        "LB": {"slope": 0.30, "offset": 2.5, "noise": 0.7, "n_obs": 0},
-        "DB": {"slope": 0.30, "offset": 2.5, "noise": 0.7, "n_obs": 0},
+        "K":  {"slope": 0.33, "offset": 0.0, "noise": 0.4, "n_obs": 0},
+        "DL": {"slope": 0.19, "offset": 0.0, "noise": 0.35, "n_obs": 0},
+        "LB": {"slope": 0.19, "offset": 0.0, "noise": 0.35, "n_obs": 0},
+        "DB": {"slope": 0.19, "offset": 0.0, "noise": 0.35, "n_obs": 0},
     },
 }
 

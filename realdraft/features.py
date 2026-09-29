@@ -20,11 +20,14 @@ def kicker_points(s: pd.DataFrame) -> pd.Series:
 
 
 def idp_points(s: pd.DataFrame) -> pd.Series:
+    """Real-IDP: Gewichte aus den Real-Ratings vom 28.09. (NNLS, 25 Defender, MAE 0.13), Solo-Tackle = 1.
+
+    Real-Rating ≈ 0.19 × Real-IDP. Interceptions und Fumble Recoveries zählen ~10 Tackles, QB-Hits nichts.
+    """
     g = lambda c: s[c].fillna(0) if c in s else 0
-    return (g("def_tackles_solo") + 0.5 * g("def_tackle_assists") + g("def_tackles_for_loss")
-            + 4 * g("def_sacks") + g("def_qb_hits") + 5 * g("def_interceptions")
-            + 1.5 * g("def_pass_defended") + 3 * g("def_fumbles_forced")
-            + 3 * g("fumble_recovery_opp") + 6 * g("def_tds") + 2 * g("def_safeties"))
+    return (g("def_tackles_solo") + 3 * g("def_tackles_for_loss") + 2.5 * g("def_sacks")
+            + 10 * g("def_interceptions") + 2.5 * g("def_pass_defended") + 4 * g("def_fumbles_forced")
+            + 10 * g("fumble_recovery_opp") + 12 * g("def_tds") + 5 * g("def_safeties"))
 
 
 def _group(pos) -> str | None:

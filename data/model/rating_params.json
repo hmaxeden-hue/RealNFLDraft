@@ -3,75 +3,79 @@
  "closeness_coef": 0.05,
  "groups": {
   "QB": {
-   "slope": 0.2482,
-   "offset": 8.455,
-   "noise": 0.638,
+   "slope": 0.2502,
+   "offset": 8.513,
+   "noise": 0.64,
    "n_obs": 4,
    "fit_raw": [
-    0.2445,
-    7.364
+    0.2505,
+    7.54
    ]
   },
   "RB": {
-   "slope": 0.2053,
-   "offset": 0.356,
-   "noise": 0.719,
-   "n_obs": 3,
+   "slope": 0.2116,
+   "offset": 0.723,
+   "noise": 0.687,
+   "n_obs": 5,
    "fit_raw": [
-    0.1661,
-    -5.362
+    0.1982,
+    -2.121
    ]
   },
   "WR": {
-   "slope": 0.2162,
-   "offset": 1.429,
-   "noise": 0.543,
+   "slope": 0.2154,
+   "offset": 1.283,
+   "noise": 0.532,
    "n_obs": 8,
    "fit_raw": [
-    0.1824,
-    0.858
+    0.1809,
+    0.566
    ]
   },
   "TE": {
-   "slope": 0.25,
-   "offset": 2.0,
-   "noise": 0.7,
-   "n_obs": 0
+   "slope": 0.2227,
+   "offset": 1.34,
+   "noise": 0.573,
+   "n_obs": 3,
+   "fit_raw": [
+    0.1498,
+    -0.421
+   ]
   },
   "K": {
-   "slope": 0.3828,
-   "offset": 3.0,
-   "noise": 0.8932,
+   "slope": 0.33,
+   "offset": 0.0,
+   "noise": 0.4,
    "n_obs": 0
   },
   "DL": {
-   "slope": 0.3827,
-   "offset": 3.083,
-   "noise": 0.569,
-   "n_obs": 16,
+   "slope": 0.1964,
+   "offset": 0.233,
+   "noise": 0.265,
+   "n_obs": 28,
    "fit_raw": [
-    0.4241,
-    3.374
+    0.1983,
+    0.3
    ]
   },
   "LB": {
-   "slope": 0.3827,
-   "offset": 3.083,
-   "noise": 0.569,
-   "n_obs": 16,
+   "slope": 0.1964,
+   "offset": 0.233,
+   "noise": 0.265,
+   "n_obs": 28,
    "fit_raw": [
-    0.4241,
-    3.374
+    0.1983,
+    0.3
    ]
   },
   "DB": {
-   "slope": 0.3827,
-   "offset": 3.083,
-   "noise": 0.569,
-   "n_obs": 16,
+   "slope": 0.1964,
+   "offset": 0.233,
+   "noise": 0.265,
+   "n_obs": 28,
    "fit_raw": [
-    0.4241,
-    3.374
+    0.1983,
+    0.3
    ]
   }
  },
@@ -81,7 +85,8 @@
    "m_fit": 1.84,
    "n": 2,
    "m_applied": 1.276,
-   "date": "2026-09-28"
+   "date": "2026-09-28",
+   "rejected": "2026-09-29: durch echte Kicker-Ratings ersetzt (0.33 pro Kicker-Punkt, ohne Offset)"
   },
   {
    "kind": "DEF",
@@ -93,7 +98,7 @@
   }
  ],
  "updated": "2026-09-29",
- "win_coef": 0.012,
- "n_ratings": 25,
- "n_censored": 40
+ "win_coef": 0.0,
+ "n_ratings": 48,
+ "n_censored": 18
 }

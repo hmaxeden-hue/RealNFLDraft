@@ -67,9 +67,11 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
   Das Modell nutzt dafür `closeness_coef`, der noch zu kalibrieren ist.
 - **Stats → Rating funktioniert gut.** Mit den tatsächlichen Stats sagt das Mapping die Ratings mit
   Korrelation 0.9–1.0 voraus (28.09.). Die grossen Fehler kommen aus der **Leistungsprognose**, nicht aus dem Mapping.
-- Defense: IDP-Punkte erklären das Rating gut (corr 0.9). **INTs und Pass-Defenses zählen viel**
-  (Edwards 1 INT + 3 PD → 4.2, Thieneman 1 INT → 3.3), ein Sack wenig (Sweat, Odeyingbo 1 Sack → 1.2).
-  Defender mit +3.0 Boost und INT-Chance sind deshalb starke Upside-Picks.
+- **Real vergibt Ratings praktisch linear pro Aktion, ohne Grundabzug** (45 Ratings vom 28.09.):
+  Defense ≈ 0.19·Solo + 0.55·TFL + 0.43·Sack + 0.46·PD + 0.75·FF + **2.05·INT + 1.98·Fumble Recovery**;
+  QB-Hits, Assists und Sieg ≈ 0 (MAE 0.13). Das ist als **Real-IDP** in `features.idp_points` umgesetzt
+  (Solo = 1, TFL 3, Sack 2.5, PD 2.5, FF 4, INT 10, FR 10). Offense ≈ 0.2 × Fantasy-Punkte, Kicker ≈ 0.33 pro
+  Kicker-Punkt, Punter ≈ 0.3 pro Punt (noch nicht modelliert). Defender mit +3.0 und INT-Chance sind starke Upside-Picks.
 - Sieg-Effekt: Bei gegebenen Stats bringt der Sieg nur ~2 % (`win_coef`). Die Siegerteams haben einfach
   die besseren Stats (28.09.: 8 der Top 10 von CHI).
 - Die App-"fps" sind **Half-PPR**.
@@ -83,7 +85,8 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
   Maye 3.8 PPR, EPA −14.5 → 0. **PPR überschätzt Spieler mit Turnovers.** Die Skala ist gestaucht.
 - Aktuelles Mapping (`data/model/rating_params.json`, sonst Default in `projection.py`):
   `rating = max(0, slope × (FP − offset) + Rauschen) × (1 ± win_coef)` pro Positionsgruppe. Stand 29.09.:
-  QB 0.25·(FP−8.5), RB 0.21·(FP−0.4), WR 0.22·(FP−1.4), Defense 0.38·(IDP−3.1), K 0.38·(K−3), TE noch Prior.
+  QB 0.25·(PPR−8.5), RB 0.21·(PPR−0.7), WR 0.22·(PPR−1.3), TE 0.22·(PPR−1.3), Defense 0.20·Real-IDP,
+  K 0.33·K-Punkte, Sieg-Effekt 0 (48 Ratings + 18 Obergrenzen).
   `calibrate` fittet immer vom Prior aus auf **alle** Ratings (idempotent), Defense gemeinsam.
 - **Ratings-Screenshots:** In der App unter NFL → Performances → "Top of <Datum>" von oben **lückenlos**
   abfotografieren und das tiefste sichtbare Rating als `--cutoff` erfassen. Alle nicht abgelesenen Spieler des
@@ -186,3 +189,6 @@ Dateiformate:
   gehören auf die Liste. (2) Ein 1-Spiel-Slate ist extrem vom Spielausgang abhängig: Das Upside-Lineup sollte
   auch einen Stack der Underdog-Seite prüfen. (3) Der Abschlag für den Ersatz-QB (×0.85) war hier zu pessimistisch,
   aus einem Spiel lässt sich das aber nicht ableiten.
+- 2026-09-29: Die Liste vom 28.09. ist lückenlos bis 0.2 abgelesen (45 Ratings). Defense-Gewichte neu gefittet
+  (Real-IDP), K- und Defense-Prior ohne Offset, Boost-Skalen (K, Defense) durch echte Ratings ersetzt.
+  Nur-Tackle-Defender liefern wenig (4 Solo → 0.8). Den Wert bringen INTs und Fumble Recoveries (je ~2 Punkte).
