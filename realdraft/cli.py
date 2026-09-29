@@ -73,7 +73,11 @@ def cmd_draft(a):
 
 
 def _players_for(date: str) -> pd.DataFrame:
-    return features.slate_players(features.slate(date))
+    """Slate-Spieler plus restliche Roster (Punter usw.), damit alle Ratings zugeordnet werden."""
+    sl = features.slate(date)
+    pl = features.slate_players(sl)
+    rest = features.slate_roster_all(sl)
+    return pd.concat([pl, rest[~rest["player_id"].isin(pl["player_id"])]], ignore_index=True)
 
 
 def cmd_result(a):
@@ -85,7 +89,7 @@ def cmd_result(a):
         for p in problems:
             print(f"- {p}")
         picks["name"] = picks["player_id"].map(pl.set_index("player_id")["name"]).fillna(picks["name"])
-        chk = history.record_draft(a.date, picks, a.total, proj)
+        chk = history.record_draft(a.date, picks, a.total, proj, a.rank)
         print("Formel-Check:", chk)
         picks["team"] = picks["player_id"].map(pl.set_index("player_id")["team"])
         history.record_ratings(a.date, picks.dropna(subset=["player_id"]))
@@ -98,6 +102,9 @@ def cmd_result(a):
         r["name"] = r["player_id"].map(pl.set_index("player_id")["name"])
         history.record_ratings(a.date, r)
         print(f"{len(r)} Ratings gespeichert.")
+    if a.cutoff is not None:
+        history.record_cutoff(a.date, a.cutoff)
+        print(f"Obergrenze {a.cutoff} für alle nicht abgelesenen Spieler gespeichert.")
 
 
 def cmd_boostfit(a):
@@ -120,6 +127,7 @@ def cmd_page(a):
 def cmd_calibrate(a):
     params, rep = calibrate.fit_rating_model(write=not a.dry_run)
     print("## Rating-Modell\n" + report.md_table(rep) + "\n")
+    print(f"Sieg-Koeffizient: ±{params.get('win_coef', 0):.0%} (Sieger ×(1+c), Verlierer ×(1−c))\n")
     print("## Formel-Checks\n" + report.md_table(calibrate.formula_checks()) + "\n")
     print("## Projektionsgüte\n" + report.md_table(calibrate.projection_accuracy()) + "\n")
     ba = calibrate.boost_analysis()
@@ -146,7 +154,9 @@ def main(argv=None):
     p.add_argument("date")
     p.add_argument("--draft", help="CSV: slot,name,boost,rating[,team]")
     p.add_argument("--total", type=float, help="Gesamtscore laut App")
+    p.add_argument("--rank", help="Rang laut App, z. B. 9021/18000")
     p.add_argument("--ratings", help="CSV: name,team,rating (alle abgelesenen Spieler)")
+    p.add_argument("--cutoff", type=float, help="Liste von oben lückenlos bis zu diesem Rating abgelesen")
     p.set_defaults(fn=cmd_result)
     p = sub.add_parser("boostfit", help="Rating-Skalen pro Gruppe aus den Pool-Boosts schätzen")
     p.add_argument("date")

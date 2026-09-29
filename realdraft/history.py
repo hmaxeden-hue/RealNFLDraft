@@ -13,6 +13,7 @@ from . import config
 DRAFTS = config.HISTORY_DIR / "drafts.csv"
 POOLS = config.HISTORY_DIR / "pools.csv"
 RATINGS = config.HISTORY_DIR / "ratings.csv"
+CUTOFFS = config.HISTORY_DIR / "rating_cutoffs.csv"   # Liste von oben vollständig bis zu diesem Rating
 
 
 def _read(path) -> pd.DataFrame:
@@ -51,7 +52,7 @@ def formula_check(picks: pd.DataFrame, app_total: float | None) -> dict:
 
 
 def record_draft(date: str, picks: pd.DataFrame, app_total: float | None,
-                 proj: pd.DataFrame | None) -> dict:
+                 proj: pd.DataFrame | None, rank: str | None = None) -> dict:
     """picks: slot, player_id, name, boost, rating. Projektion (falls vorhanden) wird angehängt."""
     d = picks.copy()
     d["slot_mult"] = d["slot"].map(lambda s: config.SLOT_MULTS[int(s) - 1])
@@ -62,6 +63,7 @@ def record_draft(date: str, picks: pd.DataFrame, app_total: float | None,
     check = formula_check(d, app_total)
     d.insert(0, "date", date)
     d["app_total"] = app_total
+    d["app_rank"] = rank
     _replace_date(DRAFTS, date, d)
     return check
 
@@ -77,5 +79,10 @@ def record_ratings(date: str, ratings: pd.DataFrame):
     pd.concat([old, r], ignore_index=True).to_csv(RATINGS, index=False, float_format="%.3f")
 
 
+def record_cutoff(date: str, cutoff: float):
+    """Die Ratings-Liste des Tages ist von oben lückenlos bis `cutoff` abgelesen: alle anderen ≤ cutoff."""
+    _replace_date(CUTOFFS, date, pd.DataFrame([{"date": date, "cutoff": cutoff}]))
+
+
 def load(which: str) -> pd.DataFrame:
-    return _read({"drafts": DRAFTS, "pools": POOLS, "ratings": RATINGS}[which])
+    return _read({"drafts": DRAFTS, "pools": POOLS, "ratings": RATINGS, "cutoffs": CUTOFFS}[which])

@@ -33,7 +33,9 @@ Bowl die Routinen pausieren.
 
 ## Regeln der App (vom User bestätigt)
 
-- Spieltag = US-Datum in der App ("Sun Sep 27" enthält auch SNF). 5 Spieler aus den Spielen des Tages.
+- Spieltag = ein Slate. Das Tool arbeitet mit dem **US-Datum** ("Sun Sep 27" enthält auch SNF). Die App
+  beschriftet TNF/MNF nach Schweizer Datum des Kickoffs (MNF 28.09. = "Sep 29 Tue", TNF = "Fri").
+  5 Spieler aus den Spielen des Slates.
 - Keine Limits: alle 5 dürfen aus einem Team kommen, auch 5 QBs. Kicker und Defense-Spieler sind draftbar.
 - **Lock pro Spiel:** Spieler eines Spiels sind ab dessen Kickoff gesperrt. Spieler aus späteren Spielen
   lassen sich noch draften. Der User draftet meist 5–8 h vor dem Kickoff.
@@ -45,13 +47,14 @@ Bowl die Routinen pausieren.
   oder nicht gespielt.**
 - Der Score zählt nur für den Spieltag. Das Feld hat > 20'000 Spieler.
 
-## Formel (Status: bestätigt mit 1 Draft)
+## Formel (Status: bestätigt mit 2 Drafts)
 
 `Score = Σ Rating_i × (Slot_i + Boost_i)`. Die Boosts werden **addiert**, die App zeigt "Gesamt 4.6x" = 1.6 + 3.0.
 
 | Datum | berechnet | App | Diff | Toleranz (Rundung) |
 |---|---|---|---|---|
 | 2026-09-27 | 18.29 | 18.44 | +0.15 | ±1.18 ✓ |
+| 2026-09-28 | 26.94 | 27 | +0.06 | ±1.24 ✓ |
 
 Prüfe die Formel mit jedem Draft (`result` gibt den Check aus). Liegt ein Check ausserhalb der
 Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
@@ -62,18 +65,29 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
   Effizienz und **Kontext** (Spielstand knapp, Restzeit, "clutch"). Wichtige Plays in engen Spielen
   zählen mehr. → Knappe Spiele (kleiner Spread) sind tendenziell gut für Ratings.
   Das Modell nutzt dafür `closeness_coef`, der noch zu kalibrieren ist.
-- **Der Boost verrät das Saison-Rating.** Die App sagt: "Lower-ranked players get bigger boosts".
-  Am 28.09. lag die Rangkorrelation zwischen Boost und meinem Saison-Rating-Schätzer bei −0.82.
-  `boostfit <datum>` schätzt daraus die relativen Skalen von Kicker und Defense gegenüber der Offense
-  (Fit 28.09.: Kicker ×1.84, Defense ×0.45). Mit `--apply` werden sie gedämpft übernommen, pro Datum einmal.
-  **Das bei jedem neuen Pool laufen lassen**, solange es wenige echte Ratings gibt.
+- **Stats → Rating funktioniert gut.** Mit den tatsächlichen Stats sagt das Mapping die Ratings mit
+  Korrelation 0.9–1.0 voraus (28.09.). Die grossen Fehler kommen aus der **Leistungsprognose**, nicht aus dem Mapping.
+- Defense: IDP-Punkte erklären das Rating gut (corr 0.9). **INTs und Pass-Defenses zählen viel**
+  (Edwards 1 INT + 3 PD → 4.2, Thieneman 1 INT → 3.3), ein Sack wenig (Sweat, Odeyingbo 1 Sack → 1.2).
+  Defender mit +3.0 Boost und INT-Chance sind deshalb starke Upside-Picks.
+- Sieg-Effekt: Bei gegebenen Stats bringt der Sieg nur ~2 % (`win_coef`). Die Siegerteams haben einfach
+  die besseren Stats (28.09.: 8 der Top 10 von CHI).
+- Die App-"fps" sind **Half-PPR**.
+- **Der Boost verrät das Saison-Rating** (Spearman −0.82 am 28.09.; "Lower-ranked players get bigger boosts").
+  `boostfit` schätzte daraus Kicker ×1.84 (passt) und Defense ×0.45. **Der Defense-Wert ist durch echte
+  Ratings widerlegt** (Steigung ~0.38 statt 0.15) und im Modell als `rejected` markiert. `boostfit` ist daher nur
+  noch ein Hinweis, nicht mehr mit `--apply` nutzen. Die Kalibrierung auf echten Ratings geht immer vor.
 - Punter sind draftbar und werden von Real bewertet (Mann +1.8 rangiert vor Barkley), sind aber
   **noch nicht modelliert**. In `/ergebnis` Punter-Ratings mitnehmen.
 - Erste Daten (27.09.): Allen hatte 17.5 PPR (2 Rush-TD, 2 INT) → 2.1. Walker 21.3 PPR → 4.2.
   Maye 3.8 PPR, EPA −14.5 → 0. **PPR überschätzt Spieler mit Turnovers.** Die Skala ist gestaucht.
 - Aktuelles Mapping (`data/model/rating_params.json`, sonst Default in `projection.py`):
-  `rating = max(0, slope × (FP − offset) + Rauschen)` pro Positionsgruppe. Defense (IDP-Punkte) und
-  Kicker sind **noch reine Schätzung**. Deshalb sollen möglichst viele Ratings aller Spieler erfasst werden.
+  `rating = max(0, slope × (FP − offset) + Rauschen) × (1 ± win_coef)` pro Positionsgruppe. Stand 29.09.:
+  QB 0.25·(FP−8.5), RB 0.21·(FP−0.4), WR 0.22·(FP−1.4), Defense 0.38·(IDP−3.1), K 0.38·(K−3), TE noch Prior.
+  `calibrate` fittet immer vom Prior aus auf **alle** Ratings (idempotent), Defense gemeinsam.
+- **Ratings-Screenshots:** In der App unter NFL → Performances → "Top of <Datum>" von oben **lückenlos**
+  abfotografieren und das tiefste sichtbare Rating als `--cutoff` erfassen. Alle nicht abgelesenen Spieler des
+  Tages gelten dann als "≤ cutoff". Ohne diese Obergrenze wäre der Fit nach oben verzerrt.
 
 ## Strategie (Mathematik)
 
@@ -166,3 +180,9 @@ Dateiformate:
   selben Spiel bei −0.05, WR1–WR2 bei 0.13, QB–WR bei ≈ 0.33. Das Modell überschätzt WR–WR aktuell
   (0.18, gemeinsamer Team-Faktor). **To-do:** Target-Konkurrenz unter Passempfängern modellieren
   (negative Komponente), damit Stacks im Upside-Optimierer realistisch bewertet werden.
+- 2026-09-28 Ergebnis: 27 Punkte, Rang 9'021 von 18k. CHI gewann als Underdog 27:7 mit Ersatz-QB Keenum
+  (24.5 fps → 4.4, projiziert 1.0). Im Rückblick optimal (~65+): Raymond, Thieneman (+2.8), Mitchell (+3.0),
+  Burden (+2.5), Booker/Barkley. Lehren: (1) Die Defense-Skala aus `boostfit` war falsch, Defender mit +3.0
+  gehören auf die Liste. (2) Ein 1-Spiel-Slate ist extrem vom Spielausgang abhängig: Das Upside-Lineup sollte
+  auch einen Stack der Underdog-Seite prüfen. (3) Der Abschlag für den Ersatz-QB (×0.85) war hier zu pessimistisch,
+  aus einem Spiel lässt sich das aber nicht ableiten.

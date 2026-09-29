@@ -3,22 +3,34 @@
  "closeness_coef": 0.05,
  "groups": {
   "QB": {
-   "slope": 0.25,
-   "offset": 9.0,
-   "noise": 0.8,
-   "n_obs": 2
+   "slope": 0.2482,
+   "offset": 8.455,
+   "noise": 0.638,
+   "n_obs": 4,
+   "fit_raw": [
+    0.2445,
+    7.364
+   ]
   },
   "RB": {
-   "slope": 0.22,
-   "offset": 2.5,
-   "noise": 0.7,
-   "n_obs": 1
+   "slope": 0.2053,
+   "offset": 0.356,
+   "noise": 0.719,
+   "n_obs": 3,
+   "fit_raw": [
+    0.1661,
+    -5.362
+   ]
   },
   "WR": {
-   "slope": 0.25,
-   "offset": 2.0,
-   "noise": 0.7,
-   "n_obs": 2
+   "slope": 0.2162,
+   "offset": 1.429,
+   "noise": 0.543,
+   "n_obs": 8,
+   "fit_raw": [
+    0.1824,
+    0.858
+   ]
   },
   "TE": {
    "slope": 0.25,
@@ -27,28 +39,40 @@
    "n_obs": 0
   },
   "K": {
-   "slope": 0.3829,
+   "slope": 0.3828,
    "offset": 3.0,
-   "noise": 0.893,
+   "noise": 0.8932,
    "n_obs": 0
   },
   "DL": {
-   "slope": 0.1498,
-   "offset": 2.5,
-   "noise": 0.35,
-   "n_obs": 0
+   "slope": 0.3827,
+   "offset": 3.083,
+   "noise": 0.569,
+   "n_obs": 16,
+   "fit_raw": [
+    0.4241,
+    3.374
+   ]
   },
   "LB": {
-   "slope": 0.1498,
-   "offset": 2.5,
-   "noise": 0.35,
-   "n_obs": 0
+   "slope": 0.3827,
+   "offset": 3.083,
+   "noise": 0.569,
+   "n_obs": 16,
+   "fit_raw": [
+    0.4241,
+    3.374
+   ]
   },
   "DB": {
-   "slope": 0.1498,
-   "offset": 2.5,
-   "noise": 0.35,
-   "n_obs": 0
+   "slope": 0.3827,
+   "offset": 3.083,
+   "noise": 0.569,
+   "n_obs": 16,
+   "fit_raw": [
+    0.4241,
+    3.374
+   ]
   }
  },
  "boost_fits": [
@@ -64,8 +88,12 @@
    "m_fit": 0.45,
    "n": 20,
    "m_applied": 0.499,
-   "date": "2026-09-28"
+   "date": "2026-09-28",
+   "rejected": "2026-09-28: 10 echte Defense-Ratings + 25 Obergrenzen passen zu Steigung ~0.33, nicht 0.15"
   }
  ],
- "updated": "2026-09-28"
+ "updated": "2026-09-29",
+ "win_coef": 0.012,
+ "n_ratings": 25,
+ "n_censored": 40
 }

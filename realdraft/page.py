@@ -27,7 +27,8 @@ def _history() -> list[dict]:
     for date, g in d.groupby("date"):
         g = g.sort_values("slot")
         chk = history.formula_check(g, g["app_total"].iloc[0] if g["app_total"].notna().any() else None)
-        out.append({"date": date, "check": chk, "picks": [{
+        rank = g["app_rank"].dropna().iloc[0] if "app_rank" in g and g["app_rank"].notna().any() else None
+        out.append({"date": date, "check": chk, "rank": rank, "picks": [{
             "slot": int(r["slot"]), "name": r["name"], "team": r["team"], "boost": float(r["boost"]),
             "mult": float(r["total_mult"]), "rating": float(r["rating"]), "points": float(r["points"]),
             "er": None if pd.isna(r.get("er", float("nan"))) else float(r["er"])} for _, r in g.iterrows()]})

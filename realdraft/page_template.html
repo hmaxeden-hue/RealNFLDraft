@@ -419,7 +419,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
       const c = x.check;
       const ok = c.ok === undefined ? "" : c.ok ? `<span class="pill risk-tief">Formel ✓ Diff ${sgn(c.diff)}</span>` : `<span class="pill risk-hoch">Formel ✗ Diff ${sgn(c.diff)}</span>`;
       return `<div style="display:grid;gap:8px">
-        <div class="section-head"><h3>${esc(dateLabel(x.date))}</h3><span class="num">App ${f1(c.app)} · berechnet ${f1(c.berechnet)} ${ok}</span></div>
+        <div class="section-head"><h3>${esc(dateLabel(x.date))}</h3><span class="num">${x.rank ? "Rang " + esc(x.rank) + " · " : ""}App ${f1(c.app)} · berechnet ${f1(c.berechnet)} ${ok}</span></div>
         <div class="table-wrap"><table><thead><tr><th>Slot</th><th>Spieler</th><th class="r">Mult</th><th class="r">Proj.</th><th class="r">Rating</th><th class="r">Punkte</th></tr></thead><tbody>
         ${x.picks.map((p) => `<tr><td class="num">${p.slot}</td><td>${esc(p.name)} <span class="muted">${esc(p.team)}</span></td><td class="r num">${f1(p.mult)}x</td>
           <td class="r num">${f1(p.er)}</td><td class="r num"><strong>${f1(p.rating)}</strong></td><td class="r num">${f1(p.points)}</td></tr>`).join("")}

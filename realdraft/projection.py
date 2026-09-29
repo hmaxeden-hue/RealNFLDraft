@@ -244,6 +244,14 @@ def simulate(df: pd.DataFrame, params: dict, n_sims: int) -> np.ndarray:
     noise = df["group"].map(lambda g: params["groups"][g]["noise"]).to_numpy()
     closeness = 1 + params.get("closeness_coef", 0) * (7 - np.minimum(np.abs(df["team_spread"].fillna(3).to_numpy()), 14)) / 7
     rating = np.maximum(0, slope * (fp - offset) + noise * rng.standard_normal((n_sims, P))) * closeness
+    win_coef = params.get("win_coef", 0.0)
+    if win_coef:
+        # Real bewertet Plays im Spielkontext: das Siegerteam bekommt mehr. Sieg-Latente = eigener minus
+        # gegnerischer Offense-Faktor, verschoben um den Spread (Spread-SD ~13.5 Punkte).
+        t = np.array([teams[x] for x in df["team"]])
+        o = np.array([teams[x] for x in df["opp"]])
+        margin = (T[:, t] - T[:, o]) / np.sqrt(2) + df["team_spread"].fillna(0).to_numpy() / 13.5
+        rating = rating * (1 + win_coef * np.where(margin > 0, 1.0, -1.0))
     return np.where(plays, rating, 0.0)
 
 

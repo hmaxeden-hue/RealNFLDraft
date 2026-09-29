@@ -10,8 +10,10 @@ from scipy.optimize import minimize
 
 from . import config, features, history, projection, sources
 
-MIN_N = 6        # ab so vielen Ratings pro Gruppe wird gefittet
-PRIOR_N = 8      # Gewicht der bisherigen Parameter (in "Beobachtungen")
+MIN_N = 3        # ab so vielen Ratings pro Fit-Gruppe wird gefittet (Shrinkage regularisiert)
+PRIOR_N = 8      # Gewicht des Priors (in "Beobachtungen")
+PRIOR_N_WIN = 10  # Shrinkage des Sieg-Koeffizienten Richtung 0
+FIT_GROUP = {"DL": "DEF", "LB": "DEF", "DB": "DEF"}   # Defense gemeinsam fitten, bis genug Daten da sind
 
 
 def pbp_player_game(season: int = config.SEASON) -> pd.DataFrame:
@@ -38,14 +40,24 @@ def dataset() -> pd.DataFrame:
     r = history.load("ratings")
     if r.empty:
         return r
-    sch = sources.schedule(config.SEASON)[["game_id", "gameday", "spread_line", "result"]]
+    sch = sources.schedule(config.SEASON)[["game_id", "gameday", "home_team", "spread_line", "result"]]
     pg = features.player_games((config.SEASON,)).merge(sch, on="game_id")
     d = r.merge(pg, left_on=["player_id", "date"], right_on=["player_id", "gameday"], how="left",
                 suffixes=("", "_pg"))
+    d["upper"] = np.nan
+    # Nicht abgelesene Spieler eines lückenlos abgelesenen Tages: Rating ≤ cutoff (zensiert)
+    for _, c in history.load("cutoffs").iterrows():
+        seen = set(r.loc[r["date"] == c["date"], "player_id"])
+        cens = pg[(pg["gameday"] == c["date"]) & ~pg["player_id"].isin(seen)].copy()
+        cens["date"], cens["rating"], cens["upper"] = c["date"], np.nan, float(c["cutoff"])
+        cens["name"] = cens["player_display_name"]
+        d = pd.concat([d, cens], ignore_index=True)
     d["fp"] = d["fp"].fillna(0)
     if d["group"].isna().any():   # keine Statline (z. B. nicht gespielt) -> Gruppe aus Roster
         pos = sources.players().set_index("gsis_id")["position"]
         d["group"] = d["group"].fillna(d["player_id"].map(pos).map(config.POS_GROUP))
+    home = d["team"] == d["home_team"]
+    d["win"] = np.select([d["result"].isna() | (d["result"] == 0), (d["result"] > 0) == home], [0, 1], -1)
     try:
         d = d.merge(pbp_player_game(), on=["game_id", "player_id"], how="left")
     except Exception:
@@ -53,13 +65,20 @@ def dataset() -> pd.DataFrame:
     return d
 
 
-def _fit_group(fp, rating, prior: dict) -> dict:
+def _fit_group(fp, rating, prior: dict, upper=None) -> dict:
+    """Least Squares auf abgelesenen Ratings; zensierte Zeilen (rating NaN) bestrafen nur pred > upper."""
+    obs = ~np.isnan(rating)
+    upper = np.full(len(fp), np.nan) if upper is None else upper
+
     def loss(x):
         s, o = x
-        return np.mean((np.maximum(0, s * (fp - o)) - rating) ** 2)
+        pred = np.maximum(0, s * (fp - o))
+        err = np.where(obs, pred - np.nan_to_num(rating), np.maximum(0, pred - np.nan_to_num(upper)))
+        return np.mean(err ** 2)
     res = minimize(loss, x0=[prior["slope"], prior["offset"]], method="Nelder-Mead")
     s_hat, o_hat = res.x
-    n = len(fp)
+    n = int(obs.sum()) + int((~obs).sum()) // 4   # zensierte Zeilen zählen ein Viertel
+    fp, rating = fp[obs], rating[obs]
     w = n / (n + PRIOR_N)
     s = w * s_hat + (1 - w) * prior["slope"]
     o = w * o_hat + (1 - w) * prior["offset"]
@@ -69,22 +88,64 @@ def _fit_group(fp, rating, prior: dict) -> dict:
             "n_obs": int(n), "fit_raw": [round(float(s_hat), 4), round(float(o_hat), 3)]}
 
 
+def _prior_params(params: dict) -> dict:
+    """Start-Heuristik plus die aus Boosts abgeleiteten Skalen. Jeder Fit startet hier (idempotent)."""
+    prior = json.loads(json.dumps(projection.DEFAULT_RATING_PARAMS))
+    for f in params.get("boost_fits", []):
+        if f.get("rejected"):
+            continue
+        for g in (["K"] if f["kind"] == "K" else sorted(config.DEFENSE)):
+            prior["groups"][g]["slope"] *= f["m_applied"]
+            prior["groups"][g]["noise"] *= f["m_applied"]
+    return prior
+
+
 def fit_rating_model(write: bool = True) -> tuple[dict, pd.DataFrame]:
+    """Rating ≈ max(0, slope·(FP − offset)) · (1 ± win_coef) pro Fit-Gruppe, auf allen Ratings."""
     params = json.loads(json.dumps(projection.load_rating_params()))
+    prior = _prior_params(params)
     d = dataset()
-    report = []
     if d.empty:
         return params, pd.DataFrame()
-    for grp, g in d.groupby("group"):
-        corr = (lambda c: g["rating"].corr(g[c])) if len(g) >= 4 else (lambda c: np.nan)
-        row = {"Gruppe": grp, "n": len(g), "corr FP": corr("fp"), "corr EPA": corr("pbp_epa"),
-               "corr WPA": corr("pbp_wpa")}
-        if len(g) >= MIN_N and grp in params["groups"]:
-            new = _fit_group(g["fp"].to_numpy(float), g["rating"].to_numpy(float), params["groups"][grp])
-            params["groups"][grp] = new
-            row.update({"slope": new["slope"], "offset": new["offset"], "noise": new["noise"]})
-        report.append(row)
+    d = d[d["group"].notna()].copy()
+    d["fg"] = d["group"].map(lambda g: FIT_GROUP.get(g, g))
+    fp, r, sign = d["fp"].to_numpy(float), d["rating"].to_numpy(float), d["win"].to_numpy(float)
+    up, obs = d["upper"].to_numpy(float), d["rating"].notna().to_numpy()
+    prior_of = lambda fg: prior["groups"]["DB" if fg == "DEF" else fg]
+    fits, c = {}, 0.0
+    for _ in range(5):
+        target = r / (1 + c * sign)
+        for fg, g in d.groupby("fg"):
+            idx = d.index.get_indexer(g.index)
+            if obs[idx].sum() >= MIN_N:
+                fits[fg] = _fit_group(fp[idx], target[idx], prior_of(fg), up[idx])
+        pars = [fits.get(fg, prior_of(fg)) for fg in d["fg"]]
+        base = np.array([max(0.0, q["slope"] * (x - q["offset"])) for q, x in zip(pars, fp)])
+        bs, ro = (base * sign)[obs], r[obs]
+        c = float(np.clip(np.sum(bs * (ro - base[obs])) / (np.sum(bs ** 2) + PRIOR_N_WIN * np.mean(base[obs] ** 2)),
+                          0, 0.6))
+
+    groups = json.loads(json.dumps(prior["groups"]))
+    for fg, q in fits.items():
+        for g in ([k for k, v in FIT_GROUP.items() if v == fg] or [fg]):
+            groups[g] = dict(q)
+    params["groups"], params["win_coef"] = groups, round(c, 3)
+    params["n_ratings"] = int(obs.sum())
+    params["n_censored"] = int((~obs).sum())
     params["updated"] = _date.today().isoformat()
+
+    pars = [groups[g] for g in d["group"]]
+    d["pred"] = [max(0.0, q["slope"] * (x - q["offset"])) * (1 + c * w) for q, x, w in zip(pars, fp, sign)]
+    report = []
+    for fg, g0 in d.groupby("fg"):
+        g = g0[g0["rating"].notna()]
+        corr = (lambda col: g["rating"].corr(g[col])) if len(g) >= 4 else (lambda col: np.nan)
+        q = fits.get(fg, prior_of(fg))
+        viol = g0[g0["rating"].isna() & (g0["pred"] > g0["upper"])]
+        report.append({"Gruppe": fg, "n": len(g), "zensiert": len(g0) - len(g), "slope": q["slope"],
+                       "offset": q["offset"], "MAE": (g["pred"] - g["rating"]).abs().mean(),
+                       "über Grenze": len(viol), "corr FP": corr("fp"),
+                       "corr EPA": corr("pbp_epa"), "corr WPA": corr("pbp_wpa")})
     if write:
         config.MODEL_FILE.parent.mkdir(parents=True, exist_ok=True)
         config.MODEL_FILE.write_text(json.dumps(params, indent=1, ensure_ascii=False))

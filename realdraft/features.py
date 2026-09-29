@@ -155,6 +155,18 @@ def slate_players(sl: pd.DataFrame) -> pd.DataFrame:
     return ro[[c for c in cols if c in ro.columns]].drop_duplicates("player_id").reset_index(drop=True)
 
 
+def slate_roster_all(sl: pd.DataFrame) -> pd.DataFrame:
+    """Alle Roster-Spieler der Teams (auch Punter/OL) – nur für die Zuordnung abgelesener Ratings."""
+    teams = set(sl["away"]) | set(sl["home"])
+    ro = sources.rosters_weekly(config.SEASON)
+    ro = ro[ro["team"].isin(teams)]
+    ro = ro[ro["week"] == ro.groupby("team")["week"].transform("max")]
+    ro = ro.rename(columns={"gsis_id": "player_id", "full_name": "name"})
+    ro["group"] = ro["position"].map(_group)
+    ro["pos_rank"] = np.nan
+    return ro[["player_id", "name", "team", "position", "group", "pos_rank"]].drop_duplicates("player_id")
+
+
 # --- Rebound-Check -------------------------------------------------------------------
 
 def team_qb_by_game(pg: pd.DataFrame) -> pd.DataFrame:

@@ -12,7 +12,7 @@ Erstelle die Draft-Empfehlung für den Spieltag `$ARGUMENTS` (leer → `next`). 
    `app_order,name,team,boost,app_status` und zeige die erkannte Liste kompakt zur Bestätigung. Unklare
    Namen, Teams oder Boosts nachfragen. Sind die Screenshots eindeutig, darfst du schon rechnen, die
    Empfehlung aber nur als vorläufig markieren, bis der User bestätigt.
-4. **Boost-Skalen**: `python -m realdraft boostfit <datum> --apply` (Kicker- und Defense-Skala aus den Boosts).
+4. **Boost-Check** (nur Info, ohne `--apply`): `python -m realdraft boostfit <datum>`.
    **Projektion**: `python -m realdraft project <datum> --top 50`. Prüfe die "Zuordnung prüfen"-Hinweise.
    Fehlen Spieler im Screenshot, zusätzlich mit `--default-boost 3.0` rechnen und die Unterschiede nennen.
 5. **News & Rebound-Check** (WebSearch, aktuelle Quellen, Datum beachten):
