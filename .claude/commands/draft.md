@@ -23,6 +23,9 @@ Erstelle die Draft-Empfehlung für den Spieltag `$ARGUMENTS` (leer → `next`). 
    - Rebound-Kandidaten als **Chance** oder **Falle** einstufen (Kriterien in CLAUDE.md).
    - Wetter bei Outdoor-Spielen, falls `slate` keins liefert.
    - Korrekturen nach `data/pools/<datum>_adj.csv` (`name,team,fp,factor,p_play,note`), immer mit Grund.
+     Möglichst `factor` statt absolutem `fp` (bleibt bei Modelländerungen richtig).
+   - Für die 5–8 Kandidaten der Empfehlung: User um Screenshots der Real-Spielerseite bitten ("Recent
+     performances"), mit `result <spieldatum> --ratings` erfassen und Trends in die Bewertung einbeziehen.
 6. **Optimierung**: `python -m realdraft draft <datum>`. Bei knappen Entscheidungen prüfe die Robustheit:
    Wie ändert sich das beste Lineup, wenn die Rating-Skalen von Defense, K und QB ×0.6–1.6 danebenliegen?
    Nimm im Zweifel das Lineup mit dem kleinsten Maximalverlust.

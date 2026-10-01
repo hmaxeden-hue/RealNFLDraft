@@ -46,8 +46,8 @@ LEAGUE_IMPLIED = 22.5
 
 # Rookie/ohne Historie: FP pro Spiel nach Depth-Chart-Rang
 DEFAULT_PRIOR = {
-    "QB": [16.0, 4.0], "RB": [11.0, 5.0, 2.0], "WR": [10.0, 7.0, 4.0, 2.0],
-    "TE": [6.0, 3.0, 1.5], "K": [7.5], "DL": [4.0, 2.5, 1.2], "LB": [7.0, 4.0, 1.5],
+    "QB": [16.0, 4.0], "RB": [9.0, 4.0, 1.5], "WR": [6.5, 4.5, 2.5, 1.2],   # Offense in Standard-Punkten
+    "TE": [4.0, 2.0, 1.0], "K": [7.5], "DL": [4.0, 2.5, 1.2], "LB": [7.0, 4.0, 1.5],
     "DB": [6.0, 4.0, 1.5],   # Defense in Real-IDP (Median Starter 2025: DL 3.2, LB 6.9, DB 6.1)
 }
 
@@ -57,7 +57,7 @@ P_EARLY_EXIT = 0.04          # Verletzung im Spiel -> Teilleistung
 
 # Streuung Fantasy-Punkte (Variationskoeffizient). 2025 gemessen (Median pro Spieler):
 # QB .46, RB .58, WR .59, TE .64, K .55; Real-IDP: DL 1.1, LB .80, DB .85 – plus Projektionsunsicherheit
-FP_CV = {"QB": 0.48, "RB": 0.62, "WR": 0.65, "TE": 0.72, "K": 0.55,
+FP_CV = {"QB": 0.48, "RB": 0.70, "WR": 0.78, "TE": 0.85, "K": 0.55,   # Offense Standard: RB .66 WR .72 TE .78
          "DL": 1.15, "LB": 0.85, "DB": 0.90}
 
 # Korrelationen in der Simulation (Ladungen auf gemeinsame Faktoren)

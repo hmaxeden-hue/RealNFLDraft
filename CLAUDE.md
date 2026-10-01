@@ -207,3 +207,12 @@ Dateiformate:
   auf "RB 1" damit ~8 FP. Jetzt skaliert die echte Snap-Quote den Prior (Burton 8.2 → 2.8). Der App-Status
   (Out/Questionable) aus dem Pool überschreibt den Injury Report. Routine und Chat-Session haben parallel gearbeitet:
   Erst die Arbeit der Routine holen (Seite/Repo), dann weitermachen, nie blind überschreiben.
+- 2026-10-01: Drei Modellfehler, gefunden über die Spielerseiten-Ratings (Real → Spieler → "Recent performances"):
+  (1) **Real zählt Receptions nicht.** Standard-Scoring passt besser (24 Ratings: corr 0.97 vs. PPR 0.92).
+  Offense-FP und xFP sind jetzt Standard (PPR − Catches bzw. − erwartete Catches), Priors/CVs angepasst.
+  (2) **Spiele mit Snaps, aber ohne Statistik fehlten** (Highsmith W3: 72 % Snaps, 0 Stats). Jetzt als 0-FP-Spiele
+  drin (574 in 2026), das entschärft die Überschätzung von Defendern und Statisten. (3) Absolute `fp`-Korrekturen
+  sind nach Modelländerungen falsch (Warren 14.5 PPR) → in `_adj.csv` möglichst `factor` statt `fp` verwenden.
+- **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
+  Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
+  erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).

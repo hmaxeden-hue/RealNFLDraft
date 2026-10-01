@@ -43,7 +43,9 @@ def player_games(seasons=(config.PRIOR_SEASON, config.SEASON)) -> pd.DataFrame:
         s = s[s["season_type"] == "REG"].copy()
         s["group"] = s["position"].map(_group)
         s = s[s["group"].notna()]
-        s["fp"] = s["fantasy_points_ppr"].fillna(0)
+        # Offense: Standard-Scoring ohne Punkte pro Catch – Real zählt Receptions nicht
+        # (28.09./01.10.: corr Standard 0.97 vs. PPR 0.92 auf 24 Ratings)
+        s["fp"] = s["fantasy_points_ppr"].fillna(0) - s["receptions"].fillna(0)
         s.loc[s["group"] == "K", "fp"] = kicker_points(s[s["group"] == "K"])
         d = s["group"].isin(config.DEFENSE)
         s.loc[d, "fp"] = idp_points(s[d])
@@ -58,8 +60,8 @@ def player_games(seasons=(config.PRIOR_SEASON, config.SEASON)) -> pd.DataFrame:
 
         try:
             o = sources.ff_opportunity(season)
-            o = o[["player_id", "week", "total_fantasy_points_exp"]].rename(
-                columns={"total_fantasy_points_exp": "xfp"})
+            o = o.assign(xfp=o["total_fantasy_points_exp"].fillna(0) - o["receptions_exp"].fillna(0))
+            o = o[["player_id", "week", "xfp"]]
             o["week"] = o["week"].astype(int)
             s = s.merge(o.groupby(["player_id", "week"], as_index=False)["xfp"].sum(),
                         on=["player_id", "week"], how="left")
@@ -70,8 +72,24 @@ def player_games(seasons=(config.PRIOR_SEASON, config.SEASON)) -> pd.DataFrame:
             sn = sources.snap_counts(season)
             sn = sn[sn["game_type"] == "REG"].merge(ids, left_on="pfr_player_id", right_on="pfr_id")
             sn["snap_pct"] = np.where(sn["offense_pct"].fillna(0) > 0, sn["offense_pct"], sn["defense_pct"])
-            sn = sn.rename(columns={"gsis_id": "player_id"})[["player_id", "week", "snap_pct"]]
-            s = s.merge(sn.drop_duplicates(["player_id", "week"]), on=["player_id", "week"], how="left")
+            sn = sn.rename(columns={"gsis_id": "player_id"})
+            s = s.merge(sn[["player_id", "week", "snap_pct"]].drop_duplicates(["player_id", "week"]),
+                        on=["player_id", "week"], how="left")
+            # Gespielt, aber keine Statistik (z. B. Pass-Rusher ohne Tackle): als 0-FP-Spiel aufnehmen,
+            # sonst wird der Schnitt solcher Spieler systematisch überschätzt.
+            pos = sources.players().set_index("gsis_id")["position"]
+            miss = sn[(sn["snap_pct"] > 0.1) & sn["player_id"].isin(pos.index)]
+            miss = miss[~miss.set_index(["player_id", "week"]).index.isin(s.set_index(["player_id", "week"]).index)]
+            if len(miss):
+                z = pd.DataFrame({
+                    "season": season, "week": miss["week"].to_numpy(), "game_id": miss["game_id"].to_numpy(),
+                    "player_id": miss["player_id"].to_numpy(), "player_display_name": miss["player"].to_numpy(),
+                    "position": miss["player_id"].map(pos).to_numpy(), "team": miss["team"].to_numpy(),
+                    "opponent_team": miss["opponent"].to_numpy(), "fp": 0.0, "xfp": 0.0,
+                    "snap_pct": miss["snap_pct"].to_numpy()})
+                z["group"] = z["position"].map(_group)
+                z = z[z["group"].notna() & (z["group"] != "K")]   # Kicker-Snaps zählen nicht
+                s = pd.concat([s, z], ignore_index=True)
         except Exception:
             s["snap_pct"] = np.nan
         frames.append(s)

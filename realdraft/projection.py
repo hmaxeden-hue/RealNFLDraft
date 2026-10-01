@@ -22,9 +22,9 @@ DEFAULT_RATING_PARAMS = {
     "closeness_coef": 0.05,
     "groups": {
         "QB": {"slope": 0.25, "offset": 9.0, "noise": 0.8, "n_obs": 2},
-        "RB": {"slope": 0.22, "offset": 2.5, "noise": 0.7, "n_obs": 1},
-        "WR": {"slope": 0.25, "offset": 2.0, "noise": 0.7, "n_obs": 2},
-        "TE": {"slope": 0.25, "offset": 2.0, "noise": 0.7, "n_obs": 0},
+        "RB": {"slope": 0.23, "offset": 0.0, "noise": 0.5, "n_obs": 0},   # Standard-Punkte (ohne Catches)
+        "WR": {"slope": 0.23, "offset": 0.0, "noise": 0.5, "n_obs": 0},
+        "TE": {"slope": 0.23, "offset": 0.0, "noise": 0.5, "n_obs": 0},
         "K":  {"slope": 0.33, "offset": 0.0, "noise": 0.4, "n_obs": 0},
         "DL": {"slope": 0.19, "offset": 0.0, "noise": 0.35, "n_obs": 0},
         "LB": {"slope": 0.19, "offset": 0.0, "noise": 0.35, "n_obs": 0},
