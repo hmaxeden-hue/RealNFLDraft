@@ -21,8 +21,8 @@ GitHub-Pages-Seite** https://hmaxeden-hue.github.io/RealNFLDraft/. Sie aktualisi
 | Routine | Zeit | ID |
 |---|---|---|
 | Real Draft Sonntag | So 09:58 | `trig_01TQYvdHXYuFyLLJjKXj6MZG` |
-| Real Draft Donnerstag | Do 14:55 | `trig_01NZE6dQh4F4wbvd1ptbJwQb` |
-| Real Draft Montag | Mo 14:59 | `trig_01CwFEfBDpgCYccSWJrXt1i9` |
+| Real Draft Donnerstag | Do 09:55 | `trig_01NZE6dQh4F4wbvd1ptbJwQb` |
+| Real Draft Montag | Mo 09:59 | `trig_01CwFEfBDpgCYccSWJrXt1i9` |
 
 Jede Routine rechnet die Projektion ohne Boosts, sucht News und zeigt eine Vorschau auf der Seite. Dann schickt
 sie eine Nachricht. Ohne Spiel am heutigen US-Datum endet sie mit einer Zeile. Der User schickt die
