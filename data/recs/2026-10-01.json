@@ -1,6 +1,6 @@
 {
  "date": "2026-10-01",
- "generated": "01.10.2026 14:49",
+ "generated": "01.10.2026 14:50",
  "slate": [
   {
    "game": "PIT @ CLE",
@@ -678,6 +678,7 @@
   "**DK Metcalf** (PIT): Rolle↓; Pech -4.6 FP vs xFP; Chance: kein Rollenverlust (95–97 % Snaps, 100 % Routen, 22 % Target-Share), FP weit unter xFP",
   "**Roman Wilson** (PIT): Rolle↓",
   "Rating-Modell für K noch kaum kalibriert (< 5 echte Ratings).",
+  "Boost nicht im Pool (0 angenommen): Riley Nowakowski",
   "Wetter nicht abrufbar (Open-Meteo blockiert) – per Websuche prüfen."
  ],
  "scenarios": [
@@ -755,12 +756,12 @@
    "opp": "CLE",
    "boost": 0.4,
    "boost_src": "Pool",
-   "er": 2.616,
-   "p10": 0.41,
-   "p90": 5.11,
-   "mu_fp": 13.1,
+   "er": 2.897,
+   "p10": 0.51,
+   "p90": 5.64,
+   "mu_fp": 14.5,
    "risk": "tief",
-   "flags": "",
+   "flags": "Dowdle out: Warren alleiniger Back, mehr Touches (Routine-Recherche, Final Injury Report)",
    "p_int": 0.0
   },
   {
@@ -892,6 +893,22 @@
    "p_int": 0.0
   },
   {
+   "name": "Riley Nowakowski",
+   "pos": "RB",
+   "group": "RB",
+   "team": "PIT",
+   "opp": "CLE",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 1.817,
+   "p10": 0.09,
+   "p90": 3.63,
+   "mu_fp": 9.2,
+   "risk": "tief",
+   "flags": "Dowdle out: mehr RB-Snaps (Routine-Recherche)",
+   "p_int": 0.0
+  },
+  {
    "name": "Payton Wilson",
    "pos": "LB",
    "group": "LB",
@@ -935,22 +952,6 @@
    "p10": 0.0,
    "p90": 3.33,
    "mu_fp": 8.7,
-   "risk": "mittel",
-   "flags": "",
-   "p_int": 0.0
-  },
-  {
-   "name": "Riley Nowakowski",
-   "pos": "RB",
-   "group": "RB",
-   "team": "PIT",
-   "opp": "CLE",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 1.57,
-   "p10": 0.0,
-   "p90": 3.19,
-   "mu_fp": 8.0,
    "risk": "mittel",
    "flags": "",
    "p_int": 0.0
@@ -1260,22 +1261,6 @@
    "p_int": 0.0
   },
   {
-   "name": "Brandin Echols",
-   "pos": "DB",
-   "group": "DB",
-   "team": "PIT",
-   "opp": "CLE",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 0.932,
-   "p10": 0.0,
-   "p90": 2.39,
-   "mu_fp": 4.9,
-   "risk": "hoch",
-   "flags": "",
-   "p_int": 0.111
-  },
-  {
    "name": "Kaden Wetjen",
    "pos": "WR",
    "group": "WR",
@@ -1404,6 +1389,22 @@
    "p_int": 0.039
   },
   {
+   "name": "Brandin Echols",
+   "pos": "DB",
+   "group": "DB",
+   "team": "PIT",
+   "opp": "CLE",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 0.707,
+   "p10": 0.0,
+   "p90": 2.14,
+   "mu_fp": 4.9,
+   "risk": "hoch",
+   "flags": "Questionable (Gehirnerschütterung), Final Injury Report",
+   "p_int": 0.111
+  },
+  {
    "name": "Derek Barnett",
    "pos": "DL",
    "group": "DL",
@@ -1434,22 +1435,6 @@
    "risk": "hoch",
    "flags": "",
    "p_int": 0.005
-  },
-  {
-   "name": "Joey Porter Jr.",
-   "pos": "DB",
-   "group": "DB",
-   "team": "PIT",
-   "opp": "CLE",
-   "boost": 0.0,
-   "boost_src": "0 (noch kein Saisonspiel)",
-   "er": 0.64,
-   "p10": 0.0,
-   "p90": 1.85,
-   "mu_fp": 3.4,
-   "risk": "hoch",
-   "flags": "keine Spiele 2026",
-   "p_int": 0.091
   },
   {
    "name": "Isaiah Bond",
@@ -2058,6 +2043,22 @@
    "risk": "hoch",
    "flags": "Out; Rolle↓; Pech -3.1 FP vs xFP",
    "p_int": 0.0
+  },
+  {
+   "name": "Joey Porter Jr.",
+   "pos": "DB",
+   "group": "DB",
+   "team": "PIT",
+   "opp": "CLE",
+   "boost": 0.0,
+   "boost_src": "0 (noch kein Saisonspiel)",
+   "er": 0.0,
+   "p10": 0.0,
+   "p90": 0.0,
+   "mu_fp": 3.4,
+   "risk": "hoch",
+   "flags": "keine Spiele 2026; Out, Final Injury Report",
+   "p_int": 0.091
   }
  ]
 }

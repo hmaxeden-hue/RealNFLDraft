@@ -83,12 +83,12 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-01,00-0036323,Patrick Queen,PIT,CLE,LB,2.600,Pool,8.043,1.520,0.155,3.341,0.990,
 2026-10-01,00-0036333,Alex Highsmith,PIT,CLE,LB,1.200,Pool,13.309,2.568,0.389,5.416,0.990,CLE ohne Center und Guard (beide Jenkins out)
 2026-10-01,00-0036407,Jerry Jeudy,CLE,PIT,WR,0.000,fehlt (0.0 angenommen),4.977,0.853,0.000,1.939,0.990,Rolle↓
-2026-10-01,00-0036504,Brandin Echols,PIT,CLE,DB,0.000,fehlt (0.0 angenommen),4.913,0.932,0.000,2.385,0.990,
+2026-10-01,00-0036504,Brandin Echols,PIT,CLE,DB,0.000,fehlt (0.0 angenommen),4.913,0.707,0.000,2.136,0.750,"Questionable (Gehirnerschütterung), Final Injury Report"
 2026-10-01,00-0036617,Asante Samuel Jr.,PIT,CLE,DB,3.000,Pool,4.449,0.817,0.000,2.133,0.990,Rolle↓; Joey Porter Jr. out – mehr Snaps
 2026-10-01,00-0036862,Ben Skowronek,PIT,CLE,WR,3.000,Pool,1.972,0.317,0.000,0.918,0.990,
 2026-10-01,00-0036894,Pat Freiermuth,PIT,CLE,TE,2.400,Pool,6.113,1.119,0.000,2.591,0.990,
 2026-10-01,00-0036974,Tyson Campbell,CLE,PIT,DB,3.000,Pool,6.320,1.186,0.124,2.578,0.990,
-2026-10-01,00-0037228,Jaylen Warren,PIT,CLE,RB,0.400,Pool,13.148,2.616,0.408,5.109,0.990,
+2026-10-01,00-0037228,Jaylen Warren,PIT,CLE,RB,0.400,Pool,14.500,2.897,0.514,5.640,0.990,"Dowdle out: Warren alleiniger Back, mehr Touches (Routine-Recherche, Final Injury Report)"
 2026-10-01,00-0037665,Sam Williams,CLE,PIT,DL,0.000,fehlt (0.0 angenommen),2.528,0.499,0.000,1.318,0.990,Rolle↓
 2026-10-01,00-0038135,Jaquan Brisker,PIT,CLE,DB,2.900,Pool,5.316,1.011,0.029,2.451,0.990,
 2026-10-01,00-0038428,Andre Szmyt,CLE,PIT,K,0.700,Pool,7.918,2.576,0.786,4.609,0.990,
@@ -99,7 +99,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-01,00-0038710,Blake Whiteheart,CLE,PIT,TE,2.400,Pool,2.004,0.337,0.000,0.983,0.990,
 2026-10-01,00-0038715,Ronnie Hickman Jr.,CLE,PIT,DB,2.200,Pool,6.244,1.178,0.083,2.707,0.990,
 2026-10-01,00-0038794,Jaleel McLaughlin,CLE,PIT,RB,0.000,fehlt (0.0 angenommen),2.477,0.525,0.000,1.379,0.990,
-2026-10-01,00-0039167,Joey Porter Jr.,PIT,CLE,DB,0.000,0 (noch kein Saisonspiel),3.441,0.640,0.000,1.850,0.990,keine Spiele 2026
+2026-10-01,00-0039110,Keeanu Benton,PIT,CLE,DL,0.000,fehlt (0.0 angenommen),2.400,0.464,0.000,1.177,0.990,
 2026-10-01,00-0039417,Myles Harden,CLE,PIT,DB,2.500,Pool,4.540,0.870,0.000,2.177,0.990,
 2026-10-01,00-0039515,Winston Reid,CLE,PIT,LB,0.000,fehlt (0.0 angenommen),3.145,0.597,0.000,1.420,0.990,
 2026-10-01,00-0039739,Roman Wilson,PIT,CLE,WR,2.400,Pool,6.488,1.152,0.000,2.558,0.990,Rolle↓
@@ -118,7 +118,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-01,00-0041115,Toriano Pride Jr.,CLE,PIT,DB,0.000,fehlt (0.0 angenommen),2.776,0.517,0.000,1.435,0.990,
 2026-10-01,00-0041393,Daylen Everette,PIT,CLE,DB,3.000,Pool,3.344,0.618,0.000,1.789,0.990,
 2026-10-01,00-0041397,Kaden Wetjen,PIT,CLE,WR,0.000,fehlt (0.0 angenommen),5.451,0.928,0.000,2.100,0.990,
-2026-10-01,00-0041398,Riley Nowakowski,PIT,CLE,RB,0.000,fehlt (0.0 angenommen),7.990,1.570,0.000,3.190,0.990,
+2026-10-01,00-0041398,Riley Nowakowski,PIT,CLE,RB,0.000,fehlt (0.0 angenommen),9.200,1.817,0.093,3.632,0.990,Dowdle out: mehr RB-Snaps (Routine-Recherche)
 2026-10-01,00-0041401,Robert Spears-Jennings,PIT,CLE,DB,3.000,Pool,2.730,0.525,0.000,1.696,0.990,
 2026-10-01,00-0041471,Emmanuel McNeil-Warren,CLE,PIT,DB,0.000,fehlt (0.0 angenommen),2.563,0.491,0.000,1.165,0.990,
 2026-10-01,00-0041489,Germie Bernard,PIT,CLE,WR,3.000,Pool,3.232,0.522,0.000,1.337,0.990,Rolle↓
