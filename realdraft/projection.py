@@ -199,6 +199,12 @@ def project(date: str, boosts: pd.DataFrame | None = None,
         hit = df["player_id"].isin(b.index)
         df.loc[hit, "boost"] = df.loc[hit, "player_id"].map(b).astype(float)
         df.loc[hit, "boost_src"] = "Pool"
+        if "app_status" in boosts:   # Status aus der App ist aktueller als der Injury Report
+            st = boosts.set_index("player_id")["app_status"]
+            for pid, status in st.items():
+                if isinstance(status, str) and status in config.P_PLAY:
+                    m = df["player_id"] == pid
+                    df.loc[m, "p_play"], df.loc[m, "status"] = config.P_PLAY[status], status
 
     if overrides is not None and not overrides.empty:
         for _, o in overrides.iterrows():

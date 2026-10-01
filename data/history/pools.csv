@@ -61,3 +61,66 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-09-28,00-0041175,Skyler Thomas,CHI,PHI,DB,0.000,fehlt (0.0 angenommen),3.023,0.213,0.000,0.655,0.990,
 2026-09-28,00-0041538,Dillon Thieneman,CHI,PHI,DB,2.800,Pool,7.389,0.747,0.000,1.757,0.990,
 2026-09-28,00-0041558,Sam Roush,CHI,PHI,TE,0.000,fehlt (0.0 angenommen),1.355,0.215,0.000,0.779,0.990,QB1 Caleb Williams fehlt (×0.88)
+2026-10-01,00-0023459,Aaron Rodgers,PIT,CLE,QB,0.900,Pool,13.568,1.404,0.000,3.547,0.990,
+2026-10-01,00-0027969,Cameron Heyward,PIT,CLE,DL,3.000,Pool,5.805,1.122,0.000,2.842,0.990,CLE ohne Center und Guard – Heyward innen gegen Ersatzleute
+2026-10-01,00-0031136,Chris Boswell,PIT,CLE,K,0.800,Pool,9.667,3.146,1.001,5.662,0.990,
+2026-10-01,00-0031595,Michael Burton,CLE,PIT,RB,0.000,fehlt (0.0 angenommen),8.239,1.600,0.000,3.295,0.990,
+2026-10-01,00-0033055,Jalen Ramsey,PIT,CLE,DB,3.000,Pool,5.072,0.588,0.000,1.760,0.600,"Questionable; Questionable, Bruch im Handgelenk (Yahoo/SteelCurtain)"
+2026-10-01,00-0033131,Maliek Collins,CLE,PIT,DL,0.000,fehlt (0.0 angenommen),3.300,0.643,0.000,1.685,0.990,
+2026-10-01,00-0033537,Deshaun Watson,CLE,PIT,QB,0.300,Pool,15.555,1.838,0.000,4.402,0.990,O-Line-Mitte fehlt komplett
+2026-10-01,00-0033876,Derek Barnett,CLE,PIT,DL,3.000,Pool,3.375,0.650,0.000,1.665,0.990,
+2026-10-01,00-0033886,T.J. Watt,PIT,CLE,LB,0.000,Pool,15.104,2.920,0.424,6.170,0.990,CLE ohne Center und Guard (beide Jenkins out) – mehr Druck in der Mitte
+2026-10-01,00-0033941,Rayshawn Jenkins,PIT,CLE,DB,3.000,Pool,3.140,0.595,0.000,1.687,0.990,
+2026-10-01,00-0034810,Sebastian Joseph-Day,PIT,CLE,DL,3.000,Pool,4.634,0.889,0.000,2.306,0.990,
+2026-10-01,00-0034856,Denzel Ward,CLE,PIT,DB,3.000,Pool,5.028,0.956,0.035,2.286,0.990,
+2026-10-01,00-0035640,DK Metcalf,PIT,CLE,WR,2.600,Pool,11.627,2.248,0.216,4.616,0.990,"Rolle↓; Pech -4.6 FP vs xFP; Chance: kein Rollenverlust (95–97 % Snaps, 100 % Routen, 22 % Target-Share), FP weit unter xFP"
+2026-10-01,00-0035680,Quincy Williams,CLE,PIT,LB,3.000,Pool,6.459,1.254,0.083,2.766,0.990,
+2026-10-01,00-0035699,Jamel Dean,PIT,CLE,DB,3.000,Pool,7.474,1.390,0.156,3.053,0.990,
+2026-10-01,00-0036139,Rico Dowdle,PIT,CLE,RB,3.000,Pool,6.987,0.000,0.000,0.000,0.000,Out; Rolle↓; Pech -3.1 FP vs xFP
+2026-10-01,00-0036252,Michael Pittman,PIT,CLE,WR,3.000,Pool,8.744,1.583,0.000,3.333,0.990,
+2026-10-01,00-0036282,Grant Delpit,CLE,PIT,DB,3.000,Pool,5.200,0.973,0.039,2.348,0.990,
+2026-10-01,00-0036287,Noah Igbinoghene,CLE,PIT,DB,0.000,fehlt (0.0 angenommen),3.273,0.597,0.000,1.357,0.990,
+2026-10-01,00-0036323,Patrick Queen,PIT,CLE,LB,2.600,Pool,8.043,1.520,0.155,3.341,0.990,
+2026-10-01,00-0036333,Alex Highsmith,PIT,CLE,LB,1.200,Pool,13.309,2.568,0.389,5.416,0.990,CLE ohne Center und Guard (beide Jenkins out)
+2026-10-01,00-0036407,Jerry Jeudy,CLE,PIT,WR,0.000,fehlt (0.0 angenommen),4.977,0.853,0.000,1.939,0.990,Rolle↓
+2026-10-01,00-0036504,Brandin Echols,PIT,CLE,DB,0.000,fehlt (0.0 angenommen),4.913,0.932,0.000,2.385,0.990,
+2026-10-01,00-0036617,Asante Samuel Jr.,PIT,CLE,DB,3.000,Pool,4.449,0.817,0.000,2.133,0.990,Rolle↓; Joey Porter Jr. out – mehr Snaps
+2026-10-01,00-0036862,Ben Skowronek,PIT,CLE,WR,3.000,Pool,1.972,0.317,0.000,0.918,0.990,
+2026-10-01,00-0036894,Pat Freiermuth,PIT,CLE,TE,2.400,Pool,6.113,1.119,0.000,2.591,0.990,
+2026-10-01,00-0036974,Tyson Campbell,CLE,PIT,DB,3.000,Pool,6.320,1.186,0.124,2.578,0.990,
+2026-10-01,00-0037228,Jaylen Warren,PIT,CLE,RB,0.400,Pool,13.148,2.616,0.408,5.109,0.990,
+2026-10-01,00-0037665,Sam Williams,CLE,PIT,DL,0.000,fehlt (0.0 angenommen),2.528,0.499,0.000,1.318,0.990,Rolle↓
+2026-10-01,00-0038135,Jaquan Brisker,PIT,CLE,DB,2.900,Pool,5.316,1.011,0.029,2.451,0.990,
+2026-10-01,00-0038428,Andre Szmyt,CLE,PIT,K,0.700,Pool,7.918,2.576,0.786,4.609,0.990,
+2026-10-01,00-0038558,Darnell Washington,PIT,CLE,TE,3.000,Pool,5.318,0.955,0.000,2.258,0.990,
+2026-10-01,00-0038565,Mekhi Blackmon,CLE,PIT,DB,3.000,Pool,5.672,1.067,0.062,2.482,0.990,
+2026-10-01,00-0038574,Isaiah McGuire,CLE,PIT,DL,2.800,Pool,4.432,0.844,0.000,2.133,0.990,
+2026-10-01,00-0038577,Nick Herbig,PIT,CLE,LB,3.000,Pool,7.423,1.402,0.133,3.080,0.990,CLE ohne Center und Guard (beide Jenkins out)
+2026-10-01,00-0038710,Blake Whiteheart,CLE,PIT,TE,2.400,Pool,2.004,0.337,0.000,0.983,0.990,
+2026-10-01,00-0038715,Ronnie Hickman Jr.,CLE,PIT,DB,2.200,Pool,6.244,1.178,0.083,2.707,0.990,
+2026-10-01,00-0038794,Jaleel McLaughlin,CLE,PIT,RB,0.000,fehlt (0.0 angenommen),2.477,0.525,0.000,1.379,0.990,
+2026-10-01,00-0039167,Joey Porter Jr.,PIT,CLE,DB,0.000,0 (noch kein Saisonspiel),3.441,0.640,0.000,1.850,0.990,keine Spiele 2026
+2026-10-01,00-0039417,Myles Harden,CLE,PIT,DB,2.500,Pool,4.540,0.870,0.000,2.177,0.990,
+2026-10-01,00-0039515,Winston Reid,CLE,PIT,LB,0.000,fehlt (0.0 angenommen),3.145,0.597,0.000,1.420,0.990,
+2026-10-01,00-0039739,Roman Wilson,PIT,CLE,WR,2.400,Pool,6.488,1.152,0.000,2.558,0.990,Rolle↓
+2026-10-01,00-0039741,Payton Wilson,PIT,CLE,LB,2.000,Pool,9.062,1.705,0.198,3.720,0.990,
+2026-10-01,00-0039852,Jared Verse,CLE,PIT,DL,3.000,Pool,4.942,0.955,0.000,2.388,0.990,
+2026-10-01,00-0040160,Jack Sawyer,PIT,CLE,LB,0.000,fehlt (0.0 angenommen),3.130,0.598,0.000,1.637,0.990,Rolle↓
+2026-10-01,00-0040466,Raheim Sanders,CLE,PIT,RB,3.000,Pool,5.786,1.132,0.000,2.461,0.990,
+2026-10-01,00-0040579,Carson Schwesinger,CLE,PIT,LB,3.000,Pool,6.056,1.132,0.046,2.643,0.990,
+2026-10-01,00-0040663,Harold Fannin Jr.,CLE,PIT,TE,1.100,Pool,11.853,2.324,0.114,4.965,0.990,
+2026-10-01,00-0040678,Derrick Harmon,PIT,CLE,DL,2.700,Pool,4.754,0.898,0.000,2.297,0.990,CLE ohne Center und Guard
+2026-10-01,00-0040685,Mason Graham,CLE,PIT,DL,1.400,Pool,7.584,1.442,0.000,3.608,0.990,
+2026-10-01,00-0040782,Isaiah Bond,CLE,PIT,WR,0.000,fehlt (0.0 angenommen),3.793,0.630,0.000,1.514,0.990,
+2026-10-01,00-0040784,Quinshon Judkins,CLE,PIT,RB,1.600,Pool,10.265,2.038,0.144,4.077,0.990,O-Line-Mitte fehlt komplett
+2026-10-01,00-0041037,Denzel Boston,CLE,PIT,WR,0.800,Pool,11.649,2.194,0.234,4.497,0.990,"PIT ohne Joey Porter Jr., Ramsey angeschlagen"
+2026-10-01,00-0041075,Justin Jefferson,CLE,PIT,LB,0.000,0 (noch kein Saisonspiel),3.876,0.718,0.000,1.706,0.990,keine Spiele 2026
+2026-10-01,00-0041115,Toriano Pride Jr.,CLE,PIT,DB,0.000,fehlt (0.0 angenommen),2.776,0.517,0.000,1.435,0.990,
+2026-10-01,00-0041393,Daylen Everette,PIT,CLE,DB,3.000,Pool,3.344,0.618,0.000,1.789,0.990,
+2026-10-01,00-0041397,Kaden Wetjen,PIT,CLE,WR,0.000,fehlt (0.0 angenommen),5.451,0.928,0.000,2.100,0.990,
+2026-10-01,00-0041398,Riley Nowakowski,PIT,CLE,RB,0.000,fehlt (0.0 angenommen),7.990,1.570,0.000,3.190,0.990,
+2026-10-01,00-0041401,Robert Spears-Jennings,PIT,CLE,DB,3.000,Pool,2.730,0.525,0.000,1.696,0.990,
+2026-10-01,00-0041471,Emmanuel McNeil-Warren,CLE,PIT,DB,0.000,fehlt (0.0 angenommen),2.563,0.491,0.000,1.165,0.990,
+2026-10-01,00-0041489,Germie Bernard,PIT,CLE,WR,3.000,Pool,3.232,0.522,0.000,1.337,0.990,Rolle↓
+2026-10-01,00-0041490,Eli Heidenreich,PIT,CLE,RB,0.000,fehlt (0.0 angenommen),3.026,0.617,0.000,1.535,0.990,
+2026-10-01,00-0041547,KC Concepcion,CLE,PIT,WR,3.000,Pool,10.180,1.926,0.124,3.991,0.990,"Pech -4.2 FP vs xFP; PIT ohne Joey Porter Jr., Ramsey angeschlagen; Chance: W3 86 % Snaps, 9 Targets, nur 2.9 FP; Tylan Wallace out"
