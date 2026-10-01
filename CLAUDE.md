@@ -213,6 +213,12 @@ Dateiformate:
   (2) **Spiele mit Snaps, aber ohne Statistik fehlten** (Highsmith W3: 72 % Snaps, 0 Stats). Jetzt als 0-FP-Spiele
   drin (574 in 2026), das entschärft die Überschätzung von Defendern und Statisten. (3) Absolute `fp`-Korrekturen
   sind nach Modelländerungen falsch (Warren 14.5 PPR) → in `_adj.csv` möglichst `factor` statt `fp` verwenden.
+- 2026-10-01: **Forced Fumbles zählen bei Real kaum.** Dean hatte in W1 und W2 je einen FF, Rating nur für die
+  Tackles (0.6 / 0.4); Greenard (28.09.) gleich. Vermutlich zählt erst die Eroberung (FR ≈ 2). FF-Gewicht 4 → 2.
+  Refit auf 33 Defender-Ratings bestätigt den Rest (pro Aktion: Solo 0.19, TFL 0.5, Sack 0.4, PD 0.45, INT 2.1,
+  FR 2.0, Assists 0). Der K-Fit hat nur 5 Punkte und hängt über `win_coef` an den anderen Gruppen: Er verschob
+  sich ohne neue K-Daten (Slope 0.42 → 0.49). Knappe Entscheidungen mit Kickern per Robustheits-Check (K-Skala
+  ±30 %) treffen; Kicker-Spielerseiten sind besonders wertvoll.
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).

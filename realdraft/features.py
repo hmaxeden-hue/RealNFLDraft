@@ -23,10 +23,12 @@ def idp_points(s: pd.DataFrame) -> pd.Series:
     """Real-IDP: Gewichte aus den Real-Ratings vom 28.09. (NNLS, 25 Defender, MAE 0.13), Solo-Tackle = 1.
 
     Real-Rating ≈ 0.19 × Real-IDP. Interceptions und Fumble Recoveries zählen ~10 Tackles, QB-Hits nichts.
+    Forced Fumbles nur 2 statt 4: Real gibt meist nichts, wenn die Offense den Ball behält
+    (Dean W1/W2, Greenard 28.09.; Refit auf 33 Ratings am 01.10.: FF ≈ 1.8).
     """
     g = lambda c: s[c].fillna(0) if c in s else 0
     return (g("def_tackles_solo") + 3 * g("def_tackles_for_loss") + 2.5 * g("def_sacks")
-            + 10 * g("def_interceptions") + 2.5 * g("def_pass_defended") + 4 * g("def_fumbles_forced")
+            + 10 * g("def_interceptions") + 2.5 * g("def_pass_defended") + 2 * g("def_fumbles_forced")
             + 10 * g("fumble_recovery_opp") + 12 * g("def_tds") + 5 * g("def_safeties"))
 
 

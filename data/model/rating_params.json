@@ -3,83 +3,83 @@
  "closeness_coef": 0.05,
  "groups": {
   "QB": {
-   "slope": 0.2458,
-   "offset": 8.274,
-   "noise": 0.627,
+   "slope": 0.2482,
+   "offset": 8.348,
+   "noise": 0.629,
    "n_obs": 4,
    "fit_raw": [
-    0.2375,
-    6.822
+    0.2446,
+    7.044
    ]
   },
   "RB": {
-   "slope": 0.2207,
-   "offset": -1.081,
-   "noise": 0.52,
-   "n_obs": 5,
+   "slope": 0.2209,
+   "offset": -1.45,
+   "noise": 0.494,
+   "n_obs": 8,
    "fit_raw": [
-    0.2057,
-    -2.81
+    0.2117,
+    -2.901
    ]
   },
   "WR": {
-   "slope": 0.2373,
-   "offset": -0.669,
-   "noise": 0.303,
+   "slope": 0.2398,
+   "offset": -0.64,
+   "noise": 0.301,
    "n_obs": 17,
    "fit_raw": [
-    0.2407,
-    -0.984
+    0.2444,
+    -0.942
    ]
   },
   "TE": {
-   "slope": 0.2605,
-   "offset": -0.012,
-   "noise": 0.413,
+   "slope": 0.263,
+   "offset": -0.004,
+   "noise": 0.415,
    "n_obs": 3,
    "fit_raw": [
-    0.3419,
-    -0.045
+    0.3508,
+    -0.016
    ]
   },
   "K": {
-   "slope": 0.415,
-   "offset": 1.376,
-   "noise": 0.475,
+   "slope": 0.4936,
+   "offset": 2.116,
+   "noise": 0.463,
    "n_obs": 5,
    "fit_raw": [
-    0.5511,
-    3.578
+    0.7554,
+    5.502
    ]
   },
   "DL": {
-   "slope": 0.1922,
-   "offset": 0.161,
-   "noise": 0.255,
-   "n_obs": 31,
+   "slope": 0.1923,
+   "offset": 0.134,
+   "noise": 0.273,
+   "n_obs": 37,
    "fit_raw": [
     0.1928,
-    0.202
+    0.163
    ]
   },
   "LB": {
-   "slope": 0.1922,
-   "offset": 0.161,
-   "noise": 0.255,
-   "n_obs": 31,
+   "slope": 0.1923,
+   "offset": 0.134,
+   "noise": 0.273,
+   "n_obs": 37,
    "fit_raw": [
     0.1928,
-    0.202
+    0.163
    ]
   },
   "DB": {
-   "slope": 0.1922,
-   "offset": 0.161,
-   "noise": 0.255,
-   "n_obs": 31,
+   "slope": 0.1923,
+   "offset": 0.134,
+   "noise": 0.273,
+   "n_obs": 37,
    "fit_raw": [
     0.1928,
-    0.202
+    0.163
    ]
   }
  },
@@ -102,7 +102,7 @@
   }
  ],
  "updated": "2026-10-01",
- "win_coef": 0.03,
- "n_ratings": 61,
+ "win_coef": 0.011,
+ "n_ratings": 70,
  "n_censored": 21
 }
