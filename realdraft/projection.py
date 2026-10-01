@@ -93,6 +93,10 @@ def _baseline(hist: pd.DataFrame, group: str, pos_rank) -> tuple[float, float, i
         prior = min(prior, max(default * 1.5, prior * 0.6)) if rank > 1 else prior
     else:
         prior = default
+        # Ohne Vorjahr zählt die echte Snap-Quote mehr als der Depth-Chart-Rang (z. B. Fullbacks auf "RB 1")
+        snaps = cur["snap_pct"].dropna() if "snap_pct" in cur else pd.Series(dtype=float)
+        if len(snaps):
+            prior *= float(np.clip(snaps.mean() / 0.65, 0.15, 1.0))
     if cur.empty:
         return prior, prior, 0
     b = blend(cur).to_numpy()

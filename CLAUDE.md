@@ -203,3 +203,7 @@ Dateiformate:
 - 2026-09-29: Die Liste vom 28.09. ist lückenlos bis 0.2 abgelesen (45 Ratings). Defense-Gewichte neu gefittet
   (Real-IDP), K- und Defense-Prior ohne Offset, Boost-Skalen (K, Defense) durch echte Ratings ersetzt.
   Nur-Tackle-Defender liefern wenig (4 Solo → 0.8). Den Wert bringen INTs und Fumble Recoveries (je ~2 Punkte).
+- 2026-10-01: Modellfehler behoben: Spieler ohne Vorjahr bekamen ihren Prior aus dem Depth-Chart-Rang, Fullbacks
+  auf "RB 1" damit ~8 FP. Jetzt skaliert die echte Snap-Quote den Prior (Burton 8.2 → 2.8). Der App-Status
+  (Out/Questionable) aus dem Pool überschreibt den Injury Report. Routine und Chat-Session haben parallel gearbeitet:
+  Erst die Arbeit der Routine holen (Seite/Repo), dann weitermachen, nie blind überschreiben.
