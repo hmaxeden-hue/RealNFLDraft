@@ -29,29 +29,31 @@ POS_GROUP = {
     "QB": "QB", "RB": "RB", "FB": "RB", "WR": "WR", "TE": "TE", "K": "K",
     "DE": "DL", "DT": "DL", "NT": "DL", "DL": "DL", "OLB": "LB", "ILB": "LB",
     "MLB": "LB", "LB": "LB", "CB": "DB", "DB": "DB", "S": "DB", "SAF": "DB",
-    "FS": "DB", "SS": "DB",
+    "FS": "DB", "SS": "DB", "P": "P",
 }
 OFFENSE = {"QB", "RB", "WR", "TE"}
 DEFENSE = {"DL", "LB", "DB"}
-GROUPS = ["QB", "RB", "WR", "TE", "K", "DL", "LB", "DB"]
+GROUPS = ["QB", "RB", "WR", "TE", "K", "P", "DL", "LB", "DB"]
+SPECIAL = {"K", "P"}   # ohne Snap-Quote: gelten immer als Stammspieler
 
 # --- Projektion ------------------------------------------------------------------
 RECENCY_DECAY = 0.80        # Gewicht pro Spiel zurück (letztes Spiel = 1.0)
 PRIOR_GAMES = 3.0           # Vorjahresniveau zählt wie so viele aktuelle Spiele
 XFP_BLEND = 0.5             # Anteil nutzungsbasierter Expected FP (Rolle) vs. echte FP
-ENV_EXP = {"QB": 0.8, "RB": 0.7, "WR": 0.7, "TE": 0.7, "K": 0.6}   # Team-Total-Elastizität
+ENV_EXP = {"QB": 0.8, "RB": 0.7, "WR": 0.7, "TE": 0.7, "K": 0.6,   # Team-Total-Elastizität
+           "P": -0.9}   # Punter: schwache Offense puntet mehr (2025: 14–19 Pkt → 199 Yds, 25+ → 136)
 MATCHUP_SHRINK_GAMES = 8.0  # so viele Spiele "Liga-Durchschnitt" im Matchup-Faktor
 MATCHUP_CLIP = (0.85, 1.15)
 # Wie viel der Form-Unterschiede zwischen Stammspielern echt ist (Backtest 2025, Steigung FP ~ Projektion):
 # K .16, DB .28, LB .41, QB .47 – der Rest ist Zufall. RB .70, DL .76, WR .80, TE .91 bleiben ungeschrumpft.
-FORM_SHRINK = {"K": 0.2, "DB": 0.3, "LB": 0.4, "QB": 0.5}
+FORM_SHRINK = {"K": 0.2, "DB": 0.3, "LB": 0.4, "QB": 0.5, "P": 0.3}   # P: Team-Schnitt Steigung .39
 REGULAR_SNAPS = 0.5         # Stammspieler: Snap-Quote der letzten 3 Spiele (Kicker immer)
 LEAGUE_IMPLIED = 22.5
 
 # Rookie/ohne Historie: FP pro Spiel nach Depth-Chart-Rang
 DEFAULT_PRIOR = {
     "QB": [16.0, 4.0], "RB": [9.0, 4.0, 1.5], "WR": [6.5, 4.5, 2.5, 1.2],   # Offense in Standard-Punkten
-    "TE": [4.0, 2.0, 1.0], "K": [7.5], "DL": [4.0, 2.5, 1.2], "LB": [7.0, 4.0, 1.5],
+    "TE": [4.0, 2.0, 1.0], "K": [7.5], "P": [16.75], "DL": [4.0, 2.5, 1.2], "LB": [7.0, 4.0, 1.5],
     "DB": [6.0, 4.0, 1.5],   # Defense in Real-IDP (Median Starter 2025: DL 3.2, LB 6.9, DB 6.1)
 }
 
@@ -61,12 +63,13 @@ P_EARLY_EXIT = 0.04          # Verletzung im Spiel -> Teilleistung
 
 # Streuung Fantasy-Punkte (Variationskoeffizient). 2025 gemessen (Median pro Spieler):
 # QB .46, RB .58, WR .59, TE .64, K .55; Real-IDP: DL 1.1, LB .80, DB .85 – plus Projektionsunsicherheit
-FP_CV = {"QB": 0.48, "RB": 0.70, "WR": 0.78, "TE": 0.85, "K": 0.55,   # Offense Standard: RB .66 WR .72 TE .78
+FP_CV = {"QB": 0.48, "RB": 0.70, "WR": 0.78, "TE": 0.85, "K": 0.55, "P": 0.51,   # Offense Standard: RB .66 WR .72 TE .78
          "DL": 1.15, "LB": 0.85, "DB": 0.90}
 
 # Korrelationen in der Simulation (Ladungen auf gemeinsame Faktoren)
 LOAD_GAME = 0.30             # Spieltempo / Total beider Teams (Offense)
 LOAD_TEAM = {"QB": 0.55, "WR": 0.45, "TE": 0.40, "RB": 0.35, "K": 0.45}
+LOAD_PUNTER = (-0.20, -0.45)  # (Spiel, eigenes Team): Punter profitieren, wenn die eigene Offense stockt
 LOAD_DEF_VS_OPP = -0.30      # eigene Defense gegen gegnerische Offense
 
 N_SIMS = 6000

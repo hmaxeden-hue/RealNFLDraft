@@ -32,6 +32,26 @@ def idp_points(s: pd.DataFrame) -> pd.Series:
             + 10 * g("fumble_recovery_opp") + 12 * g("def_tds") + 5 * g("def_safeties"))
 
 
+def punter_games(seasons) -> pd.DataFrame:
+    """Punter pro Spiel aus dem Play-by-Play. FP = Brutto-Punt-Yards / 10.
+
+    Real: Rating ≈ Punt-Yards / 128 (4 Ratings, z. B. Johnston 259 Yds → 2.0, Taylor 105 → 0.8).
+    """
+    frames = []
+    names = sources.players().set_index("gsis_id")["display_name"]
+    for season in seasons:
+        pb = sources.pbp(season)
+        pu = pb[(pb["play_type"] == "punt") & (pb["week"] <= 18) & pb["punter_player_id"].notna()]
+        g = pu.groupby(["game_id", "week", "punter_player_id", "posteam", "defteam"], as_index=False).agg(
+            yds=("kick_distance", "sum"))
+        frames.append(pd.DataFrame({
+            "season": season, "week": g["week"].astype(int), "game_id": g["game_id"],
+            "player_id": g["punter_player_id"], "player_display_name": g["punter_player_id"].map(names),
+            "position": "P", "group": "P", "team": g["posteam"], "opponent_team": g["defteam"],
+            "fp": g["yds"].fillna(0) / 10, "xfp": np.nan, "snap_pct": np.nan}))
+    return pd.concat(frames, ignore_index=True)
+
+
 def _group(pos) -> str | None:
     return config.POS_GROUP.get(pos)
 
@@ -44,7 +64,7 @@ def player_games(seasons=(config.PRIOR_SEASON, config.SEASON)) -> pd.DataFrame:
         s = sources.weekly_stats(season)
         s = s[s["season_type"] == "REG"].copy()
         s["group"] = s["position"].map(_group)
-        s = s[s["group"].notna()]
+        s = s[s["group"].notna() & (s["group"] != "P")]   # Punter kommen aus dem Play-by-Play
         # Offense: Standard-Scoring ohne Punkte pro Catch – Real zählt Receptions nicht
         # (28.09./01.10.: corr Standard 0.97 vs. PPR 0.92 auf 24 Ratings)
         s["fp"] = s["fantasy_points_ppr"].fillna(0) - s["receptions"].fillna(0)
@@ -95,7 +115,7 @@ def player_games(seasons=(config.PRIOR_SEASON, config.SEASON)) -> pd.DataFrame:
         except Exception:
             s["snap_pct"] = np.nan
         frames.append(s)
-    pg = pd.concat(frames, ignore_index=True)
+    pg = pd.concat(frames + [punter_games(seasons)], ignore_index=True)
     pg["epa"] = pg[["passing_epa", "rushing_epa", "receiving_epa"]].fillna(0).sum(axis=1)
     return pg
 

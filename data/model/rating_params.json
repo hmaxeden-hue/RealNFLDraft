@@ -52,6 +52,16 @@
     5.482
    ]
   },
+  "P": {
+   "slope": 0.0786,
+   "offset": 0.144,
+   "noise": 0.075,
+   "n_obs": 4,
+   "fit_raw": [
+    0.0798,
+    0.433
+   ]
+  },
   "DL": {
    "slope": 0.1914,
    "offset": 0.184,
@@ -103,6 +113,6 @@
  ],
  "updated": "2026-10-02",
  "win_coef": 0.0,
- "n_ratings": 118,
+ "n_ratings": 122,
  "n_censored": 36
 }

@@ -26,6 +26,7 @@ DEFAULT_RATING_PARAMS = {
         "WR": {"slope": 0.23, "offset": 0.0, "noise": 0.5, "n_obs": 0},
         "TE": {"slope": 0.23, "offset": 0.0, "noise": 0.5, "n_obs": 0},
         "K":  {"slope": 0.33, "offset": 0.0, "noise": 0.4, "n_obs": 0},
+        "P":  {"slope": 0.078, "offset": 0.0, "noise": 0.1, "n_obs": 0},  # FP = Punt-Yards / 10
         "DL": {"slope": 0.19, "offset": 0.0, "noise": 0.35, "n_obs": 0},
         "LB": {"slope": 0.19, "offset": 0.0, "noise": 0.35, "n_obs": 0},
         "DB": {"slope": 0.19, "offset": 0.0, "noise": 0.35, "n_obs": 0},
@@ -107,7 +108,7 @@ def _baseline(hist: pd.DataFrame, group: str, pos_rank) -> tuple[float, float, i
 
 def regular_means(pg: pd.DataFrame) -> dict:
     """FP pro Spiel eines typischen Stammspielers je Gruppe (Ziel der Form-Schrumpfung)."""
-    reg = pg[(pg["group"] == "K") | (pg["snap_pct"] >= config.REGULAR_SNAPS)]
+    reg = pg[pg["group"].isin(config.SPECIAL) | (pg["snap_pct"] >= config.REGULAR_SNAPS)]
     return reg.groupby("group")["fp"].mean().to_dict()
 
 
@@ -116,7 +117,7 @@ def shrink_form(mu: float, hist: pd.DataFrame, grp: str, reg_mean: dict) -> floa
     w = config.FORM_SHRINK.get(grp)
     if w is None or grp not in reg_mean or hist.empty:
         return mu
-    if grp != "K" and hist["snap_pct"].tail(3).mean() < config.REGULAR_SNAPS:
+    if grp not in config.SPECIAL and hist["snap_pct"].tail(3).mean() < config.REGULAR_SNAPS:
         return mu
     return reg_mean[grp] + w * (mu - reg_mean[grp])
 
@@ -293,6 +294,8 @@ def simulate(df: pd.DataFrame, params: dict, n_sims: int) -> tuple[np.ndarray, d
     for j, r in enumerate(df.itertuples()):
         if r.group in config.DEFENSE:
             a_g, a_t, a_o = 0.0, 0.0, config.LOAD_DEF_VS_OPP
+        elif r.group == "P":
+            (a_g, a_t), a_o = config.LOAD_PUNTER, 0.0
         else:
             a_g, a_t, a_o = config.LOAD_GAME, config.LOAD_TEAM.get(r.group, 0.3), 0.0
         e = np.sqrt(max(0.0, 1 - a_g ** 2 - a_t ** 2 - a_o ** 2))

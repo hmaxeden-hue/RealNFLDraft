@@ -46,8 +46,11 @@ Bowl die Routinen pausieren.
 - Real-Rating ≥ 0, kein Maximum, > 10 ist sehr selten. **0 = schlecht gespielt, früh verletzt raus
   oder nicht gespielt.**
 - Der Score zählt nur für den Spieltag. Das Feld hat > 20'000 Spieler.
+- **Ziel des Users (02.10.): pro Spieltag so viele Punkte wie möglich.** Kein Top-%-Ziel, Survivor egal →
+  Hauptempfehlung bleibt max. E[Score]. Seine Freunde (m, j) draften auch; ihre Drafts in
+  `data/results/<datum>_friends.csv` sammeln, wenn er sie schickt (Vergleich, Feld-Rang, Ratings).
 
-## Formel (Status: bestätigt mit 2 Drafts)
+## Formel (Status: bestätigt mit 5 Drafts)
 
 `Score = Σ Rating_i × (Slot_i + Boost_i)`. Die Boosts werden **addiert**, die App zeigt "Gesamt 4.6x" = 1.6 + 3.0.
 
@@ -55,6 +58,7 @@ Bowl die Routinen pausieren.
 |---|---|---|---|---|
 | 2026-09-27 | 18.29 | 18.44 | +0.15 | ±1.18 ✓ |
 | 2026-09-28 | 26.94 | 27 | +0.06 | ±1.24 ✓ |
+| 2026-10-01 | 35.92 / 45.04 / 47.26 (User, Freunde m, j) | 36.11 / 45.19 / 47.44 | +0.19 / +0.15 / +0.18 | ✓ |
 
 Prüfe die Formel mit jedem Draft (`result` gibt den Check aus). Liegt ein Check ausserhalb der
 Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
@@ -71,7 +75,7 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
   Defense ≈ 0.19·Solo + 0.55·TFL + 0.43·Sack + 0.46·PD + 0.75·FF + **2.05·INT + 1.98·Fumble Recovery**;
   QB-Hits, Assists und Sieg ≈ 0 (MAE 0.13). Das ist als **Real-IDP** in `features.idp_points` umgesetzt
   (Solo = 1, TFL 3, Sack 2.5, PD 2.5, FF 4, INT 10, FR 10). Offense ≈ 0.2 × Fantasy-Punkte, Kicker ≈ 0.33 pro
-  Kicker-Punkt, Punter ≈ 0.3 pro Punt (noch nicht modelliert). Defender mit +3.0 und INT-Chance sind starke Upside-Picks.
+  Kicker-Punkt, **Punter ≈ Brutto-Punt-Yards / 128** (siehe unten). Defender mit +3.0 und INT-Chance sind starke Upside-Picks.
 - Sieg-Effekt: Bei gegebenen Stats bringt der Sieg nur ~2 % (`win_coef`). Die Siegerteams haben einfach
   die besseren Stats (28.09.: 8 der Top 10 von CHI).
 - Die App-"fps" sind **Half-PPR**.
@@ -79,8 +83,11 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
   `boostfit` schätzte daraus Kicker ×1.84 (passt) und Defense ×0.45. **Der Defense-Wert ist durch echte
   Ratings widerlegt** (Steigung ~0.38 statt 0.15) und im Modell als `rejected` markiert. `boostfit` ist daher nur
   noch ein Hinweis, nicht mehr mit `--apply` nutzen. Die Kalibrierung auf echten Ratings geht immer vor.
-- Punter sind draftbar und werden von Real bewertet (Mann +1.8 rangiert vor Barkley), sind aber
-  **noch nicht modelliert**. In `/ergebnis` Punter-Ratings mitnehmen.
+- **Punter** (seit 02.10. modelliert, Gruppe P): Rating ≈ Brutto-Punt-Yards / 128, 4 von 4 Ratings fast exakt
+  (Johnston 259 Yds → 2.0, Bojorquez 251 → 2.0, Mann 167 → 1.3, Taylor 105 → 0.8). FP = Yards/10 aus dem
+  Play-by-Play (`features.punter_games`). Projektion: Ø 168 Yds pro Team-Spiel (E ≈ 1.3), Elastizität −0.9 zum
+  Team-Total (schwache Offense puntet mehr), CV 0.51, im Copula negativ ans eigene Team gekoppelt. Wenig Streuung:
+  mit +2.6–3.0 Boost ein solider Slot-4/5-Pick, nie ein Slot-1-Pick. In `/ergebnis` Punter-Ratings mitnehmen.
 - Erste Daten (27.09.): Allen hatte 17.5 PPR (2 Rush-TD, 2 INT) → 2.1. Walker 21.3 PPR → 4.2.
   Maye 3.8 PPR, EPA −14.5 → 0. **PPR überschätzt Spieler mit Turnovers.** Die Skala ist gestaucht.
 - Aktuelles Mapping (`data/model/rating_params.json`, sonst Default in `projection.py`):
@@ -237,6 +244,11 @@ Dateiformate:
   Szmyt per Robustheits-Check) kostete 8 Punkte; bei Gleichstand gilt das Modell. Die These des Users "nie
   Kicker auf Slot 1" per Backtest geprüft: falsch im Schnitt. Richtig ist aber, dass die Kicker-Form Zufall ist
   → Form-Schrumpfung eingebaut. `project` nutzt jetzt nur Spiele vor dem Spieltag (Rückblicke ohne Leck).
+- 2026-10-02: Freunde des Users: m 45.2 (Rang 5'606), j 47.4 (4'233) mit Stars ohne Boost (Rodgers, Watt, Warren)
+  und Punter Johnston. Vor dem Spiel hätte das Modell ihre Lineups auf 28 und 26 geschätzt, unseres auf 38;
+  P(User schlägt beide) = 74 %. Ehrliche Projektionsgüte (zensierte Spieler als Cutoff/2): **kein Bias nach Boost**
+  (Stars −0.22, Boost 2.5–3.0 −0.25), d. h. Spieler mit hohem Boost werden nicht überschätzt. QBs streuen stark
+  (Hurts 2.6 → 1.5, Rodgers 1.4 → 3.9, n = 4), kein klarer Fehler. Feld am 01.10.: Median ≈ 41 Punkte (interpoliert aus 3 Rängen).
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).
