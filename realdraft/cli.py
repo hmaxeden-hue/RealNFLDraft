@@ -20,7 +20,7 @@ from zoneinfo import ZoneInfo
 
 import pandas as pd
 
-from . import calibrate, config, features, history, page, pool, projection, report, sources
+from . import backtest, calibrate, config, features, history, page, pool, projection, report, sources
 
 
 def _weather(sl: pd.DataFrame) -> dict:
@@ -166,6 +166,14 @@ def cmd_calibrate(a):
         print(f"\ncorr(Boost, Saison-Rating-Schnitt) = {ba['boost'].corr(ba['saison_rating_avg']):.2f}")
 
 
+def cmd_backtest(a):
+    """Regeln (Kicker-Slot, ohne Kicker, Zuverlässigster auf 1) über eine ganze Saison vergleichen."""
+    bt = backtest.run(season=a.season, shrink=not a.no_shrink)
+    print(f"Backtest {a.season}: jedes Spiel ab Woche 3 als Einzelspiel-Slate, Boosts 0, "
+          f"Rating = Real-Mapping der echten FP.\n")
+    print(report.md_table(backtest.summary(bt)))
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="realdraft")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -197,6 +205,10 @@ def main(argv=None):
     p.add_argument("date")
     p.add_argument("--n", type=int, default=40)
     p.set_defaults(fn=cmd_checklist)
+    p = sub.add_parser("backtest", help="Draft-Regeln über eine vergangene Saison vergleichen (~2 Min.)")
+    p.add_argument("--season", type=int, default=config.PRIOR_SEASON)
+    p.add_argument("--no-shrink", action="store_true", help="ohne Form-Schrumpfung (Vergleich)")
+    p.set_defaults(fn=cmd_backtest)
     p = sub.add_parser("calibrate")
     p.add_argument("--dry-run", action="store_true")
     p.set_defaults(fn=cmd_calibrate)

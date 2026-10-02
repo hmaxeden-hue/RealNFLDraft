@@ -99,6 +99,16 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
   mit dem höchsten E[Rating] gehört auf Slot 1.
 - Der grösste Hebel ist die **Auswahl**. +3.0 Boost bringt mehr als der ganze Unterschied Slot 1 vs. 5
   (0.8). Der Optimierer (`optimizer.best_lineup`) findet per DP die exakt beste Auswahl über alle Spieler.
+- **Kicker auf Slot 1 ist erlaubt und meist richtig**, wenn sein E[Rating] am höchsten ist (Backtest 2025,
+  240 Einzelspiele, `backtest`): "Kicker ans Ende" kostet 0.55 Punkte pro Spiel und ist in 59 % der Spiele
+  schlechter, sogar beim P10. "Ohne Kicker" kostet 2.75. "Zuverlässigster auf Slot 1" bringt nichts (−0.06).
+  Grund: Ein Durchschnitts-Kicker holt bei Real ~2.5–3 Rating, so viel wie ein guter RB. Welcher Kicker
+  trifft, ist aber Zufall. Die Antwort darauf ist die **Form-Schrumpfung** (unten), nicht ein Verbot.
+  Hängt an der K-Skala: Bei ×0.7 setzt das Modell nie mehr einen Kicker auf Slot 1. Jedes Kicker-Rating sammeln.
+- **Form-Schrumpfung** (`FORM_SHRINK`): Bei Stammspielern ist die Form nur teilweise echt (Backtest 2025,
+  Steigung FP ~ Projektion): K 0.16, DB 0.28, LB 0.41, QB 0.47. Die Projektion wird um diesen Anteil zum
+  Stammspieler-Schnitt der Gruppe gezogen (Backtest +0.6 Punkte pro Spiel). RB/WR/TE/DL (0.7–0.9) bleiben.
+  Ersatzspieler (Snaps < 50 %) werden nicht geschrumpft, dort zählt die Rolle.
 - Rating 0 macht jeden Boost wertlos. Geboostete Spieler haben deshalb oft ein hohes Risiko
   (Rollenverlust, Verletzung).
 - **Rebound-Check** für jeden Kandidaten mit Boost: WARUM hat er underperformt?
@@ -147,6 +157,7 @@ python -m realdraft boostfit <datum> [--apply]    # Skalen K/Defense aus den Poo
 python -m realdraft calibrate [--dry-run]        # Rating-Modell fitten, Formel-/Projektions-/Boost-Berichte
 python -m realdraft page                         # site/index.html aus data/recs + Historie
 python -m realdraft checklist <datum> [--n 40]   # Boost-Checkliste für grosse Slates
+python -m realdraft backtest [--season 2025]     # Draft-Regeln über eine Saison prüfen (Kicker-Slot usw.)
 python -m pytest -q
 ```
 
@@ -219,6 +230,13 @@ Dateiformate:
   FR 2.0, Assists 0). Der K-Fit hat nur 5 Punkte und hängt über `win_coef` an den anderen Gruppen: Er verschob
   sich ohne neue K-Daten (Slope 0.42 → 0.49). Knappe Entscheidungen mit Kickern per Robustheits-Check (K-Skala
   ±30 %) treffen; Kicker-Spielerseiten sind besonders wertvoll.
+- 2026-10-01 (TNF PIT @ CLE): 36.1 Punkte, Rang 11'010/16.2k. Boswell 0.3 auf Slot 1, Queen 0.6, Pittman 0.5;
+  Szmyt (der Kicker, den das Modell wollte) 4.9. Hindsight-Optimum 77 = Judkins, Metcalf + drei DBs mit +3.0 und
+  INT (Spears-Jennings, Delpit, Ward). Rating-Modell gut (MAE 0.23), daneben lagen die Spielverläufe.
+  Reihenfolge allein (Boswell auf Slot 5) hätte +1.4 gebracht. Die manuelle Abweichung vom Modell (Queen statt
+  Szmyt per Robustheits-Check) kostete 8 Punkte; bei Gleichstand gilt das Modell. Die These des Users "nie
+  Kicker auf Slot 1" per Backtest geprüft: falsch im Schnitt. Richtig ist aber, dass die Kicker-Form Zufall ist
+  → Form-Schrumpfung eingebaut. `project` nutzt jetzt nur Spiele vor dem Spieltag (Rückblicke ohne Leck).
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).

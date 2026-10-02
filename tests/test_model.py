@@ -31,3 +31,12 @@ def test_scenario_masks_and_lineups():
     out = optimizer.scenario_lineups(sims, er, boost, scen)
     for s in out:
         assert len(set(s["lineup"])) == 5 and s["cond_mean"] > s["mean"]
+
+
+def test_shrink_form_pulls_regular_kicker_and_spares_backups():
+    reg = {"K": 8.0, "LB": 6.5}
+    k = pd.DataFrame({"snap_pct": [0.0, 0.0, 0.0]})
+    assert abs(projection.shrink_form(12.0, k, "K", reg) - (8.0 + 0.2 * 4.0)) < 1e-9
+    backup = pd.DataFrame({"snap_pct": [0.2, 0.3, 0.1]})
+    assert projection.shrink_form(2.0, backup, "LB", reg) == 2.0       # Ersatzspieler: Rolle zählt
+    assert projection.shrink_form(9.0, k, "WR", reg) == 9.0            # WR-Form ist grösstenteils echt

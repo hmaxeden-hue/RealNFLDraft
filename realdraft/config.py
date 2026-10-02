@@ -42,6 +42,10 @@ XFP_BLEND = 0.5             # Anteil nutzungsbasierter Expected FP (Rolle) vs. e
 ENV_EXP = {"QB": 0.8, "RB": 0.7, "WR": 0.7, "TE": 0.7, "K": 0.6}   # Team-Total-Elastizität
 MATCHUP_SHRINK_GAMES = 8.0  # so viele Spiele "Liga-Durchschnitt" im Matchup-Faktor
 MATCHUP_CLIP = (0.85, 1.15)
+# Wie viel der Form-Unterschiede zwischen Stammspielern echt ist (Backtest 2025, Steigung FP ~ Projektion):
+# K .16, DB .28, LB .41, QB .47 – der Rest ist Zufall. RB .70, DL .76, WR .80, TE .91 bleiben ungeschrumpft.
+FORM_SHRINK = {"K": 0.2, "DB": 0.3, "LB": 0.4, "QB": 0.5}
+REGULAR_SNAPS = 0.5         # Stammspieler: Snap-Quote der letzten 3 Spiele (Kicker immer)
 LEAGUE_IMPLIED = 22.5
 
 # Rookie/ohne Historie: FP pro Spiel nach Depth-Chart-Rang

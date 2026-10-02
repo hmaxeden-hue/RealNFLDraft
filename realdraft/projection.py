@@ -105,6 +105,22 @@ def _baseline(hist: pd.DataFrame, group: str, pos_rank) -> tuple[float, float, i
     return float(mu), prior, len(cur)
 
 
+def regular_means(pg: pd.DataFrame) -> dict:
+    """FP pro Spiel eines typischen Stammspielers je Gruppe (Ziel der Form-Schrumpfung)."""
+    reg = pg[(pg["group"] == "K") | (pg["snap_pct"] >= config.REGULAR_SNAPS)]
+    return reg.groupby("group")["fp"].mean().to_dict()
+
+
+def shrink_form(mu: float, hist: pd.DataFrame, grp: str, reg_mean: dict) -> float:
+    """Form-Unterschiede bei K, DB, LB, QB sind grösstenteils Zufall -> zum Stammspieler-Schnitt ziehen."""
+    w = config.FORM_SHRINK.get(grp)
+    if w is None or grp not in reg_mean or hist.empty:
+        return mu
+    if grp != "K" and hist["snap_pct"].tail(3).mean() < config.REGULAR_SNAPS:
+        return mu
+    return reg_mean[grp] + w * (mu - reg_mean[grp])
+
+
 def turnover_rates(pg: pd.DataFrame) -> tuple[dict, dict, dict]:
     """(Gruppenraten INT/FR pro Spiel, Spielerraten, INT-Faktor pro gegnerischem Team)."""
     d = pg[pg["group"].isin(config.DEFENSE)].assign(
@@ -151,6 +167,9 @@ def project(date: str, boosts: pd.DataFrame | None = None,
     tc = features.team_context(sl).set_index("team")
     pl = features.slate_players(sl)
     pg = features.player_games()
+    gd = sources.schedule(config.SEASON).set_index("game_id")["gameday"].astype(str)
+    pg = pg[pg["game_id"].map(gd).fillna("") < date]   # nur Spiele vor dem Spieltag (Rückblicke ohne Leck)
+    reg_mean = regular_means(pg)
     qbg = features.team_qb_by_game(pg)
     mf = matchup_factors(pg)
     base_it = _team_base_implied(int(sl["week"].max()))
@@ -164,6 +183,7 @@ def project(date: str, boosts: pd.DataFrame | None = None,
         grp = p["group"]
         hist = by_player.get(p["player_id"], pg.iloc[:0])
         mu, prior, n_cur = _baseline(hist, grp, p.get("pos_rank"))
+        mu = shrink_form(mu, hist, grp, reg_mean)
         env = 1.0
         if grp in config.ENV_EXP and pd.notna(ctx["implied"]):
             env = (ctx["implied"] / base_it.get(p["team"], config.LEAGUE_IMPLIED)) ** config.ENV_EXP[grp]

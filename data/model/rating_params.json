@@ -3,83 +3,83 @@
  "closeness_coef": 0.05,
  "groups": {
   "QB": {
-   "slope": 0.2482,
-   "offset": 8.348,
-   "noise": 0.629,
-   "n_obs": 4,
+   "slope": 0.232,
+   "offset": 6.713,
+   "noise": 0.695,
+   "n_obs": 6,
    "fit_raw": [
-    0.2446,
-    7.044
+    0.2079,
+    3.664
    ]
   },
   "RB": {
-   "slope": 0.2209,
-   "offset": -1.45,
-   "noise": 0.494,
-   "n_obs": 8,
+   "slope": 0.2385,
+   "offset": -0.901,
+   "noise": 0.517,
+   "n_obs": 12,
    "fit_raw": [
-    0.2117,
-    -2.901
+    0.2442,
+    -1.502
    ]
   },
   "WR": {
-   "slope": 0.2398,
-   "offset": -0.64,
-   "noise": 0.301,
-   "n_obs": 17,
+   "slope": 0.2539,
+   "offset": -0.587,
+   "noise": 0.336,
+   "n_obs": 25,
    "fit_raw": [
-    0.2444,
-    -0.942
+    0.2615,
+    -0.775
    ]
   },
   "TE": {
-   "slope": 0.263,
-   "offset": -0.004,
-   "noise": 0.415,
-   "n_obs": 3,
+   "slope": 0.2048,
+   "offset": -0.617,
+   "noise": 0.359,
+   "n_obs": 7,
    "fit_raw": [
-    0.3508,
-    -0.016
+    0.176,
+    -1.323
    ]
   },
   "K": {
-   "slope": 0.4936,
-   "offset": 2.116,
-   "noise": 0.463,
-   "n_obs": 5,
+   "slope": 0.5303,
+   "offset": 2.558,
+   "noise": 0.422,
+   "n_obs": 7,
    "fit_raw": [
-    0.7554,
-    5.502
+    0.7593,
+    5.482
    ]
   },
   "DL": {
-   "slope": 0.1923,
-   "offset": 0.134,
-   "noise": 0.273,
-   "n_obs": 37,
+   "slope": 0.1914,
+   "offset": 0.184,
+   "noise": 0.24,
+   "n_obs": 68,
    "fit_raw": [
-    0.1928,
-    0.163
+    0.1916,
+    0.206
    ]
   },
   "LB": {
-   "slope": 0.1923,
-   "offset": 0.134,
-   "noise": 0.273,
-   "n_obs": 37,
+   "slope": 0.1914,
+   "offset": 0.184,
+   "noise": 0.24,
+   "n_obs": 68,
    "fit_raw": [
-    0.1928,
-    0.163
+    0.1916,
+    0.206
    ]
   },
   "DB": {
-   "slope": 0.1923,
-   "offset": 0.134,
-   "noise": 0.273,
-   "n_obs": 37,
+   "slope": 0.1914,
+   "offset": 0.184,
+   "noise": 0.24,
+   "n_obs": 68,
    "fit_raw": [
-    0.1928,
-    0.163
+    0.1916,
+    0.206
    ]
   }
  },
@@ -101,8 +101,8 @@
    "rejected": "2026-09-28: 10 echte Defense-Ratings + 25 Obergrenzen passen zu Steigung ~0.33, nicht 0.15"
   }
  ],
- "updated": "2026-10-01",
- "win_coef": 0.011,
- "n_ratings": 70,
- "n_censored": 21
+ "updated": "2026-10-02",
+ "win_coef": 0.0,
+ "n_ratings": 118,
+ "n_censored": 36
 }
