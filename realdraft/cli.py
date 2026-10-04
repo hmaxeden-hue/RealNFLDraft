@@ -50,8 +50,27 @@ def _run_projection(date: str, default_boost: float = 0.0):
 
 
 def _started(sl: pd.DataFrame) -> bool:
-    """Erstes Spiel angepfiffen? Dann bleiben Vorab-Prognosen und Empfehlung unverändert."""
-    return sl["kickoff_et"].min() <= datetime.now(ZoneInfo(config.TZ_APP))
+    """Letztes Spiel angepfiffen? Dann bleiben Vorab-Prognosen und Empfehlung unverändert.
+
+    Die Projektion nutzt nur Spiele vor dem Spieltag, ein Lauf zwischen den Kickoffs ändert also nichts
+    an der Vorab-Prognose (ausser News). Gesperrte Spiele schliesst `_lock_started` aus.
+    """
+    return sl["kickoff_et"].max() <= datetime.now(ZoneInfo(config.TZ_APP))
+
+
+def _lock_started(sl: pd.DataFrame, proj: pd.DataFrame, sims):
+    """Spieler aus bereits angepfiffenen Spielen sind in der App gesperrt -> nicht empfehlen."""
+    now = datetime.now(ZoneInfo(config.TZ_APP))
+    locked = set(sl.loc[sl["kickoff_et"] <= now, "game_id"])
+    if not locked or _started(sl):
+        return proj, sims, []
+    m = proj["game_id"].isin(locked).to_numpy()
+    proj = proj.copy()
+    proj.loc[m, "er"] = 0.0
+    sims = sims.copy()
+    sims[:, m] = 0.0
+    names = sl.loc[sl["game_id"].isin(locked)].apply(lambda g: f"{g['away']} @ {g['home']}", axis=1)
+    return proj, sims, [f"Gesperrt (läuft schon): {', '.join(names)}"]
 
 
 def cmd_status(a):
@@ -74,7 +93,8 @@ def cmd_project(a):
 
 def cmd_draft(a):
     sl, proj, sims, scen, problems = _run_projection(a.date, a.default_boost)
-    rec = report.recommendation(a.date, sl, proj, sims, problems, _weather(sl), scen)
+    proj, sims, lock_msg = _lock_started(sl, proj, sims)
+    rec = report.recommendation(a.date, sl, proj, sims, problems + lock_msg, _weather(sl), scen)
     print(report.draft_report(rec))
     if _started(sl):
         return

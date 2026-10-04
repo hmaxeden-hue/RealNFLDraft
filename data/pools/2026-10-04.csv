@@ -1,0 +1,63 @@
+app_order,name,team,boost,app_status
+1,Kenneth Walker III,KC,0.0,Active
+2,Kyren Williams,LA,0.2,Active
+3,Ashton Jeanty,LV,0.2,Active
+4,Evan McPherson,CIN,0.1,Active
+5,Christian Watson,GB,0.1,Active
+6,Will Anderson Jr.,HOU,0.2,Active
+7,Brock Purdy,SF,0.0,Active
+8,Jared Goff,DET,0.1,Active
+9,Josh Allen,BUF,0.0,Active
+10,Davante Adams,LA,0.0,Active
+11,Jahmyr Gibbs,DET,0.0,Active
+12,Derrick Henry,BAL,0.0,Active
+13,Patrick Mahomes,KC,0.1,Active
+14,Jaxon Smith-Njigba,SEA,0.0,Active
+15,Greg Rousseau,BUF,0.1,Active
+16,Bryce Young,CAR,0.1,Active
+17,D'Andre Swift,CHI,0.0,Active
+18,James Cook,BUF,0.0,Active
+19,CeeDee Lamb,DAL,0.0,Active
+20,Chase McLaughlin,TB,0.1,Active
+21,Dak Prescott,DAL,0.2,Active
+22,Jevon Holland,NYG,0.2,Active
+23,Geno Smith,NYJ,0.2,Active
+24,Christian McCaffrey,SF,0.2,Active
+25,Joe Burrow,CIN,0.2,Active
+26,Amon-Ra St. Brown,DET,0.2,Active
+27,Lamar Jackson,BAL,0.2,Active
+28,Andrew Van Ginkel,MIN,0.2,Active
+29,Talanoa Hufanga,DEN,0.3,Active
+30,Devin Lloyd,CAR,0.0,Active
+31,Chuba Hubbard,CAR,0.3,Active
+32,Matthew Stafford,LA,0.3,Active
+33,Ryan Fitzgerald,CAR,0.3,Active
+34,Will Reichard,MIN,0.3,Active
+35,Nakobe Dean,LV,0.4,Active
+36,Tyler Loop,BAL,0.4,Active
+37,Garrett Wilson,NYJ,0.4,Active
+38,Kirk Cousins,LV,0.4,Active
+39,Bhayshul Tuten,JAX,0.5,Active
+40,Matt Gay,LV,0.5,Active
+41,Breece Hall,NYJ,0.5,Out
+42,Harrison Butker,KC,0.5,Active
+43,Javonte Williams,DAL,0.5,Active
+44,C.J. Stroud,HOU,0.5,Active
+45,Trevor Lawrence,JAX,0.5,Active
+46,Hezekiah Masses,LV,0.5,Active
+47,Travis Kelce,KC,0.5,Active
+48,Jordan Love,GB,0.6,Active
+49,Dalton Kincaid,BUF,0.6,Active
+50,Ka'imi Fairbairn,HOU,1.5,Active
+51,Nico Collins,HOU,0.3,Active
+52,David Montgomery,HOU,0.9,Active
+53,Ja'Marr Chase,CIN,0.7,Active
+54,Cairo Santos,CHI,0.4,Active
+55,Cam Little,JAX,1.5,Active
+56,Puka Nacua,LA,1.1,Active
+57,Harrison Mevis,LA,1.5,Active
+58,Brandon Aubrey,DAL,0.7,Active
+59,Cam Skattebo,NYG,0.7,Active
+60,Jacoby Brissett,ARI,0.7,Active
+61,Michael Wilson,ARI,1.5,Active
+62,Trey Smack,GB,0.2,Active
