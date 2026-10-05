@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import json
+import math
 from pathlib import Path
 
 import pandas as pd
@@ -35,6 +36,17 @@ def _history() -> list[dict]:
     return sorted(out, key=lambda x: x["date"], reverse=True)
 
 
+def _clean(x):
+    """NaN/inf -> None: JSON.parse im Browser scheitert sonst und die Seite bleibt leer."""
+    if isinstance(x, float):
+        return x if math.isfinite(x) else None
+    if isinstance(x, dict):
+        return {k: _clean(v) for k, v in x.items()}
+    if isinstance(x, (list, tuple)):
+        return [_clean(v) for v in x]
+    return x
+
+
 def build() -> Path:
     days = []
     for f in sorted(config.RECS_DIR.glob("*.json"), reverse=True):
@@ -46,7 +58,7 @@ def build() -> Path:
     data = {"days": days, "history": _history(), "slots": config.SLOT_MULTS,
             "model": {"groups": params["groups"], "boost_fits": params.get("boost_fits", []),
                       "updated": params.get("updated"), "n_ratings": int(len(ratings))}}
-    blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    blob = json.dumps(_clean(data), ensure_ascii=False, allow_nan=False).replace("</", "<\\/")
     html = TEMPLATE.read_text().replace("__DATA__", blob)
     config.SITE_FILE.parent.mkdir(parents=True, exist_ok=True)
     config.SITE_FILE.write_text(html)

@@ -26,3 +26,11 @@ def test_ambiguity_is_reported():
     e = pd.DataFrame({"name": ["J. Allen"], "boost": [0]})
     _, problems = match_names(e, PLAYERS)
     assert problems and "mehrdeutig" in problems[0]
+
+
+def test_page_data_has_no_nan():
+    import json, math
+    from realdraft import page
+    d = page._clean({"a": float("nan"), "b": [1.0, float("inf"), {"c": "x"}]})
+    assert d == {"a": None, "b": [1.0, None, {"c": "x"}]}
+    json.dumps(d, allow_nan=False)

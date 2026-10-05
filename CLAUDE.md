@@ -256,6 +256,9 @@ Dateiformate:
   K +0.3 zu hoch, QB −1.0 zu tief, sonst ±0.3. **Grosser Slate:** Die App-Liste ist grob nach Rang sortiert,
   Boosts der Top 50 meist 0–0.6, weiter unten bis 1.5 (aber nicht streng: Collins +0.3 stand weiter unten).
   Ein Spiel lief schon (London 15:30) → `draft` sperrt angepfiffene Spiele automatisch.
+- 2026-10-05: **Draftbrett war leer.** Ein fehlender Dach-Wert (DAL @ HOU) landete als `NaN` in den Seitendaten,
+  `JSON.parse` brach ab. Jetzt: `page._clean` macht aus NaN/inf `null`, `json.dumps(allow_nan=False)`, und die
+  Seite zeigt bei unlesbaren Daten eine rote Meldung statt nichts. Nach Seitenänderungen im Browser prüfen.
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).

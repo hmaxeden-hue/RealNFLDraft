@@ -7,6 +7,11 @@ import pandas as pd
 from . import config, optimizer
 
 
+
+def _txt(x) -> str:
+    """Text oder "" (fehlende Werte wie NaN aus dem Spielplan)."""
+    return x if isinstance(x, str) else ""
+
 def md_table(df: pd.DataFrame) -> str:
     if df.empty:
         return "_(keine Einträge)_"
@@ -46,7 +51,7 @@ def slate_table(sl: pd.DataFrame, wx: dict | None = None) -> str:
                        else f"{g['away']} -{-g['spread_home']:.1f}") if pd.notna(g["spread_home"]) else "",
             "O/U": g["total"], "Team-Totals": f"{g['away']} {g['away_implied']:.1f} / {g['home']} {g['home_implied']:.1f}"
             if pd.notna(g["total"]) else "",
-            "Dach": g["roof"] or "", "Wetter": w or "",
+            "Dach": _txt(g["roof"]), "Wetter": w or "",
         })
     return md_table(pd.DataFrame(rows))
 
@@ -84,7 +89,7 @@ def _slate_rows(sl: pd.DataFrame, wx: dict | None) -> list[dict]:
             "total": None if pd.isna(g["total"]) else float(g["total"]),
             "implied": f"{g['away']} {g['away_implied']:.1f} / {g['home']} {g['home_implied']:.1f}"
             if pd.notna(g["total"]) else "",
-            "roof": g["roof"] or "", "weather": (wx or {}).get(g["game_id"], ""),
+            "roof": _txt(g["roof"]), "weather": (wx or {}).get(g["game_id"], ""),
         })
     return rows
 
@@ -164,7 +169,7 @@ def recommendation(date: str, sl, proj, sims, problems, wx=None, scen=None) -> d
 def draft_report(rec: dict) -> str:
     out = [f"# Draft {rec['date']}", ""]
     out.append(md_table(pd.DataFrame([{"Kickoff CH": g["kickoff_ch"], "Spiel": g["game"], "Spread": g["spread"],
-                                        "O/U": g["total"], "Team-Totals": g["implied"], "Dach": g["roof"],
+                                        "O/U": g["total"], "Team-Totals": g["implied"], "Dach": _txt(g["roof"]),
                                         "Wetter": g["weather"]} for g in rec["slate"]])))
     out += ["", f"Pool: {rec['n_pool']} Spieler mit Boost aus der App, {rec['n_players']} Spieler projiziert."]
     if rec["problems"]:

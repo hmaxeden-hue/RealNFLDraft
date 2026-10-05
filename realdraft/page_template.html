@@ -249,7 +249,17 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
 <script id="data" type="application/json">__DATA__</script>
 <script>
 (function () {
-  const DATA = JSON.parse(document.getElementById("data").textContent);
+  let DATA;
+  try {
+    DATA = JSON.parse(document.getElementById("data").textContent);
+  } catch (e) {
+    const box = document.createElement("p");
+    box.style.cssText = "margin:16px;padding:12px;border:1px solid #c33;border-radius:8px;color:#c33";
+    box.textContent = "Die Daten des Draftbretts konnten nicht gelesen werden (" + e.message +
+      "). Bitte Claude Bescheid geben.";
+    document.body.prepend(box);
+    return;
+  }
   const SLOTS = DATA.slots;
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
