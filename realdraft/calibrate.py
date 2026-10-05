@@ -156,7 +156,13 @@ def projection_accuracy() -> pd.DataFrame:
     p, r = history.load("pools"), history.load("ratings")
     if p.empty or r.empty:
         return pd.DataFrame()
-    m = p.merge(r[["date", "player_id", "rating"]], on=["date", "player_id"])
+    # Ohne zensierte Spieler wäre der Bias verzerrt (nur wer gut spielte, steht auf der Liste):
+    # wer an einem Datum mit Cutoff fehlt, zählt mit Cutoff/2.
+    cut = history.load("cutoffs")
+    cut = cut.set_index("date")["cutoff"] if not cut.empty else pd.Series(dtype=float)
+    m = p.merge(r[["date", "player_id", "rating"]], on=["date", "player_id"], how="left")
+    m["rating"] = m["rating"].fillna(m["date"].map(cut) / 2)
+    m = m[m["rating"].notna() & (m["p_play"] > 0.5)]
     if m.empty:
         return m
     m["err"] = m["er"] - m["rating"]

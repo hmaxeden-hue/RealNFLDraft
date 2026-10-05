@@ -106,12 +106,11 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
   mit dem höchsten E[Rating] gehört auf Slot 1.
 - Der grösste Hebel ist die **Auswahl**. +3.0 Boost bringt mehr als der ganze Unterschied Slot 1 vs. 5
   (0.8). Der Optimierer (`optimizer.best_lineup`) findet per DP die exakt beste Auswahl über alle Spieler.
-- **Kicker auf Slot 1 ist erlaubt und meist richtig**, wenn sein E[Rating] am höchsten ist (Backtest 2025,
-  240 Einzelspiele, `backtest`): "Kicker ans Ende" kostet 0.55 Punkte pro Spiel und ist in 59 % der Spiele
-  schlechter, sogar beim P10. "Ohne Kicker" kostet 2.75. "Zuverlässigster auf Slot 1" bringt nichts (−0.06).
-  Grund: Ein Durchschnitts-Kicker holt bei Real ~2.5–3 Rating, so viel wie ein guter RB. Welcher Kicker
-  trifft, ist aber Zufall. Die Antwort darauf ist die **Form-Schrumpfung** (unten), nicht ein Verbot.
-  Hängt an der K-Skala: Bei ×0.7 setzt das Modell nie mehr einen Kicker auf Slot 1. Jedes Kicker-Rating sammeln.
+- **Kicker: einer pro Lineup ja, Slot 1 nein** (Stand 05.10., 21 Kicker-Ratings). Die erste K-Skala (7 Ratings)
+  war zu hoch: Ein Durchschnitts-Kicker holt ~2.6 Rating, nicht ~3. Backtest 2025 (`backtest`) mit der neuen
+  Skala: Das Modell setzt nie mehr einen Kicker auf Slot 1, im Schnitt 1 Kicker pro Lineup. "Ohne Kicker"
+  kostet 0.8 Punkte pro Spiel. Mit +1.5 Boost (grosse Slates) sind Kicker starke Slot-2–5-Picks
+  (04.10.: Fairbairn 4.8, Little 4.4). Welcher Kicker trifft, ist Zufall → Form-Schrumpfung (unten).
 - **Form-Schrumpfung** (`FORM_SHRINK`): Bei Stammspielern ist die Form nur teilweise echt (Backtest 2025,
   Steigung FP ~ Projektion): K 0.16, DB 0.28, LB 0.41, QB 0.47. Die Projektion wird um diesen Anteil zum
   Stammspieler-Schnitt der Gruppe gezogen (Backtest +0.6 Punkte pro Spiel). RB/WR/TE/DL (0.7–0.9) bleiben.
@@ -249,6 +248,14 @@ Dateiformate:
   P(User schlägt beide) = 74 %. Ehrliche Projektionsgüte (zensierte Spieler als Cutoff/2): **kein Bias nach Boost**
   (Stars −0.22, Boost 2.5–3.0 −0.25), d. h. Spieler mit hohem Boost werden nicht überschätzt. QBs streuen stark
   (Hurts 2.6 → 1.5, Rodgers 1.4 → 3.9, n = 4), kein klarer Fehler. Feld am 01.10.: Median ≈ 41 Punkte (interpoliert aus 3 Rängen).
+- 2026-10-04 (Sonntag, 13 offene Spiele): 44.8 Punkte, Rang 4'630/20.4k (Top 23 %). Der User tauschte Mevis →
+  Nacua (5.1, sehr gut) und Little (4.4) → Chase (0.9, schlecht). Modell-Lineup ≈ 48, Sicher-Variante (mit
+  Nacua) 57.5, Optimum mit bekannten Boosts 71.8 (Lamb, K. Williams, Nacua, Fairbairn, Little). 146 Ratings bis
+  2.2 → Neukalibrierung: K 0.53/2.6 → 0.34/0.55 (Kicker ~13 % tiefer), QB 0.23/6.7 → 0.22/3.2 (QBs ~25 % höher),
+  Punter bestätigt (Mann 293 Yds → 2.3, Eckley 284 → 2.3). Ehrliche Projektionsgüte (zensiert mitgezählt):
+  K +0.3 zu hoch, QB −1.0 zu tief, sonst ±0.3. **Grosser Slate:** Die App-Liste ist grob nach Rang sortiert,
+  Boosts der Top 50 meist 0–0.6, weiter unten bis 1.5 (aber nicht streng: Collins +0.3 stand weiter unten).
+  Ein Spiel lief schon (London 15:30) → `draft` sperrt angepfiffene Spiele automatisch.
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).
