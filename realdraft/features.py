@@ -13,10 +13,14 @@ from . import config, sources
 # --- Fantasy-Punkte als Näherung ans Real-Rating ------------------------------------
 
 def kicker_points(s: pd.DataFrame) -> pd.Series:
+    """Real-K: Gewichte aus 35 Kicker-Ratings (NNLS, MAE 0.21, 04.10.), Real-Rating ≈ 0.34 × Real-K.
+
+    Pro Kick: FG 0.41 + 0.21 pro 10 Yards, XP 0.37, FG verschossen −0.98, XP verschossen −0.56 Rating.
+    Fehlschüsse kosten viel mehr als in Fantasy (Aubrey 11 fps mit 2 Misses → 2.2, Santos 11 fps → 3.6).
+    """
     g = lambda c: s[c].fillna(0) if c in s else 0
-    short = g("fg_made_0_19") + g("fg_made_20_29") + g("fg_made_30_39")
-    return (3 * short + 4 * g("fg_made_40_49") + 5 * (g("fg_made_50_59") + g("fg_made_60_"))
-            + g("pat_made") - g("fg_missed") - g("pat_missed"))
+    return (1.2 * g("fg_made") + 0.6 * g("fg_made_distance") / 10 + 1.1 * g("pat_made")
+            - 2.9 * (g("fg_missed") + g("fg_blocked")) - 1.6 * (g("pat_missed") + g("pat_blocked")))
 
 
 def idp_points(s: pd.DataFrame) -> pd.Series:

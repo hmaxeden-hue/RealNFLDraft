@@ -74,8 +74,8 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
 - **Real vergibt Ratings praktisch linear pro Aktion, ohne Grundabzug** (45 Ratings vom 28.09.):
   Defense ≈ 0.19·Solo + 0.55·TFL + 0.43·Sack + 0.46·PD + 0.75·FF + **2.05·INT + 1.98·Fumble Recovery**;
   QB-Hits, Assists und Sieg ≈ 0 (MAE 0.13). Das ist als **Real-IDP** in `features.idp_points` umgesetzt
-  (Solo = 1, TFL 3, Sack 2.5, PD 2.5, FF 4, INT 10, FR 10). Offense ≈ 0.2 × Fantasy-Punkte, Kicker ≈ 0.33 pro
-  Kicker-Punkt, **Punter ≈ Brutto-Punt-Yards / 128** (siehe unten). Defender mit +3.0 und INT-Chance sind starke Upside-Picks.
+  (Solo = 1, TFL 3, Sack 2.5, PD 2.5, FF 4, INT 10, FR 10). Offense ≈ 0.2 × Fantasy-Punkte, **Kicker pro Kick** (Real-K, siehe unten),
+  **Punter ≈ Brutto-Punt-Yards / 128** (siehe unten). Defender mit +3.0 und INT-Chance sind starke Upside-Picks.
 - Sieg-Effekt: Bei gegebenen Stats bringt der Sieg nur ~2 % (`win_coef`). Die Siegerteams haben einfach
   die besseren Stats (28.09.: 8 der Top 10 von CHI).
 - Die App-"fps" sind **Half-PPR**.
@@ -83,6 +83,11 @@ Toleranz: untersuchen, Modell anpassen und diese Tabelle aktualisieren.
   `boostfit` schätzte daraus Kicker ×1.84 (passt) und Defense ×0.45. **Der Defense-Wert ist durch echte
   Ratings widerlegt** (Steigung ~0.38 statt 0.15) und im Modell als `rejected` markiert. `boostfit` ist daher nur
   noch ein Hinweis, nicht mehr mit `--apply` nutzen. Die Kalibrierung auf echten Ratings geht immer vor.
+- **Kicker = Real-K** (05.10., 35 Ratings inkl. aller 28 Kicker vom 04.10., MAE 0.21): pro Kick
+  FG getroffen 0.41 + 0.21 pro 10 Yards (40 Yds ≈ 1.2), XP 0.37, **FG verschossen −0.98**, XP verschossen −0.56.
+  Fantasy-Punkte unterschätzen Fehlschüsse (Aubrey 11 fps mit 2 Misses → 2.2, Santos 11 fps → 3.6).
+  `features.kicker_points` rechnet Real-K (Rating ≈ 0.34 × Real-K, Ø Kicker ≈ 2.6). Backtest: K nie auf Slot 1,
+  ~0.9 Kicker pro Lineup, "ohne Kicker" −0.6 Punkte pro Spiel.
 - **Punter** (seit 02.10. modelliert, Gruppe P): Rating ≈ Brutto-Punt-Yards / 128, 4 von 4 Ratings fast exakt
   (Johnston 259 Yds → 2.0, Bojorquez 251 → 2.0, Mann 167 → 1.3, Taylor 105 → 0.8). FP = Yards/10 aus dem
   Play-by-Play (`features.punter_games`). Projektion: Ø 168 Yds pro Team-Spiel (E ≈ 1.3), Elastizität −0.9 zum
@@ -259,6 +264,9 @@ Dateiformate:
 - 2026-10-05: **Draftbrett war leer.** Ein fehlender Dach-Wert (DAL @ HOU) landete als `NaN` in den Seitendaten,
   `JSON.parse` brach ab. Jetzt: `page._clean` macht aus NaN/inf `null`, `json.dumps(allow_nan=False)`, und die
   Seite zeigt bei unlesbaren Daten eine rote Meldung statt nichts. Nach Seitenänderungen im Browser prüfen.
+- 2026-10-05: Gefilterte Listen (Performances → Position K bzw. P) liefern **alle** Kicker/Punter eines Tages in
+  wenigen Screenshots. Punter-Formel bestätigt (30 Ratings, MAE 0.08; Returns und Inside-20 zählen nicht).
+  Kicker auf Real-K umgestellt (s. oben). Bei grossen Slates nach `/ergebnis` jeweils K und P gefiltert anfragen.
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).

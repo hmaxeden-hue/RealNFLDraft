@@ -95,12 +95,13 @@ def pbp(season: int) -> pd.DataFrame:
             "forced_fumble_player_1_player_id", "pass_defense_1_player_id",
             "kicker_player_id", "yardline_100", "touchdown", "score_differential",
             "game_seconds_remaining", "punter_player_id", "kick_distance", "punt_inside_twenty",
-            "touchback", "return_yards", "punt_blocked", "play_id"]
+            "touchback", "return_yards", "punt_blocked", "play_id", "field_goal_result",
+            "extra_point_result", "wp"]
 
     def load():
         df = _nfl().load_pbp([season]).to_pandas()
         return df[[c for c in cols if c in df.columns]]
-    return _cached(f"pbp2_{season}", load, _ttl(season))
+    return _cached(f"pbp3_{season}", load, _ttl(season))
 
 
 # --- optionale Quellen (Netzwerk-Freigabe nötig) --------------------------------

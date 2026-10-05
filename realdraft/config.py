@@ -63,7 +63,8 @@ P_EARLY_EXIT = 0.04          # Verletzung im Spiel -> Teilleistung
 
 # Streuung Fantasy-Punkte (Variationskoeffizient). 2025 gemessen (Median pro Spieler):
 # QB .46, RB .58, WR .59, TE .64, K .55; Real-IDP: DL 1.1, LB .80, DB .85 – plus Projektionsunsicherheit
-FP_CV = {"QB": 0.48, "RB": 0.70, "WR": 0.78, "TE": 0.85, "K": 0.55, "P": 0.51,   # Offense Standard: RB .66 WR .72 TE .78
+# Offense Standard: RB .66 WR .72 TE .78; K in Real-K (Fehlschüsse teuer) .62
+FP_CV = {"QB": 0.48, "RB": 0.70, "WR": 0.78, "TE": 0.85, "K": 0.62, "P": 0.51,
          "DL": 1.15, "LB": 0.85, "DB": 0.90}
 
 # Korrelationen in der Simulation (Ladungen auf gemeinsame Faktoren)

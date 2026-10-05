@@ -4,27 +4,27 @@
  "groups": {
   "QB": {
    "slope": 0.2235,
-   "offset": 3.211,
+   "offset": 3.212,
    "noise": 0.721,
    "n_obs": 26,
    "fit_raw": [
     0.2153,
-    1.43
+    1.431
    ]
   },
   "RB": {
    "slope": 0.237,
-   "offset": -1.368,
+   "offset": -1.37,
    "noise": 0.545,
    "n_obs": 50,
    "fit_raw": [
     0.2381,
-    -1.587
+    -1.589
    ]
   },
   "WR": {
    "slope": 0.2588,
-   "offset": -0.936,
+   "offset": -0.937,
    "noise": 0.523,
    "n_obs": 82,
    "fit_raw": [
@@ -39,27 +39,27 @@
    "n_obs": 31,
    "fit_raw": [
     0.2491,
-    -0.588
+    -0.587
    ]
   },
   "K": {
-   "slope": 0.3404,
-   "offset": 0.548,
-   "noise": 0.515,
-   "n_obs": 24,
+   "slope": 0.3428,
+   "offset": 0.126,
+   "noise": 0.33,
+   "n_obs": 35,
    "fit_raw": [
-    0.3438,
-    0.73
+    0.3457,
+    0.155
    ]
   },
   "P": {
-   "slope": 0.0782,
-   "offset": -0.317,
-   "noise": 0.129,
-   "n_obs": 13,
+   "slope": 0.0773,
+   "offset": -0.19,
+   "noise": 0.131,
+   "n_obs": 30,
    "fit_raw": [
-    0.0784,
-    -0.512
+    0.0772,
+    -0.241
    ]
   },
   "DL": {
@@ -113,6 +113,6 @@
  ],
  "updated": "2026-10-05",
  "win_coef": 0.014,
- "n_ratings": 268,
- "n_censored": 807
+ "n_ratings": 305,
+ "n_censored": 770
 }
