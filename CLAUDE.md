@@ -43,7 +43,7 @@ Bowl die Routinen pausieren.
 - Slot-Boost: 2.0 / 1.8 / 1.6 / 1.4 / 1.2. Dazu kommt ein Spieler-Boost von 0 bis +3.0
   (underperformt = hoch, Topform = 0). Boosts basieren auf der **ganzen Saison** und ändern sich
   **nur nach Spielen**, nie vor dem Kickoff.
-- Real-Rating ≥ 0, kein Maximum, > 10 ist sehr selten. **0 = schlecht gespielt, früh verletzt raus
+- Real-Rating meist ≥ 0 (leicht negativ möglich: Barion Brown −5 Yds → −0.1), kein Maximum, > 10 ist sehr selten. **0 = schlecht gespielt, früh verletzt raus
   oder nicht gespielt.**
 - Der Score zählt nur für den Spieltag. Das Feld hat > 20'000 Spieler.
 - **Ziel des Users (02.10.): pro Spieltag so viele Punkte wie möglich.** Kein Top-%-Ziel, Survivor egal →
@@ -267,6 +267,13 @@ Dateiformate:
 - 2026-10-05: Gefilterte Listen (Performances → Position K bzw. P) liefern **alle** Kicker/Punter eines Tages in
   wenigen Screenshots. Punter-Formel bestätigt (30 Ratings, MAE 0.08; Returns und Inside-20 zählen nicht).
   Kicker auf Real-K umgestellt (s. oben). Bei grossen Slates nach `/ergebnis` jeweils K und P gefiltert anfragen.
+- 2026-10-05 (MNF ATL @ NO): 43.0 Punkte, Rang 4'755/17.5k (Top 27 %), User spielte genau die Empfehlung
+  (E 47.4). Bijan 6.7, Kamara (+3.0) 3.3, Folk 2.8 wie projiziert. Carlson 0.9 (ein FG verschossen) und K. Miller
+  0.1 (19 Yds) fielen ab. Sicher-Variante (Chase Young) 44.8, ATL-Stack 48.5, Optimum 70.5 (Brian Robinson +1.8
+  mit 3 TD als Backup, Henderson +1.9 mit Fumble Recovery, nicht vorhersehbar). News waren entscheidend: Rush
+  (Backup, +2.8) wäre ohne Korrektur im Lineup gewesen. Spieler, die in der App-Liste fehlen (Tua, verletzt),
+  bekamen eine Projektion → vor dem Draft "Boost nicht im Pool"-Spieler mit hohem E auf Einsatz prüfen.
+  Woche 4 gesamt: TNF 36.1 (Rang 68 %), So 44.8 (Top 23 %), MNF 43.0 (Top 27 %).
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).
