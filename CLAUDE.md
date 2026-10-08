@@ -274,6 +274,10 @@ Dateiformate:
   (Backup, +2.8) wäre ohne Korrektur im Lineup gewesen. Spieler, die in der App-Liste fehlen (Tua, verletzt),
   bekamen eine Projektion → vor dem Draft "Boost nicht im Pool"-Spieler mit hohem E auf Einsatz prüfen.
   Woche 4 gesamt: TNF 36.1 (Rang 68 %), So 44.8 (Top 23 %), MNF 43.0 (Top 27 %).
+- 2026-10-08: User-Hinweis "TB hat eine Top-Run-Defense" geprüft: stimmt (W1–4 Rang 3 bei Rush-Yds/Spiel und YPC,
+  RB-FP 11.3 vs. Liga 17.1). Das Modell-Matchup (0.91, 8 Spiele Liga-Schnitt + Vorjahr) dämpft frühe Saisons stark.
+  Per `_adj.csv` ×0.85 auf Javonte Williams → Lamb auf Slot 1 (Gleichstand ±1 Punkt). Idee: Matchup-Shrinkage per
+  Backtest prüfen (wie viel sagen 4 Spiele Defense-Daten?).
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).
