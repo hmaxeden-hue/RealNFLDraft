@@ -1,6 +1,6 @@
 {
  "date": "2026-10-08",
- "generated": "08.10.2026 12:48",
+ "generated": "08.10.2026 12:50",
  "slate": [
   {
    "game": "TB @ DAL",
@@ -72,12 +72,12 @@
    "p90": 4.0,
    "mu_fp": 12.6,
    "risk": "tief",
-   "flags": "QB-Wechsel; startet vermutlich für Baker Mayfield; Startet (2. Start, Mayfield Daumen out). W4: 148 Yds, 1 TD, 2 INT, 55 Rush-Yds, Real ≤ 2.2 → leicht abgewertet",
+   "flags": "QB-Wechsel; startet vermutlich für Baker Mayfield; Starter bestätigt, 2. Start in Folge, Mayfield (Daumen) Out (Newsweek/Buccaneers.com, Routine 08.10.). W4: 148 Yds, 1 TD, 2 INT, 55 Rush-Yds, Real ≤ 2.2 → leicht abgewertet",
    "p_int": 0.0,
    "slot": 3,
    "mult": 4.6,
    "epts": 9.4,
-   "why": "12.6 FP proj., Boost +3.0, Team-Total 19.5 (0.93×), Matchup 1.15×, QB-Wechsel; startet vermutlich für Baker Mayfield; Startet (2. Start, Mayfield Daumen out). W4: 148 Yds, 1 TD, 2 INT, 55 Rush-Yds, Real ≤ 2.2 → leicht abgewertet"
+   "why": "12.6 FP proj., Boost +3.0, Team-Total 19.5 (0.93×), Matchup 1.15×, QB-Wechsel; startet vermutlich für Baker Mayfield; Starter bestätigt, 2. Start in Folge, Mayfield (Daumen) Out (Newsweek/Buccaneers.com, Routine 08.10.). W4: 148 Yds, 1 TD, 2 INT, 55 Rush-Yds, Real ≤ 2.2 → leicht abgewertet"
   },
   {
    "name": "Jake Ferguson",
@@ -470,7 +470,7 @@
    "p90": 4.0,
    "mu_fp": 12.6,
    "risk": "tief",
-   "flags": "QB-Wechsel; startet vermutlich für Baker Mayfield; Startet (2. Start, Mayfield Daumen out). W4: 148 Yds, 1 TD, 2 INT, 55 Rush-Yds, Real ≤ 2.2 → leicht abgewertet",
+   "flags": "QB-Wechsel; startet vermutlich für Baker Mayfield; Starter bestätigt, 2. Start in Folge, Mayfield (Daumen) Out (Newsweek/Buccaneers.com, Routine 08.10.). W4: 148 Yds, 1 TD, 2 INT, 55 Rush-Yds, Real ≤ 2.2 → leicht abgewertet",
    "p_int": 0.0,
    "fp_last3": 5.2,
    "xfp_last3": 7.7
@@ -675,7 +675,7 @@
   }
  ],
  "warnings": [
-  "**Jalon Daniels** (TB): QB-Wechsel; startet vermutlich für Baker Mayfield; Startet (2. Start, Mayfield Daumen out). W4: 148 Yds, 1 TD, 2 INT, 55 Rush-Yds, Real ≤ 2.2 → leicht abgewertet",
+  "**Jalon Daniels** (TB): QB-Wechsel; startet vermutlich für Baker Mayfield; Starter bestätigt, 2. Start in Folge, Mayfield (Daumen) Out (Newsweek/Buccaneers.com, Routine 08.10.). W4: 148 Yds, 1 TD, 2 INT, 55 Rush-Yds, Real ≤ 2.2 → leicht abgewertet",
   "**Jake Ferguson** (DAL): Rolle↓",
   "**Emeka Egbuka** (TB): Rolle↓; QB-Wechsel; QB1 Baker Mayfield fehlt (×0.85)",
   "**George Pickens** (DAL): Rolle↓",
@@ -800,7 +800,7 @@
    "p90": 4.71,
    "mu_fp": 7.7,
    "risk": "tief",
-   "flags": "QB1 Baker Mayfield fehlt (×0.92)",
+   "flags": "QB1 Baker Mayfield fehlt (×0.92); Beim Report 6.10. DNP, im Out-Report 7.10. nicht mehr genannt → spielt (Routine 08.10.)",
    "p_int": 0.0
   },
   {
@@ -832,7 +832,7 @@
    "p90": 4.0,
    "mu_fp": 12.6,
    "risk": "tief",
-   "flags": "QB-Wechsel; startet vermutlich für Baker Mayfield; Startet (2. Start, Mayfield Daumen out). W4: 148 Yds, 1 TD, 2 INT, 55 Rush-Yds, Real ≤ 2.2 → leicht abgewertet",
+   "flags": "QB-Wechsel; startet vermutlich für Baker Mayfield; Starter bestätigt, 2. Start in Folge, Mayfield (Daumen) Out (Newsweek/Buccaneers.com, Routine 08.10.). W4: 148 Yds, 1 TD, 2 INT, 55 Rush-Yds, Real ≤ 2.2 → leicht abgewertet",
    "p_int": 0.0
   },
   {

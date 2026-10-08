@@ -283,7 +283,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-08,00-0034855,Baker Mayfield,TB,DAL,QB,1.400,Pool,16.917,0.000,0.000,0.000,0.000,Out (Thumb); Rolle↓; QB-Wechsel; Pech -5.2 FP vs xFP
 2026-10-08,00-0034967,Rashan Gary,DAL,TB,LB,3.000,Pool,5.988,1.161,0.003,2.591,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-10-08,00-0035254,Anthony Nelson,TB,DAL,LB,3.000,Pool,3.617,0.722,0.000,1.662,0.990,
-2026-10-08,00-0035358,Chase McLaughlin,TB,DAL,K,0.400,Pool,7.735,2.489,0.617,4.710,0.990,QB1 Baker Mayfield fehlt (×0.92)
+2026-10-08,00-0035358,Chase McLaughlin,TB,DAL,K,0.400,Pool,7.735,2.489,0.617,4.710,0.990,"QB1 Baker Mayfield fehlt (×0.92); Beim Report 6.10. DNP, im Out-Report 7.10. nicht mehr genannt → spielt (Routine 08.10.)"
 2026-10-08,00-0035718,Quinnen Williams,DAL,TB,DL,3.000,Pool,6.215,1.252,0.000,3.006,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-10-08,00-0035942,Christian Rozeboom,TB,DAL,LB,3.000,fehlt (3.0 angenommen),5.673,1.119,0.014,2.492,0.990,Rolle↓
 2026-10-08,00-0036358,CeeDee Lamb,DAL,TB,WR,0.000,Pool,14.226,3.793,0.740,7.792,0.990,
@@ -329,7 +329,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-08,00-0041048,Ted Hurst III,TB,DAL,WR,3.000,Pool,3.390,1.058,0.033,2.133,0.990,Rolle↓; QB-Wechsel; QB1 Baker Mayfield fehlt (×0.85)
 2026-10-08,00-0041057,Keionte Scott,TB,DAL,DB,3.000,Pool,5.679,1.107,0.060,2.415,0.990,
 2026-10-08,00-0041079,DeMonte Capehart,TB,DAL,DL,0.000,0 (noch kein Saisonspiel),2.219,0.529,0.000,1.274,0.990,keine Spiele 2026
-2026-10-08,00-0041251,Jalon Daniels,TB,DAL,QB,3.000,Pool,12.561,2.043,0.191,3.997,0.990,"QB-Wechsel; startet vermutlich für Baker Mayfield; Startet (2. Start, Mayfield Daumen out). W4: 148 Yds, 1 TD, 2 INT, 55 Rush-Yds, Real ≤ 2.2 → leicht abgewertet"
+2026-10-08,00-0041251,Jalon Daniels,TB,DAL,QB,3.000,Pool,12.561,2.043,0.191,3.997,0.990,"QB-Wechsel; startet vermutlich für Baker Mayfield; Starter bestätigt, 2. Start in Folge, Mayfield (Daumen) Out (Newsweek/Buccaneers.com, Routine 08.10.). W4: 148 Yds, 1 TD, 2 INT, 55 Rush-Yds, Real ≤ 2.2 → leicht abgewertet"
 2026-10-08,00-0041253,Ayden Garnes,TB,DAL,DB,0.000,0 (noch kein Saisonspiel),3.956,0.810,0.000,1.944,0.990,keine Spiele 2026
 2026-10-08,00-0041502,Josiah Trotter,TB,DAL,LB,0.900,Pool,7.835,1.529,0.142,3.281,0.990,
 2026-10-08,00-0041537,Malachi Lawrence,DAL,TB,LB,3.000,fehlt (3.0 angenommen),1.918,0.481,0.000,1.132,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
