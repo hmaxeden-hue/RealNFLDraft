@@ -29,7 +29,7 @@ Erstelle die Draft-Empfehlung für den Spieltag `$ARGUMENTS` (leer → `next`). 
 6. **Optimierung**: `python -m realdraft draft <datum>`. Bei knappen Entscheidungen prüfe die Robustheit:
    Wie ändert sich das beste Lineup, wenn die Rating-Skalen von Defense, K und QB ×0.6–1.6 danebenliegen?
    Nimm im Zweifel das Lineup mit dem kleinsten Maximalverlust. Aber: Bei Gleichstand (< 0.5 E-Punkte) ohne
-   neue Info (News, Spielerseite) gilt die Modell-Empfehlung. Kicker nicht aus Prinzip abwerten (Backtest).
+   neue Info (News, Spielerseite) gilt die Modell-Empfehlung. Kicker nicht aus Prinzip abwerten (Backtest). Matchups nie manuell nachschärfen (sind im Modell).
 7. **Antwort (Deutsch, kompakt)**:
    - Tabelle Empfehlung: Slot, Spieler, Team, Gegner, Boost, Gesamt-Mult, E[Rating], E[Punkte], Risiko,
      1–2 Sätze Begründung (Zahlen + News, bei Boost-Spielern Chance/Falle).

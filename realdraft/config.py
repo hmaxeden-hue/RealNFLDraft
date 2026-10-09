@@ -44,6 +44,9 @@ ENV_EXP = {"QB": 0.8, "RB": 0.7, "WR": 0.7, "TE": 0.7, "K": 0.6,   # Team-Total-
            "P": -0.9}   # Punter: schwache Offense puntet mehr (2025: 14–19 Pkt → 199 Yds, 25+ → 136)
 MATCHUP_SHRINK_GAMES = 8.0  # so viele Spiele "Liga-Durchschnitt" im Matchup-Faktor
 MATCHUP_CLIP = (0.85, 1.15)
+# Backtest 2025 (ab W5, ≥4 Spiele Defense-Daten): RB-Matchup wirkt (starke Run-D −8 %, schwache +16 %),
+# WR-Matchup sagt nichts voraus (echte/proj. FP 1.04 / 0.98 / 0.99 nach Defense-Stärke) → WR stark gedämpft.
+MATCHUP_EXP = {"WR": 0.3}
 # Wie viel der Form-Unterschiede zwischen Stammspielern echt ist (Backtest 2025, Steigung FP ~ Projektion):
 # K .16, DB .28, LB .41, QB .47 – der Rest ist Zufall. RB .70, DL .76, WR .80, TE .91 bleiben ungeschrumpft.
 FORM_SHRINK = {"K": 0.2, "DB": 0.3, "LB": 0.4, "QB": 0.5, "P": 0.3}   # P: Team-Schnitt Steigung .39

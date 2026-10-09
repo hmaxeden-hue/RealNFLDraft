@@ -278,6 +278,14 @@ Dateiformate:
   RB-FP 11.3 vs. Liga 17.1). Das Modell-Matchup (0.91, 8 Spiele Liga-Schnitt + Vorjahr) dämpft frühe Saisons stark.
   Per `_adj.csv` ×0.85 auf Javonte Williams → Lamb auf Slot 1 (Gleichstand ±1 Punkt). Idee: Matchup-Shrinkage per
   Backtest prüfen (wie viel sagen 4 Spiele Defense-Daten?).
+- 2026-10-08 (TNF TB @ DAL): 31.7 Punkte, Rang 10'705/17.1k. Lamb 0.3 (5 Targets, 2 Catches, 9 Yds, gesund),
+  Ferguson 0.6. TB gewann 24:16 als Underdog. Das Modell-Original mit Javonte (2.9) hätte 37.4 gebracht, der
+  DAL-Stack mit Pickens (5.1) 42.4, das Optimum 78.8 (Irving 7.8 mit +0.9, Pickens, Flournoy, Daniels, Anzalone).
+  **Lehre: Matchup nicht manuell nachschärfen.** Der Backtest 2025 zeigt: Starke Run-D kostet RBs ~8 %, das
+  Modell hatte 0.91 schon drin; ×0.85 per `_adj.csv` zählte doppelt. WR-Matchup sagt nichts voraus →
+  `MATCHUP_EXP` WR 0.3. Manuelle Korrekturen nur für News (Verletzung, Rolle, QB-Wechsel), nicht für Matchups.
+  Bilanz der Abweichungen vom Modell bei Gleichstand: Queen statt Szmyt −8, Lamb statt Javonte −5.8,
+  Nacua statt Mevis (User) +9, Chase statt Little (User) −13.
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).

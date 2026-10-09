@@ -188,7 +188,7 @@ def project(date: str, boosts: pd.DataFrame | None = None,
         env = 1.0
         if grp in config.ENV_EXP and pd.notna(ctx["implied"]):
             env = (ctx["implied"] / base_it.get(p["team"], config.LEAGUE_IMPLIED)) ** config.ENV_EXP[grp]
-        match = mf.get((ctx["opp"], grp), 1.0)
+        match = mf.get((ctx["opp"], grp), 1.0) ** config.MATCHUP_EXP.get(grp, 1.0)
         p_play, status = _p_play(p)
         sig = features.rebound_signals(hist[hist["season"] == config.SEASON], grp, qbg, p["team"])
         lam_int = lam_fr = 0.0
