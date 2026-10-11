@@ -363,7 +363,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-11,00-0034173,Eddy Pineiro,SF,SEA,K,2.400,Pool,6.240,2.034,0.474,3.947,0.990,
 2026-10-11,00-0034275,Foley Fatukasi,LV,NE,DL,3.000,Pool,2.147,0.517,0.000,1.232,0.990,
 2026-10-11,00-0034350,Uchenna Nwosu,SEA,SF,LB,2.300,Pool,5.320,1.067,0.000,2.369,0.990,
-2026-10-11,00-0034351,Dallas Goedert,PHI,JAX,TE,1.300,Pool,5.706,0.000,0.137,3.171,0.990,Rolle↓
+2026-10-11,00-0034351,Dallas Goedert,PHI,JAX,TE,1.300,Pool,4.850,0.000,0.077,2.733,0.990,Rolle↓; Rückkehr nach 2 verpassten Spielen (×0.85)
 2026-10-11,00-0034365,Ian Thomas,LV,NE,TE,3.000,Pool,1.302,0.473,0.000,1.089,0.990,
 2026-10-11,00-0034391,Siran Neal,SF,SEA,DB,2.800,Pool,2.874,0.631,0.000,1.508,0.990,
 2026-10-11,00-0034413,Foyesade Oluokun,JAX,PHI,LB,1.500,Pool,7.751,0.000,0.141,3.296,0.990,
@@ -403,7 +403,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-11,00-0036275,D'Andre Swift,CHI,GB,RB,0.200,Pool,14.198,3.662,0.952,6.972,0.990,Rolle↓; QB-Wechsel; Pech -8.4 FP vs xFP
 2026-10-11,00-0036281,C.J. Henderson,ATL,BAL,DB,1.200,Pool,7.166,1.456,0.149,3.153,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-10-11,00-0036282,Grant Delpit,CLE,NYJ,DB,2.300,Pool,6.423,1.277,0.096,2.763,0.990,
-2026-10-11,00-0036287,Noah Igbinoghene,CLE,NYJ,DB,3.000,Pool,3.375,0.714,0.000,1.625,0.990,
+2026-10-11,00-0036287,Noah Igbinoghene,CLE,NYJ,DB,3.000,Pool,2.848,0.622,0.000,1.409,0.990,Rückkehr nach 2 verpassten Spielen (×0.85)
 2026-10-11,00-0036389,Jalen Hurts,PHI,JAX,QB,0.800,Pool,13.405,0.000,0.267,4.305,0.990,Pech -4.0 FP vs xFP
 2026-10-11,00-0036410,Tee Higgins,CIN,MIA,WR,0.300,Pool,9.105,1.870,0.000,4.544,0.750,Questionable (Groin)
 2026-10-11,00-0036442,Joe Burrow,CIN,MIA,QB,0.200,Pool,18.358,3.263,0.711,6.136,0.990,
@@ -486,9 +486,8 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-11,00-0039851,Drake Maye,NE,LV,QB,1.900,Pool,18.237,3.333,0.710,6.187,0.990,Pech -4.7 FP vs xFP
 2026-10-11,00-0039861,Tyler Nubin,NYG,WAS,DB,3.000,Pool,5.800,1.173,0.074,2.542,0.990,
 2026-10-11,00-0039868,Troy Franklin,DEN,LAC,WR,3.000,Pool,2.805,0.957,0.000,1.947,0.990,
-2026-10-11,00-0039910,Jayden Daniels,WAS,NYG,QB,1.000,Pool,18.581,3.466,0.821,6.378,0.990,Rolle↓; QB-Wechsel; Pech -4.5 FP vs xFP
+2026-10-11,00-0039910,Jayden Daniels,WAS,NYG,QB,1.000,Pool,15.794,2.859,0.540,5.358,0.990,Rolle↓; QB-Wechsel; Pech -4.5 FP vs xFP; Rückkehr nach 2 verpassten Spielen (×0.85)
 2026-10-11,00-0039917,Michael Penix Jr.,ATL,BAL,QB,0.600,Pool,16.415,3.020,0.610,5.595,0.990,QB-Wechsel
-2026-10-11,00-0039918,Caleb Williams,CHI,GB,QB,0.000,fehlt (0.0 angenommen),17.616,2.465,0.000,5.570,0.750,Questionable (Hamstring); Rolle↓; QB-Wechsel
 2026-10-11,00-0039919,Rome Odunze,CHI,GB,WR,1.600,Pool,8.083,2.325,0.418,4.744,0.990,QB-Wechsel
 2026-10-11,00-0039924,Dallas Turner,MIN,NO,LB,1.100,Pool,7.149,1.454,0.109,3.102,0.990,
 2026-10-11,00-0040074,Tyler Loop,BAL,ATL,K,0.600,Pool,5.661,1.859,0.419,3.569,0.990,QB1 Lamar Jackson fehlt (×0.92)

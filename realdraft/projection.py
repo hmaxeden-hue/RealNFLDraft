@@ -127,6 +127,26 @@ def shrink_form(mu: float, hist: pd.DataFrame, grp: str, reg_mean: dict) -> floa
     return reg_mean[grp] + w * (mu - reg_mean[grp])
 
 
+def _team_weeks_before(date: str) -> dict:
+    """Wochen, in denen jedes Team in dieser Saison vor `date` gespielt hat."""
+    sch = sources.schedule(config.SEASON)
+    sch = sch[(sch["game_type"] == "REG") & (sch["gameday"].astype(str) < date)]
+    out = {}
+    for _, g in sch.iterrows():
+        for t in (g["home_team"], g["away_team"]):
+            out.setdefault(t, []).append(int(g["week"]))
+    return out
+
+
+def _missed_before(hist: pd.DataFrame, weeks: list) -> int:
+    """Team-Spiele seit dem letzten Einsatz des Spielers (Rückkehr nach Verletzung)."""
+    cur = hist[hist["season"] == config.SEASON]
+    if cur.empty:
+        return 0
+    last = int(cur["week"].max())
+    return sum(w > last for w in weeks)
+
+
 def turnover_rates(pg: pd.DataFrame) -> tuple[dict, dict, dict]:
     """(Gruppenraten INT/FR pro Spiel, Spielerraten, INT-Faktor pro gegnerischem Team)."""
     d = pg[pg["group"].isin(config.DEFENSE)].assign(
@@ -177,6 +197,7 @@ def project(date: str, boosts: pd.DataFrame | None = None,
     pg = pg[pg["game_id"].map(gd).fillna("") < date]   # nur Spiele vor dem Spieltag (Rückblicke ohne Leck)
     reg_mean = regular_means(pg)
     qbg = features.team_qb_by_game(pg)
+    team_weeks = _team_weeks_before(date)
     mf = matchup_factors(pg)
     base_it = _team_base_implied(int(sl["week"].max()))
     to_group, to_player, opp_int = turnover_rates(pg)
@@ -196,8 +217,10 @@ def project(date: str, boosts: pd.DataFrame | None = None,
         match = mf.get((ctx["opp"], grp), 1.0) ** config.MATCHUP_EXP.get(grp, 1.0)
         p_play, status = _p_play(p)
         sig = features.rebound_signals(hist[hist["season"] == config.SEASON], grp, qbg, p["team"])
+        missed = _missed_before(hist, team_weeks.get(p["team"], []))
+        ret = config.RETURN_FACTOR if (missed >= 2 and n_cur > 0) else 1.0
         lam_int = lam_fr = 0.0
-        mu_fp = mu * env * match
+        mu_fp = mu * env * match * ret
         if grp in config.DEFENSE:
             rates = to_player.get(p["player_id"], to_group[grp])
             lam_fr = rates["fr"]
@@ -210,6 +233,7 @@ def project(date: str, boosts: pd.DataFrame | None = None,
             "team_spread": ctx["team_spread"], "implied": ctx["implied"],
             "mu_base": mu, "prior": prior, "n_games": n_cur, "env": env, "matchup": match,
             "mu_fp": mu_fp, "lam_int": lam_int, "lam_fr": lam_fr, "p_play": p_play, "status": status,
+            "missed": missed,
             "injury": p.get("report_primary_injury"), **sig,
         })
     df = pd.DataFrame(rows)
@@ -355,6 +379,8 @@ def _flags(r) -> str:
         f.append(f"Pech {r['luck_gap']:+.1f} FP vs xFP")
     if r["n_games"] == 0:
         f.append("keine Spiele 2026")
+    if r.get("missed", 0) >= 2 and r["n_games"] > 0:
+        f.append(f"Rückkehr nach {int(r['missed'])} verpassten Spielen (×{config.RETURN_FACTOR})")
     if r["note"]:
         f.append(r["note"])
     return "; ".join(f)

@@ -291,6 +291,10 @@ Dateiformate:
   womöglich doppelt (Brissett: Matchup 1.15 × Team-Total 1.12). Per Backtest prüfen, ob Matchup bei gegebenem
   Team-Total noch etwas erklärt. Bei Gleichstand zwischen Spielen mit verschiedenen Kickoffs den später
   beginnenden Spieler nehmen (länger tauschbar, mehr Infos).
+- 2026-10-11: **Rückkehr nach Verletzung** (User-Frage zu Jayden Daniels). Backtest 2025, Offense-Stammspieler im
+  ersten Spiel nach ≥ 2 verpassten Team-Spielen: FP/Projektion 0.62 (QB 0.47), bei voller Rolle 0.89 (QB 0.81);
+  Rückkehrer haben doppelt so oft < 70 % Snaps (55 % vs. 29 %). Jetzt `RETURN_FACTOR` 0.85 automatisch
+  (Flag "Rückkehr nach N verpassten Spielen"). Daniels fiel dadurch aus dem Lineup (E 3.5 → 2.9).
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).
