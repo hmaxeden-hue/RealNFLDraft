@@ -1,6 +1,6 @@
 {
  "date": "2026-10-11",
- "generated": "11.10.2026 16:55",
+ "generated": "11.10.2026 16:59",
  "slate": [
   {
    "game": "PHI @ JAX",
@@ -714,6 +714,24 @@
    "xfp_last3": null
   },
   {
+   "name": "Ja'Marr Chase",
+   "pos": "WR",
+   "group": "WR",
+   "team": "CIN",
+   "opp": "MIA",
+   "boost": 1.1,
+   "boost_src": "Pool",
+   "er": 2.957,
+   "p10": 0.47,
+   "p90": 6.06,
+   "mu_fp": 11.4,
+   "risk": "tief",
+   "flags": "Questionable (Concussion); Rolle↓; Spielt laut User-News trotz Questionable",
+   "p_int": 0.0,
+   "fp_last3": 12.7,
+   "xfp_last3": 8.5
+  },
+  {
    "name": "DK Metcalf",
    "pos": "WR",
    "group": "WR",
@@ -766,32 +784,15 @@
    "p_int": 0.0,
    "fp_last3": 6.6,
    "xfp_last3": 5.6
-  },
-  {
-   "name": "Nick Emmanwori",
-   "pos": "DB",
-   "group": "DB",
-   "team": "SEA",
-   "opp": "SF",
-   "boost": 3.0,
-   "boost_src": "Pool",
-   "er": 1.581,
-   "p10": 0.22,
-   "p90": 3.27,
-   "mu_fp": 7.9,
-   "risk": "tief",
-   "flags": "",
-   "p_int": 0.07,
-   "fp_last3": 7.3,
-   "xfp_last3": null
   }
  ],
  "warnings": [
   "**Jayden Daniels** (WAS): Rolle↓; QB-Wechsel; Pech -4.5 FP vs xFP",
+  "**Ja'Marr Chase** (CIN): Questionable (Concussion); Rolle↓; Spielt laut User-News trotz Questionable",
   "**Bijan Robinson** (ATL): QB-Wechsel",
   "**Rome Odunze** (CHI): QB-Wechsel",
   "**Bo Nix** (DEN): Rolle↓",
-  "**Ja'Marr Chase** (CIN): Questionable (Concussion); Rolle↓; Spielt laut User-News trotz Questionable",
+  "**Kyler Murray** (MIN): QB-Wechsel",
   "**BAL**: QB1 Lamar Jackson fehlt → Offense abgewertet, gegnerische Defense aufgewertet",
   "Wetter nicht abrufbar (Open-Meteo blockiert) – per Websuche prüfen."
  ],
@@ -1199,6 +1200,22 @@
    "p_int": 0.0
   },
   {
+   "name": "Jaylen Warren",
+   "pos": "RB",
+   "group": "RB",
+   "team": "PIT",
+   "opp": "IND",
+   "boost": 0.3,
+   "boost_src": "Pool",
+   "er": 3.058,
+   "p10": 0.75,
+   "p90": 5.85,
+   "mu_fp": 11.8,
+   "risk": "tief",
+   "flags": "",
+   "p_int": 0.0
+  },
+  {
    "name": "Drake London",
    "pos": "WR",
    "group": "WR",
@@ -1279,22 +1296,6 @@
    "p_int": 0.0
   },
   {
-   "name": "Jaylen Warren",
-   "pos": "RB",
-   "group": "RB",
-   "team": "PIT",
-   "opp": "IND",
-   "boost": 0.3,
-   "boost_src": "Pool",
-   "er": 3.002,
-   "p10": 0.73,
-   "p90": 5.75,
-   "mu_fp": 11.6,
-   "risk": "tief",
-   "flags": "",
-   "p_int": 0.0
-  },
-  {
    "name": "Jordan Love",
    "pos": "QB",
    "group": "QB",
@@ -1308,6 +1309,22 @@
    "mu_fp": 16.4,
    "risk": "tief",
    "flags": "",
+   "p_int": 0.0
+  },
+  {
+   "name": "Ja'Marr Chase",
+   "pos": "WR",
+   "group": "WR",
+   "team": "CIN",
+   "opp": "MIA",
+   "boost": 1.1,
+   "boost_src": "Pool",
+   "er": 2.957,
+   "p10": 0.47,
+   "p90": 6.06,
+   "mu_fp": 11.4,
+   "risk": "tief",
+   "flags": "Questionable (Concussion); Rolle↓; Spielt laut User-News trotz Questionable",
    "p_int": 0.0
   },
   {
@@ -1370,6 +1387,22 @@
    "p10": 0.75,
    "p90": 5.67,
    "mu_fp": 10.9,
+   "risk": "tief",
+   "flags": "QB-Wechsel",
+   "p_int": 0.0
+  },
+  {
+   "name": "Sam Darnold",
+   "pos": "QB",
+   "group": "QB",
+   "team": "SEA",
+   "opp": "SF",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 2.875,
+   "p10": 0.56,
+   "p90": 5.46,
+   "mu_fp": 15.9,
    "risk": "tief",
    "flags": "QB-Wechsel",
    "p_int": 0.0
@@ -1503,17 +1536,17 @@
    "p_int": 0.0
   },
   {
-   "name": "Sam Darnold",
+   "name": "Kyler Murray",
    "pos": "QB",
    "group": "QB",
-   "team": "SEA",
-   "opp": "SF",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 2.684,
-   "p10": 0.47,
-   "p90": 5.14,
-   "mu_fp": 15.0,
+   "team": "MIN",
+   "opp": "NO",
+   "boost": 1.0,
+   "boost_src": "Pool",
+   "er": 2.686,
+   "p10": 0.5,
+   "p90": 5.11,
+   "mu_fp": 14.7,
    "risk": "tief",
    "flags": "QB-Wechsel",
    "p_int": 0.0
@@ -1580,22 +1613,6 @@
    "mu_fp": 14.9,
    "risk": "tief",
    "flags": "",
-   "p_int": 0.0
-  },
-  {
-   "name": "Ja'Marr Chase",
-   "pos": "WR",
-   "group": "WR",
-   "team": "CIN",
-   "opp": "MIA",
-   "boost": 1.1,
-   "boost_src": "Pool",
-   "er": 2.598,
-   "p10": 0.38,
-   "p90": 5.31,
-   "mu_fp": 9.9,
-   "risk": "tief",
-   "flags": "Questionable (Concussion); Rolle↓; Spielt laut User-News trotz Questionable",
    "p_int": 0.0
   },
   {
@@ -1676,22 +1693,6 @@
    "mu_fp": 14.6,
    "risk": "tief",
    "flags": "Rolle↓; Pech -3.8 FP vs xFP",
-   "p_int": 0.0
-  },
-  {
-   "name": "Kyler Murray",
-   "pos": "QB",
-   "group": "QB",
-   "team": "MIN",
-   "opp": "NO",
-   "boost": 1.0,
-   "boost_src": "Pool",
-   "er": 2.514,
-   "p10": 0.41,
-   "p90": 4.82,
-   "mu_fp": 14.0,
-   "risk": "tief",
-   "flags": "QB-Wechsel",
    "p_int": 0.0
   },
   {
@@ -2399,6 +2400,22 @@
    "p_int": 0.0
   },
   {
+   "name": "Justin Jefferson",
+   "pos": "WR",
+   "group": "WR",
+   "team": "MIN",
+   "opp": "NO",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 1.997,
+   "p10": 0.0,
+   "p90": 4.85,
+   "mu_fp": 9.1,
+   "risk": "mittel",
+   "flags": "Questionable (Ankle); Rolle↓; QB-Wechsel",
+   "p_int": 0.0
+  },
+  {
    "name": "Deebo Samuel Sr.",
    "pos": "WR",
    "group": "WR",
@@ -2639,6 +2656,22 @@
    "p_int": 0.0
   },
   {
+   "name": "Talanoa Hufanga",
+   "pos": "DB",
+   "group": "DB",
+   "team": "DEN",
+   "opp": "LAC",
+   "boost": 0.7,
+   "boost_src": "Pool",
+   "er": 1.813,
+   "p10": 0.25,
+   "p90": 3.79,
+   "mu_fp": 9.1,
+   "risk": "tief",
+   "flags": "",
+   "p_int": 0.158
+  },
+  {
    "name": "J.K. Scott",
    "pos": "P",
    "group": "P",
@@ -2653,22 +2686,6 @@
    "risk": "tief",
    "flags": "",
    "p_int": 0.0
-  },
-  {
-   "name": "Talanoa Hufanga",
-   "pos": "DB",
-   "group": "DB",
-   "team": "DEN",
-   "opp": "LAC",
-   "boost": 0.7,
-   "boost_src": "Pool",
-   "er": 1.803,
-   "p10": 0.24,
-   "p90": 3.78,
-   "mu_fp": 9.1,
-   "risk": "tief",
-   "flags": "",
-   "p_int": 0.158
   },
   {
    "name": "Jeffery Simmons",
@@ -2732,22 +2749,6 @@
    "mu_fp": 6.1,
    "risk": "tief",
    "flags": "",
-   "p_int": 0.0
-  },
-  {
-   "name": "Justin Jefferson",
-   "pos": "WR",
-   "group": "WR",
-   "team": "MIN",
-   "opp": "NO",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 1.731,
-   "p10": 0.0,
-   "p90": 4.2,
-   "mu_fp": 7.8,
-   "risk": "mittel",
-   "flags": "Questionable (Ankle); Rolle↓; QB-Wechsel",
    "p_int": 0.0
   },
   {
@@ -3055,6 +3056,22 @@
    "p_int": 0.0
   },
   {
+   "name": "Hezekiah Masses",
+   "pos": "DB",
+   "group": "DB",
+   "team": "LV",
+   "opp": "NE",
+   "boost": 0.8,
+   "boost_src": "Pool",
+   "er": 1.629,
+   "p10": 0.12,
+   "p90": 3.57,
+   "mu_fp": 8.3,
+   "risk": "mittel",
+   "flags": "",
+   "p_int": 0.28
+  },
+  {
    "name": "Nakobe Dean",
    "pos": "LB",
    "group": "LB",
@@ -3149,22 +3166,6 @@
    "risk": "tief",
    "flags": "",
    "p_int": 0.0
-  },
-  {
-   "name": "Hezekiah Masses",
-   "pos": "DB",
-   "group": "DB",
-   "team": "LV",
-   "opp": "NE",
-   "boost": 0.8,
-   "boost_src": "Pool",
-   "er": 1.589,
-   "p10": 0.1,
-   "p90": 3.5,
-   "mu_fp": 8.1,
-   "risk": "mittel",
-   "flags": "",
-   "p_int": 0.28
   },
   {
    "name": "Zay Flowers",
@@ -3679,6 +3680,22 @@
    "p_int": 0.0
   },
   {
+   "name": "C.J. Henderson",
+   "pos": "DB",
+   "group": "DB",
+   "team": "ATL",
+   "opp": "BAL",
+   "boost": 1.2,
+   "boost_src": "Pool",
+   "er": 1.456,
+   "p10": 0.15,
+   "p90": 3.15,
+   "mu_fp": 7.2,
+   "risk": "mittel",
+   "flags": "Gegner ohne QB1 (INT-Rate ×1.3)",
+   "p_int": 0.098
+  },
+  {
    "name": "Dallas Turner",
    "pos": "LB",
    "group": "LB",
@@ -3903,22 +3920,6 @@
    "p_int": 0.117
   },
   {
-   "name": "C.J. Henderson",
-   "pos": "DB",
-   "group": "DB",
-   "team": "ATL",
-   "opp": "BAL",
-   "boost": 1.2,
-   "boost_src": "Pool",
-   "er": 1.417,
-   "p10": 0.13,
-   "p90": 3.09,
-   "mu_fp": 7.0,
-   "risk": "mittel",
-   "flags": "Gegner ohne QB1 (INT-Rate ×1.3)",
-   "p_int": 0.098
-  },
-  {
    "name": "Raheim Sanders",
    "pos": "RB",
    "group": "RB",
@@ -3997,6 +3998,38 @@
    "risk": "mittel",
    "flags": "",
    "p_int": 0.065
+  },
+  {
+   "name": "Pete Werner",
+   "pos": "LB",
+   "group": "LB",
+   "team": "NO",
+   "opp": "MIN",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 1.392,
+   "p10": 0.1,
+   "p90": 3.05,
+   "mu_fp": 7.0,
+   "risk": "mittel",
+   "flags": "",
+   "p_int": 0.025
+  },
+  {
+   "name": "Ja'Quan McMillian",
+   "pos": "DB",
+   "group": "DB",
+   "team": "DEN",
+   "opp": "LAC",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 1.392,
+   "p10": 0.15,
+   "p90": 2.96,
+   "mu_fp": 7.0,
+   "risk": "mittel",
+   "flags": "Rolle↓",
+   "p_int": 0.111
   },
   {
    "name": "Sonny Styles",
@@ -4175,6 +4208,38 @@
    "p_int": 0.032
   },
   {
+   "name": "Christian Izien",
+   "pos": "DB",
+   "group": "DB",
+   "team": "DET",
+   "opp": "ARI",
+   "boost": 1.7,
+   "boost_src": "Pool",
+   "er": 1.351,
+   "p10": 0.12,
+   "p90": 2.91,
+   "mu_fp": 6.8,
+   "risk": "mittel",
+   "flags": "",
+   "p_int": 0.063
+  },
+  {
+   "name": "Treydan Stukes",
+   "pos": "DB",
+   "group": "DB",
+   "team": "LV",
+   "opp": "NE",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 1.35,
+   "p10": 0.06,
+   "p90": 3.05,
+   "mu_fp": 6.7,
+   "risk": "mittel",
+   "flags": "",
+   "p_int": 0.167
+  },
+  {
    "name": "Alex Highsmith",
    "pos": "LB",
    "group": "LB",
@@ -4189,22 +4254,6 @@
    "risk": "mittel",
    "flags": "",
    "p_int": 0.027
-  },
-  {
-   "name": "Ja'Quan McMillian",
-   "pos": "DB",
-   "group": "DB",
-   "team": "DEN",
-   "opp": "LAC",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 1.35,
-   "p10": 0.13,
-   "p90": 2.91,
-   "mu_fp": 6.7,
-   "risk": "mittel",
-   "flags": "Rolle↓",
-   "p_int": 0.111
   },
   {
    "name": "Julian Love",
@@ -4399,22 +4448,6 @@
    "p_int": 0.029
   },
   {
-   "name": "Pete Werner",
-   "pos": "LB",
-   "group": "LB",
-   "team": "NO",
-   "opp": "MIN",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 1.323,
-   "p10": 0.08,
-   "p90": 2.92,
-   "mu_fp": 6.6,
-   "risk": "mittel",
-   "flags": "",
-   "p_int": 0.025
-  },
-  {
    "name": "Kamari Lassiter",
    "pos": "DB",
    "group": "DB",
@@ -4509,22 +4542,6 @@
    "risk": "tief",
    "flags": "",
    "p_int": 0.0
-  },
-  {
-   "name": "Christian Izien",
-   "pos": "DB",
-   "group": "DB",
-   "team": "DET",
-   "opp": "ARI",
-   "boost": 1.7,
-   "boost_src": "Pool",
-   "er": 1.315,
-   "p10": 0.11,
-   "p90": 2.84,
-   "mu_fp": 6.6,
-   "risk": "mittel",
-   "flags": "",
-   "p_int": 0.063
   },
   {
    "name": "D.J. Reed",
@@ -4639,22 +4656,6 @@
    "p_int": 0.0
   },
   {
-   "name": "Treydan Stukes",
-   "pos": "DB",
-   "group": "DB",
-   "team": "LV",
-   "opp": "NE",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 1.297,
-   "p10": 0.04,
-   "p90": 2.97,
-   "mu_fp": 6.4,
-   "risk": "mittel",
-   "flags": "",
-   "p_int": 0.167
-  },
-  {
    "name": "Tyson Campbell",
    "pos": "DB",
    "group": "DB",
@@ -4701,6 +4702,22 @@
    "risk": "mittel",
    "flags": "",
    "p_int": 0.081
+  },
+  {
+   "name": "Andre Cisco",
+   "pos": "DB",
+   "group": "DB",
+   "team": "NYJ",
+   "opp": "CLE",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 1.292,
+   "p10": 0.1,
+   "p90": 2.84,
+   "mu_fp": 6.4,
+   "risk": "mittel",
+   "flags": "Rolle↓",
+   "p_int": 0.062
   },
   {
    "name": "Jevon Holland",
@@ -4975,6 +4992,22 @@
    "p_int": 0.0
   },
   {
+   "name": "Mike Sainristil",
+   "pos": "DB",
+   "group": "DB",
+   "team": "WAS",
+   "opp": "NYG",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 1.263,
+   "p10": 0.06,
+   "p90": 2.85,
+   "mu_fp": 6.2,
+   "risk": "mittel",
+   "flags": "Rolle↓",
+   "p_int": 0.123
+  },
+  {
    "name": "Xavier McKinney",
    "pos": "DB",
    "group": "DB",
@@ -5197,22 +5230,6 @@
    "risk": "mittel",
    "flags": "",
    "p_int": 0.105
-  },
-  {
-   "name": "Chuck Clark",
-   "pos": "DB",
-   "group": "DB",
-   "team": "DET",
-   "opp": "ARI",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 1.241,
-   "p10": 0.09,
-   "p90": 2.73,
-   "mu_fp": 6.2,
-   "risk": "mittel",
-   "flags": "",
-   "p_int": 0.099
   },
   {
    "name": "Denzel Ward",
@@ -5439,22 +5456,6 @@
    "p_int": 0.0
   },
   {
-   "name": "Mike Sainristil",
-   "pos": "DB",
-   "group": "DB",
-   "team": "WAS",
-   "opp": "NYG",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 1.228,
-   "p10": 0.05,
-   "p90": 2.8,
-   "mu_fp": 6.0,
-   "risk": "mittel",
-   "flags": "Rolle↓",
-   "p_int": 0.123
-  },
-  {
    "name": "Dane Belton",
    "pos": "DB",
    "group": "DB",
@@ -5471,6 +5472,22 @@
    "p_int": 0.072
   },
   {
+   "name": "Roger McCreary",
+   "pos": "DB",
+   "group": "DB",
+   "team": "DET",
+   "opp": "ARI",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 1.224,
+   "p10": 0.07,
+   "p90": 2.69,
+   "mu_fp": 6.1,
+   "risk": "mittel",
+   "flags": "",
+   "p_int": 0.083
+  },
+  {
    "name": "Ladd McConkey",
    "pos": "WR",
    "group": "WR",
@@ -5485,22 +5502,6 @@
    "risk": "mittel",
    "flags": "Questionable (Foot); Rolle↓",
    "p_int": 0.0
-  },
-  {
-   "name": "Andre Cisco",
-   "pos": "DB",
-   "group": "DB",
-   "team": "NYJ",
-   "opp": "CLE",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 1.224,
-   "p10": 0.07,
-   "p90": 2.71,
-   "mu_fp": 6.1,
-   "risk": "mittel",
-   "flags": "Rolle↓",
-   "p_int": 0.062
   },
   {
    "name": "Gabe Jacas",
@@ -5581,6 +5582,22 @@
    "risk": "mittel",
    "flags": "",
    "p_int": 0.066
+  },
+  {
+   "name": "Xavier Woods",
+   "pos": "DB",
+   "group": "DB",
+   "team": "CHI",
+   "opp": "GB",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 1.218,
+   "p10": 0.05,
+   "p90": 2.77,
+   "mu_fp": 5.9,
+   "risk": "mittel",
+   "flags": "",
+   "p_int": 0.091
   },
   {
    "name": "Daiyan Henley",
@@ -5855,6 +5872,22 @@
    "p_int": 0.07
   },
   {
+   "name": "Chuck Clark",
+   "pos": "DB",
+   "group": "DB",
+   "team": "DET",
+   "opp": "ARI",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 1.193,
+   "p10": 0.07,
+   "p90": 2.64,
+   "mu_fp": 6.0,
+   "risk": "mittel",
+   "flags": "",
+   "p_int": 0.099
+  },
+  {
    "name": "Ronnie Hickman Jr.",
    "pos": "DB",
    "group": "DB",
@@ -5967,22 +6000,6 @@
    "p_int": 0.021
   },
   {
-   "name": "Roger McCreary",
-   "pos": "DB",
-   "group": "DB",
-   "team": "DET",
-   "opp": "ARI",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 1.186,
-   "p10": 0.05,
-   "p90": 2.62,
-   "mu_fp": 5.9,
-   "risk": "mittel",
-   "flags": "",
-   "p_int": 0.083
-  },
-  {
    "name": "Jason Marshall Jr.",
    "pos": "DB",
    "group": "DB",
@@ -5997,22 +6014,6 @@
    "risk": "mittel",
    "flags": "",
    "p_int": 0.088
-  },
-  {
-   "name": "Xavier Woods",
-   "pos": "DB",
-   "group": "DB",
-   "team": "CHI",
-   "opp": "GB",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 1.182,
-   "p10": 0.04,
-   "p90": 2.72,
-   "mu_fp": 5.8,
-   "risk": "mittel",
-   "flags": "",
-   "p_int": 0.091
   },
   {
    "name": "Budda Baker",
@@ -6623,6 +6624,22 @@
    "p_int": 0.103
   },
   {
+   "name": "Jake Hansen",
+   "pos": "LB",
+   "group": "LB",
+   "team": "HOU",
+   "opp": "TEN",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 1.125,
+   "p10": 0.01,
+   "p90": 2.47,
+   "mu_fp": 5.6,
+   "risk": "mittel",
+   "flags": "",
+   "p_int": 0.02
+  },
+  {
    "name": "Darnell Washington",
    "pos": "TE",
    "group": "TE",
@@ -6701,6 +6718,22 @@
    "risk": "mittel",
    "flags": "",
    "p_int": 0.0
+  },
+  {
+   "name": "Marlon Humphrey",
+   "pos": "DB",
+   "group": "DB",
+   "team": "BAL",
+   "opp": "ATL",
+   "boost": 2.0,
+   "boost_src": "Pool",
+   "er": 1.117,
+   "p10": 0.0,
+   "p90": 2.94,
+   "mu_fp": 7.4,
+   "risk": "hoch",
+   "flags": "Questionable (Hamstring); Rolle↓",
+   "p_int": 0.147
   },
   {
    "name": "Myles Harden",
@@ -6845,22 +6878,6 @@
    "risk": "mittel",
    "flags": "",
    "p_int": 0.043
-  },
-  {
-   "name": "Jake Hansen",
-   "pos": "LB",
-   "group": "LB",
-   "team": "HOU",
-   "opp": "TEN",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 1.099,
-   "p10": 0.0,
-   "p90": 2.42,
-   "mu_fp": 5.5,
-   "risk": "mittel",
-   "flags": "",
-   "p_int": 0.02
   },
   {
    "name": "Michael Mayer",
@@ -7231,22 +7248,6 @@
    "p_int": 0.0
   },
   {
-   "name": "Marlon Humphrey",
-   "pos": "DB",
-   "group": "DB",
-   "team": "BAL",
-   "opp": "ATL",
-   "boost": 2.0,
-   "boost_src": "Pool",
-   "er": 1.056,
-   "p10": 0.0,
-   "p90": 2.82,
-   "mu_fp": 7.0,
-   "risk": "hoch",
-   "flags": "Questionable (Hamstring); Rolle↓",
-   "p_int": 0.147
-  },
-  {
    "name": "Kevin Winston Jr.",
    "pos": "DB",
    "group": "DB",
@@ -7542,7 +7543,7 @@
    "opp": "DET",
    "boost": 0.0,
    "boost_src": "fehlt (0.0 angenommen)",
-   "er": 1.001,
+   "er": 1.002,
    "p10": 0.02,
    "p90": 2.15,
    "mu_fp": 5.0,
@@ -7679,6 +7680,22 @@
    "p_int": 0.05
   },
   {
+   "name": "Nehemiah Pritchett",
+   "pos": "DB",
+   "group": "DB",
+   "team": "SEA",
+   "opp": "SF",
+   "boost": 2.4,
+   "boost_src": "Pool",
+   "er": 0.986,
+   "p10": 0.0,
+   "p90": 2.33,
+   "mu_fp": 4.8,
+   "risk": "mittel",
+   "flags": "Rolle↓",
+   "p_int": 0.094
+  },
+  {
    "name": "Cordale Flott",
    "pos": "DB",
    "group": "DB",
@@ -7725,22 +7742,6 @@
    "risk": "mittel",
    "flags": "",
    "p_int": 0.022
-  },
-  {
-   "name": "Nehemiah Pritchett",
-   "pos": "DB",
-   "group": "DB",
-   "team": "SEA",
-   "opp": "SF",
-   "boost": 2.4,
-   "boost_src": "Pool",
-   "er": 0.978,
-   "p10": 0.0,
-   "p90": 2.31,
-   "mu_fp": 4.8,
-   "risk": "mittel",
-   "flags": "Rolle↓",
-   "p_int": 0.094
   },
   {
    "name": "Jauan Jennings",
@@ -7919,6 +7920,22 @@
    "p_int": 0.143
   },
   {
+   "name": "Charvarius Ward",
+   "pos": "DB",
+   "group": "DB",
+   "team": "IND",
+   "opp": "PIT",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 0.935,
+   "p10": 0.0,
+   "p90": 2.41,
+   "mu_fp": 6.3,
+   "risk": "hoch",
+   "flags": "Questionable (Not injury related - resting player)",
+   "p_int": 0.061
+  },
+  {
    "name": "Isaiah Oliver",
    "pos": "DB",
    "group": "DB",
@@ -7999,22 +8016,6 @@
    "p_int": 0.003
   },
   {
-   "name": "Jalen Ramsey",
-   "pos": "DB",
-   "group": "DB",
-   "team": "PIT",
-   "opp": "IND",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 0.925,
-   "p10": 0.0,
-   "p90": 2.42,
-   "mu_fp": 6.2,
-   "risk": "hoch",
-   "flags": "Questionable (Wrist)",
-   "p_int": 0.076
-  },
-  {
    "name": "Oronde Gadsden II",
    "pos": "TE",
    "group": "TE",
@@ -8063,6 +8064,22 @@
    "p_int": 0.0
   },
   {
+   "name": "Bryan Cook",
+   "pos": "DB",
+   "group": "DB",
+   "team": "CIN",
+   "opp": "MIA",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 0.919,
+   "p10": 0.0,
+   "p90": 2.37,
+   "mu_fp": 6.2,
+   "risk": "hoch",
+   "flags": "Questionable (Ankle); Rolle↓",
+   "p_int": 0.053
+  },
+  {
    "name": "Kindle Vildor",
    "pos": "DB",
    "group": "DB",
@@ -8095,20 +8112,20 @@
    "p_int": 0.0
   },
   {
-   "name": "Charvarius Ward",
+   "name": "Jalen Ramsey",
    "pos": "DB",
    "group": "DB",
-   "team": "IND",
-   "opp": "PIT",
+   "team": "PIT",
+   "opp": "IND",
    "boost": 0.0,
    "boost_src": "fehlt (0.0 angenommen)",
    "er": 0.914,
    "p10": 0.0,
-   "p90": 2.36,
-   "mu_fp": 6.2,
+   "p90": 2.4,
+   "mu_fp": 6.1,
    "risk": "hoch",
-   "flags": "Questionable (Not injury related - resting player)",
-   "p_int": 0.061
+   "flags": "Questionable (Wrist)",
+   "p_int": 0.076
   },
   {
    "name": "Mike Washington Jr.",
@@ -8317,22 +8334,6 @@
    "risk": "hoch",
    "flags": "",
    "p_int": 0.003
-  },
-  {
-   "name": "Bryan Cook",
-   "pos": "DB",
-   "group": "DB",
-   "team": "CIN",
-   "opp": "MIA",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 0.882,
-   "p10": 0.0,
-   "p90": 2.28,
-   "mu_fp": 5.9,
-   "risk": "hoch",
-   "flags": "Questionable (Ankle); Rolle↓",
-   "p_int": 0.053
   },
   {
    "name": "Jonathan Allen",
@@ -8671,6 +8672,22 @@
    "p_int": 0.0
   },
   {
+   "name": "Dre'Mont Jones",
+   "pos": "LB",
+   "group": "LB",
+   "team": "NE",
+   "opp": "LV",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 0.828,
+   "p10": 0.0,
+   "p90": 2.24,
+   "mu_fp": 5.5,
+   "risk": "hoch",
+   "flags": "Questionable (Shoulder)",
+   "p_int": 0.028
+  },
+  {
    "name": "DJ Giddens",
    "pos": "RB",
    "group": "RB",
@@ -8925,22 +8942,6 @@
    "risk": "hoch",
    "flags": "",
    "p_int": 0.005
-  },
-  {
-   "name": "Dre'Mont Jones",
-   "pos": "LB",
-   "group": "LB",
-   "team": "NE",
-   "opp": "LV",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 0.792,
-   "p10": 0.0,
-   "p90": 2.15,
-   "mu_fp": 5.2,
-   "risk": "hoch",
-   "flags": "Questionable (Shoulder)",
-   "p_int": 0.028
   },
   {
    "name": "Dayo Odeyingbo",
@@ -9871,6 +9872,22 @@
    "p_int": 0.005
   },
   {
+   "name": "Laquon Treadwell",
+   "pos": "WR",
+   "group": "WR",
+   "team": "IND",
+   "opp": "PIT",
+   "boost": 0.0,
+   "boost_src": "fehlt (0.0 angenommen)",
+   "er": 0.65,
+   "p10": 0.0,
+   "p90": 1.41,
+   "mu_fp": 1.6,
+   "risk": "hoch",
+   "flags": "",
+   "p_int": 0.0
+  },
+  {
    "name": "Jonnu Smith",
    "pos": "TE",
    "group": "TE",
@@ -10141,22 +10158,6 @@
    "risk": "hoch",
    "flags": "",
    "p_int": 0.004
-  },
-  {
-   "name": "Laquon Treadwell",
-   "pos": "WR",
-   "group": "WR",
-   "team": "IND",
-   "opp": "PIT",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 0.624,
-   "p10": 0.0,
-   "p90": 1.36,
-   "mu_fp": 1.5,
-   "risk": "hoch",
-   "flags": "",
-   "p_int": 0.0
   },
   {
    "name": "Kevin Jobity Jr.",
@@ -17497,7 +17498,7 @@
    "er": 0.0,
    "p10": 0.0,
    "p90": 0.0,
-   "mu_fp": 5.6,
+   "mu_fp": 5.8,
    "risk": "hoch",
    "flags": "Out (Hamstring); Rolle↓",
    "p_int": 0.054
@@ -17657,7 +17658,7 @@
    "er": 0.0,
    "p10": 0.0,
    "p90": 0.0,
-   "mu_fp": 6.7,
+   "mu_fp": 6.9,
    "risk": "hoch",
    "flags": "Out (Ankle); Rolle↓",
    "p_int": 0.129
@@ -17705,7 +17706,7 @@
    "er": 0.0,
    "p10": 0.0,
    "p90": 0.0,
-   "mu_fp": 5.4,
+   "mu_fp": 5.8,
    "risk": "hoch",
    "flags": "Out (Knee); Rolle↓",
    "p_int": 0.075
@@ -18329,7 +18330,7 @@
    "er": 0.0,
    "p10": 0.0,
    "p90": 0.0,
-   "mu_fp": 6.7,
+   "mu_fp": 6.8,
    "risk": "hoch",
    "flags": "Out (Ankle); Rolle↓",
    "p_int": 0.092
@@ -18535,9 +18536,9 @@
    "boost": 0.0,
    "boost_src": "fehlt (0.0 angenommen)",
    "er": 0.0,
-   "p10": 0.12,
-   "p90": 2.66,
-   "mu_fp": 6.4,
+   "p10": 0.14,
+   "p90": 2.72,
+   "mu_fp": 6.6,
    "risk": "mittel",
    "flags": "Rolle↓",
    "p_int": 0.045
@@ -18759,9 +18760,9 @@
    "boost": 0.0,
    "boost_src": "fehlt (0.0 angenommen)",
    "er": 0.0,
-   "p10": 0.13,
-   "p90": 2.9,
-   "mu_fp": 7.1,
+   "p10": 0.14,
+   "p90": 2.94,
+   "mu_fp": 7.2,
    "risk": "mittel",
    "flags": "",
    "p_int": 0.117

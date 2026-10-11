@@ -286,6 +286,11 @@ Dateiformate:
   `MATCHUP_EXP` WR 0.3. Manuelle Korrekturen nur für News (Verletzung, Rolle, QB-Wechsel), nicht für Matchups.
   Bilanz der Abweichungen vom Modell bei Gleichstand: Queen statt Szmyt −8, Lamb statt Javonte −5.8,
   Nacua statt Mevis (User) +9, Chase statt Little (User) −13.
+- 2026-10-11: Spiele mit frühem Ausscheiden (Snaps < 50 % der üblichen, z. B. Chase W4 20 %) zählen nicht mehr
+  zur Form (`_baseline`). Offene Frage: Matchup-Faktor und Team-Total (Vegas) zählen die gegnerische Defense
+  womöglich doppelt (Brissett: Matchup 1.15 × Team-Total 1.12). Per Backtest prüfen, ob Matchup bei gegebenem
+  Team-Total noch etwas erklärt. Bei Gleichstand zwischen Spielen mit verschiedenen Kickoffs den später
+  beginnenden Spieler nehmen (länger tauschbar, mehr Infos).
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).

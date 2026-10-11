@@ -84,6 +84,11 @@ def _baseline(hist: pd.DataFrame, group: str, pos_rank) -> tuple[float, float, i
         return b
 
     cur = hist[hist["season"] == config.SEASON]
+    # Früh verletzt raus (Snaps < 50 % der üblichen): sagt nichts über die Form (Chase W4: 20 % Snaps)
+    if "snap_pct" in cur and cur["snap_pct"].notna().sum() >= 3:
+        typical = cur["snap_pct"].median()
+        if typical >= 0.6:
+            cur = cur[~(cur["snap_pct"] < 0.5 * typical)]
     prev = hist[hist["season"] == config.PRIOR_SEASON]
     defaults = config.DEFAULT_PRIOR[group]
     rank = int(pos_rank) if pd.notna(pos_rank) else len(defaults) + 1
