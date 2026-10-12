@@ -531,3 +531,63 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-11,00-0041509,Arvell Reese,NYG,WAS,LB,1.200,Pool,8.724,1.714,0.166,3.742,0.990,
 2026-10-11,00-0041522,Jacob Rodriguez,MIA,CIN,LB,1.600,Pool,7.570,1.469,0.098,3.201,0.990,
 2026-10-11,00-0041569,Gabe Jacas,NE,LV,LB,1.500,Pool,5.999,1.220,0.010,2.831,0.990,Rolle↓
+2026-10-12,00-0026498,Matthew Stafford,LA,BUF,QB,0.000,fehlt (0.0 angenommen),19.776,3.712,1.217,6.466,0.990,
+2026-10-12,00-0031381,Davante Adams,LA,BUF,WR,0.000,fehlt (0.0 angenommen),10.851,3.028,0.608,6.113,0.990,
+2026-10-12,00-0031388,Aaron Donald,LA,BUF,DL,0.000,fehlt (0.0 angenommen),2.424,0.626,0.000,1.529,0.990,
+2026-10-12,00-0033110,Tyler Higbee,LA,BUF,TE,0.000,fehlt (0.0 angenommen),3.891,1.084,0.011,2.259,0.990,
+2026-10-12,00-0034234,Poona Ford,LA,BUF,DL,0.000,fehlt (0.0 angenommen),2.165,0.578,0.000,1.421,0.990,
+2026-10-12,00-0034577,Kyle Allen,BUF,LA,QB,0.000,0 (noch kein Saisonspiel),3.699,0.672,0.000,1.554,0.990,keine Spiele 2026
+2026-10-12,00-0034827,DJ Moore,BUF,LA,WR,0.000,fehlt (0.0 angenommen),6.133,1.352,0.000,3.177,0.750,Questionable (Shoulder); Rolle↓
+2026-10-12,00-0034832,Bradley Chubb,BUF,LA,LB,0.000,fehlt (0.0 angenommen),4.896,1.063,0.000,2.420,0.990,
+2026-10-12,00-0034857,Josh Allen,BUF,LA,QB,0.000,fehlt (0.0 angenommen),18.117,3.404,1.116,5.947,0.990,
+2026-10-12,00-0035253,C.J. Gardner-Johnson,BUF,LA,DB,0.000,fehlt (0.0 angenommen),7.466,1.522,0.097,3.285,0.990,
+2026-10-12,00-0035500,Greg Dortch,BUF,LA,WR,0.000,fehlt (0.0 angenommen),1.591,0.665,0.000,1.444,0.990,
+2026-10-12,00-0035537,Ty Johnson,BUF,LA,RB,0.000,fehlt (0.0 angenommen),3.070,1.144,0.000,2.239,0.990,
+2026-10-12,00-0035667,Greg Gaines,BUF,LA,DL,0.000,fehlt (0.0 angenommen),2.490,0.642,0.000,1.572,0.990,
+2026-10-12,00-0035689,Dawson Knox,BUF,LA,TE,0.000,fehlt (0.0 angenommen),2.085,0.685,0.000,1.466,0.990,
+2026-10-12,00-0036162,Tyler Bass,BUF,LA,K,0.000,fehlt (0.0 angenommen),6.212,2.052,0.494,3.885,0.990,
+2026-10-12,00-0036244,Colby Parkinson,LA,BUF,TE,0.000,fehlt (0.0 angenommen),3.546,0.999,0.003,2.090,0.990,Rolle↓
+2026-10-12,00-0036349,Kam Curl,LA,BUF,DB,0.000,fehlt (0.0 angenommen),6.323,1.333,0.029,2.828,0.990,
+2026-10-12,00-0036849,Tutu Atwell,LA,BUF,WR,0.000,fehlt (0.0 angenommen),1.722,0.713,0.000,1.483,0.990,Rolle↓
+2026-10-12,00-0036888,Damar Hamlin,BUF,LA,DB,0.000,fehlt (0.0 angenommen),1.509,0.487,0.000,1.372,0.990,
+2026-10-12,00-0036914,Greg Rousseau,BUF,LA,LB,0.000,fehlt (0.0 angenommen),6.820,1.437,0.061,3.046,0.990,
+2026-10-12,00-0037034,Dee Alford,BUF,LA,DB,0.000,fehlt (0.0 angenommen),8.791,1.333,0.000,3.414,0.750,Questionable (Ankle); Rolle↓
+2026-10-12,00-0037191,Trent McDuffie,LA,BUF,DB,0.000,fehlt (0.0 angenommen),6.791,1.422,0.081,3.090,0.990,
+2026-10-12,00-0037195,Jaylen Watson,LA,BUF,DB,0.000,fehlt (0.0 angenommen),6.061,1.261,0.000,2.709,0.990,Rolle↓
+2026-10-12,00-0037248,James Cook,BUF,LA,RB,0.000,fehlt (0.0 angenommen),11.934,3.155,0.825,6.053,0.990,Rolle↓
+2026-10-12,00-0037254,Terrel Bernard,BUF,LA,LB,0.000,fehlt (0.0 angenommen),6.178,1.294,0.000,2.931,0.990,
+2026-10-12,00-0037261,Khalil Shakir,BUF,LA,WR,0.000,fehlt (0.0 angenommen),5.014,1.490,0.197,2.968,0.990,
+2026-10-12,00-0037288,Christian Benford,BUF,LA,DB,0.000,fehlt (0.0 angenommen),7.309,1.518,0.094,3.190,0.990,
+2026-10-12,00-0037587,Nate Landman,LA,BUF,LB,0.000,fehlt (0.0 angenommen),6.655,1.402,0.011,3.004,0.990,
+2026-10-12,00-0037840,Kyren Williams,LA,BUF,RB,0.000,fehlt (0.0 angenommen),18.060,4.620,1.332,8.775,0.990,
+2026-10-12,00-0037841,Quentin Lake,LA,BUF,DB,0.000,fehlt (0.0 angenommen),7.312,1.149,0.000,2.882,0.750,Questionable (Hip)
+2026-10-12,00-0038557,Dorian Williams,BUF,LA,LB,0.000,fehlt (0.0 angenommen),5.033,1.089,0.000,2.384,0.990,
+2026-10-12,00-0038933,Dalton Kincaid,BUF,LA,TE,0.000,fehlt (0.0 angenommen),4.969,1.334,0.097,2.776,0.990,Rolle↓
+2026-10-12,00-0039059,Ethan Evans,LA,BUF,P,0.000,fehlt (0.0 angenommen),15.657,1.212,0.497,2.069,0.990,
+2026-10-12,00-0039074,Davis Allen,LA,BUF,TE,0.000,fehlt (0.0 angenommen),1.215,0.513,0.000,1.163,0.990,
+2026-10-12,00-0039075,Puka Nacua,LA,BUF,WR,0.000,fehlt (0.0 angenommen),15.114,4.107,0.870,8.410,0.990,
+2026-10-12,00-0039137,Byron Young,LA,BUF,LB,0.000,fehlt (0.0 angenommen),7.032,1.458,0.043,3.077,0.990,
+2026-10-12,00-0039138,Kobie Turner,LA,BUF,DL,0.000,fehlt (0.0 angenommen),3.877,0.896,0.000,2.158,0.990,
+2026-10-12,00-0039151,Emmanuel Forbes,LA,BUF,DB,0.000,fehlt (0.0 angenommen),3.811,0.868,0.000,2.091,0.990,
+2026-10-12,00-0039498,Harrison Mevis,LA,BUF,K,0.000,fehlt (0.0 angenommen),7.711,2.556,0.638,4.863,0.990,
+2026-10-12,00-0039738,Blake Corum,LA,BUF,RB,0.000,fehlt (0.0 angenommen),6.436,1.939,0.393,3.661,0.990,Rolle↓
+2026-10-12,00-0039749,Tyler Davis,LA,BUF,DL,0.000,fehlt (0.0 angenommen),1.638,0.485,0.000,1.204,0.990,
+2026-10-12,00-0039751,Jordan Whittington,LA,BUF,WR,0.000,fehlt (0.0 angenommen),1.065,0.560,0.000,1.255,0.990,
+2026-10-12,00-0039772,Josh Wallace,LA,BUF,DB,0.000,fehlt (0.0 angenommen),6.080,1.276,0.000,2.869,0.990,
+2026-10-12,00-0039774,Omar Speights,LA,BUF,LB,0.000,fehlt (0.0 angenommen),4.581,1.008,0.000,2.242,0.990,Rolle↓
+2026-10-12,00-0039776,Jaylen McCollough,LA,BUF,DB,0.000,fehlt (0.0 angenommen),2.187,0.575,0.000,1.354,0.990,Rolle↓
+2026-10-12,00-0039834,Kamren Kinchens,LA,BUF,DB,0.000,fehlt (0.0 angenommen),6.256,1.307,0.000,2.848,0.990,
+2026-10-12,00-0039872,Cole Bishop,BUF,LA,DB,0.000,fehlt (0.0 angenommen),6.798,1.401,0.033,3.036,0.990,
+2026-10-12,00-0039873,DeWayne Carter,BUF,LA,DL,0.000,fehlt (0.0 angenommen),1.823,0.522,0.000,1.291,0.990,
+2026-10-12,00-0039875,Ray Davis,BUF,LA,RB,0.000,fehlt (0.0 angenommen),1.676,0.849,0.000,1.768,0.990,
+2026-10-12,00-0039901,Keon Coleman,BUF,LA,WR,0.000,fehlt (0.0 angenommen),5.363,1.580,0.209,3.170,0.990,
+2026-10-12,00-0040580,Josaiah Stewart,LA,BUF,LB,0.000,fehlt (0.0 angenommen),4.514,1.007,0.000,2.213,0.990,
+2026-10-12,00-0040590,Konata Mumpfield,LA,BUF,WR,0.000,fehlt (0.0 angenommen),3.123,1.054,0.029,2.109,0.990,Rolle↓
+2026-10-12,00-0040613,Shaun Dolac,LA,BUF,LB,0.000,fehlt (0.0 angenommen),1.616,0.512,0.000,1.245,0.990,
+2026-10-12,00-0040709,Maxwell Hairston,BUF,LA,DB,0.000,fehlt (0.0 angenommen),6.213,1.319,0.000,2.948,0.990,
+2026-10-12,00-0040710,Deone Walker,BUF,LA,DL,0.000,fehlt (0.0 angenommen),4.688,1.030,0.000,2.423,0.990,
+2026-10-12,00-0041086,Jalon Kilgore,BUF,LA,DB,0.000,0 (noch kein Saisonspiel),1.816,0.543,0.000,1.736,0.990,keine Spiele 2026
+2026-10-12,00-0041126,Tommy Doman Jr.,BUF,LA,P,0.000,fehlt (0.0 angenommen),18.772,1.453,0.586,2.452,0.990,
+2026-10-12,00-0041391,Davison Igbinosun,BUF,LA,DB,0.000,fehlt (0.0 angenommen),6.220,1.297,0.014,2.800,0.990,
+2026-10-12,00-0041404,Wesley Bailey,LA,BUF,LB,0.000,fehlt (0.0 angenommen),1.932,0.553,0.000,1.362,0.990,
+2026-10-12,00-0041415,Dean Connors,LA,BUF,RB,0.000,fehlt (0.0 angenommen),0.458,0.612,0.000,1.437,0.990,
