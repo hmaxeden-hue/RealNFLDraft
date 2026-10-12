@@ -295,6 +295,12 @@ Dateiformate:
   ersten Spiel nach ≥ 2 verpassten Team-Spielen: FP/Projektion 0.62 (QB 0.47), bei voller Rolle 0.89 (QB 0.81);
   Rückkehrer haben doppelt so oft < 70 % Snaps (55 % vs. 29 %). Jetzt `RETURN_FACTOR` 0.85 automatisch
   (Flag "Rückkehr nach N verpassten Spielen"). Daniels fiel dadurch aus dem Lineup (E 3.5 → 2.9).
+- 2026-10-11 (Sonntag, 13 Spiele): **63.6 Punkte, Rang 1'445/19.6k (Top 7 %)**, bestes Ergebnis bisher. Maye (+1.8)
+  7.5, Boswell 4.0, Brissett 3.7, Chase (User-Pick statt Folk) 3.5, McBride 2.6. Gibbs statt Brissett hätte 71.1
+  gebracht (8.9 Rating), Folk statt Chase +3.6, Daniels (5.6) wäre trotz Rückkehr stark gewesen → Rückkehr-Faktor
+  0.85 vorerst behalten (1 Fall), weiter beobachten. Brissett/Gibbs war im Modell ein Gleichstand; die
+  Matchup-Doppelzählung (Team-Total + Matchup) bleibt der Kandidat für den nächsten Backtest. Ratings bis 3.0
+  erfasst (90), Rest des 63-Seiten-PDFs nicht; bei grossen Slates lieber K/P gefiltert nachfragen.
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).
