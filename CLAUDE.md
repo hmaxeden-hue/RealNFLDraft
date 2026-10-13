@@ -301,6 +301,12 @@ Dateiformate:
   0.85 vorerst behalten (1 Fall), weiter beobachten. Brissett/Gibbs war im Modell ein Gleichstand; die
   Matchup-Doppelzählung (Team-Total + Matchup) bleibt der Kandidat für den nächsten Backtest. Ratings bis 3.0
   erfasst (90), Rest des 63-Seiten-PDFs nicht; bei grossen Slates lieber K/P gefiltert nachfragen.
+- 2026-10-12 (MNF BUF @ LA, 37:34 OT): 33.8 Punkte, Rang 13'426/17k. Nacua 6.2 und Stafford 6.1 wie erhofft,
+  aber **Mevis −0.8** (FG 50 Yds verschossen + FG 48 Yds geblockt, 4 XP; die App zeigt den Block nicht als
+  Versuch, Real bestraft ihn trotzdem) und Gardner-Johnson 0.8 (User-Tausch statt Corum 3.5, −8.9 Punkte).
+  Mit dem Modell-Lineup 42.6. Real-K bestätigt (51 Kicker-Ratings, MAE 0.25, FG-Fehlschuss ≈ −0.94).
+  **Kicker-Ratings können negativ werden**; das Modell kappt bei 0 und unterschätzt damit das Kicker-Risiko leicht.
+  Ein Einzelspiel lebt stark vom Spielverlauf: BUF gewann als Underdog in OT, Bass (+0.9) holte 5.3.
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).
