@@ -310,3 +310,8 @@ Dateiformate:
 - **Spielerseiten-Ratings sind Gold:** Für die Top-Kandidaten eines Drafts den User um Screenshots der
   Spielerseite bitten ("Recent performances" = echte Real-Ratings pro Spiel) und mit `result <spieldatum> --ratings`
   erfassen. Sie zeigen Trends, die die Stats verstecken (Concepcion 1.3 → 0.7 → 0.3 trotz hoher Nutzung).
+- 2026-10-15 (TNF SEA @ DEN): **Form ist nicht gegner-bereinigt.** User-Einwand zu Bonitto: 2 Sacks kamen gegen
+  die schwache Chargers-OL. Test: ohne das Spiel E 1.54 → 1.36, Lineup 36.9 → 36.1, also hinter Singleton/Strnad
+  (36.5). Bonittos ganzer Vorsprung kam aus einem Spiel gegen einen schwachen Gegner → Singleton (+2.9, jedes Spiel
+  ≥ 5 FP) genommen. Idee: einzelne Ausreisser-Spiele gegen Bottom-5-Gegner in der Form abwerten (Backtest).
+  JSN (Boost 0, E 3.46, kein Rückkehr-Abzug) bräuchte auf Slot 1 E ≈ 4.1, um sich zu lohnen (−1.2 E).
