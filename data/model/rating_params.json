@@ -3,92 +3,92 @@
  "closeness_coef": 0.05,
  "groups": {
   "QB": {
-   "slope": 0.1931,
-   "offset": 0.135,
-   "noise": 0.637,
-   "n_obs": 52,
+   "slope": 0.1932,
+   "offset": 0.147,
+   "noise": 0.626,
+   "n_obs": 54,
    "fit_raw": [
-    0.1844,
-    -1.228
+    0.1848,
+    -1.165
    ]
   },
   "RB": {
-   "slope": 0.2352,
-   "offset": -1.674,
-   "noise": 0.673,
-   "n_obs": 98,
+   "slope": 0.2388,
+   "offset": -1.312,
+   "noise": 0.666,
+   "n_obs": 104,
    "fit_raw": [
-    0.2356,
-    -1.811
+    0.2395,
+    -1.413
    ]
   },
   "WR": {
-   "slope": 0.2587,
-   "offset": -0.749,
-   "noise": 0.53,
-   "n_obs": 148,
+   "slope": 0.26,
+   "offset": -0.723,
+   "noise": 0.517,
+   "n_obs": 156,
    "fit_raw": [
-    0.2602,
-    -0.79
+    0.2615,
+    -0.76
    ]
   },
   "TE": {
-   "slope": 0.2361,
-   "offset": -0.625,
-   "noise": 0.462,
-   "n_obs": 74,
+   "slope": 0.237,
+   "offset": -0.582,
+   "noise": 0.45,
+   "n_obs": 77,
    "fit_raw": [
-    0.2367,
-    -0.692
+    0.2377,
+    -0.643
    ]
   },
   "K": {
-   "slope": 0.3363,
-   "offset": -0.051,
-   "noise": 0.427,
-   "n_obs": 55,
+   "slope": 0.3333,
+   "offset": -0.215,
+   "noise": 0.457,
+   "n_obs": 57,
    "fit_raw": [
-    0.3372,
-    -0.059
+    0.3338,
+    -0.245
    ]
   },
   "P": {
-   "slope": 0.0749,
-   "offset": -0.75,
-   "noise": 0.123,
-   "n_obs": 42,
+   "slope": 0.076,
+   "offset": -0.479,
+   "noise": 0.122,
+   "n_obs": 44,
    "fit_raw": [
-    0.0743,
-    -0.893
+    0.0756,
+    -0.566
    ]
   },
   "DL": {
-   "slope": 0.1945,
-   "offset": -0.288,
-   "noise": 0.487,
-   "n_obs": 512,
+   "slope": 0.1952,
+   "offset": -0.289,
+   "noise": 0.478,
+   "n_obs": 546,
    "fit_raw": [
-    0.1946,
+    0.1952,
     -0.293
    ]
   },
   "LB": {
-   "slope": 0.1945,
-   "offset": -0.288,
-   "noise": 0.487,
-   "n_obs": 512,
+   "slope": 0.1952,
+   "offset": -0.289,
+   "noise": 0.478,
+   "n_obs": 546,
    "fit_raw": [
-    0.1946,
+    0.1952,
     -0.293
    ]
   },
   "DB": {
-   "slope": 0.1945,
-   "offset": -0.288,
-   "noise": 0.487,
-   "n_obs": 512,
+   "slope": 0.1952,
+   "offset": -0.289,
+   "noise": 0.478,
+   "n_obs": 546,
    "fit_raw": [
-    0.1946,
+    0.1952,
     -0.293
    ]
   }
@@ -111,8 +111,8 @@
    "rejected": "2026-09-28: 10 echte Defense-Ratings + 25 Obergrenzen passen zu Steigung ~0.33, nicht 0.15"
   }
  ],
- "updated": "2026-10-13",
+ "updated": "2026-10-16",
  "win_coef": 0.009,
- "n_ratings": 557,
- "n_censored": 1702
+ "n_ratings": 611,
+ "n_censored": 1718
 }

@@ -315,3 +315,13 @@ Dateiformate:
   (36.5). Bonittos ganzer Vorsprung kam aus einem Spiel gegen einen schwachen Gegner → Singleton (+2.9, jedes Spiel
   ≥ 5 FP) genommen. Idee: einzelne Ausreisser-Spiele gegen Bottom-5-Gegner in der Form abwerten (Backtest).
   JSN (Boost 0, E 3.46, kein Rückkehr-Abzug) bräuchte auf Slot 1 E ≈ 4.1, um sich zu lohnen (−1.2 E).
+- 2026-10-15 Ergebnis: **30.85 Punkte, Rang 5'974/16.5k (Top 36 %)**. DEN gewann 17:14 in OT, die DEN-Defense
+  dominierte. Bonitto (vom Modell gewählt, von uns gegen Singleton getauscht) holte 2.9 statt Singletons 1.2:
+  Modell-Lineup 38.5 (**−7.6 durch den Tausch**). Bilanz manueller Abweichungen jetzt 1 von 6 positiv, Summe
+  −34.3 (Queen −8, Lamb −5.8, Nacua +9, Chase −13, Gardner-Johnson −8.9, Singleton −7.6) → bei Gleichstand
+  konsequent beim Modell bleiben (`draft.md` Schritt 6 verschärft). Hindsight-Optimum 84.0 (McMillian 5.1 mit INT,
+  Abrams-Draine 4.0 mit INT, Strnad 3.6 mit FR, Crawshaw 3.2, Bonitto). Treffer: Dickson 1.6 (E 1.63),
+  Dobbins 2.5 (2.22), Crawshaw 395 Yds → 3.2 (Formel 3.1). JSN 4.5 (E 3.46) hätte statt Bonitto nur 33.5 gebracht.
+  **Kicker-Clutch:** Lutz 3.7 für 1/1 FG + 2/2 XP; Real-K-Formel ≈ 2.2. Das 53-Yard-FG war der Siegtreffer in OT
+  (WPA +0.35) → Siegtreffer-Kicks bringen wohl ~+1.5 extra. Bonitto 2.9 bei nur 5.25 FP (Formel ≈ 1.1) und ohne
+  grosse WPA → Real bewertet Edge-Rusher teils über die Box-Stats hinaus (Pressures?), beobachten.
