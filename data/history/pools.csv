@@ -668,7 +668,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-18,00-0031136,Chris Boswell,PIT,TB,K,1.000,Pool,8.493,2.898,0.838,5.433,0.990,
 2026-10-18,00-0031203,Cairo Santos,CHI,ATL,K,0.400,Pool,7.627,2.580,0.685,4.895,0.990,
 2026-10-18,00-0031381,Davante Adams,LA,ARI,WR,0.300,Pool,12.284,3.141,0.660,6.477,0.990,
-2026-10-18,00-0031503,Jameis Winston,NYG,NO,QB,0.000,fehlt (0.0 angenommen),15.870,3.071,1.052,5.315,0.990,
+2026-10-18,00-0031503,Jameis Winston,NYG,NO,QB,0.600,Pool,15.870,3.071,1.052,5.315,0.990,
 2026-10-18,00-0032378,DeForest Buckner,IND,TEN,DL,1.700,Pool,7.913,1.662,0.000,3.958,0.990,
 2026-10-18,00-0032464,Kalif Raymond,CHI,ATL,WR,2.000,Pool,3.905,1.226,0.068,2.438,0.990,QB-Wechsel
 2026-10-18,00-0032726,Ka'imi Fairbairn,HOU,JAX,K,0.500,Pool,6.617,2.279,0.605,4.257,0.990,
@@ -683,6 +683,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-18,00-0033890,Budda Baker,ARI,LA,DB,1.500,Pool,7.686,1.129,0.000,2.849,0.750,Questionable (Not injury related - resting player)
 2026-10-18,00-0033921,Chris Godwin Jr.,TB,PIT,WR,3.000,Pool,3.463,1.115,0.015,2.244,0.990,Rolle↓; QB-Wechsel; QB1 Baker Mayfield fehlt (×0.85)
 2026-10-18,00-0033928,Jourdan Lewis,JAX,HOU,DB,2.600,Pool,5.523,1.188,0.000,2.772,0.990,
+2026-10-18,00-0034161,Daniel Carlson,NO,NYG,K,2.100,Pool,6.149,2.136,0.557,3.980,0.990,
 2026-10-18,00-0034275,Foley Fatukasi,LV,BUF,DL,3.000,Pool,1.587,0.455,0.000,1.126,0.990,
 2026-10-18,00-0034351,Dallas Goedert,PHI,CAR,TE,1.700,Pool,7.819,1.975,0.283,4.164,0.990,
 2026-10-18,00-0034357,Isaiah Oliver,TEN,IND,DB,3.000,Pool,5.488,1.140,0.000,2.488,0.990,
@@ -699,10 +700,10 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-18,00-0034981,Foster Moreau,HOU,JAX,TE,3.000,Pool,1.533,0.541,0.000,1.203,0.990,
 2026-10-18,00-0035133,Keisean Nixon,GB,DAL,DB,1.500,Pool,7.288,1.516,0.101,3.212,0.990,
 2026-10-18,00-0035190,AJ Cole,LV,BUF,P,2.500,Pool,16.385,1.234,0.466,2.128,0.990,
-2026-10-18,00-0035192,Joey Slye,TEN,IND,K,0.000,fehlt (0.0 angenommen),8.574,2.841,0.737,5.368,0.990,
+2026-10-18,00-0035192,Joey Slye,TEN,IND,K,2.000,Pool,8.574,2.841,0.737,5.368,0.990,
 2026-10-18,00-0035230,Ed Oliver,BUF,LV,DL,2.800,Pool,9.906,1.514,0.000,4.190,0.750,Questionable (Knee); Rolle↓
 2026-10-18,00-0035253,C.J. Gardner-Johnson,BUF,LV,DB,3.000,Pool,7.215,1.476,0.083,3.209,0.990,
-2026-10-18,00-0035261,Tony Pollard,TEN,IND,RB,0.000,fehlt (0.0 angenommen),10.000,2.639,0.637,4.998,0.990,Rolle↓; Pech -3.2 FP vs xFP
+2026-10-18,00-0035261,Tony Pollard,TEN,IND,RB,1.400,Pool,10.000,2.639,0.637,4.998,0.990,Rolle↓; Pech -3.2 FP vs xFP
 2026-10-18,00-0035269,Matt Gay,LV,BUF,K,0.500,Pool,7.189,2.364,0.622,4.408,0.990,
 2026-10-18,00-0035358,Chase McLaughlin,TB,PIT,K,0.600,Pool,7.232,2.467,0.677,4.615,0.990,QB1 Baker Mayfield fehlt (×0.92)
 2026-10-18,00-0035378,Andrew Wingard,ARI,LA,DB,2.200,Pool,7.318,0.000,0.000,0.000,0.000,Out (Knee); Rolle↓
@@ -711,8 +712,9 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-18,00-0035632,Amani Hooker,TEN,IND,DB,1.900,Pool,6.945,1.404,0.076,3.042,0.990,
 2026-10-18,00-0035644,Noah Fant,NO,NYG,TE,2.200,Pool,3.570,1.028,0.001,2.171,0.990,Rolle↓
 2026-10-18,00-0035669,Nick Scott,CAR,PHI,DB,3.000,Pool,5.719,1.211,0.001,2.642,0.990,
-2026-10-18,00-0035710,Daniel Jones,IND,TEN,QB,0.000,fehlt (0.0 angenommen),18.080,3.341,1.152,5.761,0.990,Pech -9.1 FP vs xFP
+2026-10-18,00-0035710,Daniel Jones,IND,TEN,QB,1.900,Pool,18.080,3.341,1.152,5.761,0.990,Pech -9.1 FP vs xFP
 2026-10-18,00-0035859,Blake Gillikin,ARI,LA,P,2.300,Pool,21.386,1.159,0.000,2.438,0.750,Questionable (Back)
+2026-10-18,00-0035993,Tyler Huntley,BAL,CLE,QB,0.800,Pool,10.877,2.047,0.518,3.714,0.990,QB-Wechsel; startet vermutlich für Lamar Jackson
 2026-10-18,00-0036040,Juwan Johnson,NO,NYG,TE,1.400,Pool,6.083,1.604,0.165,3.349,0.990,Rolle↓
 2026-10-18,00-0036162,Tyler Bass,BUF,LV,K,0.600,Pool,6.905,2.304,0.563,4.409,0.990,
 2026-10-18,00-0036212,Tua Tagovailoa,ATL,CHI,QB,0.000,fehlt (0.0 angenommen),12.790,2.465,0.717,4.389,0.990,QB-Wechsel
@@ -732,7 +734,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-18,00-0036554,Nico Collins,HOU,JAX,WR,0.300,Pool,10.369,2.889,0.566,5.936,0.990,Rolle↓
 2026-10-18,00-0036555,Chuba Hubbard,CAR,PHI,RB,0.100,Pool,10.352,2.814,0.646,5.351,0.990,
 2026-10-18,00-0036813,Christian Elliss,NE,NYJ,LB,3.000,Pool,5.569,0.892,0.000,2.279,0.750,Questionable (Chest)
-2026-10-18,00-0036875,Rhamondre Stevenson,NE,NYJ,RB,0.000,fehlt (0.0 angenommen),11.961,3.039,0.733,5.847,0.990,
+2026-10-18,00-0036875,Rhamondre Stevenson,NE,NYJ,RB,0.900,Pool,11.961,3.039,0.733,5.847,0.990,
 2026-10-18,00-0036893,Najee Harris,NYG,NO,RB,3.000,Pool,4.109,1.326,0.082,2.611,0.990,
 2026-10-18,00-0036894,Pat Freiermuth,PIT,TB,TE,1.800,Pool,6.418,1.262,0.000,3.142,0.750,Questionable (Calf)
 2026-10-18,00-0036901,Eric Stokes,LV,BUF,DB,3.000,Pool,5.995,1.240,0.024,2.648,0.990,
@@ -745,6 +747,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-18,00-0036998,Jevon Holland,NYG,NO,DB,1.000,Pool,8.016,1.671,0.137,3.584,0.990,
 2026-10-18,00-0037083,Kingsley Enagbare,NYJ,NE,LB,3.000,Pool,5.814,1.177,0.000,2.551,0.990,
 2026-10-18,00-0037192,George Karlaftis,KC,LAC,DL,3.000,Pool,6.727,1.362,0.000,3.245,0.990,
+2026-10-18,00-0037224,Cameron Dicker,LAC,KC,K,1.300,Pool,7.210,2.349,0.597,4.391,0.990,
 2026-10-18,00-0037228,Jaylen Warren,PIT,TB,RB,0.000,Pool,11.380,3.044,0.739,5.736,0.990,
 2026-10-18,00-0037238,Drake London,ATL,CHI,WR,0.400,Pool,11.761,3.269,0.680,6.623,0.990,QB-Wechsel
 2026-10-18,00-0037239,Chris Olave,NO,NYG,WR,0.300,Pool,11.467,2.371,0.000,5.675,0.750,Questionable (Illness); Rolle↓
@@ -782,7 +785,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-18,00-0038618,Xavier Hutchinson,HOU,JAX,WR,2.300,Pool,3.640,1.176,0.061,2.336,0.990,Rolle↓
 2026-10-18,00-0038715,Ronnie Hickman Jr.,CLE,BAL,DB,2.400,Pool,5.673,1.192,0.000,2.772,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-10-18,00-0038791,Thomas Incoom,CAR,PHI,LB,3.000,Pool,1.892,0.529,0.000,1.266,0.990,
-2026-10-18,00-0038905,Blake Grupe,LA,ARI,K,0.000,0 (noch kein Saisonspiel),8.993,2.778,0.748,5.192,0.990,keine Spiele 2026
+2026-10-18,00-0038905,Blake Grupe,LA,ARI,K,0.000,Pool,8.993,2.778,0.748,5.192,0.990,keine Spiele 2026
 2026-10-18,00-0038933,Dalton Kincaid,BUF,LV,TE,1.500,Pool,6.307,1.602,0.174,3.332,0.990,Rolle↓
 2026-10-18,00-0038996,Tucker Kraft,GB,DAL,TE,2.200,Pool,7.492,1.921,0.243,4.049,0.990,Rolle↓
 2026-10-18,00-0039000,Deonte Banks,NYG,NO,DB,0.900,Pool,8.191,1.688,0.149,3.547,0.990,
@@ -805,7 +808,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-18,00-0039410,Ryan Flournoy,DAL,GB,WR,3.000,Pool,4.421,1.345,0.135,2.738,0.990,
 2026-10-18,00-0039424,Devaughn Vele,NO,NYG,WR,1.700,Pool,5.970,1.758,0.240,3.580,0.990,Rolle↓
 2026-10-18,00-0039451,Isaiah Williams,NYJ,NE,WR,3.000,Pool,2.787,0.907,0.000,1.863,0.990,
-2026-10-18,00-0039576,Spencer Shrader,IND,TEN,K,0.000,fehlt (0.0 angenommen),10.915,3.552,1.012,6.608,0.990,
+2026-10-18,00-0039576,Spencer Shrader,IND,TEN,K,0.000,Pool,10.915,3.552,1.012,6.608,0.990,
 2026-10-18,00-0039634,Austin McNamara,NYJ,NE,P,1.800,Pool,22.179,1.656,0.643,2.880,0.990,
 2026-10-18,00-0039738,Blake Corum,LA,ARI,RB,1.700,Pool,7.546,1.961,0.389,3.791,0.990,
 2026-10-18,00-0039794,Braelon Allen,NYJ,NE,RB,1.200,Pool,5.357,1.556,0.185,3.042,0.990,
@@ -817,9 +820,9 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-18,00-0039861,Tyler Nubin,NYG,NO,DB,3.000,Pool,7.178,0.000,0.000,0.000,0.000,Out (Neck); Rolle↓
 2026-10-18,00-0039901,Keon Coleman,BUF,LV,WR,1.500,Pool,5.771,1.667,0.225,3.349,0.990,
 2026-10-18,00-0039915,Ladd McConkey,LAC,KC,WR,1.200,Pool,4.985,1.459,0.165,2.959,0.990,Rolle↓
-2026-10-18,00-0039917,Michael Penix Jr.,ATL,CHI,QB,0.000,fehlt (0.0 angenommen),17.793,3.382,1.183,5.821,0.990,QB-Wechsel
-2026-10-18,00-0039918,Caleb Williams,CHI,ATL,QB,0.000,fehlt (0.0 angenommen),17.379,3.237,0.970,5.707,0.970,"Questionable (Hamstring); Rolle↓; QB-Wechsel; Rückkehr nach 3 verpassten Spielen (×0.85); ESPN-Inactives: Williams spielt (Hamstring, 3 Spiele verpasst)"
-2026-10-18,00-0039919,Rome Odunze,CHI,ATL,WR,0.000,fehlt (0.0 angenommen),8.773,2.498,0.489,5.064,0.990,QB-Wechsel; Pech -4.6 FP vs xFP
+2026-10-18,00-0039917,Michael Penix Jr.,ATL,CHI,QB,0.600,Pool,17.793,3.382,1.183,5.821,0.990,QB-Wechsel
+2026-10-18,00-0039918,Caleb Williams,CHI,ATL,QB,0.300,Pool,17.379,3.237,0.970,5.707,0.970,"Questionable (Hamstring); Rolle↓; QB-Wechsel; Rückkehr nach 3 verpassten Spielen (×0.85); ESPN-Inactives: Williams spielt (Hamstring, 3 Spiele verpasst)"
+2026-10-18,00-0039919,Rome Odunze,CHI,ATL,WR,2.000,Pool,8.773,2.498,0.489,5.064,0.990,QB-Wechsel; Pech -4.6 FP vs xFP
 2026-10-18,00-0040056,Jared Ivey,ATL,CHI,LB,3.000,Pool,2.021,0.556,0.000,1.325,0.990,
 2026-10-18,00-0040074,Tyler Loop,BAL,CLE,K,0.500,Pool,6.878,2.321,0.609,4.378,0.990,QB1 Lamar Jackson fehlt (×0.92)
 2026-10-18,00-0040122,Ashton Jeanty,LV,BUF,RB,0.300,Pool,15.154,3.869,0.979,7.477,0.990,Rolle↓
@@ -846,12 +849,12 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-18,00-0040719,Bhayshul Tuten,JAX,HOU,RB,0.500,Pool,7.241,2.040,0.380,3.893,0.990,
 2026-10-18,00-0040725,Donovan Ezeiruaku,DAL,GB,LB,3.000,Pool,4.996,1.067,0.000,2.310,0.990,
 2026-10-18,00-0040735,Luther Burden III,CHI,ATL,WR,1.500,Pool,7.297,2.101,0.355,4.280,0.990,QB-Wechsel; Pech -3.1 FP vs xFP
-2026-10-18,00-0040743,Tyler Shough,NO,NYG,QB,0.000,fehlt (0.0 angenommen),17.999,3.501,1.181,6.051,0.990,Rolle↓; Pech -3.1 FP vs xFP
+2026-10-18,00-0040743,Tyler Shough,NO,NYG,QB,0.100,Pool,17.999,3.501,1.181,6.051,0.990,Rolle↓; Pech -3.1 FP vs xFP
 2026-10-18,00-0040782,Isaiah Bond,CLE,BAL,WR,3.000,Pool,2.865,0.957,0.000,1.947,0.990,
 2026-10-18,00-0040784,Quinshon Judkins,CLE,BAL,RB,1.100,Pool,9.869,2.006,0.000,4.580,0.750,Questionable (Ankle); Pech -3.2 FP vs xFP
 2026-10-18,00-0040889,Hezekiah Masses,LV,BUF,DB,1.300,Pool,7.890,1.605,0.100,3.479,0.990,Rolle↓
 2026-10-18,00-0040898,Ryan Eckley,BAL,CLE,P,2.800,Pool,22.672,1.739,0.666,2.962,0.990,
-2026-10-18,00-0040899,Trey Smack,GB,DAL,K,0.000,fehlt (0.0 angenommen),8.067,2.746,0.708,5.169,0.990,
+2026-10-18,00-0040899,Trey Smack,GB,DAL,K,0.400,Pool,8.067,2.746,0.708,5.169,0.990,
 2026-10-18,00-0040957,Xavier Nwankpa,KC,LAC,DB,2.400,Pool,4.050,0.881,0.000,2.458,0.990,
 2026-10-18,00-0041013,Emmett Johnson,KC,LAC,RB,3.000,Pool,2.010,0.823,0.000,1.729,0.990,Rolle↓
 2026-10-18,00-0041027,Jeremiyah Love,ARI,LA,RB,1.300,Pool,6.550,0.000,0.000,0.000,0.000,Out (Ankle); Rolle↓
@@ -859,6 +862,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-18,00-0041042,Malachi Fields,NYG,NO,WR,3.000,Pool,4.353,1.363,0.095,2.784,0.990,Rolle↓
 2026-10-18,00-0041064,Genesis Smith,LAC,KC,DB,2.100,Pool,5.316,1.111,0.000,2.684,0.990,Rolle↓
 2026-10-18,00-0041145,Dominic Zvada,NYG,NO,K,1.000,Pool,8.307,2.825,0.753,5.391,0.990,
+2026-10-18,00-0041251,Jalon Daniels,TB,PIT,QB,1.600,Pool,11.206,2.143,0.588,3.837,0.990,QB-Wechsel; startet vermutlich für Baker Mayfield
 2026-10-18,00-0041391,Davison Igbinosun,BUF,LV,DB,3.000,Pool,6.301,1.312,0.069,2.855,0.990,
 2026-10-18,00-0041395,Eli Raridon,NE,NYJ,TE,3.000,Pool,2.573,0.739,0.000,1.552,0.990,
 2026-10-18,00-0041489,Germie Bernard,PIT,TB,WR,3.000,Pool,4.163,1.287,0.085,2.605,0.990,
