@@ -43,9 +43,9 @@
    ]
   },
   "K": {
-   "slope": 0.3333,
+   "slope": 0.3304,
    "offset": -0.215,
-   "noise": 0.457,
+   "noise": 0.453,
    "n_obs": 57,
    "fit_raw": [
     0.3338,
@@ -63,9 +63,9 @@
    ]
   },
   "DL": {
-   "slope": 0.1952,
+   "slope": 0.1989,
    "offset": -0.289,
-   "noise": 0.478,
+   "noise": 0.487,
    "n_obs": 546,
    "fit_raw": [
     0.1952,
@@ -73,9 +73,9 @@
    ]
   },
   "LB": {
-   "slope": 0.1952,
+   "slope": 0.1989,
    "offset": -0.289,
-   "noise": 0.478,
+   "noise": 0.487,
    "n_obs": 546,
    "fit_raw": [
     0.1952,
@@ -83,9 +83,9 @@
    ]
   },
   "DB": {
-   "slope": 0.1952,
+   "slope": 0.1989,
    "offset": -0.289,
-   "noise": 0.478,
+   "noise": 0.487,
    "n_obs": 546,
    "fit_raw": [
     0.1952,
@@ -109,9 +109,23 @@
    "m_applied": 0.499,
    "date": "2026-09-28",
    "rejected": "2026-09-28: 10 echte Defense-Ratings + 25 Obergrenzen passen zu Steigung ~0.33, nicht 0.15"
+  },
+  {
+   "date": "2026-10-18",
+   "kind": "K",
+   "m_fit": 0.99,
+   "n": 18,
+   "m_applied": 0.991
+  },
+  {
+   "date": "2026-10-18",
+   "kind": "DEF",
+   "m_fit": 1.02,
+   "n": 72,
+   "m_applied": 1.019
   }
  ],
- "updated": "2026-10-16",
+ "updated": "2026-10-18",
  "win_coef": 0.009,
  "n_ratings": 611,
  "n_censored": 1718
