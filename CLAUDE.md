@@ -325,3 +325,12 @@ Dateiformate:
   **Kicker-Clutch:** Lutz 3.7 für 1/1 FG + 2/2 XP; Real-K-Formel ≈ 2.2. Das 53-Yard-FG war der Siegtreffer in OT
   (WPA +0.35) → Siegtreffer-Kicks bringen wohl ~+1.5 extra. Bonitto 2.9 bei nur 5.25 FP (Formel ≈ 1.1) und ohne
   grosse WPA → Real bewertet Edge-Rusher teils über die Box-Stats hinaus (Pressures?), beobachten.
+- 2026-10-18 (Sonntag, 12 Spiele): **47.96 Punkte, Rang 1'227/19.6k (Top 6 %)**, bestes Perzentil bisher.
+  User nahm die Sicher-Variante (Stafford 3.9 statt Odunze ≈ 1.2): **+2.8** gegen das E-max-Lineup (45.4).
+  Slye 6.0 (4/4 FG, E 2.8) trug das Lineup, Ward 0.9 (E 3.0) floppte, Jones 2.3 (E 3.3), Borregales 2.2 (E 2.8).
+  Ohne Boosts von 16 Spielern (Daniel Jones +1.9, Slye +2.0, Odunze +2.0) hätte das Modell schlechter gewählt
+  (E 47.0 statt 51.5) → **Checkliste der fehlenden Boosts immer abfragen**. Alle 24 K und 24 P lückenlos erfasst.
+  Nach der Kalibrierung trifft Real-K die Kicker gut (Slye 6.0 vs. 6.1, Bass 5.9 vs. 6.05). Ausreisser nach oben
+  nur bei **knappen Siegen** (Ryland 8.6 vs. 6.5, +2 Pkt.; Fairbairn 5.3 vs. 3.9 und Szmyt 3.4 vs. 2.0, je +3):
+  wie bei Lutz (OT-Sieg) gibt der spielentscheidende Kick ~+1.5. Kicker gesamt: Sieg +0.13, Niederlage −0.11.
+  QB-Residuen korrelieren mit dem Spielausgang (r = 0.32; Sieg +0.2) → Idee: QB-eigener Sieg-Koeffizient statt ±1 %.
