@@ -870,3 +870,63 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-18,00-0041509,Arvell Reese,NYG,NO,LB,1.300,Pool,8.442,1.724,0.119,3.666,0.990,
 2026-10-18,00-0041544,Akheem Mesidor,LAC,KC,LB,3.000,Pool,5.171,1.078,0.000,2.353,0.990,
 2026-10-18,00-0041569,Gabe Jacas,NE,NYJ,LB,2.000,Pool,5.745,1.181,0.000,2.645,0.990,
+2026-10-19,00-0029892,Kyle Juszczyk,SF,WAS,RB,0.000,fehlt (0.0 angenommen),2.461,0.933,0.000,1.897,0.990,
+2026-10-19,00-0030140,Tress Way,WAS,SF,P,0.000,fehlt (0.0 angenommen),16.316,1.218,0.468,2.074,0.990,
+2026-10-19,00-0031236,Brandin Cooks,SF,WAS,WR,0.000,fehlt (0.0 angenommen),2.885,0.940,0.000,1.901,0.990,
+2026-10-19,00-0031408,Mike Evans,SF,WAS,WR,0.000,fehlt (0.0 angenommen),11.290,2.257,0.000,5.464,0.750,"Questionable (Ribs); Questionable Ribs + Achilles, kein Training Fr (Preview 18.10.); Inactives 90 Min vor Kickoff pruefen"
+2026-10-19,00-0031588,Stefon Diggs,WAS,SF,WR,0.000,fehlt (0.0 angenommen),7.404,1.573,0.000,3.728,0.750,"Questionable (Hamstring); Questionable Hamstring, Fr limitiert (Commanders-Report 17.10.)"
+2026-10-19,00-0033280,Christian McCaffrey,SF,WAS,RB,0.000,fehlt (0.0 angenommen),18.056,4.437,1.159,8.611,0.990,Rolle↓
+2026-10-19,00-0033288,George Kittle,SF,WAS,TE,0.000,fehlt (0.0 angenommen),10.744,2.631,0.440,5.560,0.990,
+2026-10-19,00-0033551,Rasul Douglas,WAS,SF,DB,0.000,fehlt (0.0 angenommen),6.611,1.350,0.065,2.903,0.990,
+2026-10-19,00-0033699,Austin Ekeler,WAS,SF,RB,0.000,fehlt (0.0 angenommen),1.286,0.685,0.000,1.503,0.990,
+2026-10-19,00-0033918,Fabian Moreau,WAS,SF,DB,0.000,fehlt (0.0 angenommen),2.033,0.531,0.000,1.288,0.990,
+2026-10-19,00-0034173,Eddy Pineiro,SF,WAS,K,0.000,fehlt (0.0 angenommen),8.922,2.967,0.705,5.584,0.990,
+2026-10-19,00-0034302,Frankie Luvu,WAS,SF,LB,0.000,fehlt (0.0 angenommen),5.488,1.127,0.000,2.465,0.990,
+2026-10-19,00-0034333,Daron Payne,WAS,SF,DL,0.000,fehlt (0.0 angenommen),3.369,0.769,0.000,1.798,0.990,
+2026-10-19,00-0034373,Dorance Armstrong,WAS,SF,LB,0.000,fehlt (0.0 angenommen),4.382,0.930,0.000,2.014,0.990,
+2026-10-19,00-0034391,Siran Neal,SF,WAS,DB,0.000,fehlt (0.0 angenommen),2.591,0.493,0.000,1.310,0.750,Questionable (Neck)
+2026-10-19,00-0034397,Tim Settle,WAS,SF,DL,0.000,fehlt (0.0 angenommen),3.595,0.819,0.000,1.974,0.990,
+2026-10-19,00-0034465,Jeremy Reaves,WAS,SF,DB,0.000,fehlt (0.0 angenommen),5.606,1.136,0.002,2.438,0.990,
+2026-10-19,00-0034815,Fred Warner,SF,WAS,LB,0.000,fehlt (0.0 angenommen),7.638,1.523,0.045,3.217,0.990,
+2026-10-19,00-0035409,Shy Tuttle,WAS,SF,DL,0.000,fehlt (0.0 angenommen),1.785,0.486,0.000,1.169,0.990,Rolle↓
+2026-10-19,00-0035659,Terry McLaurin,WAS,SF,WR,0.000,fehlt (0.0 angenommen),7.930,2.200,0.433,4.428,0.990,Rolle↓
+2026-10-19,00-0035821,Corliss Waitman,SF,WAS,P,0.000,fehlt (0.0 angenommen),14.443,1.096,0.412,1.886,0.990,
+2026-10-19,00-0036260,Javon Kinlaw,WAS,SF,DL,0.000,fehlt (0.0 angenommen),2.553,0.476,0.000,1.333,0.750,Questionable (Ankle)
+2026-10-19,00-0036286,K'Lavon Chaisson,WAS,SF,LB,0.000,fehlt (0.0 angenommen),5.536,1.134,0.000,2.452,0.990,
+2026-10-19,00-0036329,Ashtyn Davis,SF,WAS,DB,0.000,fehlt (0.0 angenommen),1.434,0.469,0.000,1.186,0.990,
+2026-10-19,00-0036375,Amik Robertson,WAS,SF,DB,0.000,fehlt (0.0 angenommen),6.208,1.262,0.059,2.694,0.990,
+2026-10-19,00-0036563,Deommodore Lenoir,SF,WAS,DB,0.000,fehlt (0.0 angenommen),4.910,1.020,0.000,2.241,0.990,
+2026-10-19,00-0036626,Dyami Brown,WAS,SF,WR,0.000,fehlt (0.0 angenommen),3.292,1.053,0.062,2.107,0.990,Rolle↓
+2026-10-19,00-0036940,Odafe Oweh,WAS,SF,LB,0.000,fehlt (0.0 angenommen),5.447,1.099,0.000,2.427,0.990,
+2026-10-19,00-0036942,Osa Odighizuwa,SF,WAS,DL,0.000,fehlt (0.0 angenommen),2.350,0.586,0.000,1.412,0.990,
+2026-10-19,00-0036972,Mac Jones,SF,WAS,QB,0.000,fehlt (0.0 angenommen),5.825,1.123,0.058,2.149,0.990,Rückkehr nach 3 verpassten Spielen (×0.85)
+2026-10-19,00-0037256,Rachaad White,WAS,SF,RB,0.000,fehlt (0.0 angenommen),6.484,1.798,0.321,3.429,0.990,Rolle↓
+2026-10-19,00-0037616,Nick Cross,WAS,SF,DB,0.000,fehlt (0.0 angenommen),5.190,0.796,0.000,2.063,0.750,Questionable (Illness); Rückkehr nach 3 verpassten Spielen (×0.85)
+2026-10-19,00-0037742,Treylon Burks,WAS,SF,WR,0.000,fehlt (0.0 angenommen),3.527,1.095,0.045,2.208,0.990,
+2026-10-19,00-0037809,Chig Okonkwo,WAS,SF,TE,0.000,fehlt (0.0 angenommen),3.188,0.901,0.000,1.875,0.990,
+2026-10-19,00-0037834,Brock Purdy,SF,WAS,QB,0.000,fehlt (0.0 angenommen),23.497,4.319,1.670,7.304,0.990,
+2026-10-19,00-0038039,Jack Jones,SF,WAS,DB,0.000,fehlt (0.0 angenommen),3.470,0.768,0.000,1.751,0.990,
+2026-10-19,00-0038554,Ji'Ayir Brown,SF,WAS,DB,0.000,fehlt (0.0 angenommen),5.378,1.126,0.000,2.521,0.990,
+2026-10-19,00-0039148,Keion White,SF,WAS,DL,0.000,fehlt (0.0 angenommen),4.062,0.871,0.000,2.116,0.990,
+2026-10-19,00-0039149,Quan Martin,WAS,SF,DB,0.000,fehlt (0.0 angenommen),4.797,0.996,0.000,2.160,0.990,
+2026-10-19,00-0039345,Renardo Green,SF,WAS,DB,0.000,fehlt (0.0 angenommen),6.167,1.237,0.000,2.764,0.990,
+2026-10-19,00-0039355,Luke McCaffrey,WAS,SF,WR,0.000,fehlt (0.0 angenommen),2.254,0.799,0.000,1.642,0.990,
+2026-10-19,00-0039360,Malik Mustapha,SF,WAS,DB,0.000,fehlt (0.0 angenommen),5.603,1.146,0.000,2.498,0.990,
+2026-10-19,00-0039365,Jacob Cowing,SF,WAS,WR,0.000,fehlt (0.0 angenommen),2.259,0.804,0.000,1.662,0.990,
+2026-10-19,00-0039435,Tatum Bethune,SF,WAS,LB,0.000,0 (noch kein Saisonspiel),6.221,1.263,0.014,2.704,0.990,keine Spiele 2026
+2026-10-19,00-0039898,Mike Sainristil,WAS,SF,DB,0.000,fehlt (0.0 angenommen),5.421,1.106,0.000,2.507,0.990,Rolle↓
+2026-10-19,00-0039910,Jayden Daniels,WAS,SF,QB,0.000,fehlt (0.0 angenommen),17.897,3.279,1.214,5.681,0.990,
+2026-10-19,00-0040152,Upton Stout,SF,WAS,DB,0.000,fehlt (0.0 angenommen),4.968,0.789,0.000,1.999,0.750,Questionable (Shoulder)
+2026-10-19,00-0040172,Jordan Watkins,SF,WAS,WR,0.000,fehlt (0.0 angenommen),1.198,0.567,0.000,1.239,0.990,
+2026-10-19,00-0040177,Jordan James,SF,WAS,RB,0.000,fehlt (0.0 angenommen),0.713,0.581,0.000,1.358,0.990,
+2026-10-19,00-0040216,Kain Medrano,WAS,SF,LB,0.000,fehlt (0.0 angenommen),5.520,1.127,0.000,2.570,0.990,
+2026-10-19,00-0040560,Sebastian Valdez,SF,WAS,DL,0.000,fehlt (0.0 angenommen),1.831,0.511,0.000,1.242,0.990,
+2026-10-19,00-0040589,Kurtis Rourke,SF,WAS,QB,0.000,0 (noch kein Saisonspiel),2.579,0.559,0.000,1.293,0.990,keine Spiele 2026
+2026-10-19,00-0041028,Sonny Styles,WAS,SF,LB,0.000,fehlt (0.0 angenommen),6.514,1.291,0.003,2.804,0.990,
+2026-10-19,00-0041040,Antonio Williams,WAS,SF,WR,0.000,fehlt (0.0 angenommen),4.792,1.421,0.188,2.812,0.990,Rolle↓
+2026-10-19,00-0041052,Kaelon Black,SF,WAS,RB,0.000,fehlt (0.0 angenommen),2.535,0.946,0.000,1.905,0.990,Rolle↓
+2026-10-19,00-0041068,Ephesians Prysock,SF,WAS,DB,0.000,0 (noch kein Saisonspiel),3.467,0.776,0.000,1.842,0.990,keine Spiele 2026
+2026-10-19,00-0041078,Jaden Dugger,SF,WAS,LB,0.000,fehlt (0.0 angenommen),4.689,0.987,0.000,2.202,0.990,
+2026-10-19,00-0041117,Athan Kaliakmanis,WAS,SF,QB,0.000,fehlt (0.0 angenommen),10.478,1.940,0.542,3.451,0.990,
+2026-10-19,00-0041182,Drew Stevens,WAS,SF,K,0.000,fehlt (0.0 angenommen),6.829,2.266,0.533,4.323,0.990,
+2026-10-19,00-0041557,Gracen Halton,SF,WAS,DL,0.000,fehlt (0.0 angenommen),5.562,0.891,0.000,2.465,0.750,Questionable (Quadricep)
