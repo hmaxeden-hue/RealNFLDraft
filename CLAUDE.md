@@ -334,3 +334,8 @@ Dateiformate:
   nur bei **knappen Siegen** (Ryland 8.6 vs. 6.5, +2 Pkt.; Fairbairn 5.3 vs. 3.9 und Szmyt 3.4 vs. 2.0, je +3):
   wie bei Lutz (OT-Sieg) gibt der spielentscheidende Kick ~+1.5. Kicker gesamt: Sieg +0.13, Niederlage −0.11.
   QB-Residuen korrelieren mit dem Spielausgang (r = 0.32; Sieg +0.2) → Idee: QB-eigener Sieg-Koeffizient statt ±1 %.
+- 2026-10-19 (MNF WAS @ SF): **31.47 Punkte, Rang 11'992/16.1k (untere 26 %)**. Modell-Lineup unverändert gespielt.
+  McCaffrey 5.3 (E 4.4) und Purdy 3.7 (4.3) okay; Piñeiro 1.2 (E 3.1; nur 1 FG, 1 XP verschossen), Stevens 1.9 (2.4),
+  McLaurin 0.9 (E 2.2, **verletzt raus im 1. Viertel**). Rachaad White (+2.2) statt McLaurin = 37.7, Upside-Variante
+  (Kittle, A. Williams) ≈ 38.4, Hindsight 52.2 (McCaffrey, Kittle, Luvu, White, Okonkwo). Pech, kein Modellfehler:
+  zwei Kicker im selben Spiel mit wenig Kicks sind die Varianz des Einzelspiels. Liste lückenlos bis 0.1 erfasst.
