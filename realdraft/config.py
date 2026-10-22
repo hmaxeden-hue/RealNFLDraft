@@ -89,6 +89,7 @@ UPSIDE_QUANTILE = 0.95
 
 # Fällt der Stamm-QB aus: Ersatz-QB mindestens so viele FP, Mitspieler abwerten
 BACKUP_QB_START_FP = 13.0
+BACKUP_QB_P_PLAY = 0.05     # Einsatzchance eines Ersatz-QBs, wenn der Stamm-QB spielt
 QB_OUT_FACTOR = {"WR": 0.85, "TE": 0.88, "RB": 0.94, "K": 0.92}
 DEF_VS_BACKUP_QB = 1.3       # INT-Rate der gegnerischen Defense gegen einen Ersatz-QB
 

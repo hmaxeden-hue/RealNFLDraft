@@ -242,7 +242,7 @@ def project(date: str, boosts: pd.DataFrame | None = None,
     df["sleeper_ppr"] = (df["player_id"].map(pl.set_index("player_id")["sleeper_id"].astype(str))
                          .map(sp.set_index("sleeper_id")["sleeper_proj_ppr"])
                          if sp is not None and "sleeper_id" in pl else np.nan)
-    _apply_qb_out(df, qbg)
+    _apply_qb_out(df, features.team_qb_starts(pg))
 
     df["boost"], df["boost_src"] = float(default_boost), f"fehlt ({default_boost:.1f} angenommen)"
     # Regel der App: wer diese Saison noch nicht gespielt hat, hat keinen Boost
@@ -285,18 +285,29 @@ def project(date: str, boosts: pd.DataFrame | None = None,
 
 
 def _apply_qb_out(df: pd.DataFrame, qbg: pd.DataFrame):
-    """Fehlt der Stamm-QB (meiste Starts), startet der gesündeste nächste QB der Depth Chart."""
+    """Stamm-QB = meiste Starts der letzten 17 Teamspiele (Starts dieser Saison zählen doppelt). Spielt er,
+    sitzen die Ersatz-QBs; fehlt er (Status Out oder gar nicht im Kader, z. B. IR), startet der gesündeste
+    nächste QB der Depth Chart und die übrigen sitzen."""
     for team in df["team"].unique():
-        starts = qbg[qbg["team"] == team]["qb_id"]
-        if starts.empty:
+        qbs = (df["team"] == team) & (df["group"] == "QB")
+        st = qbg[qbg["team"] == team]
+        if st.empty or not qbs.any():
             continue
-        main = df[(df["player_id"] == starts.mode().iloc[0]) & (df["team"] == team)]
-        if main.empty or main["p_play"].iloc[0] >= 0.5:
+        main_id = st.assign(w=np.where(st["season"] == config.SEASON, 2, 1)).groupby("qb_id")["w"].sum().idxmax()
+        main = df[qbs & (df["player_id"] == main_id)]
+        if not main.empty and main["p_play"].iloc[0] >= 0.5:
+            starter = main.index[0]
+        else:
+            backups = df[qbs & (df["p_play"] >= 0.5) & (df["player_id"] != main_id)]
+            starter = backups.sort_values("pos_rank", na_position="last").index[0] if not backups.empty else None
+        # Ersatz-QBs (auch frühere Aushilfs-Starter) kommen nur bei Verletzung des Starters rein
+        bench = qbs & (df.index != starter)
+        df.loc[bench, "p_play"] = np.minimum(df.loc[bench, "p_play"], config.BACKUP_QB_P_PLAY)
+        if not main.empty and starter == main.index[0]:
             continue
-        main_name = main["name"].iloc[0]
-        backups = df[(df["team"] == team) & (df["group"] == "QB") & (df["p_play"] >= 0.5)]
-        if not backups.empty:
-            j = backups.sort_values("pos_rank", na_position="last").index[0]
+        main_name = st.loc[st["qb_id"] == main_id, "qb"].iloc[-1]
+        if starter is not None:
+            j = starter
             df.loc[j, "mu_base"] = max(df.loc[j, "mu_base"], config.BACKUP_QB_START_FP)
             df.loc[j, "mu_fp"] = df.loc[j, "mu_base"] * df.loc[j, "env"] * df.loc[j, "matchup"]
             df.loc[j, "note"] = f"startet vermutlich für {main_name}"

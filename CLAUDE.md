@@ -339,3 +339,9 @@ Dateiformate:
   McLaurin 0.9 (E 2.2, **verletzt raus im 1. Viertel**). Rachaad White (+2.2) statt McLaurin = 37.7, Upside-Variante
   (Kittle, A. Williams) ≈ 38.4, Hindsight 52.2 (McCaffrey, Kittle, Luvu, White, Okonkwo). Pech, kein Modellfehler:
   zwei Kicker im selben Spiel mit wenig Kicks sind die Varianz des Einzelspiels. Liste lückenlos bis 0.1 erfasst.
+- 2026-10-22: **Fix Ersatz-QBs.** Backups mit Aushilfs-Starts (Bagent, Keenum, Tua, Kaliakmanis) hatten p_play 0.99
+  und volle Projektion (E ≈ 2) → mit hohem Boost wären sie ins Lineup gerutscht. Jetzt bestimmt `_apply_qb_out` den
+  Stamm-QB aus den letzten 17 Teamspielen (Starts dieser Saison doppelt, `features.team_qb_starts`); spielt er,
+  bekommen alle anderen QBs `BACKUP_QB_P_PLAY` 0.05. Fehlt er (Out oder IR, also gar nicht im Kader), startet der
+  nächste gesunde QB der Depth Chart (Bonus-FP wie bisher), die übrigen sitzen. Effekt 10-18: McKee 0.82 → 2.22
+  (echt 2.5), J.J. McCarthy statt Winston für Dart (echt 2.9).

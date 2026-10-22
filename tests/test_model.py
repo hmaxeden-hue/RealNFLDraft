@@ -40,3 +40,15 @@ def test_shrink_form_pulls_regular_kicker_and_spares_backups():
     backup = pd.DataFrame({"snap_pct": [0.2, 0.3, 0.1]})
     assert projection.shrink_form(2.0, backup, "LB", reg) == 2.0       # Ersatzspieler: Rolle zählt
     assert projection.shrink_form(9.0, k, "WR", reg) == 9.0            # WR-Form ist grösstenteils echt
+
+
+def test_backup_qb_sits_when_starter_plays():
+    df = pd.DataFrame([
+        {"player_id": "s", "name": "Starter", "team": "A", "opp": "B", "group": "QB", "p_play": 0.99, "pos_rank": 1},
+        {"player_id": "b", "name": "Backup", "team": "A", "opp": "B", "group": "QB", "p_play": 0.99, "pos_rank": 2},
+    ])
+    # Starter verpasste 2 Spiele dieser Saison, der Ersatz sprang ein: der Stamm-QB spielt wieder
+    qbg = pd.DataFrame({"team": ["A"] * 6, "season": [2025, 2025, 2025, 2026, 2026, 2026],
+                        "qb_id": ["s", "s", "s", "s", "b", "b"], "qb": ["Starter"] * 4 + ["Backup"] * 2})
+    projection._apply_qb_out(df, qbg)
+    assert df.loc[0, "p_play"] == 0.99 and df.loc[1, "p_play"] <= 0.05

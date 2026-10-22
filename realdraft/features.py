@@ -224,6 +224,14 @@ def team_qb_by_game(pg: pd.DataFrame) -> pd.DataFrame:
         columns={"player_display_name": "qb", "player_id": "qb_id"})
 
 
+def team_qb_starts(pg: pd.DataFrame, n: int = 17) -> pd.DataFrame:
+    """Starter (meiste Pässe) der letzten n Teamspiele über Saisongrenzen, für die Stamm-QB-Bestimmung."""
+    q = pg[pg["group"] == "QB"].sort_values("attempts", ascending=False)
+    q = q.drop_duplicates(["team", "season", "week"]).sort_values(["season", "week"])
+    return q.groupby("team").tail(n)[["team", "season", "week", "player_id", "player_display_name"]].rename(
+        columns={"player_id": "qb_id", "player_display_name": "qb"})
+
+
 def rebound_signals(hist: pd.DataFrame, group: str, qb_games: pd.DataFrame, team: str) -> dict:
     """Heuristik: Warum lief es zuletzt schlecht? hist = Spiele dieser Saison, chronologisch.
 
