@@ -345,3 +345,7 @@ Dateiformate:
   bekommen alle anderen QBs `BACKUP_QB_P_PLAY` 0.05. Fehlt er (Out oder IR, also gar nicht im Kader), startet der
   nächste gesunde QB der Depth Chart (Bonus-FP wie bisher), die übrigen sitzen. Effekt 10-18: McKee 0.82 → 2.22
   (echt 2.5), J.J. McCarthy statt Winston für Dart (echt 2.9).
+- 2026-10-22 (TNF NE @ CHI): **49.15 Punkte, Rang 4'778/16.1k (Top 30 %)**, Modell-Lineup gespielt (A.J. Brown
+  mit +3.0 erst auf Nachfrage im Pool). Maye 4.9 (E 3.8), Loveland 3.2 (E 1.6), Odunze 2.4 und Borregales 2.2 genau
+  auf E, A.J. Brown 1.5 (E 2.3; zweites Spiel nach Knöchelverletzung). Hindsight 68.2: Burden 5.6 (+1.3, E 2.0,
+  vom Rolle↓-Signal gebremst) und Stevenson 4.6 (+1.1, E 2.2). Sicher-Variante (Punter) hätte nur 41.8 gebracht.
