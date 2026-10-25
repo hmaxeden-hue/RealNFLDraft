@@ -295,6 +295,10 @@ def _apply_qb_out(df: pd.DataFrame, qbg: pd.DataFrame):
             continue
         main_id = st.assign(w=np.where(st["season"] == config.SEASON, 2, 1)).groupby("qb_id")["w"].sum().idxmax()
         main = df[qbs & (df["player_id"] == main_id)]
+        last = df[qbs & (df["player_id"] == st["qb_id"].iloc[-1]) & (df["p_play"] >= 0.5)]
+        if main.empty and not last.empty:
+            # Stamm-QB nicht mehr im Kader (Wechsel), der letzte Starter ist da: er ist der neue Stamm-QB
+            main_id, main = last["player_id"].iloc[0], last
         if not main.empty and main["p_play"].iloc[0] >= 0.5:
             starter = main.index[0]
         else:
