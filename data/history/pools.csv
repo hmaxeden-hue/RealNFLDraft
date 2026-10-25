@@ -1001,7 +1001,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-25,00-0025565,Nick Folk,ATL,SF,K,1.600,Pool,7.378,2.515,0.562,4.805,0.990,
 2026-10-25,00-0026498,Matthew Stafford,LA,LV,QB,0.300,Pool,19.195,3.626,1.321,6.279,0.990,Rolle↓; Pech -3.5 FP vs xFP
 2026-10-25,00-0029604,Kirk Cousins,LV,LA,QB,0.300,Pool,15.803,2.962,1.033,5.087,0.990,
-2026-10-25,00-0029822,Brandon McManus,LA,LV,K,0.000,0 (noch kein Saisonspiel),7.426,2.498,0.580,4.762,0.990,keine Spiele 2026
+2026-10-25,00-0029822,Brandon McManus,LA,LV,K,0.000,Pool,7.426,2.498,0.580,4.762,0.990,keine Spiele 2026
 2026-10-25,00-0030279,Keenan Allen,IND,MIN,WR,2.100,Pool,5.743,1.630,0.264,3.267,0.990,
 2026-10-25,00-0030506,Travis Kelce,KC,SEA,TE,1.100,Pool,4.845,1.290,0.120,2.670,0.990,
 2026-10-25,00-0030565,Geno Smith,NYJ,MIA,QB,0.600,Pool,16.054,3.033,1.078,5.221,0.990,
@@ -1025,7 +1025,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-25,00-0033523,Jonathan Allen,CIN,BAL,DL,1.200,Pool,7.073,1.467,0.000,3.441,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-10-25,00-0033526,Samaje Perine,CIN,BAL,RB,2.900,Pool,4.490,1.194,0.000,2.480,0.990,
 2026-10-25,00-0033537,Deshaun Watson,CLE,TEN,QB,0.700,Pool,16.945,3.233,1.173,5.602,0.990,Pech -3.6 FP vs xFP
-2026-10-25,00-0033862,Zane Gonzalez,MIA,NYJ,K,0.000,0 (noch kein Saisonspiel),8.582,2.888,0.714,5.565,0.990,keine Spiele 2026
+2026-10-25,00-0033862,Zane Gonzalez,MIA,NYJ,K,0.000,Pool,8.582,2.888,0.714,5.565,0.990,keine Spiele 2026
 2026-10-25,00-0033873,Patrick Mahomes,KC,SEA,QB,0.300,Pool,12.729,2.417,0.787,4.214,0.990,
 2026-10-25,00-0033881,Evan Engram,DEN,ARI,TE,3.000,Pool,3.682,1.015,0.043,2.112,0.990,
 2026-10-25,00-0033890,Budda Baker,ARI,DEN,DB,1.400,Pool,6.984,1.064,0.000,2.716,0.750,Questionable (Groin)
@@ -1067,7 +1067,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-25,00-0035643,Jeffery Simmons,TEN,CLE,DL,1.600,Pool,11.846,2.366,0.063,5.588,0.990,
 2026-10-25,00-0035669,Nick Scott,CAR,TB,DB,3.000,Pool,6.862,1.435,0.133,3.044,0.990,
 2026-10-25,00-0035687,Bobby Okereke,CAR,TB,LB,1.500,Pool,8.559,1.664,0.108,3.590,0.990,
-2026-10-25,00-0035700,Josh Jacobs,GB,DET,RB,0.000,0 (noch kein Saisonspiel),12.967,3.283,0.596,6.536,0.990,keine Spiele 2026
+2026-10-25,00-0035700,Josh Jacobs,GB,DET,RB,0.000,Pool,12.967,3.283,0.596,6.536,0.990,keine Spiele 2026
 2026-10-25,00-0035710,Daniel Jones,IND,MIN,QB,1.800,Pool,11.584,2.187,0.688,3.773,0.990,Pech -7.8 FP vs xFP
 2026-10-25,00-0035719,Deebo Samuel Sr.,SF,ATL,WR,1.100,Pool,7.072,0.000,0.000,0.000,0.000,Out (Hamstring); Rolle↓
 2026-10-25,00-0035859,Blake Gillikin,ARI,DEN,P,2.500,Pool,23.312,1.763,0.657,3.037,0.990,
@@ -1080,7 +1080,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-25,00-0036281,C.J. Henderson,ATL,SF,DB,2.200,Pool,6.337,1.005,0.000,2.540,0.750,Questionable (Groin); Rolle↓
 2026-10-25,00-0036282,Grant Delpit,CLE,TEN,DB,2.900,Pool,6.137,1.286,0.030,2.804,0.990,Rolle↓
 2026-10-25,00-0036293,Jeremy Chinn,LV,LA,DB,1.500,Pool,7.186,1.459,0.165,3.009,0.990,
-2026-10-25,00-0036322,Justin Jefferson,MIN,IND,WR,0.000,fehlt (0.0 angenommen),9.978,2.737,0.560,5.499,0.990,QB-Wechsel
+2026-10-25,00-0036322,Justin Jefferson,MIN,IND,WR,0.700,Pool,9.978,2.737,0.560,5.499,0.990,QB-Wechsel
 2026-10-25,00-0036374,L'Jarius Sneed,KC,SEA,DB,2.000,Pool,6.691,1.021,0.000,2.580,0.750,Questionable (Knee); Rolle↓
 2026-10-25,00-0036388,Xavier McKinney,GB,DET,DB,1.800,Pool,5.764,1.197,0.035,2.686,0.990,
 2026-10-25,00-0036410,Tee Higgins,CIN,BAL,WR,0.600,Pool,8.171,2.351,0.446,4.738,0.990,Rolle↓
@@ -1106,6 +1106,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-25,00-0037192,George Karlaftis,KC,SEA,DL,2.500,Pool,8.058,1.615,0.000,3.742,0.990,
 2026-10-25,00-0037236,Aidan Hutchinson,DET,GB,DL,2.700,Pool,5.926,1.254,0.000,2.989,0.990,
 2026-10-25,00-0037238,Drake London,ATL,SF,WR,0.500,Pool,11.039,3.039,0.639,6.215,0.990,
+2026-10-25,00-0037240,Jameson Williams,DET,GB,WR,1.400,Pool,8.301,2.366,0.488,4.726,0.990,
 2026-10-25,00-0037244,Devin Lloyd,CAR,TB,LB,0.400,Pool,10.456,2.075,0.239,4.442,0.990,
 2026-10-25,00-0037246,Jalen Pitre,HOU,NYG,DB,3.000,Pool,7.811,0.000,0.000,0.000,0.000,Out (Shoulder); Rolle↓
 2026-10-25,00-0037263,Tyler Allgeier,ARI,DEN,RB,3.000,Pool,5.286,1.372,0.000,2.917,0.990,
@@ -1122,8 +1123,9 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-25,00-0037840,Kyren Williams,LA,LV,RB,0.100,Pool,14.422,3.644,0.669,7.344,0.990,Rolle↓
 2026-10-25,00-0037841,Quentin Lake,LA,LV,DB,1.600,Pool,8.284,1.655,0.159,3.506,0.990,
 2026-10-25,00-0038038,Kyle Hamilton,BAL,CIN,DB,1.200,Pool,8.108,1.618,0.211,3.324,0.990,
+2026-10-25,00-0038120,Breece Hall,NYJ,MIA,RB,0.500,Pool,10.837,0.000,0.000,0.000,0.000,Out (Quadricep); Rückkehr nach 3 verpassten Spielen (×0.85)
 2026-10-25,00-0038124,Christian Watson,GB,DET,WR,0.300,Pool,12.068,3.273,0.701,6.571,0.990,
-2026-10-25,00-0038128,Malik Willis,MIA,NYJ,QB,0.000,fehlt (0.0 angenommen),15.272,2.930,1.088,5.070,0.990,Pech -8.2 FP vs xFP
+2026-10-25,00-0038128,Malik Willis,MIA,NYJ,QB,2.000,Pool,15.272,2.930,1.088,5.070,0.990,Pech -8.2 FP vs xFP
 2026-10-25,00-0038129,Cade Otton,TB,CAR,TE,3.000,Pool,3.887,1.088,0.089,2.207,0.990,Rolle↓; QB-Wechsel
 2026-10-25,00-0038134,Kenneth Walker III,KC,SEA,RB,0.000,Pool,13.098,3.236,0.592,6.417,0.990,
 2026-10-25,00-0038428,Andre Szmyt,CLE,TEN,K,0.600,Pool,9.016,3.109,0.781,5.927,0.990,
@@ -1132,6 +1134,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-25,00-0038543,Jaxon Smith-Njigba,SEA,KC,WR,0.000,Pool,12.948,3.632,0.758,7.367,0.990,
 2026-10-25,00-0038559,Michael Wilson,ARI,DEN,WR,1.700,Pool,7.825,2.194,0.438,4.455,0.990,Pech -6.2 FP vs xFP
 2026-10-25,00-0038560,Jordan Battle,CIN,BAL,DB,1.100,Pool,6.838,1.424,0.035,3.161,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
+2026-10-25,00-0038563,Tre Tucker,LV,LA,WR,1.000,Pool,7.846,2.206,0.382,4.503,0.990,
 2026-10-25,00-0038567,Chad Ryland,ARI,DEN,K,0.400,Pool,7.341,2.470,0.570,4.767,0.990,
 2026-10-25,00-0038574,Isaiah McGuire,CLE,TEN,DL,3.000,Pool,4.375,0.964,0.000,2.270,0.990,
 2026-10-25,00-0038597,Chase Brown,CIN,BAL,RB,0.900,Pool,10.257,2.695,0.392,5.416,0.990,Pech -4.1 FP vs xFP
@@ -1169,9 +1172,10 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-25,00-0039345,Renardo Green,SF,ATL,DB,1.400,Pool,7.022,1.467,0.108,3.246,0.990,
 2026-10-25,00-0039361,Bucky Irving,TB,CAR,RB,0.500,Pool,12.398,3.160,0.522,6.284,0.990,QB-Wechsel
 2026-10-25,00-0039371,Kris Abrams-Draine,DEN,ARI,DB,2.200,Pool,6.748,1.405,0.124,2.999,0.990,
-2026-10-25,00-0039404,Will Reichard,MIN,IND,K,0.000,fehlt (0.0 angenommen),9.959,3.311,0.838,6.278,0.990,
+2026-10-25,00-0039404,Will Reichard,MIN,IND,K,0.100,Pool,9.959,3.311,0.838,6.278,0.990,
 2026-10-25,00-0039451,Isaiah Williams,NYJ,MIA,WR,3.000,Pool,3.049,1.027,0.050,2.056,0.990,Rolle↓
 2026-10-25,00-0039491,Jalen Coker,CAR,TB,WR,0.600,Pool,8.451,2.376,0.492,4.771,0.990,Pech -3.8 FP vs xFP
+2026-10-25,00-0039576,Spencer Shrader,IND,MIN,K,0.000,Pool,7.081,2.352,0.492,4.464,0.990,
 2026-10-25,00-0039634,Austin McNamara,NYJ,MIA,P,2.200,Pool,16.186,1.262,0.488,2.167,0.990,
 2026-10-25,00-0039732,Bo Nix,DEN,ARI,QB,1.300,Pool,18.331,3.464,1.264,5.889,0.990,Rolle↓; Pech -4.7 FP vs xFP
 2026-10-25,00-0039738,Blake Corum,LA,LV,RB,1.400,Pool,6.885,1.779,0.091,3.583,0.990,
@@ -1212,7 +1216,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-25,00-0040738,Demetrius Knight Jr.,CIN,BAL,LB,2.300,Pool,6.196,1.282,0.025,2.836,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-10-25,00-0040752,Oluwafemi Oladejo,TEN,CLE,LB,3.000,Pool,1.326,0.421,0.000,1.007,0.990,
 2026-10-25,00-0040782,Isaiah Bond,CLE,TEN,WR,3.000,Pool,2.509,0.896,0.000,1.833,0.990,
-2026-10-25,00-0040784,Quinshon Judkins,CLE,TEN,RB,0.000,fehlt (0.0 angenommen),10.601,2.744,0.446,5.528,0.990,Pech -3.2 FP vs xFP
+2026-10-25,00-0040784,Quinshon Judkins,CLE,TEN,RB,1.100,Pool,10.601,2.744,0.446,5.528,0.990,Pech -3.2 FP vs xFP
 2026-10-25,00-0040889,Hezekiah Masses,LV,LA,DB,1.300,Pool,6.824,1.391,0.045,3.142,0.990,Rolle↓
 2026-10-25,00-0040898,Ryan Eckley,BAL,CIN,P,2.200,Pool,18.422,1.408,0.555,2.384,0.990,
 2026-10-25,00-0040899,Trey Smack,GB,DET,K,0.400,Pool,6.355,2.113,0.454,4.060,0.990,
