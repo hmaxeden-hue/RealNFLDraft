@@ -1234,63 +1234,68 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-10-25,00-0041509,Arvell Reese,NYG,HOU,LB,1.200,Pool,6.734,1.295,0.050,2.822,0.990,
 2026-10-25,00-0041511,Omar Cooper Jr.,NYJ,MIA,WR,0.900,Pool,3.852,1.231,0.146,2.414,0.990,
 2026-10-25,00-0041557,Gracen Halton,SF,ATL,DL,1.800,Pool,5.074,1.075,0.000,2.571,0.990,
-2026-10-26,00-0027940,Von Miller,DAL,PHI,LB,0.000,fehlt (0.0 angenommen),2.144,0.527,0.000,1.200,0.990,
-2026-10-26,00-0029692,Bryan Anger,DAL,PHI,P,0.000,fehlt (0.0 angenommen),17.944,1.407,0.544,2.375,0.990,
-2026-10-26,00-0032580,Jonathan Jones,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),6.173,1.244,0.067,2.695,0.990,Rolle↓
-2026-10-26,00-0033077,Dak Prescott,DAL,PHI,QB,0.000,fehlt (0.0 angenommen),16.986,3.180,1.136,5.455,0.990,Pech -8.0 FP vs xFP
-2026-10-26,00-0033120,Kenny Clark,DAL,PHI,DL,0.000,fehlt (0.0 angenommen),2.222,0.572,0.000,1.356,0.990,
-2026-10-26,00-0033393,Kenny Moore II,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),6.562,1.315,0.114,2.802,0.990,
-2026-10-26,00-0033787,Jake Elliott,PHI,DAL,K,0.000,fehlt (0.0 angenommen),7.895,2.689,0.643,5.118,0.990,
-2026-10-26,00-0033877,Malik Hooker,DAL,PHI,DB,0.000,fehlt (0.0 angenommen),5.449,1.122,0.063,2.379,0.990,
-2026-10-26,00-0034351,Dallas Goedert,PHI,DAL,TE,0.000,fehlt (0.0 angenommen),6.634,1.700,0.265,3.526,0.990,QB-Wechsel
-2026-10-26,00-0034844,Saquon Barkley,PHI,DAL,RB,0.000,fehlt (0.0 angenommen),7.973,1.629,0.000,3.713,0.750,"Questionable (Hamstring); Rolle↓; QB-Wechsel; Rückkehr nach 2 verpassten Spielen (×0.85); Questionable Hamstring, Sa volles Training (Yahoo/Eagles-Report 25.10.); Inactives 90 Min vor Kickoff pruefen"
-2026-10-26,00-0034967,Rashan Gary,DAL,PHI,LB,0.000,fehlt (0.0 angenommen),5.292,1.083,0.000,2.354,0.990,
-2026-10-26,00-0034993,Marcus Epps,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),4.938,1.023,0.000,2.223,0.990,Rolle↓; Rückkehr nach 3 verpassten Spielen (×0.85)
+2026-10-26,00-0027940,Von Miller,DAL,PHI,LB,0.000,fehlt (0.0 angenommen),2.144,0.470,0.000,1.071,0.990,
+2026-10-26,00-0029692,Bryan Anger,DAL,PHI,P,3.000,Pool,17.944,1.407,0.544,2.375,0.990,
+2026-10-26,00-0032580,Jonathan Jones,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),6.173,1.110,0.059,2.404,0.990,Rolle↓
+2026-10-26,00-0033077,Dak Prescott,DAL,PHI,QB,0.500,Pool,16.986,3.180,1.136,5.455,0.990,Pech -8.0 FP vs xFP
+2026-10-26,00-0033120,Kenny Clark,DAL,PHI,DL,3.000,Pool,2.222,0.510,0.000,1.210,0.990,
+2026-10-26,00-0033393,Kenny Moore II,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),6.562,1.173,0.102,2.500,0.990,
+2026-10-26,00-0033787,Jake Elliott,PHI,DAL,K,1.900,Pool,7.895,2.731,0.653,5.198,0.990,
+2026-10-26,00-0033877,Malik Hooker,DAL,PHI,DB,3.000,Pool,5.449,1.000,0.056,2.122,0.990,
+2026-10-26,00-0034351,Dallas Goedert,PHI,DAL,TE,1.600,Pool,6.634,1.700,0.265,3.526,0.990,QB-Wechsel
+2026-10-26,00-0034844,Saquon Barkley,PHI,DAL,RB,2.200,Pool,7.973,1.629,0.000,3.713,0.750,"Questionable (Hamstring); Rolle↓; QB-Wechsel; Rückkehr nach 2 verpassten Spielen (×0.85); Questionable Hamstring, Sa volles Training (Yahoo/Eagles-Report 25.10.); Inactives 90 Min vor Kickoff pruefen"
+2026-10-26,00-0034967,Rashan Gary,DAL,PHI,LB,3.000,Pool,5.292,0.966,0.000,2.100,0.990,
+2026-10-26,00-0034993,Marcus Epps,PHI,DAL,DB,3.000,Pool,4.938,0.912,0.000,1.983,0.990,Rolle↓; Rückkehr nach 3 verpassten Spielen (×0.85)
 2026-10-26,00-0035662,Marquise Brown,PHI,DAL,WR,0.000,fehlt (0.0 angenommen),2.286,0.817,0.000,1.645,0.990,QB-Wechsel; Rückkehr nach 4 verpassten Spielen (×0.85)
-2026-10-26,00-0035718,Quinnen Williams,DAL,PHI,DL,0.000,fehlt (0.0 angenommen),5.636,1.185,0.000,2.833,0.990,Rolle↓
-2026-10-26,00-0036192,A.J. Epenesa,PHI,DAL,LB,0.000,fehlt (0.0 angenommen),2.048,0.544,0.000,1.458,0.990,
-2026-10-26,00-0036224,Jonathan Greenard,PHI,DAL,LB,0.000,fehlt (0.0 angenommen),3.346,0.570,0.000,1.471,0.750,Questionable (Ankle)
-2026-10-26,00-0036313,Braden Mann,PHI,DAL,P,0.000,fehlt (0.0 angenommen),17.820,1.390,0.519,2.362,0.990,
-2026-10-26,00-0036358,CeeDee Lamb,DAL,PHI,WR,0.000,fehlt (0.0 angenommen),11.554,3.147,0.701,6.306,0.990,Pech -5.4 FP vs xFP
-2026-10-26,00-0036418,Zack Baun,PHI,DAL,LB,0.000,fehlt (0.0 angenommen),7.352,1.505,0.100,3.251,0.990,
+2026-10-26,00-0035718,Quinnen Williams,DAL,PHI,DL,2.600,Pool,5.636,1.057,0.000,2.527,0.990,Rolle↓
+2026-10-26,00-0036192,A.J. Epenesa,PHI,DAL,LB,0.000,fehlt (0.0 angenommen),2.048,0.486,0.000,1.301,0.990,
+2026-10-26,00-0036224,Jonathan Greenard,PHI,DAL,LB,0.000,fehlt (0.0 angenommen),3.346,0.509,0.000,1.312,0.750,Questionable (Ankle)
+2026-10-26,00-0036313,Braden Mann,PHI,DAL,P,1.500,Pool,17.820,1.390,0.519,2.362,0.990,
+2026-10-26,00-0036358,CeeDee Lamb,DAL,PHI,WR,0.200,Pool,11.554,3.147,0.701,6.306,0.990,Pech -5.4 FP vs xFP
+2026-10-26,00-0036418,Zack Baun,PHI,DAL,LB,2.500,Pool,7.352,1.342,0.089,2.900,0.990,
+2026-10-26,00-0036912,DeVonta Smith,PHI,DAL,WR,0.600,Pool,9.065,0.000,0.000,0.000,0.000,Out (Hamstring); Rolle↓; QB-Wechsel
 2026-10-26,00-0036980,Elijah Moore,PHI,DAL,WR,0.000,fehlt (0.0 angenommen),0.840,0.475,0.000,1.067,0.990,QB-Wechsel
-2026-10-26,00-0036997,Javonte Williams,DAL,PHI,RB,0.000,fehlt (0.0 angenommen),13.236,3.456,0.889,6.767,0.990,Rolle↓
-2026-10-26,00-0037051,Elijah Garcia,DAL,PHI,DL,0.000,fehlt (0.0 angenommen),1.634,0.461,0.000,1.108,0.990,
-2026-10-26,00-0037073,Jordan Davis,PHI,DAL,DL,0.000,fehlt (0.0 angenommen),2.128,0.554,0.000,1.300,0.990,
-2026-10-26,00-0037079,Riq Woolen,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),6.590,1.333,0.124,2.770,0.990,
+2026-10-26,00-0036997,Javonte Williams,DAL,PHI,RB,0.400,Pool,13.236,3.456,0.889,6.767,0.990,Rolle↓
+2026-10-26,00-0037073,Jordan Davis,PHI,DAL,DL,3.000,Pool,2.128,0.495,0.000,1.160,0.990,
+2026-10-26,00-0037079,Riq Woolen,PHI,DAL,DB,3.000,Pool,6.590,1.189,0.111,2.471,0.990,
 2026-10-26,00-0037120,Tyler Goodson,DAL,PHI,RB,0.000,fehlt (0.0 angenommen),1.383,0.672,0.000,1.448,0.990,
-2026-10-26,00-0037247,George Pickens,DAL,PHI,WR,0.000,fehlt (0.0 angenommen),8.231,2.328,0.458,4.712,0.990,
-2026-10-26,00-0037258,Dameon Pierce,PHI,DAL,RB,0.000,fehlt (0.0 angenommen),3.862,1.228,0.141,2.360,0.990,QB-Wechsel; Pech -3.7 FP vs xFP
-2026-10-26,00-0037270,Otito Ogbonnia,DAL,PHI,DL,0.000,fehlt (0.0 angenommen),2.692,0.650,0.000,1.530,0.990,
-2026-10-26,00-0037275,DaRon Bland,DAL,PHI,DB,0.000,fehlt (0.0 angenommen),6.440,1.311,0.103,2.784,0.990,
-2026-10-26,00-0037561,Markquese Bell,DAL,PHI,DB,0.000,fehlt (0.0 angenommen),3.033,0.703,0.000,1.595,0.990,
-2026-10-26,00-0037692,Brandon Aubrey,DAL,PHI,K,0.000,fehlt (0.0 angenommen),6.706,2.281,0.489,4.436,0.990,
-2026-10-26,00-0037839,Cobie Durant,DAL,PHI,DB,0.000,fehlt (0.0 angenommen),5.016,1.035,0.000,2.355,0.990,Rolle↓; Rückkehr nach 4 verpassten Spielen (×0.85)
-2026-10-26,00-0038041,Jake Ferguson,DAL,PHI,TE,0.000,fehlt (0.0 angenommen),4.222,1.141,0.130,2.316,0.990,Rolle↓
-2026-10-26,00-0038116,Arnold Ebiketie,PHI,DAL,LB,0.000,fehlt (0.0 angenommen),4.510,0.961,0.000,2.086,0.990,
-2026-10-26,00-0038386,Jalen Carter,PHI,DAL,DL,0.000,fehlt (0.0 angenommen),5.434,1.144,0.000,2.631,0.990,
-2026-10-26,00-0038400,Tanner McKee,PHI,DAL,QB,0.000,fehlt (0.0 angenommen),12.300,2.310,0.748,3.993,0.990,QB-Wechsel
-2026-10-26,00-0038412,Moro Ojomo,PHI,DAL,DL,0.000,fehlt (0.0 angenommen),1.975,0.524,0.000,1.246,0.990,Rolle↓
-2026-10-26,00-0038556,DeMarvion Overshown,DAL,PHI,LB,0.000,fehlt (0.0 angenommen),4.083,0.882,0.000,1.950,0.990,Rückkehr nach 5 verpassten Spielen (×0.85)
-2026-10-26,00-0038624,Ameer Speed,DAL,PHI,DB,0.000,fehlt (0.0 angenommen),2.632,0.621,0.000,1.460,0.990,Rolle↓
+2026-10-26,00-0037247,George Pickens,DAL,PHI,WR,1.000,Pool,8.231,2.328,0.458,4.712,0.990,
+2026-10-26,00-0037258,Dameon Pierce,PHI,DAL,RB,2.700,Pool,3.862,1.228,0.141,2.360,0.990,QB-Wechsel; Pech -3.7 FP vs xFP
+2026-10-26,00-0037270,Otito Ogbonnia,DAL,PHI,DL,3.000,Pool,2.692,0.580,0.000,1.366,0.990,
+2026-10-26,00-0037275,DaRon Bland,DAL,PHI,DB,3.000,Pool,6.440,1.170,0.092,2.484,0.990,
+2026-10-26,00-0037561,Markquese Bell,DAL,PHI,DB,3.000,Pool,3.033,0.627,0.000,1.423,0.990,
+2026-10-26,00-0037692,Brandon Aubrey,DAL,PHI,K,1.400,Pool,6.706,2.316,0.497,4.506,0.990,
+2026-10-26,00-0037801,KaVontae Turpin,DAL,PHI,WR,3.000,Pool,2.331,0.000,0.000,0.000,0.000,Out (Ribs)
+2026-10-26,00-0037839,Cobie Durant,DAL,PHI,DB,0.000,fehlt (0.0 angenommen),5.016,0.923,0.000,2.101,0.990,Rolle↓; Rückkehr nach 4 verpassten Spielen (×0.85)
+2026-10-26,00-0038041,Jake Ferguson,DAL,PHI,TE,3.000,Pool,4.222,1.141,0.130,2.316,0.990,Rolle↓
+2026-10-26,00-0038116,Arnold Ebiketie,PHI,DAL,LB,0.000,fehlt (0.0 angenommen),4.510,0.857,0.000,1.861,0.990,
+2026-10-26,00-0038386,Jalen Carter,PHI,DAL,DL,3.000,Pool,5.434,1.021,0.000,2.348,0.990,
+2026-10-26,00-0038393,Dontayvion Wicks,PHI,DAL,WR,2.000,Pool,4.434,0.000,0.000,0.000,0.000,Out (Ankle); Rolle↓; QB-Wechsel
+2026-10-26,00-0038400,Tanner McKee,PHI,DAL,QB,1.100,Pool,12.300,2.310,0.748,3.993,0.990,QB-Wechsel
+2026-10-26,00-0038412,Moro Ojomo,PHI,DAL,DL,0.000,fehlt (0.0 angenommen),1.975,0.467,0.000,1.112,0.990,Rolle↓
+2026-10-26,00-0038556,DeMarvion Overshown,DAL,PHI,LB,0.000,fehlt (0.0 angenommen),4.083,0.787,0.000,1.740,0.990,Rückkehr nach 5 verpassten Spielen (×0.85)
+2026-10-26,00-0038624,Ameer Speed,DAL,PHI,DB,0.000,fehlt (0.0 angenommen),2.632,0.554,0.000,1.302,0.990,Rolle↓
+2026-10-26,00-0038625,Dee Winters,DAL,PHI,LB,2.100,Pool,6.709,0.000,0.000,0.000,0.000,Out (Calf); Rolle↓
 2026-10-26,00-0038705,Emari Demercado,DAL,PHI,RB,0.000,fehlt (0.0 angenommen),1.463,0.711,0.000,1.463,0.990,Rückkehr nach 4 verpassten Spielen (×0.85)
 2026-10-26,00-0038738,Hunter Luepke,DAL,PHI,RB,0.000,fehlt (0.0 angenommen),0.950,0.586,0.000,1.317,0.990,
+2026-10-26,00-0039013,Nolan Smith,PHI,DAL,LB,3.000,Pool,5.186,0.000,0.000,0.000,0.000,Out (Concussion); Rolle↓
 2026-10-26,00-0039062,Jonathan Mingo,DAL,PHI,WR,0.000,fehlt (0.0 angenommen),0.984,0.519,0.000,1.129,0.990,Pech -3.5 FP vs xFP
-2026-10-26,00-0039140,Kelee Ringo,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),2.365,0.581,0.000,1.341,0.990,
-2026-10-26,00-0039167,Joey Porter Jr.,DAL,PHI,DB,0.000,fehlt (0.0 angenommen),6.139,1.276,0.076,2.749,0.990,
-2026-10-26,00-0039410,Ryan Flournoy,DAL,PHI,WR,0.000,fehlt (0.0 angenommen),4.948,1.487,0.252,2.914,0.990,
-2026-10-26,00-0039530,Brevyn Spann-Ford,DAL,PHI,TE,0.000,fehlt (0.0 angenommen),1.009,0.477,0.000,1.050,0.990,
-2026-10-26,00-0039740,Jalyx Hunt,PHI,DAL,LB,0.000,fehlt (0.0 angenommen),5.978,0.925,0.000,2.486,0.750,Questionable (Knee); Rolle↓
-2026-10-26,00-0039826,Jeremiah Trotter Jr.,PHI,DAL,LB,0.000,fehlt (0.0 angenommen),3.662,0.795,0.000,1.766,0.990,
-2026-10-26,00-0039841,Cooper DeJean,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),8.124,1.622,0.228,3.381,0.990,
-2026-10-26,00-0039888,Quinyon Mitchell,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),7.761,1.559,0.199,3.275,0.990,
-2026-10-26,00-0040008,Shavon Revel Jr.,DAL,PHI,DB,0.000,fehlt (0.0 angenommen),2.854,0.684,0.000,1.657,0.990,Rolle↓
-2026-10-26,00-0040011,Shemar James,DAL,PHI,LB,0.000,fehlt (0.0 angenommen),4.979,1.058,0.000,2.358,0.990,
-2026-10-26,00-0040024,Darius Cooper,PHI,DAL,WR,0.000,fehlt (0.0 angenommen),3.275,1.066,0.111,2.111,0.990,Rolle↓; QB-Wechsel
-2026-10-26,00-0040708,Jihaad Campbell,PHI,DAL,LB,0.000,fehlt (0.0 angenommen),5.872,1.198,0.035,2.631,0.990,Rolle↓
-2026-10-26,00-0040725,Donovan Ezeiruaku,DAL,PHI,LB,0.000,fehlt (0.0 angenommen),4.974,1.041,0.000,2.260,0.990,
-2026-10-26,00-0040749,Andrew Mukuba,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),6.587,1.326,0.088,2.891,0.990,
-2026-10-26,00-0040865,Caleb Downs,DAL,PHI,DB,0.000,fehlt (0.0 angenommen),6.055,1.234,0.062,2.622,0.990,
-2026-10-26,00-0040867,Makai Lemon,PHI,DAL,WR,0.000,fehlt (0.0 angenommen),3.632,1.154,0.122,2.313,0.990,QB-Wechsel
-2026-10-26,00-0040872,Jaishawn Barham,DAL,PHI,LB,0.000,fehlt (0.0 angenommen),5.551,1.151,0.000,2.502,0.990,
-2026-10-26,00-0041537,Malachi Lawrence,DAL,PHI,LB,0.000,fehlt (0.0 angenommen),2.799,0.649,0.000,1.472,0.990,
+2026-10-26,00-0039140,Kelee Ringo,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),2.365,0.518,0.000,1.197,0.990,
+2026-10-26,00-0039167,Joey Porter Jr.,DAL,PHI,DB,0.000,fehlt (0.0 angenommen),6.139,1.138,0.068,2.452,0.990,
+2026-10-26,00-0039410,Ryan Flournoy,DAL,PHI,WR,2.700,Pool,4.948,1.487,0.252,2.914,0.990,
+2026-10-26,00-0039530,Brevyn Spann-Ford,DAL,PHI,TE,3.000,Pool,1.009,0.477,0.000,1.050,0.990,
+2026-10-26,00-0039740,Jalyx Hunt,PHI,DAL,LB,3.000,Pool,5.978,0.825,0.000,2.217,0.750,Questionable (Knee); Rolle↓
+2026-10-26,00-0039826,Jeremiah Trotter Jr.,PHI,DAL,LB,3.000,Pool,3.662,0.709,0.000,1.576,0.990,
+2026-10-26,00-0039841,Cooper DeJean,PHI,DAL,DB,2.300,Pool,8.124,1.447,0.203,3.016,0.990,
+2026-10-26,00-0039888,Quinyon Mitchell,PHI,DAL,DB,1.900,Pool,7.761,1.390,0.177,2.922,0.990,
+2026-10-26,00-0040008,Shavon Revel Jr.,DAL,PHI,DB,3.000,Pool,2.854,0.610,0.000,1.477,0.990,Rolle↓
+2026-10-26,00-0040011,Shemar James,DAL,PHI,LB,0.000,fehlt (0.0 angenommen),4.979,0.944,0.000,2.103,0.990,
+2026-10-26,00-0040024,Darius Cooper,PHI,DAL,WR,1.200,Pool,3.275,1.066,0.111,2.111,0.990,Rolle↓; QB-Wechsel
+2026-10-26,00-0040708,Jihaad Campbell,PHI,DAL,LB,3.000,Pool,5.872,1.069,0.031,2.347,0.990,Rolle↓
+2026-10-26,00-0040725,Donovan Ezeiruaku,DAL,PHI,LB,3.000,Pool,4.974,0.929,0.000,2.016,0.990,
+2026-10-26,00-0040749,Andrew Mukuba,PHI,DAL,DB,3.000,Pool,6.587,1.183,0.079,2.579,0.990,
+2026-10-26,00-0040865,Caleb Downs,DAL,PHI,DB,3.000,Pool,6.055,1.101,0.055,2.339,0.990,
+2026-10-26,00-0040867,Makai Lemon,PHI,DAL,WR,3.000,Pool,3.632,1.154,0.122,2.313,0.990,QB-Wechsel
+2026-10-26,00-0040872,Jaishawn Barham,DAL,PHI,LB,3.000,Pool,5.551,1.027,0.000,2.232,0.990,
+2026-10-26,00-0040930,Camden Brown,DAL,PHI,WR,0.000,0 (noch kein Saisonspiel),0.574,0.426,0.000,0.986,0.990,keine Spiele 2026
+2026-10-26,00-0041537,Malachi Lawrence,DAL,PHI,LB,3.000,Pool,2.799,0.579,0.000,1.314,0.990,
