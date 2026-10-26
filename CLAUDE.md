@@ -349,3 +349,8 @@ Dateiformate:
   mit +3.0 erst auf Nachfrage im Pool). Maye 4.9 (E 3.8), Loveland 3.2 (E 1.6), Odunze 2.4 und Borregales 2.2 genau
   auf E, A.J. Brown 1.5 (E 2.3; zweites Spiel nach Knöchelverletzung). Hindsight 68.2: Burden 5.6 (+1.3, E 2.0,
   vom Rolle↓-Signal gebremst) und Stevenson 4.6 (+1.1, E 2.2). Sicher-Variante (Punter) hätte nur 41.8 gebracht.
+- 2026-10-25 (Sonntag, 12 Spiele): **47.60 Punkte, Rang 421/19.5k (Top 2.2 %)**, bestes Ergebnis bisher.
+  Modell-Lineup gespielt (Willis +2.0 erst durch die Boost-Nachfrage im Lineup). Nix 5.4 (E 3.5), Willis 4.7 (E 2.9)
+  trugen; Gibbs 4.4 (E 5.8), Dobbins 1.6 (2.7), **Piñeiro 0.1** (E 2.4; 0 FG, 1 XP verschossen, zweites schwaches
+  Spiel nacheinander). Upside-Variante (Kraft 2.5 statt Piñeiro) ≈ 56.2, Sicher (Ward statt Dobbins) ≈ 47.1.
+  Hindsight 89.1 (Pollard 8.0 mit 3 TD bei E 2.1). 396 Ratings erfasst (Seiten mit Lücken, daher keine Obergrenze).
