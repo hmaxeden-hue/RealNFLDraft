@@ -354,3 +354,8 @@ Dateiformate:
   trugen; Gibbs 4.4 (E 5.8), Dobbins 1.6 (2.7), **Piñeiro 0.1** (E 2.4; 0 FG, 1 XP verschossen, zweites schwaches
   Spiel nacheinander). Upside-Variante (Kraft 2.5 statt Piñeiro) ≈ 56.2, Sicher (Ward statt Dobbins) ≈ 47.1.
   Hindsight 89.1 (Pollard 8.0 mit 3 TD bei E 2.1). 396 Ratings erfasst (Seiten mit Lücken, daher keine Obergrenze).
+- 2026-10-26 (MNF DAL @ PHI): **43.92 Punkte, Rang 6'489/15.7k (Top 41 %)**. User liess das Platzhalter-Lineup mit Dak
+  stehen (Barkley spielte). Javonte 6.2 (E 3.5), Dak 4.7 (3.2), Aubrey 4.3 (2.3) über E; Elliott 0.9 (0 FG) und Anger
+  0.7 (nur 2 Punts) darunter. Barkley-Variante (Plan bei "aktiv") ≈ 45.9 (+2.0), Hindsight 65.8. Lehre: Bei
+  Questionable-Spielern das Platzhalter-Lineup so wählen, dass es auch ohne Tausch gut ist (war so) – der Tausch nach
+  den Inactives lohnt aber, wenn der User ihn machen kann. Kicker im Einzelspiel: Elliott 0 FG trotz E 2.7.
