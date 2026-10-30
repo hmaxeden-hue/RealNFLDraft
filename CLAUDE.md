@@ -359,3 +359,8 @@ Dateiformate:
   0.7 (nur 2 Punts) darunter. Barkley-Variante (Plan bei "aktiv") ≈ 45.9 (+2.0), Hindsight 65.8. Lehre: Bei
   Questionable-Spielern das Platzhalter-Lineup so wählen, dass es auch ohne Tausch gut ist (war so) – der Tausch nach
   den Inactives lohnt aber, wenn der User ihn machen kann. Kicker im Einzelspiel: Elliott 0 FG trotz E 2.7.
+- 2026-10-29 (TNF CAR @ GB): **35.16 Punkte, Rang 3'027/15.7k (Top 19 %)**, Modell-Lineup gespielt. Love 4.2 (E 3.3),
+  Jacobs 3.6 (4.2), Kraft 2.7 (2.0), Martin 1.5 (1.3) etwa auf E; Lloyd 0.6 (E 1.6) als Backup hinter Jacobs schwach.
+  Upside (Watson) 35.6, Sicher (Whelan) 34.1 → alle Varianten gleichauf. Hindsight 76.9 nur mit +3.0-Verteidigern
+  (Hopper 5.4 mit INT, Cox 3.4 mit FR, Wheatley 3.3 mit INT) – Turnover-Glück, nicht vorhersagbar.
+  Container wurde zwischen den Spieltagen zurückgesetzt: Repo neu klonen, `pip install -r requirements.txt pymupdf`.
