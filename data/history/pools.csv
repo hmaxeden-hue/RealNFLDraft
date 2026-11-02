@@ -1621,3 +1621,63 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-01,00-0041522,Jacob Rodriguez,MIA,NE,LB,2.600,Pool,7.343,1.464,0.130,3.195,0.990,
 2026-11-01,00-0041547,KC Concepcion,CLE,PIT,WR,2.300,Pool,6.793,1.972,0.359,3.987,0.990,
 2026-11-01,00-0041569,Gabe Jacas,NE,MIA,LB,3.000,Pool,5.289,1.087,0.000,2.521,0.990,
+2026-11-02,00-0031203,Cairo Santos,CHI,SEA,K,0.000,fehlt (0.0 angenommen),6.006,2.047,0.419,3.857,0.990,
+2026-11-02,00-0031411,DeMarcus Lawrence,SEA,CHI,LB,0.000,fehlt (0.0 angenommen),6.046,1.244,0.016,2.739,0.990,
+2026-11-02,00-0031492,Jason Myers,SEA,CHI,K,0.000,fehlt (0.0 angenommen),6.974,2.384,0.562,4.553,0.990,
+2026-11-02,00-0031583,Grady Jarrett,CHI,SEA,DL,0.000,fehlt (0.0 angenommen),1.539,0.438,0.000,1.051,0.990,
+2026-11-02,00-0031933,Leonard Williams,SEA,CHI,DL,0.000,fehlt (0.0 angenommen),5.065,1.095,0.000,2.602,0.990,
+2026-11-02,00-0032464,Kalif Raymond,CHI,SEA,WR,0.000,fehlt (0.0 angenommen),2.416,0.846,0.000,1.718,0.990,Rolle↓
+2026-11-02,00-0033908,Cooper Kupp,SEA,CHI,WR,0.000,fehlt (0.0 angenommen),3.803,1.192,0.125,2.378,0.990,Rolle↓
+2026-11-02,00-0034160,Michael Dickson,SEA,CHI,P,0.000,fehlt (0.0 angenommen),16.956,1.323,0.527,2.195,0.990,
+2026-11-02,00-0034320,Kentavius Street,CHI,SEA,DL,0.000,fehlt (0.0 angenommen),2.316,0.571,0.000,1.347,0.990,
+2026-11-02,00-0034869,Sam Darnold,SEA,CHI,QB,0.000,fehlt (0.0 angenommen),17.101,3.267,1.213,5.576,0.990,
+2026-11-02,00-0034974,Julian Love,SEA,CHI,DB,0.000,fehlt (0.0 angenommen),6.460,1.312,0.076,2.863,0.990,
+2026-11-02,00-0035357,Cam Lewis,CHI,SEA,DB,0.000,fehlt (0.0 angenommen),5.793,1.224,0.080,2.568,0.990,
+2026-11-02,00-0035386,T.J. Edwards,CHI,SEA,LB,0.000,fehlt (0.0 angenommen),6.758,1.393,0.065,3.020,0.990,Rolle↓; Rückkehr nach 2 verpassten Spielen (×0.85)
+2026-11-02,00-0035525,Devin Bush,CHI,SEA,LB,0.000,fehlt (0.0 angenommen),8.859,1.769,0.188,3.764,0.990,
+2026-11-02,00-0035643,Jeffery Simmons,CHI,SEA,DL,0.000,fehlt (0.0 angenommen),9.942,1.997,0.027,4.877,0.990,
+2026-11-02,00-0035647,Montez Sweat,CHI,SEA,DL,0.000,fehlt (0.0 angenommen),3.853,0.832,0.000,2.010,0.990,Rückkehr nach 2 verpassten Spielen (×0.85)
+2026-11-02,00-0036275,D'Andre Swift,CHI,SEA,RB,0.000,fehlt (0.0 angenommen),11.188,2.979,0.777,5.633,0.990,
+2026-11-02,00-0036292,Jaylon Johnson,CHI,SEA,DB,0.000,fehlt (0.0 angenommen),6.114,1.262,0.072,2.808,0.990,
+2026-11-02,00-0036366,Neville Gallimore,CHI,SEA,DL,0.000,fehlt (0.0 angenommen),1.932,0.512,0.000,1.217,0.990,
+2026-11-02,00-0036994,Ernest Jones,SEA,CHI,LB,0.000,fehlt (0.0 angenommen),8.304,1.683,0.179,3.604,0.990,
+2026-11-02,00-0037109,Jack Sanborn,CHI,SEA,LB,0.000,fehlt (0.0 angenommen),3.703,0.835,0.000,1.916,0.990,
+2026-11-02,00-0037129,Josh Blackwell,CHI,SEA,DB,0.000,fehlt (0.0 angenommen),3.677,0.828,0.000,1.975,0.990,
+2026-11-02,00-0037137,Josh Jobe,SEA,CHI,DB,0.000,fehlt (0.0 angenommen),6.023,1.238,0.068,2.724,0.990,
+2026-11-02,00-0037271,D'Marco Jackson,CHI,SEA,LB,0.000,fehlt (0.0 angenommen),6.497,0.997,0.000,2.640,0.750,Questionable (Ankle)
+2026-11-02,00-0037323,Rodney Thomas,SEA,CHI,DB,0.000,fehlt (0.0 angenommen),5.337,1.113,0.045,2.362,0.990,Rolle↓
+2026-11-02,00-0037843,Daniel Hardy,CHI,SEA,DL,0.000,fehlt (0.0 angenommen),1.879,0.510,0.000,1.200,0.990,
+2026-11-02,00-0038111,Kyler Gordon,CHI,SEA,DB,0.000,fehlt (0.0 angenommen),8.188,1.638,0.246,3.386,0.990,
+2026-11-02,00-0038390,Noah Sewell,CHI,SEA,LB,0.000,fehlt (0.0 angenommen),3.770,0.798,0.000,1.765,0.990,
+2026-11-02,00-0038440,Zavier Scott,CHI,SEA,RB,0.000,fehlt (0.0 angenommen),0.679,0.563,0.000,1.279,0.990,
+2026-11-02,00-0038488,Brady Russell,SEA,CHI,RB,0.000,fehlt (0.0 angenommen),0.166,0.451,0.000,1.121,0.990,
+2026-11-02,00-0038543,Jaxon Smith-Njigba,SEA,CHI,WR,0.000,fehlt (0.0 angenommen),15.316,4.150,0.863,8.545,0.990,
+2026-11-02,00-0038568,Clark Phillips III,CHI,SEA,DB,0.000,fehlt (0.0 angenommen),1.230,0.468,0.000,1.667,0.990,
+2026-11-02,00-0038765,Ty Okada,SEA,CHI,DB,0.000,fehlt (0.0 angenommen),6.605,1.364,0.092,2.917,0.990,
+2026-11-02,00-0038797,Emanuel Wilson,SEA,CHI,RB,0.000,fehlt (0.0 angenommen),8.362,2.332,0.553,4.452,0.990,
+2026-11-02,00-0038922,Drake Thomas,SEA,CHI,LB,0.000,fehlt (0.0 angenommen),6.575,1.379,0.068,3.059,0.990,Rückkehr nach 2 verpassten Spielen (×0.85)
+2026-11-02,00-0039021,Roschon Johnson,CHI,SEA,RB,0.000,fehlt (0.0 angenommen),2.124,0.847,0.000,1.776,0.990,Rolle↓
+2026-11-02,00-0039047,Derick Hall,SEA,CHI,LB,0.000,fehlt (0.0 angenommen),4.274,0.925,0.000,2.058,0.990,
+2026-11-02,00-0039071,Tyrique Stevenson,CHI,SEA,DB,0.000,fehlt (0.0 angenommen),6.910,1.396,0.131,2.947,0.990,
+2026-11-02,00-0039165,Zach Charbonnet,SEA,CHI,RB,0.000,0 (noch kein Saisonspiel),9.754,2.680,0.700,5.142,0.990,keine Spiele 2026
+2026-11-02,00-0039169,Devon Witherspoon,SEA,CHI,DB,0.000,fehlt (0.0 angenommen),6.514,1.315,0.085,2.784,0.990,
+2026-11-02,00-0039299,George Holani,SEA,CHI,RB,0.000,fehlt (0.0 angenommen),3.097,1.082,0.022,2.134,0.990,
+2026-11-02,00-0039309,Byron Murphy II,SEA,CHI,DL,0.000,fehlt (0.0 angenommen),4.127,0.912,0.000,2.179,0.990,
+2026-11-02,00-0039745,Tory Taylor,CHI,SEA,P,0.000,fehlt (0.0 angenommen),21.561,1.673,0.654,2.867,0.990,
+2026-11-02,00-0039793,AJ Barner,SEA,CHI,TE,0.000,fehlt (0.0 angenommen),4.337,1.214,0.165,2.436,0.990,
+2026-11-02,00-0039795,Nehemiah Pritchett,SEA,CHI,DB,0.000,fehlt (0.0 angenommen),3.072,0.735,0.000,2.092,0.990,Rolle↓
+2026-11-02,00-0039815,Tyrice Knight,SEA,CHI,LB,0.000,fehlt (0.0 angenommen),5.738,1.179,0.018,2.546,0.990,
+2026-11-02,00-0039840,Austin Booker,CHI,SEA,DL,0.000,fehlt (0.0 angenommen),5.392,1.137,0.000,2.690,0.990,
+2026-11-02,00-0039918,Caleb Williams,CHI,SEA,QB,0.000,fehlt (0.0 angenommen),13.971,2.652,0.938,4.632,0.990,
+2026-11-02,00-0039919,Rome Odunze,CHI,SEA,WR,0.000,fehlt (0.0 angenommen),6.660,1.912,0.351,3.795,0.990,Pech -3.6 FP vs xFP
+2026-11-02,00-0040061,Connor O'Toole,SEA,CHI,LB,0.000,fehlt (0.0 angenommen),3.042,0.709,0.000,1.681,0.990,
+2026-11-02,00-0040126,Colston Loveland,CHI,SEA,TE,0.000,fehlt (0.0 angenommen),6.126,1.612,0.282,3.297,0.990,
+2026-11-02,00-0040277,Jahdae Walker,CHI,SEA,WR,0.000,fehlt (0.0 angenommen),1.239,0.562,0.000,1.202,0.990,Rolle↓
+2026-11-02,00-0040648,Tory Horton,SEA,CHI,WR,0.000,fehlt (0.0 angenommen),3.645,1.154,0.111,2.306,0.990,
+2026-11-02,00-0040733,Nick Emmanwori,SEA,CHI,DB,0.000,fehlt (0.0 angenommen),6.839,1.426,0.157,2.997,0.990,
+2026-11-02,00-0040735,Luther Burden III,CHI,SEA,WR,0.000,fehlt (0.0 angenommen),6.551,1.875,0.325,3.783,0.990,Rolle↓
+2026-11-02,00-0041051,Zavion Thomas,CHI,SEA,WR,0.000,fehlt (0.0 angenommen),0.866,0.473,0.000,1.058,0.990,
+2026-11-02,00-0041060,Malik Muhammad,CHI,SEA,DB,0.000,fehlt (0.0 angenommen),6.404,0.995,0.000,2.592,0.750,Questionable (Toe); Rolle↓
+2026-11-02,00-0041085,Keyshaun Elliott,CHI,SEA,LB,0.000,0 (noch kein Saisonspiel),1.842,0.496,0.000,1.156,0.990,keine Spiele 2026
+2026-11-02,00-0041178,Robert Henry Jr.,SEA,CHI,RB,0.000,0 (noch kein Saisonspiel),0.726,0.557,0.000,1.272,0.990,keine Spiele 2026
+2026-11-02,00-0041538,Dillon Thieneman,CHI,SEA,DB,0.000,fehlt (0.0 angenommen),7.175,1.439,0.152,3.083,0.990,
