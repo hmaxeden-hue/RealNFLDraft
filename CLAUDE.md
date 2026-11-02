@@ -364,3 +364,11 @@ Dateiformate:
   Upside (Watson) 35.6, Sicher (Whelan) 34.1 → alle Varianten gleichauf. Hindsight 76.9 nur mit +3.0-Verteidigern
   (Hopper 5.4 mit INT, Cox 3.4 mit FR, Wheatley 3.3 mit INT) – Turnover-Glück, nicht vorhersagbar.
   Container wurde zwischen den Spieltagen zurückgesetzt: Repo neu klonen, `pip install -r requirements.txt pymupdf`.
+- 2026-11-01 (Sonntag, 12 Spiele): **27.43 Punkte, Rang 13'874/18.3k (untere 24 %)**, schlechtester Sonntag bisher.
+  Drei QBs mit hohem E floppten gleichzeitig: Brissett 0.5 (E 4.0; nur 3.5 FP im 33:30-Shootout, ARI lief über
+  Allgeier 7.9), Mayfield −0.1 (E 3.2), Herbert 1.5 (E 2.7); Borregales 0.8 (E 2.6). Die Rating-Formel traf
+  (Brissett 0.7, Herbert 1.5, Ward 5.0 vs. 5.5) – es war die Leistung, nicht das Mapping. **User tauschte McManus →
+  Cam Ward** (nach meinem Hinweis auf den fehlenden Long Snapper): Ward 5.5 statt McManus 2.0 = **+8.3** (Modell-
+  Lineup 19.1). Bilanz manueller Abweichungen: 2 von 7 positiv, Summe −26.0. Hindsight 133.8 (Hooker 8.3 mit 3 INT,
+  Allgeier 7.9, E. Johnson 5.8, Ward 5.5, Gainwell 4.9). Idee: 3 QBs im Lineup bündeln das QB-Risiko (Turnovers,
+  Spielplan) – prüfen, ob ein QB-Limit/Diversifikation im Backtest E kostet oder P25 hebt.
