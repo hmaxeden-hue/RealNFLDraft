@@ -372,3 +372,10 @@ Dateiformate:
   Lineup 19.1). Bilanz manueller Abweichungen: 2 von 7 positiv, Summe −26.0. Hindsight 133.8 (Hooker 8.3 mit 3 INT,
   Allgeier 7.9, E. Johnson 5.8, Ward 5.5, Gainwell 4.9). Idee: 3 QBs im Lineup bündeln das QB-Risiko (Turnovers,
   Spielplan) – prüfen, ob ein QB-Limit/Diversifikation im Backtest E kostet oder P25 hebt.
+- 2026-11-02 (MNF CHI @ SEA): **35.94 Punkte, Rang 4'941/15.4k (Top 32 %)**. **Wochenduell:** Der User spielt pro
+  Woche gegen einen Freund (Summe aller Spieltage). 10 Punkte hinten vor MNF, Freund hatte JSN (Slot 1), Darnold
+  (Slot 3), Taylor (Slot 5). Gemeinsame Spieler auf gleichem Slot heben sich auf → Duell-Lineup ohne JSN, mit
+  Stevenson (CB CHI, +3.0): P(Abstand > 10) 20 % → 25 %, E −1.0 (`tools/duel.py`). User spielte es: Darnold 2.8,
+  Simmons 2.6, Bush 2.0, Taylor 1.2, Stevenson 1.1. JSN holte 4.7 → Modell-Lineup ≈ 39.0 (+3.0); Duell knapp
+  verloren. Ex ante richtig (mehr Streuung beim Rückstand), ex post Pech. Hindsight 47.9 (Swift 5.2 mit 3 TD).
+  Regel: Im Duell nur am letzten Spieltag der Woche und nur bei Rückstand auf Streuung spielen, sonst E-max.
