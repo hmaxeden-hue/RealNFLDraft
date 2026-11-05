@@ -1,0 +1,49 @@
+app_order,name,team,boost,app_status
+1,"Trevor Lawrence",JAX,0.3,Active
+2,"Rashod Bateman",BAL,1.9,Active
+3,"Chris Rodriguez Jr.",JAX,2.5,Active
+4,"Roquan Smith",BAL,2.3,Active
+5,"Tyler Huntley",BAL,0.7,Out
+6,"Malaki Starks",BAL,3.0,Active
+7,"Tyler Loop",BAL,0.9,Out
+8,"Foyesade Oluokun",JAX,1.7,Active
+9,"Cam Little",JAX,0.8,Active
+10,"Parker Washington",JAX,0.9,Active
+11,"Derrick Henry",BAL,0.2,Active
+12,"Zay Flowers",BAL,0.2,Active
+13,"Brenton Strange",JAX,2.0,Active
+14,"Bhayshul Tuten",JAX,0.2,Questionable
+15,"Jakobi Meyers",JAX,2.0,Active
+16,"Trenton Simpson",BAL,2.3,Active
+17,"Travis Hunter",JAX,1.6,Active
+18,"Kyle Hamilton",BAL,1.5,Active
+19,"Lamar Jackson",BAL,0.2,Out
+20,"Ryan Eckley",BAL,2.3,Active
+21,"Josh Hines-Allen",JAX,2.2,Active
+22,"Logan Cooke",JAX,2.9,Active
+23,"Marlon Humphrey",BAL,3.0,Active
+24,"Rayuan Lane III",JAX,2.0,Active
+25,"Justice Hill",BAL,3.0,Active
+26,"Jarrian Jones",JAX,2.9,Active
+27,"Mark Andrews",BAL,3.0,Active
+28,"Jourdan Lewis",JAX,3.0,Active
+29,"Ventrell Miller",JAX,3.0,Active
+30,"Mike Green",BAL,3.0,Active
+31,"Tavius Robinson",BAL,3.0,Out
+32,"Travon Walker",JAX,3.0,Questionable
+33,"Antonio Johnson",JAX,3.0,Active
+34,"Josh Cameron",JAX,2.7,Active
+35,"Branson Combs",JAX,3.0,Active
+36,"Brian Thomas Jr.",JAX,3.0,Active
+37,"Josh Cuevas",BAL,3.0,Active
+38,"Travis Jones",BAL,3.0,Active
+39,"Nate Wiggins",BAL,3.0,Questionable
+40,"DaVon Hamilton",JAX,3.0,Out
+41,"Nnamdi Madubuike",BAL,3.0,Active
+42,"Arik Armstead",JAX,3.0,Active
+43,"Bryan Thomas Jr.",JAX,3.0,Active
+44,"Matt Hibner",BAL,3.0,Active
+45,"Devontez Walker",BAL,3.0,Active
+46,"Montaric Brown",JAX,3.0,Active
+47,"Broderick Washington Jr.",BAL,3.0,Active
+48,"Trey Hendrickson",BAL,3.0,Active
