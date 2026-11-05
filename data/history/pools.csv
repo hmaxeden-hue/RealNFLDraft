@@ -1744,7 +1744,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-05,00-0040885,Chandler Rivers,BAL,JAX,DB,0.000,fehlt (0.0 angenommen),2.024,0.485,0.000,1.176,0.990,Rolle↓; Rückkehr nach 3 verpassten Spielen (×0.85)
 2026-11-05,00-0040887,Josh Cuevas,BAL,JAX,TE,3.000,Pool,1.232,0.501,0.000,1.075,0.990,QB-Wechsel; QB1 Lamar Jackson fehlt (×0.88)
 2026-11-05,00-0040898,Ryan Eckley,BAL,JAX,P,2.300,Pool,27.305,1.970,0.793,3.325,0.990,
-2026-11-05,00-0040981,Joe Fagnano,BAL,JAX,QB,0.000,fehlt (0.0 angenommen),8.471,1.516,0.385,2.745,0.990,QB-Wechsel; startet vermutlich für Lamar Jackson; Startet laut Minter (ESPN/NFL.com 03.11.); selbst angeschlagen (Knöchel)
+2026-11-05,00-0040981,Joe Fagnano,BAL,JAX,QB,3.000,Pool,8.471,1.516,0.385,2.745,0.990,QB-Wechsel; startet vermutlich für Lamar Jackson; Startet laut Minter (ESPN/NFL.com 03.11.); selbst angeschlagen (Knöchel)
 2026-11-05,00-0041055,Jalen Huskey,JAX,BAL,DB,0.000,fehlt (0.0 angenommen),2.732,0.607,0.000,1.633,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-05,00-0041100,Josh Cameron,JAX,BAL,WR,2.700,Pool,2.482,0.815,0.000,1.657,0.990,Rolle↓
 2026-11-05,00-0041218,Bryan Thomas Jr.,JAX,BAL,DL,3.000,Pool,3.003,0.658,0.000,1.616,0.990,Gegner ohne QB1 (INT-Rate ×1.3)

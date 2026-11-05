@@ -1,6 +1,6 @@
 {
  "date": "2026-11-05",
- "generated": "05.11.2026 13:24",
+ "generated": "05.11.2026 13:26",
  "slate": [
   {
    "game": "JAX @ BAL",
@@ -17,7 +17,7 @@
   "nicht gefunden: Tavius Robinson",
   "nicht gefunden: DaVon Hamilton"
  ],
- "n_pool": 45,
+ "n_pool": 46,
  "n_players": 85,
  "best": [
   {
@@ -81,26 +81,6 @@
    "why": "27.3 FP proj., Boost +2.3, Team-Total 14.8 (1.52×)"
   },
   {
-   "name": "Jakobi Meyers",
-   "pos": "WR",
-   "group": "WR",
-   "team": "JAX",
-   "opp": "BAL",
-   "boost": 2.0,
-   "boost_src": "Pool",
-   "er": 1.855,
-   "p10": 0.34,
-   "p90": 3.75,
-   "mu_fp": 6.6,
-   "risk": "tief",
-   "flags": "Rolle↓; Pech -3.2 FP vs xFP",
-   "p_int": 0.0,
-   "slot": 4,
-   "mult": 3.4,
-   "epts": 6.31,
-   "why": "6.6 FP proj., Boost +2.0, Rolle↓; Pech -3.2 FP vs xFP"
-  },
-  {
    "name": "Chris Rodriguez Jr.",
    "pos": "RB",
    "group": "RB",
@@ -115,16 +95,36 @@
    "risk": "tief",
    "flags": "",
    "p_int": 0.0,
-   "slot": 5,
-   "mult": 3.7,
-   "epts": 6.02,
+   "slot": 4,
+   "mult": 3.9,
+   "epts": 6.34,
    "why": "5.6 FP proj., Boost +2.5, Matchup 0.95×"
+  },
+  {
+   "name": "Joe Fagnano",
+   "pos": "QB",
+   "group": "QB",
+   "team": "BAL",
+   "opp": "JAX",
+   "boost": 3.0,
+   "boost_src": "Pool",
+   "er": 1.516,
+   "p10": 0.38,
+   "p90": 2.75,
+   "mu_fp": 8.5,
+   "risk": "tief",
+   "flags": "QB-Wechsel; startet vermutlich für Lamar Jackson; Startet laut Minter (ESPN/NFL.com 03.11.); selbst angeschlagen (Knöchel)",
+   "p_int": 0.0,
+   "slot": 5,
+   "mult": 4.2,
+   "epts": 6.37,
+   "why": "8.5 FP proj., Boost +3.0, Team-Total 14.8 (0.69×), Matchup 0.95×, QB-Wechsel; startet vermutlich für Lamar Jackson; Startet laut Minter (ESPN/NFL.com 03.11.); selbst angeschlagen (Knöchel)"
   }
  ],
  "dist": {
-  "mean": 35.02,
-  "p25": 26.6,
-  "p95": 57.07
+  "mean": 35.41,
+  "p25": 28.0,
+  "p95": 54.41
  },
  "variants": [
   {
@@ -134,26 +134,26 @@
     "Trevor Lawrence",
     "Cam Little",
     "Ryan Eckley",
-    "Jakobi Meyers",
-    "Chris Rodriguez Jr."
+    "Chris Rodriguez Jr.",
+    "Joe Fagnano"
    ],
-   "mean": 35.02,
-   "p25": 26.6,
-   "p95": 57.07
+   "mean": 35.41,
+   "p25": 28.0,
+   "p95": 54.41
   },
   {
    "key": "safe",
    "label": "Sicher (max. P25)",
    "lineup": [
     "Trevor Lawrence",
-    "Cam Little",
     "Ryan Eckley",
     "Chris Rodriguez Jr.",
+    "Joe Fagnano",
     "Logan Cooke"
    ],
-   "mean": 34.3,
-   "p25": 27.44,
-   "p95": 51.21
+   "mean": 34.61,
+   "p25": 28.67,
+   "p95": 49.5
   },
   {
    "key": "upside",
@@ -176,6 +176,23 @@
    "out": "Trevor Lawrence",
    "alt": [
     {
+     "name": "Jakobi Meyers",
+     "pos": "WR",
+     "group": "WR",
+     "team": "JAX",
+     "opp": "BAL",
+     "boost": 2.0,
+     "boost_src": "Pool",
+     "er": 1.855,
+     "p10": 0.34,
+     "p90": 3.75,
+     "mu_fp": 6.6,
+     "risk": "tief",
+     "flags": "Rolle↓; Pech -3.2 FP vs xFP",
+     "p_int": 0.0,
+     "delta": -0.31
+    },
+    {
      "name": "Logan Cooke",
      "pos": "P",
      "group": "P",
@@ -190,7 +207,7 @@
      "risk": "tief",
      "flags": "",
      "p_int": 0.0,
-     "delta": -1.03
+     "delta": -1.1
     },
     {
      "name": "Brian Thomas Jr.",
@@ -207,24 +224,7 @@
      "risk": "mittel",
      "flags": "",
      "p_int": 0.0,
-     "delta": -1.03
-    },
-    {
-     "name": "Marlon Humphrey",
-     "pos": "DB",
-     "group": "DB",
-     "team": "BAL",
-     "opp": "JAX",
-     "boost": 3.0,
-     "boost_src": "Pool",
-     "er": 1.241,
-     "p10": 0.11,
-     "p90": 2.75,
-     "mu_fp": 6.7,
-     "risk": "mittel",
-     "flags": "Rolle↓",
-     "p_int": 0.103,
-     "delta": -1.08
+     "delta": -1.1
     }
    ]
   },
@@ -233,6 +233,23 @@
    "out": "Cam Little",
    "alt": [
     {
+     "name": "Jakobi Meyers",
+     "pos": "WR",
+     "group": "WR",
+     "team": "JAX",
+     "opp": "BAL",
+     "boost": 2.0,
+     "boost_src": "Pool",
+     "er": 1.855,
+     "p10": 0.34,
+     "p90": 3.75,
+     "mu_fp": 6.6,
+     "risk": "tief",
+     "flags": "Rolle↓; Pech -3.2 FP vs xFP",
+     "p_int": 0.0,
+     "delta": -0.01
+    },
+    {
      "name": "Logan Cooke",
      "pos": "P",
      "group": "P",
@@ -247,7 +264,7 @@
      "risk": "tief",
      "flags": "",
      "p_int": 0.0,
-     "delta": -0.73
+     "delta": -0.8
     },
     {
      "name": "Brian Thomas Jr.",
@@ -264,24 +281,7 @@
      "risk": "mittel",
      "flags": "",
      "p_int": 0.0,
-     "delta": -0.73
-    },
-    {
-     "name": "Marlon Humphrey",
-     "pos": "DB",
-     "group": "DB",
-     "team": "BAL",
-     "opp": "JAX",
-     "boost": 3.0,
-     "boost_src": "Pool",
-     "er": 1.241,
-     "p10": 0.11,
-     "p90": 2.75,
-     "mu_fp": 6.7,
-     "risk": "mittel",
-     "flags": "Rolle↓",
-     "p_int": 0.103,
-     "delta": -0.78
+     "delta": -0.8
     }
    ]
   },
@@ -290,6 +290,23 @@
    "out": "Ryan Eckley",
    "alt": [
     {
+     "name": "Jakobi Meyers",
+     "pos": "WR",
+     "group": "WR",
+     "team": "JAX",
+     "opp": "BAL",
+     "boost": 2.0,
+     "boost_src": "Pool",
+     "er": 1.855,
+     "p10": 0.34,
+     "p90": 3.75,
+     "mu_fp": 6.6,
+     "risk": "tief",
+     "flags": "Rolle↓; Pech -3.2 FP vs xFP",
+     "p_int": 0.0,
+     "delta": -1.01
+    },
+    {
      "name": "Logan Cooke",
      "pos": "P",
      "group": "P",
@@ -304,7 +321,7 @@
      "risk": "tief",
      "flags": "",
      "p_int": 0.0,
-     "delta": -1.72
+     "delta": -1.79
     },
     {
      "name": "Brian Thomas Jr.",
@@ -321,31 +338,31 @@
      "risk": "mittel",
      "flags": "",
      "p_int": 0.0,
-     "delta": -1.73
-    },
-    {
-     "name": "Marlon Humphrey",
-     "pos": "DB",
-     "group": "DB",
-     "team": "BAL",
-     "opp": "JAX",
-     "boost": 3.0,
-     "boost_src": "Pool",
-     "er": 1.241,
-     "p10": 0.11,
-     "p90": 2.75,
-     "mu_fp": 6.7,
-     "risk": "mittel",
-     "flags": "Rolle↓",
-     "p_int": 0.103,
-     "delta": -1.77
+     "delta": -1.79
     }
    ]
   },
   {
    "slot": 4,
-   "out": "Jakobi Meyers",
+   "out": "Chris Rodriguez Jr.",
    "alt": [
+    {
+     "name": "Jakobi Meyers",
+     "pos": "WR",
+     "group": "WR",
+     "team": "JAX",
+     "opp": "BAL",
+     "boost": 2.0,
+     "boost_src": "Pool",
+     "er": 1.855,
+     "p10": 0.34,
+     "p90": 3.75,
+     "mu_fp": 6.6,
+     "risk": "tief",
+     "flags": "Rolle↓; Pech -3.2 FP vs xFP",
+     "p_int": 0.0,
+     "delta": -0.04
+    },
     {
      "name": "Logan Cooke",
      "pos": "P",
@@ -361,7 +378,7 @@
      "risk": "tief",
      "flags": "",
      "p_int": 0.0,
-     "delta": -0.72
+     "delta": -0.78
     },
     {
      "name": "Brian Thomas Jr.",
@@ -378,31 +395,31 @@
      "risk": "mittel",
      "flags": "",
      "p_int": 0.0,
-     "delta": -0.72
-    },
-    {
-     "name": "Marlon Humphrey",
-     "pos": "DB",
-     "group": "DB",
-     "team": "BAL",
-     "opp": "JAX",
-     "boost": 3.0,
-     "boost_src": "Pool",
-     "er": 1.241,
-     "p10": 0.11,
-     "p90": 2.75,
-     "mu_fp": 6.7,
-     "risk": "mittel",
-     "flags": "Rolle↓",
-     "p_int": 0.103,
-     "delta": -0.77
+     "delta": -0.78
     }
    ]
   },
   {
    "slot": 5,
-   "out": "Chris Rodriguez Jr.",
+   "out": "Joe Fagnano",
    "alt": [
+    {
+     "name": "Jakobi Meyers",
+     "pos": "WR",
+     "group": "WR",
+     "team": "JAX",
+     "opp": "BAL",
+     "boost": 2.0,
+     "boost_src": "Pool",
+     "er": 1.855,
+     "p10": 0.34,
+     "p90": 3.75,
+     "mu_fp": 6.6,
+     "risk": "tief",
+     "flags": "Rolle↓; Pech -3.2 FP vs xFP",
+     "p_int": 0.0,
+     "delta": -0.39
+    },
     {
      "name": "Logan Cooke",
      "pos": "P",
@@ -418,7 +435,7 @@
      "risk": "tief",
      "flags": "",
      "p_int": 0.0,
-     "delta": -0.76
+     "delta": -1.11
     },
     {
      "name": "Brian Thomas Jr.",
@@ -435,24 +452,7 @@
      "risk": "mittel",
      "flags": "",
      "p_int": 0.0,
-     "delta": -0.76
-    },
-    {
-     "name": "Marlon Humphrey",
-     "pos": "DB",
-     "group": "DB",
-     "team": "BAL",
-     "opp": "JAX",
-     "boost": 3.0,
-     "boost_src": "Pool",
-     "er": 1.241,
-     "p10": 0.11,
-     "p90": 2.75,
-     "mu_fp": 6.7,
-     "risk": "mittel",
-     "flags": "Rolle↓",
-     "p_int": 0.103,
-     "delta": -0.8
+     "delta": -1.11
     }
    ]
   }
@@ -475,6 +475,24 @@
    "p_int": 0.0,
    "fp_last3": 24.7,
    "xfp_last3": null
+  },
+  {
+   "name": "Joe Fagnano",
+   "pos": "QB",
+   "group": "QB",
+   "team": "BAL",
+   "opp": "JAX",
+   "boost": 3.0,
+   "boost_src": "Pool",
+   "er": 1.516,
+   "p10": 0.38,
+   "p90": 2.75,
+   "mu_fp": 8.5,
+   "risk": "tief",
+   "flags": "QB-Wechsel; startet vermutlich für Lamar Jackson; Startet laut Minter (ESPN/NFL.com 03.11.); selbst angeschlagen (Knöchel)",
+   "p_int": 0.0,
+   "fp_last3": -0.1,
+   "xfp_last3": 7.6
   },
   {
    "name": "Jakobi Meyers",
@@ -655,27 +673,10 @@
    "p_int": 0.0,
    "fp_last3": 7.7,
    "xfp_last3": 2.4
-  },
-  {
-   "name": "Brenton Strange",
-   "pos": "TE",
-   "group": "TE",
-   "team": "JAX",
-   "opp": "BAL",
-   "boost": 2.0,
-   "boost_src": "Pool",
-   "er": 1.373,
-   "p10": 0.23,
-   "p90": 2.79,
-   "mu_fp": 5.4,
-   "risk": "mittel",
-   "flags": "Rolle↓",
-   "p_int": 0.0,
-   "fp_last3": 5.6,
-   "xfp_last3": 5.2
   }
  ],
  "warnings": [
+  "**Joe Fagnano** (BAL): QB-Wechsel; startet vermutlich für Lamar Jackson; Startet laut Minter (ESPN/NFL.com 03.11.); selbst angeschlagen (Knöchel)",
   "**Jakobi Meyers** (JAX): Rolle↓; Pech -3.2 FP vs xFP",
   "**Trevor Lawrence** (JAX): Rolle↓",
   "**Parker Washington** (JAX): Rolle↓",
@@ -712,15 +713,15 @@
    "p_scen": 0.059,
    "lineup": [
     "Derrick Henry",
+    "Joe Fagnano",
     "Marlon Humphrey",
     "Logan Cooke",
-    "Malaki Starks",
-    "Ryan Eckley"
+    "Malaki Starks"
    ],
-   "cond_mean": 33.9,
-   "mean": 28.54,
-   "p25": 22.08,
-   "p95": 44.46
+   "cond_mean": 38.17,
+   "mean": 28.18,
+   "p25": 21.26,
+   "p95": 45.06
   }
  ],
  "players": [
@@ -874,8 +875,8 @@
    "group": "QB",
    "team": "BAL",
    "opp": "JAX",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
+   "boost": 3.0,
+   "boost_src": "Pool",
    "er": 1.516,
    "p10": 0.38,
    "p90": 2.75,
