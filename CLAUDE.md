@@ -379,3 +379,10 @@ Dateiformate:
   Simmons 2.6, Bush 2.0, Taylor 1.2, Stevenson 1.1. JSN holte 4.7 → Modell-Lineup ≈ 39.0 (+3.0); Duell knapp
   verloren. Ex ante richtig (mehr Streuung beim Rückstand), ex post Pech. Hindsight 47.9 (Swift 5.2 mit 3 TD).
   Regel: Im Duell nur am letzten Spieltag der Woche und nur bei Rückstand auf Streuung spielen, sonst E-max.
+- 2026-11-05 (TNF JAX @ BAL): **33.74 Punkte, Rang 1'361/15.1k (Top 9 %)**. Tuten spielte → Basis-Lineup.
+  Little 5.7 (E 2.7; 4/4 FG), Lawrence 3.3, Rodriguez 1.9, Eckley 1.7 – aber **Fagnano −0.7** (Dritt-QB, Rookie,
+  −0.3 FP) kostete auf 4.2x −2.9; Meyers statt Fagnano = 44.5 (+10.8). **Negative QB-Ratings** (Fagnano −0.7,
+  Mayfield −0.1) und K-Ratings bis −0.9 bildet das Modell nicht ab: `fp_to_rating` kappt bei 0 und die Gamma-Sims
+  haben keinen negativen Rand → Ersatz-/Rookie-QBs mit tiefem Team-Total (< 16) werden überschätzt. Idee: für
+  solche QBs und für K einen negativen Rand simulieren (z. B. 15 % Masse bei −0.5…−1.0), per Backtest prüfen.
+  Hindsight 65.3 (Little, J. Hill, M. Brown, J. Lewis, Meyers).
