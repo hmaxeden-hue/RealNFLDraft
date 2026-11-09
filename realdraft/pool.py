@@ -32,7 +32,7 @@ def match_names(entries: pd.DataFrame, players: pd.DataFrame) -> tuple[pd.DataFr
     pl["n_full"] = pl["name"].map(norm)
     pl["n_last"] = pl["n_full"].str.split().str[-1]
     pl["n_init"] = pl["n_full"].str[0]
-    problems, ids = [], []
+    problems, ids, exact = [], [], []
     for _, e in entries.iterrows():
         cand = pl
         if "team" in e and pd.notna(e.get("team")) and str(e["team"]).strip():
@@ -44,6 +44,7 @@ def match_names(entries: pd.DataFrame, players: pd.DataFrame) -> tuple[pd.DataFr
         n = norm(e["name"])
         parts = n.split()
         hit = cand[cand["n_full"] == n]
+        exact.append(not hit.empty)
         if hit.empty and len(parts) >= 2:
             hit = cand[(cand["n_last"] == parts[-1]) & (cand["n_init"] == parts[0][0])]
         if hit.empty:
@@ -59,7 +60,16 @@ def match_names(entries: pd.DataFrame, players: pd.DataFrame) -> tuple[pd.DataFr
         ids.append(hit.iloc[0]["player_id"])
     out = entries.copy()
     out["player_id"] = ids
-    return out, problems
+    # Kollision: ein nur ungefähr erkannter Name darf keinen exakt erkannten Spieler überschreiben
+    # (z. B. "Brian Robinson", nicht im Kader, wurde sonst zu Bijan Robinson)
+    out["_exact"] = exact
+    dup = out["player_id"].notna() & out["player_id"].duplicated(keep=False)
+    taken = set(out.loc[dup & out["_exact"], "player_id"])
+    clash = dup & ~out["_exact"] & out["player_id"].isin(taken)
+    for _, e in out[clash].iterrows():
+        problems.append(f"nicht gefunden: {e['name']} (ähnlicher Name schon exakt vergeben)")
+    out.loc[clash, "player_id"] = None
+    return out.drop(columns="_exact"), problems
 
 
 def load_pool(date: str, players: pd.DataFrame):

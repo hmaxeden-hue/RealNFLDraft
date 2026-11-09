@@ -386,3 +386,11 @@ Dateiformate:
   haben keinen negativen Rand → Ersatz-/Rookie-QBs mit tiefem Team-Total (< 16) werden überschätzt. Idee: für
   solche QBs und für K einen negativen Rand simulieren (z. B. 15 % Masse bei −0.5…−1.0), per Backtest prüfen.
   Hindsight 65.3 (Little, J. Hill, M. Brown, J. Lewis, Meyers).
+- 2026-11-08 (Sonntag, 13 Spiele): **35.88 Punkte, Rang 9'478/18.1k (Mitte)**. User spielte Gibbs statt Herbert
+  (Gibbs 2.0x Slot 1, McCaffrey 2.0x Slot 2): Gibbs 3.4, McCaffrey 4.6, Willis 0.7 (E 3.7, nur 2.9 FP), D. Jones 2.1,
+  Piñeiro 2.6. Modell-Lineup mit Herbert (≈ 2.0 nach FP) ≈ 38.5 → Abweichung ≈ −2.6 (Bilanz 2 von 8 positiv).
+  Charbonnet (von mir per Rolle auf 6 FP abgewertet) holte ≈ 2.25 → mit ihm ≈ 40.5; die Rollen-Abwertung kostete ≈ 2.
+  Hindsight 100.3 (Reese 7.0 mit 3 Sacks, Golden 6.5, McDuffie 5.7, Zvada 5.6, Bonitto 5.4). Alle 26 K erfasst.
+  **Bug behoben:** "Brian Robinson" (nicht im Kader) wurde per Nachname+Initial auf Bijan Robinson gemappt und
+  überschrieb dessen Pool-Zeile (11-01 und 11-08). `match_names` verwirft jetzt ungefähre Treffer, deren
+  player_id schon exakt vergeben ist. Nachgerechnet: Bijan wäre an beiden Tagen nicht ins Lineup gekommen.

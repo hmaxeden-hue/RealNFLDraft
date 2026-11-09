@@ -34,3 +34,15 @@ def test_page_data_has_no_nan():
     d = page._clean({"a": float("nan"), "b": [1.0, float("inf"), {"c": "x"}]})
     assert d == {"a": None, "b": [1.0, None, {"c": "x"}]}
     json.dumps(d, allow_nan=False)
+
+
+def test_fuzzy_name_does_not_overwrite_exact_match():
+    import pandas as pd
+    from realdraft import pool
+    players = pd.DataFrame([{"player_id": "bijan", "name": "Bijan Robinson", "team": "ATL", "position": "RB",
+                             "group": "RB", "pos_rank": 1}])
+    entries = pd.DataFrame([{"name": "Bijan Robinson", "team": "ATL", "boost": 0.0},
+                            {"name": "Brian Robinson", "team": "ATL", "boost": 1.8}])
+    out, problems = pool.match_names(entries, players)
+    assert out["player_id"].tolist()[0] == "bijan" and pd.isna(out["player_id"].tolist()[1])
+    assert any("Brian Robinson" in p for p in problems)
