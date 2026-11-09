@@ -394,3 +394,9 @@ Dateiformate:
   **Bug behoben:** "Brian Robinson" (nicht im Kader) wurde per Nachname+Initial auf Bijan Robinson gemappt und
   überschrieb dessen Pool-Zeile (11-01 und 11-08). `match_names` verwirft jetzt ungefähre Treffer, deren
   player_id schon exakt vergeben ist. Nachgerechnet: Bijan wäre an beiden Tagen nicht ins Lineup gekommen.
+- 2026-11-09 (MNF BUF @ MIN), **Wochenduell zu dritt**: Leo 72.54, Marc 73.87, User 69.62 → braucht +4.25 auf Marc
+  und +2.92 auf Leo. Gegner-Lineups unbekannt → als Mischung aus Top-E-Lineups und Star-Lineups (Cook/Allen/
+  Jefferson) modelliert, beide unabhängig gezogen. E-max-Lineup (Mason, Oliver, Doman, Thorson, Alford; E 36.0):
+  P(beide schlagen) 17 %. Duell-Lineup Wentz, Mason, Doman, Thorson, H. Smith (MIN-lastig, E 32.6): 26 %, robust
+  gegen beide Gegner-Modelle (Stars 27 %, Top-E 26 %). Prinzip: Rückstand gegen mehrere → gegen die Chalk-Seite
+  (BUF-Stars) wetten, stabile Punter als Sockel.

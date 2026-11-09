@@ -1,0 +1,49 @@
+app_order,name,team,boost,app_status
+1,"Tyler Bass",BUF,0.3,Active
+2,"DJ Moore",BUF,0.9,Active
+3,"Eric Wilson",MIN,1.6,Active
+4,"T.J. Hockenson",MIN,1.7,Active
+5,"Dorian Williams",BUF,2.4,Active
+6,"Jordan Addison",MIN,1.6,Active
+7,"Andrew Van Ginkel",MIN,1.0,Active
+8,"Kyler Murray",MIN,0.7,Out
+9,"Aaron Jones Sr.",MIN,0.7,Active
+10,"Blake Cashman",MIN,1.0,Active
+11,"James Cook III",BUF,0,Active
+12,"Will Reichard",MIN,0.2,Active
+13,"Dallas Turner",MIN,1.5,Active
+14,"Josh Allen",BUF,0,Active
+15,"Khalil Shakir",BUF,1.9,Active
+16,"Byron Murphy Jr.",MIN,1.3,Active
+17,"Justin Jefferson",MIN,1.0,Active
+18,"Greg Rousseau",BUF,0.9,Active
+19,"Dalton Kincaid",BUF,1.3,Active
+20,"Keon Coleman",BUF,1.7,Active
+21,"James Pierre",MIN,2.6,Active
+22,"Terrel Bernard",BUF,3.0,Active
+23,"Cole Bishop",BUF,3.0,Active
+24,"Davison Igbinosun",BUF,3.0,Active
+25,"Isaiah Rodgers",MIN,3.0,Active
+26,"Joshua Metellus",MIN,3.0,Active
+27,"Jalen Redmond",MIN,3.0,Active
+28,"Brett Thorson",MIN,2.8,Active
+29,"Joshua Palmer",BUF,2.0,Out
+30,"Deone Walker",BUF,3.0,Active
+31,"Kyle Van Noy",MIN,3.0,Active
+32,"Ty Johnson",BUF,3.0,Active
+33,"Harrison Smith",MIN,3.0,Active
+34,"Christian Benford",BUF,3.0,Active
+35,"Jordan Mason",MIN,1.7,Active
+36,"Tommy Doman Jr.",BUF,3.0,Active
+37,"Carson Wentz",MIN,1.0,Active
+38,"TJ Parker",BUF,3.0,Active
+39,"Myles Price",MIN,2.5,Active
+40,"Ed Oliver",BUF,2.8,Active
+41,"Bradley Chubb",BUF,3.0,Active
+42,"Kaleb Elarms-Orr",BUF,3.0,Active
+43,"Tyrion Ingram-Dawkins",MIN,3.0,Active
+44,"Dee Alford",BUF,3.0,Active
+45,"Theo Jackson",MIN,3.0,Questionable
+46,"Greg Gaines",BUF,3.0,Questionable
+47,"DeWayne Carter",BUF,3.0,Active
+48,"Ray Davis",BUF,3.0,Active
