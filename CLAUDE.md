@@ -410,3 +410,6 @@ Dateiformate:
   Thorson, Igbinosun, Metellus: P(beide) 25.8 %, P(Leo) 59 %, E 31.2, höchster Floor (P25 24.6). Pierre-Variante
   27.5 %, aber Pierre ist Teilzeit (31–61 % Snaps). **Modell-Idee:** Für DEF/P die Vorsaison schwächer gewichten,
   sobald ≥ 5 Spiele 2026 vorliegen, und bei < 60 % Snaps stärker auf 2026 schrumpfen; Backtest.
+  Nachtrag 3: Marcs Muster laut User: 2–3 Stars mit ~0 Boost (Cook, Allen, Bass, DJ Moore) + 2–3 BUF-Spieler mit
+  mittlerem Boost (Shakir, Coleman, Kincaid, D. Williams, Rousseau) → E 21–27. Damit P(beide schlagen) für das
+  finale Lineup **47 %** (P(Leo) 59 %, P(Marc) 60 %); Bishop statt Metellus 48 % (Rauschen) → unverändert gespielt.
