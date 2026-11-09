@@ -2008,7 +2008,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-08,00-0041538,Dillon Thieneman,CHI,TB,DB,2.100,Pool,6.730,1.352,0.129,2.903,0.990,
 2026-11-08,00-0041547,KC Concepcion,CLE,NO,WR,2.500,Pool,6.610,1.912,0.351,3.806,0.990,Rolle↓
 2026-11-08,00-0041569,Gabe Jacas,NE,GB,LB,2.800,Pool,3.901,0.842,0.000,2.013,0.990,Rolle↓
-2026-11-09,00-0029606,Harrison Smith,MIN,BUF,DB,3.000,Pool,6.239,1.251,0.044,2.802,0.990,
+2026-11-09,00-0029606,Harrison Smith,MIN,BUF,DB,3.000,Pool,4.368,0.911,0.000,2.309,0.990,"2026 Ø 0.9 Rating, nur 1 gutes Spiel"
 2026-11-09,00-0031360,Kyle Van Noy,MIN,BUF,LB,3.000,Pool,3.501,0.758,0.000,1.698,0.990,
 2026-11-09,00-0032950,Carson Wentz,MIN,BUF,QB,1.000,Pool,11.907,2.222,0.674,3.951,0.990,Rückkehr nach 5 verpassten Spielen (×0.85); startet vermutlich für Kyler Murray
 2026-11-09,00-0033293,Aaron Jones,MIN,BUF,RB,0.700,Pool,8.092,2.262,0.531,4.343,0.990,Rolle↓; QB1 Kyler Murray fehlt (×0.94)
@@ -2018,7 +2018,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-09,00-0034857,Josh Allen,BUF,MIN,QB,0.000,Pool,15.119,2.872,0.987,4.986,0.990,Pech -3.6 FP vs xFP
 2026-11-09,00-0035228,Kyler Murray,MIN,BUF,QB,0.700,Pool,15.025,0.000,0.000,0.000,0.000,Out (Hamstring)
 2026-11-09,00-0035229,T.J. Hockenson,MIN,BUF,TE,1.700,Pool,4.534,1.251,0.162,2.501,0.990,QB1 Kyler Murray fehlt (×0.88)
-2026-11-09,00-0035230,Ed Oliver,BUF,MIN,DL,2.800,Pool,9.450,1.840,0.000,4.329,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
+2026-11-09,00-0035230,Ed Oliver,BUF,MIN,DL,2.800,Pool,4.725,0.977,0.000,2.395,0.990,"Gegner ohne QB1 (INT-Rate ×1.3); 2026 nur 32–41 % Snaps, 0–1.2 FP seit W3 – Modell-E 1.83 zu hoch (Vorsaison)"
 2026-11-09,00-0035236,Byron Murphy,MIN,BUF,DB,1.300,Pool,7.013,1.394,0.102,3.047,0.990,
 2026-11-09,00-0035272,Andrew Van Ginkel,MIN,BUF,LB,1.000,Pool,7.981,1.594,0.145,3.405,0.990,
 2026-11-09,00-0035276,Blake Cashman,MIN,BUF,LB,1.000,Pool,8.071,1.605,0.129,3.450,0.990,
@@ -2036,7 +2036,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-09,00-0036888,Damar Hamlin,BUF,MIN,DB,0.000,fehlt (0.0 angenommen),5.302,1.081,0.013,2.405,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-09,00-0036914,Greg Rousseau,BUF,MIN,LB,0.900,Pool,6.481,1.325,0.067,2.908,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-09,00-0036988,Josh Palmer,BUF,MIN,WR,2.000,Pool,2.155,0.000,0.000,0.000,0.000,Out (Hamstring); Rolle↓
-2026-11-09,00-0037034,Dee Alford,BUF,MIN,DB,3.000,Pool,7.514,1.518,0.119,3.369,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
+2026-11-09,00-0037034,Dee Alford,BUF,MIN,DB,3.000,Pool,4.133,0.897,0.000,2.491,0.990,Gegner ohne QB1 (INT-Rate ×1.3); Echte Ratings 2026 laut Spielerseite 0/0/0.4/0.5/2.5 (Ø 0.7) – Modell-E 1.45 zu hoch (Vorsaison)
 2026-11-09,00-0037248,James Cook,BUF,MIN,RB,0.000,Pool,12.896,3.415,0.901,6.560,0.990,
 2026-11-09,00-0037254,Terrel Bernard,BUF,MIN,LB,3.000,Pool,6.095,1.227,0.000,2.781,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-09,00-0037261,Khalil Shakir,BUF,MIN,WR,1.900,Pool,4.990,1.490,0.206,3.059,0.990,
@@ -2068,7 +2068,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-09,00-0041081,Max Bredeson,MIN,BUF,RB,0.000,fehlt (0.0 angenommen),1.412,0.713,0.000,1.512,0.990,QB1 Kyler Murray fehlt (×0.94)
 2026-11-09,00-0041083,Charles Demmings,MIN,BUF,DB,0.000,0 (noch kein Saisonspiel),4.022,0.849,0.000,2.079,0.990,keine Spiele 2026
 2026-11-09,00-0041086,Jalon Kilgore,BUF,MIN,DB,0.000,fehlt (0.0 angenommen),0.830,0.458,0.000,1.713,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
-2026-11-09,00-0041126,Tommy Doman Jr.,BUF,MIN,P,3.000,Pool,21.251,1.665,0.692,2.840,0.990,
+2026-11-09,00-0041126,Tommy Doman Jr.,BUF,MIN,P,3.000,Pool,11.688,0.977,0.388,1.660,0.990,Echte Ratings 2026 1.5/0.4/0.8/0.8 (Ø 0.9); BUF als Favorit puntet wenig
 2026-11-09,00-0041391,Davison Igbinosun,BUF,MIN,DB,3.000,Pool,6.713,1.338,0.071,2.999,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-09,00-0041444,Kaleb Elarms-Orr,BUF,MIN,LB,3.000,Pool,2.690,0.617,0.000,1.501,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-09,00-0041581,Brett Thorson,MIN,BUF,P,2.800,Pool,19.715,1.530,0.606,2.591,0.990,

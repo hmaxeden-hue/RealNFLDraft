@@ -404,3 +404,9 @@ Dateiformate:
   Wentz/Mason/Doman/Thorson/**Alford** = P(beide) 26.6 %, P(Leo) 58 %, P(Marc) 34 %, E 33.6, P25 27.2 –
   gleiche Chance wie mit H. Smith (User-Einwand: Smith/Mason nur 1 gutes Spiel), aber mehr Sockel.
   E-max-Lineup 23.4 %. Lehre: Unter fast gleichen Duell-Chancen das Lineup mit höherem P25 wählen.
+  Nachtrag 2: User-Einwand zu Alford (echte Ratings 0/0/0.4/0.5/2.5) war richtig. **Modell überschätzt Teilzeit-
+  Verteidiger und Punter mit hohem Boost über die Vorsaison**: Alford E 1.45 vs. 2026 Ø 0.8, Oliver 1.83 vs. 0.9
+  (32–41 % Snaps), Doman 1.65 vs. 0.9. Per `_adj` korrigiert (factor 0.5–0.7) → finales Duell-Lineup Wentz, Mason,
+  Thorson, Igbinosun, Metellus: P(beide) 25.8 %, P(Leo) 59 %, E 31.2, höchster Floor (P25 24.6). Pierre-Variante
+  27.5 %, aber Pierre ist Teilzeit (31–61 % Snaps). **Modell-Idee:** Für DEF/P die Vorsaison schwächer gewichten,
+  sobald ≥ 5 Spiele 2026 vorliegen, und bei < 60 % Snaps stärker auf 2026 schrumpfen; Backtest.
