@@ -1,6 +1,6 @@
 slot,name,reason
-1,Carson Wentz,"MIN-QB mit +1.0 (3.0x), E 2.2. Duell-Pick: startet für Murray; kaum jemand nimmt ihn → eigener Ausschlag, wenn MIN mithält."
-2,Jordan Mason,"MIN-RB mit +1.7 (3.5x), E 1.9. Lead-Back, Matchup 1.11×."
-3,Tommy Doman Jr.,"BUF-Punter mit +3.0 (4.6x), E 1.7. Stabiler Sockel."
-4,Brett Thorson,"MIN-Punter mit +2.8 (4.2x), E 1.5. Stabiler Sockel, zuletzt 22 FP."
-5,Harrison Smith,"MIN-Safety mit +3.0 (4.2x), E 1.3. Duell-Lineup: P(beide schlagen) 26 % statt 17 % mit dem E-max-Lineup (Mason, Oliver, Doman, Thorson, Alford; E 36.0)."
+1,Carson Wentz,"MIN-QB mit +1.0 (3.0x), E 2.2. Duell-Pick: Leo hat BUF-Seite (Cook, Bass); Wentz punktet, wenn MIN mithält. Risiko Rating < 0.5 nur 7 %."
+2,Jordan Mason,"MIN-RB mit +1.7 (3.5x), E 1.9. Lead-Back, Matchup 1.11×; in jedem guten Lineup."
+3,Tommy Doman Jr.,"BUF-Punter mit +3.0 (4.6x), E 1.7. Hat Leo auch (Slot 3) → hebt sich fast auf, stabiler Sockel."
+4,Brett Thorson,"MIN-Punter mit +2.8 (4.2x), E 1.5. Hat Leo auch (Slot 5) → bei uns höherer Slot = kleiner Vorteil."
+5,Dee Alford,"BUF-Nickel mit +3.0 (4.2x), E 1.5. Statt H. Smith: gleiche Duell-Chance (27 %), aber mehr Sockel (P25 27.2 statt 26.1, E 33.6 statt 32.6)."

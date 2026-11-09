@@ -400,3 +400,7 @@ Dateiformate:
   P(beide schlagen) 17 %. Duell-Lineup Wentz, Mason, Doman, Thorson, H. Smith (MIN-lastig, E 32.6): 26 %, robust
   gegen beide Gegner-Modelle (Stars 27 %, Top-E 26 %). Prinzip: Rückstand gegen mehrere → gegen die Chalk-Seite
   (BUF-Stars) wetten, stabile Punter als Sockel.
+  Nachtrag: Leo hatte Cook, Bass, Cashman, Thorson, Doman (E 28.4). Mit Leo fix und Marc als Mischung:
+  Wentz/Mason/Doman/Thorson/**Alford** = P(beide) 26.6 %, P(Leo) 58 %, P(Marc) 34 %, E 33.6, P25 27.2 –
+  gleiche Chance wie mit H. Smith (User-Einwand: Smith/Mason nur 1 gutes Spiel), aber mehr Sockel.
+  E-max-Lineup 23.4 %. Lehre: Unter fast gleichen Duell-Chancen das Lineup mit höherem P25 wählen.
