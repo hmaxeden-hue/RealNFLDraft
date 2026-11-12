@@ -427,3 +427,7 @@ Dateiformate:
   Endstand Woche 9: Leo 110.54, Marc 100.87, User 83.34 (`data/results/duel_weeks.csv`). Marc 27 lag genau im
   modellierten Bereich (E 21–27); Leo 38 nahe der Schätzung (≈ 40). Auch das E-max-Lineup (≤ 29.4) hätte keinen
   der beiden um die nötigen 2.92/4.25 geschlagen → Woche war nach dem Sonntag praktisch verloren.
+- 2026-11-12 (TNF WAS @ NYG): **QB-Regel-Lücke:** NYG-QB1 Dart (IR, nicht im Kader); der Zähler wählte Winston
+  (meiste Starts W2–W6), obwohl McCarthy die letzten zwei Spiele startete und laut News startet → per `_adj`
+  korrigiert (McCarthy E 2.9 statt Winston 2.4, Lineup E 38.4 statt 35.8). Bei QB-Wechseln immer die News prüfen.
+  Wochenduell-Stand nach Woche 9: User 4, Leo 3, Marc 1 Wochensiege.

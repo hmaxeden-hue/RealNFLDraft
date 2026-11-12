@@ -2072,63 +2072,65 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-09,00-0041391,Davison Igbinosun,BUF,MIN,DB,3.000,Pool,6.713,1.338,0.071,2.999,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-09,00-0041444,Kaleb Elarms-Orr,BUF,MIN,LB,3.000,Pool,2.690,0.617,0.000,1.501,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-09,00-0041581,Brett Thorson,MIN,BUF,P,2.800,Pool,19.715,1.530,0.606,2.591,0.990,
-2026-11-12,00-0030140,Tress Way,WAS,NYG,P,0.000,fehlt (0.0 angenommen),22.183,1.690,0.687,2.853,0.990,
-2026-11-12,00-0031270,Shelby Harris,NYG,WAS,DL,0.000,fehlt (0.0 angenommen),1.814,0.487,0.000,1.179,0.990,
-2026-11-12,00-0031503,Jameis Winston,NYG,WAS,QB,0.000,fehlt (0.0 angenommen),12.839,2.391,0.199,4.617,0.990,Rolle↓; QB-Wechsel
-2026-11-12,00-0031588,Stefon Diggs,WAS,NYG,WR,0.000,fehlt (0.0 angenommen),6.590,1.929,0.349,3.839,0.990,Rolle↓
-2026-11-12,00-0032424,DJ Reader,NYG,WAS,DL,0.000,fehlt (0.0 angenommen),2.528,0.602,0.000,1.425,0.990,
-2026-11-12,00-0033551,Rasul Douglas,WAS,NYG,DB,0.000,fehlt (0.0 angenommen),7.710,1.553,0.154,3.335,0.990,Rolle↓
-2026-11-12,00-0033699,Austin Ekeler,WAS,NYG,RB,0.000,fehlt (0.0 angenommen),2.418,0.717,0.000,1.658,0.990,
-2026-11-12,00-0033918,Fabian Moreau,WAS,NYG,DB,0.000,fehlt (0.0 angenommen),1.994,0.506,0.000,1.180,0.990,Rückkehr nach 3 verpassten Spielen (×0.85)
-2026-11-12,00-0034302,Frankie Luvu,WAS,NYG,LB,0.000,fehlt (0.0 angenommen),6.883,1.402,0.084,3.008,0.990,
-2026-11-12,00-0034373,Dorance Armstrong,WAS,NYG,LB,0.000,fehlt (0.0 angenommen),6.069,1.258,0.034,2.675,0.990,
-2026-11-12,00-0034397,Tim Settle,WAS,NYG,DL,0.000,fehlt (0.0 angenommen),3.297,0.745,0.000,1.879,0.990,
-2026-11-12,00-0034465,Jeremy Reaves,WAS,NYG,DB,0.000,fehlt (0.0 angenommen),6.230,1.303,0.107,2.738,0.990,Rolle↓
-2026-11-12,00-0035250,Devin Singletary,NYG,WAS,RB,0.000,fehlt (0.0 angenommen),6.129,1.606,0.064,3.275,0.990,QB-Wechsel
-2026-11-12,00-0035279,Charles Omenihu,WAS,NYG,DL,0.000,fehlt (0.0 angenommen),4.074,0.905,0.000,2.214,0.990,
-2026-11-12,00-0035409,Shy Tuttle,WAS,NYG,DL,0.000,fehlt (0.0 angenommen),4.270,0.914,0.000,2.213,0.990,
-2026-11-12,00-0036280,Malik Harrison,NYG,WAS,LB,0.000,fehlt (0.0 angenommen),3.048,0.534,0.000,1.381,0.750,Questionable (Groin)
-2026-11-12,00-0036286,K'Lavon Chaisson,WAS,NYG,LB,0.000,fehlt (0.0 angenommen),6.111,1.243,0.037,2.639,0.990,
-2026-11-12,00-0036309,Darnell Mooney,NYG,WAS,WR,0.000,fehlt (0.0 angenommen),3.582,1.142,0.069,2.314,0.990,QB-Wechsel
-2026-11-12,00-0036375,Amik Robertson,WAS,NYG,DB,0.000,fehlt (0.0 angenommen),6.625,1.347,0.130,2.849,0.990,
+2026-11-12,00-0030140,Tress Way,WAS,NYG,P,2.000,Pool,22.183,1.690,0.687,2.853,0.990,
+2026-11-12,00-0031503,Jameis Winston,NYG,WAS,QB,1.500,Pool,12.839,0.122,0.000,0.000,0.050,Rolle↓; QB-Wechsel; Backup hinter McCarthy
+2026-11-12,00-0031588,Stefon Diggs,WAS,NYG,WR,1.600,Pool,6.590,1.929,0.349,3.839,0.990,Rolle↓
+2026-11-12,00-0032268,Marcus Mariota,WAS,NYG,QB,1.500,Pool,10.428,0.100,0.000,0.000,0.050,Rolle↓; Rückkehr nach 4 verpassten Spielen (×0.85)
+2026-11-12,00-0032424,DJ Reader,NYG,WAS,DL,3.000,Pool,2.528,0.570,0.000,1.349,0.990,
+2026-11-12,00-0033551,Rasul Douglas,WAS,NYG,DB,2.600,Pool,7.710,1.470,0.146,3.157,0.990,Rolle↓
+2026-11-12,00-0033699,Austin Ekeler,WAS,NYG,RB,3.000,Pool,2.418,0.717,0.000,1.658,0.990,
+2026-11-12,00-0033918,Fabian Moreau,WAS,NYG,DB,0.000,fehlt (0.0 angenommen),1.994,0.479,0.000,1.117,0.990,Rückkehr nach 3 verpassten Spielen (×0.85)
+2026-11-12,00-0034302,Frankie Luvu,WAS,NYG,LB,2.400,Pool,6.883,1.327,0.080,2.847,0.990,
+2026-11-12,00-0034373,Dorance Armstrong,WAS,NYG,LB,3.000,Pool,6.069,1.191,0.032,2.532,0.990,
+2026-11-12,00-0034397,Tim Settle,WAS,NYG,DL,3.000,Pool,3.297,0.706,0.000,1.779,0.990,
+2026-11-12,00-0034465,Jeremy Reaves,WAS,NYG,DB,3.000,Pool,6.230,1.234,0.102,2.592,0.990,Rolle↓
+2026-11-12,00-0035250,Devin Singletary,NYG,WAS,RB,1.800,Pool,6.129,1.606,0.064,3.275,0.990,QB-Wechsel
+2026-11-12,00-0035279,Charles Omenihu,WAS,NYG,DL,2.900,Pool,4.074,0.857,0.000,2.096,0.990,
+2026-11-12,00-0035409,Shy Tuttle,WAS,NYG,DL,3.000,Pool,4.270,0.865,0.000,2.095,0.990,
+2026-11-12,00-0036280,Malik Harrison,NYG,WAS,LB,0.000,fehlt (0.0 angenommen),3.048,0.505,0.000,1.308,0.750,Questionable (Groin)
+2026-11-12,00-0036286,K'Lavon Chaisson,WAS,NYG,LB,2.200,Pool,6.111,1.177,0.035,2.498,0.990,
+2026-11-12,00-0036309,Darnell Mooney,NYG,WAS,WR,3.000,Pool,3.582,1.142,0.069,2.314,0.990,QB-Wechsel
+2026-11-12,00-0036375,Amik Robertson,WAS,NYG,DB,3.000,Pool,6.625,1.275,0.123,2.697,0.990,
 2026-11-12,00-0036415,Van Jefferson,WAS,NYG,WR,0.000,fehlt (0.0 angenommen),3.053,1.003,0.036,2.023,0.990,
-2026-11-12,00-0036502,Jason Pinnock,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),4.600,0.967,0.000,2.084,0.990,Rolle↓
-2026-11-12,00-0036587,Ar'Darius Washington,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),4.704,0.993,0.000,2.150,0.990,
-2026-11-12,00-0036937,Paulson Adebo,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),5.119,1.087,0.013,2.395,0.990,
-2026-11-12,00-0036940,Odafe Oweh,WAS,NYG,LB,0.000,fehlt (0.0 angenommen),5.752,1.189,0.014,2.636,0.990,
-2026-11-12,00-0036996,Greg Newsome II,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),5.288,1.097,0.000,2.425,0.990,
-2026-11-12,00-0036998,Jevon Holland,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),5.485,1.153,0.000,2.674,0.990,
-2026-11-12,00-0037256,Rachaad White,WAS,NYG,RB,0.000,fehlt (0.0 angenommen),6.894,1.812,0.139,3.680,0.990,Rolle↓
-2026-11-12,00-0037259,Micah McFadden,NYG,WAS,LB,0.000,fehlt (0.0 angenommen),7.335,1.494,0.098,3.240,0.990,
-2026-11-12,00-0037611,Kayvon Thibodeaux,NYG,WAS,LB,0.000,fehlt (0.0 angenommen),5.255,1.113,0.000,2.459,0.990,
-2026-11-12,00-0037616,Nick Cross,WAS,NYG,DB,0.000,fehlt (0.0 angenommen),8.310,1.674,0.247,3.480,0.990,
-2026-11-12,00-0037742,Treylon Burks,WAS,NYG,WR,0.000,fehlt (0.0 angenommen),4.383,1.353,0.194,2.712,0.990,
-2026-11-12,00-0037809,Chig Okonkwo,WAS,NYG,TE,0.000,fehlt (0.0 angenommen),3.371,1.009,0.110,2.013,0.990,
-2026-11-12,00-0037838,Isaiah Likely,NYG,WAS,TE,0.000,fehlt (0.0 angenommen),7.633,1.978,0.367,4.077,0.990,Rolle↓; QB-Wechsel
-2026-11-12,00-0038094,Jordan Stout,NYG,WAS,P,0.000,fehlt (0.0 angenommen),17.386,1.359,0.553,2.286,0.990,
-2026-11-12,00-0038399,Zaire Barnes,NYG,WAS,LB,0.000,fehlt (0.0 angenommen),2.005,0.507,0.000,1.163,0.990,
+2026-11-12,00-0036502,Jason Pinnock,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),4.600,0.916,0.000,1.973,0.990,Rolle↓
+2026-11-12,00-0036587,Ar'Darius Washington,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),4.704,0.940,0.000,2.035,0.990,
+2026-11-12,00-0036937,Paulson Adebo,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),5.119,1.029,0.012,2.268,0.990,
+2026-11-12,00-0036940,Odafe Oweh,WAS,NYG,LB,1.700,Pool,5.752,1.126,0.013,2.496,0.990,
+2026-11-12,00-0036996,Greg Newsome II,NYG,WAS,DB,3.000,Pool,5.288,1.039,0.000,2.295,0.990,
+2026-11-12,00-0036998,Jevon Holland,NYG,WAS,DB,1.200,Pool,5.485,1.092,0.000,2.531,0.990,
+2026-11-12,00-0037256,Rachaad White,WAS,NYG,RB,1.500,Pool,6.894,1.812,0.139,3.680,0.990,Rolle↓
+2026-11-12,00-0037259,Micah McFadden,NYG,WAS,LB,1.900,Pool,7.335,1.415,0.093,3.067,0.990,
+2026-11-12,00-0037611,Kayvon Thibodeaux,NYG,WAS,LB,0.000,fehlt (0.0 angenommen),5.255,1.053,0.000,2.327,0.990,
+2026-11-12,00-0037616,Nick Cross,WAS,NYG,DB,1.200,Pool,8.310,1.585,0.234,3.295,0.990,
+2026-11-12,00-0037742,Treylon Burks,WAS,NYG,WR,1.700,Pool,4.383,1.353,0.194,2.712,0.990,
+2026-11-12,00-0037809,Chig Okonkwo,WAS,NYG,TE,3.000,Pool,3.371,1.009,0.110,2.013,0.990,
+2026-11-12,00-0037838,Isaiah Likely,NYG,WAS,TE,1.000,Pool,7.633,1.978,0.367,4.077,0.990,Rolle↓; QB-Wechsel
+2026-11-12,00-0038094,Jordan Stout,NYG,WAS,P,2.200,Pool,17.386,1.359,0.553,2.286,0.990,
+2026-11-12,00-0038399,Zaire Barnes,NYG,WAS,LB,0.000,fehlt (0.0 angenommen),2.005,0.480,0.000,1.101,0.990,
+2026-11-12,00-0038576,Charlie Jones,NYG,WAS,WR,0.000,fehlt (0.0 angenommen),0.800,0.470,0.000,1.062,0.990,QB-Wechsel
 2026-11-12,00-0038938,Jalin Hyatt,NYG,WAS,WR,0.000,fehlt (0.0 angenommen),0.984,0.498,0.000,1.129,0.990,QB-Wechsel
-2026-11-12,00-0039000,Deonte Banks,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),5.210,1.084,0.007,2.301,0.990,
-2026-11-12,00-0039149,Quan Martin,WAS,NYG,DB,0.000,fehlt (0.0 angenommen),3.860,0.851,0.000,1.863,0.990,
-2026-11-12,00-0039337,Malik Nabers,NYG,WAS,WR,0.000,fehlt (0.0 angenommen),11.082,3.044,0.603,6.180,0.990,Rolle↓; QB-Wechsel
+2026-11-12,00-0039000,Deonte Banks,NYG,WAS,DB,1.900,Pool,5.210,1.026,0.007,2.178,0.990,
+2026-11-12,00-0039149,Quan Martin,WAS,NYG,DB,3.000,Pool,3.860,0.806,0.000,1.763,0.990,
+2026-11-12,00-0039337,Malik Nabers,NYG,WAS,WR,0.700,Pool,11.082,3.044,0.603,6.180,0.990,Rolle↓; QB-Wechsel
 2026-11-12,00-0039355,Luke McCaffrey,WAS,NYG,WR,0.000,fehlt (0.0 angenommen),1.695,0.658,0.000,1.395,0.990,
-2026-11-12,00-0039368,Jordan Magee,WAS,NYG,LB,0.000,fehlt (0.0 angenommen),2.094,0.526,0.000,1.213,0.990,
-2026-11-12,00-0039821,Andru Phillips,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),5.255,1.084,0.004,2.367,0.990,
+2026-11-12,00-0039368,Jordan Magee,WAS,NYG,LB,0.000,fehlt (0.0 angenommen),2.094,0.498,0.000,1.149,0.990,
+2026-11-12,00-0039821,Andru Phillips,NYG,WAS,DB,3.000,Pool,5.255,1.026,0.004,2.241,0.990,
 2026-11-12,00-0039847,Theo Johnson,NYG,WAS,TE,0.000,fehlt (0.0 angenommen),3.008,0.909,0.062,1.806,0.990,Rolle↓; QB-Wechsel
-2026-11-12,00-0039861,Tyler Nubin,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),4.877,1.031,0.000,2.263,0.990,Rolle↓
-2026-11-12,00-0039898,Mike Sainristil,WAS,NYG,DB,0.000,fehlt (0.0 angenommen),4.252,0.932,0.000,2.293,0.990,Rolle↓
-2026-11-12,00-0039906,Jer'Zhan Newton,WAS,NYG,DL,0.000,fehlt (0.0 angenommen),2.734,0.665,0.000,1.600,0.990,
-2026-11-12,00-0039910,Jayden Daniels,WAS,NYG,QB,0.000,fehlt (0.0 angenommen),16.944,3.239,0.700,6.010,0.990,Rolle↓
-2026-11-12,00-0040216,Kain Medrano,WAS,NYG,LB,0.000,fehlt (0.0 angenommen),4.500,0.972,0.000,2.407,0.990,
-2026-11-12,00-0040677,Abdul Carter,NYG,WAS,LB,0.000,fehlt (0.0 angenommen),5.555,1.164,0.005,2.558,0.990,
-2026-11-12,00-0040694,Darius Alexander,NYG,WAS,DL,0.000,fehlt (0.0 angenommen),2.256,0.555,0.000,1.317,0.990,
-2026-11-12,00-0040715,Cam Skattebo,NYG,WAS,RB,0.000,fehlt (0.0 angenommen),11.308,2.911,0.458,5.907,0.990,QB-Wechsel
-2026-11-12,00-0040731,Trey Amos,WAS,NYG,DB,0.000,fehlt (0.0 angenommen),5.903,1.239,0.086,2.653,0.990,
-2026-11-12,00-0041028,Sonny Styles,WAS,NYG,LB,0.000,fehlt (0.0 angenommen),7.011,1.444,0.116,3.113,0.990,
-2026-11-12,00-0041040,Antonio Williams,WAS,NYG,WR,0.000,fehlt (0.0 angenommen),4.889,1.495,0.216,2.981,0.990,
-2026-11-12,00-0041042,Malachi Fields,NYG,WAS,WR,0.000,fehlt (0.0 angenommen),5.016,1.521,0.234,3.064,0.990,QB-Wechsel
-2026-11-12,00-0041145,Dominic Zvada,NYG,WAS,K,0.000,fehlt (0.0 angenommen),7.535,2.524,0.622,4.802,0.990,
+2026-11-12,00-0039861,Tyler Nubin,NYG,WAS,DB,3.000,Pool,4.877,0.976,0.000,2.142,0.990,Rolle↓
+2026-11-12,00-0039898,Mike Sainristil,WAS,NYG,DB,0.000,fehlt (0.0 angenommen),4.252,0.883,0.000,2.171,0.990,Rolle↓
+2026-11-12,00-0039906,Jer'Zhan Newton,WAS,NYG,DL,0.000,fehlt (0.0 angenommen),2.734,0.629,0.000,1.515,0.990,
+2026-11-12,00-0039910,Jayden Daniels,WAS,NYG,QB,0.400,Pool,16.944,3.239,0.700,6.010,0.990,Rolle↓
+2026-11-12,00-0039923,J.J. McCarthy,NYG,WAS,QB,1.800,Pool,15.833,2.949,0.492,5.614,0.990,QB-Wechsel; Startet laut Yahoo/Heavy/Yardbarker (erster Heimstart); Winston nur Backup
+2026-11-12,00-0040216,Kain Medrano,WAS,NYG,LB,2.600,Pool,4.500,0.920,0.000,2.278,0.990,
+2026-11-12,00-0040677,Abdul Carter,NYG,WAS,LB,0.000,fehlt (0.0 angenommen),5.555,1.102,0.005,2.422,0.990,
+2026-11-12,00-0040694,Darius Alexander,NYG,WAS,DL,0.000,fehlt (0.0 angenommen),2.256,0.526,0.000,1.247,0.990,
+2026-11-12,00-0040715,Cam Skattebo,NYG,WAS,RB,0.600,Pool,11.308,2.911,0.458,5.907,0.990,QB-Wechsel
+2026-11-12,00-0040731,Trey Amos,WAS,NYG,DB,0.000,fehlt (0.0 angenommen),5.903,1.173,0.082,2.512,0.990,
+2026-11-12,00-0041028,Sonny Styles,WAS,NYG,LB,1.800,Pool,7.011,1.367,0.110,2.947,0.990,
+2026-11-12,00-0041040,Antonio Williams,WAS,NYG,WR,3.000,Pool,4.889,1.495,0.216,2.981,0.990,
+2026-11-12,00-0041042,Malachi Fields,NYG,WAS,WR,3.000,Pool,5.016,1.521,0.234,3.064,0.990,QB-Wechsel
+2026-11-12,00-0041145,Dominic Zvada,NYG,WAS,K,0.700,Pool,7.535,2.534,0.625,4.821,0.990,
 2026-11-12,00-0041178,Robert Henry Jr.,WAS,NYG,RB,0.000,0 (noch kein Saisonspiel),1.413,0.502,0.000,1.284,0.990,keine Spiele 2026
-2026-11-12,00-0041182,Drew Stevens,WAS,NYG,K,0.000,fehlt (0.0 angenommen),5.843,1.971,0.393,3.849,0.990,
-2026-11-12,00-0041462,Colton Hood,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),3.911,0.837,0.000,1.851,0.990,Rolle↓; Rückkehr nach 3 verpassten Spielen (×0.85)
-2026-11-12,00-0041509,Arvell Reese,NYG,WAS,LB,0.000,fehlt (0.0 angenommen),9.494,1.916,0.246,4.055,0.990,
+2026-11-12,00-0041182,Drew Stevens,WAS,NYG,K,1.100,Pool,5.843,1.978,0.395,3.865,0.990,
+2026-11-12,00-0041462,Colton Hood,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),3.911,0.792,0.000,1.752,0.990,Rolle↓; Rückkehr nach 3 verpassten Spielen (×0.85)
+2026-11-12,00-0041509,Arvell Reese,NYG,WAS,LB,0.700,Pool,9.494,1.814,0.233,3.839,0.990,
