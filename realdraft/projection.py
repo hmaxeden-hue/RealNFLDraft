@@ -278,6 +278,7 @@ def project(date: str, boosts: pd.DataFrame | None = None,
     df["p10"] = np.quantile(sims, 0.10, axis=0)
     df["p90"] = np.quantile(sims, 0.90, axis=0)
     df["p_low"] = (sims < 0.5).mean(axis=0)
+    df["p_neg"] = (sims < 0).mean(axis=0)
     df["risk"] = np.select([df["p_low"] < 0.2, df["p_low"] < 0.4], ["tief", "mittel"], "hoch")
     df["flags"] = df.apply(_flags, axis=1)
     df["calib_n"] = df["group"].map(lambda g: params["groups"][g].get("n_obs", 0))
@@ -350,9 +351,14 @@ def simulate(df: pd.DataFrame, params: dict, n_sims: int) -> tuple[np.ndarray, d
     lam_int, lam_fr = df["lam_int"].to_numpy(), df["lam_fr"].to_numpy()
     # Defender: stetiger Teil (Tackles, PD, Sacks) + seltene Turnover-Events als Poisson-Ereignisse
     cv = np.where(is_def, df["group"].map(config.FP_CV_DEF_BASE).fillna(1.0), df["group"].map(config.FP_CV))
+    is_qb = (df["group"] == "QB").to_numpy()
     mu = np.maximum(df["mu_fp"].to_numpy() - is_def * config.TO_POINTS * (lam_int + lam_fr), 0.05)
+    mu = mu + is_qb * config.QB_TO_PTS * config.QB_TO_RATE   # Turnover-Abzug unten hält E[FP] gleich
     shape, scale = 1 / cv ** 2, mu * cv ** 2
     fp = sps.gamma.ppf(np.clip(U, 1e-6, 1 - 1e-6), a=shape, scale=scale)
+    if is_qb.any():
+        m = np.exp(-config.QB_TO_LOAD * Z - config.QB_TO_LOAD ** 2 / 2)   # schwacher Tag -> mehr Turnovers
+        fp = fp - np.where(is_qb, config.QB_TO_PTS * rng.poisson(config.QB_TO_RATE * m), 0.0)
     if is_def.any():
         o = np.array([teams[x] for x in df["opp"]])
         m = np.exp(-config.TO_OPP_LOAD * T[:, o] - config.TO_OPP_LOAD ** 2 / 2)   # E[m] = 1
@@ -367,7 +373,11 @@ def simulate(df: pd.DataFrame, params: dict, n_sims: int) -> tuple[np.ndarray, d
     offset = df["group"].map(lambda g: params["groups"][g]["offset"]).to_numpy()
     noise = df["group"].map(lambda g: params["groups"][g]["noise"]).to_numpy()
     closeness = 1 + params.get("closeness_coef", 0) * (7 - np.minimum(np.abs(df["team_spread"].fillna(3).to_numpy()), 14)) / 7
-    rating = np.maximum(0, slope * (fp - offset) + noise * rng.standard_normal((n_sims, P))) * closeness
+    raw = slope * (fp - offset) + noise * rng.standard_normal((n_sims, P))
+    a, b = config.QB_LOWFP_PENALTY
+    raw = raw + is_qb * np.minimum(0.0, a * fp + b)
+    floor = df["group"].map(config.NEG_RATING_FLOOR).fillna(0.0).to_numpy()
+    rating = np.maximum(floor, raw) * closeness
     # Spielausgang: eigener minus gegnerischer Offense-Faktor, verschoben um den Spread (SD ~13.5 Punkte)
     t = np.array([teams[x] for x in df["team"]])
     o = np.array([teams[x] for x in df["opp"]])
@@ -388,6 +398,8 @@ def _flags(r) -> str:
         f.append(r["status"] + (f" ({r['injury']})" if isinstance(r["injury"], str) else ""))
     if r["role_alarm"]:
         f.append("Rolle↓")
+    if r.get("p_neg", 0) >= 0.08:
+        f.append(f"Minus-Risiko {r['p_neg']:.0%}")
     if r["qb_change"]:
         f.append("QB-Wechsel")
     if pd.notna(r["luck_gap"]) and r["luck_gap"] < -3:

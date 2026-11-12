@@ -52,3 +52,14 @@ def test_backup_qb_sits_when_starter_plays():
                         "qb_id": ["s", "s", "s", "s", "b", "b"], "qb": ["Starter"] * 4 + ["Backup"] * 2})
     projection._apply_qb_out(df, qbg)
     assert df.loc[0, "p_play"] == 0.99 and df.loc[1, "p_play"] <= 0.05
+
+
+def test_qb_can_go_negative_but_keeps_expectation():
+    params = {"groups": {"QB": {"slope": 0.2, "offset": 0.0, "noise": 0.0}}}
+    df = _df([{"group": "QB", "team": "A", "opp": "B", "mu_fp": 8.0},
+              {"group": "QB", "team": "B", "opp": "A", "mu_fp": 20.0}])
+    sims, _ = projection.simulate(df, params, 20000)
+    weak, strong = sims[:, 0], sims[:, 1]
+    assert (weak < 0).mean() > 0.05 and weak.min() >= -2.5    # Ersatz-QB mit wenig FP: echtes Minus-Risiko
+    assert (strong < 0).mean() < 0.05                         # Starter selten negativ
+    assert abs(strong.mean() / (0.2 * 20.0) - 1) < 0.06       # Erwartung bleibt (bis auf Exits) erhalten

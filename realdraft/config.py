@@ -101,6 +101,14 @@ OPP_INT_SHRINK = 8.0         # Spiele Liga-Schnitt im INT-Faktor des gegnerische
 OPP_INT_CLIP = (0.7, 1.5)
 TO_OPP_LOAD = 0.25           # schlechter Tag der gegnerischen Offense -> mehr Turnovers
 
+# QB-Minus-Risiko: Turnovers (INT + Fumble lost, je −2 FP) als Poisson-Ereignisse, gekoppelt an schwache Tage,
+# plus Real-Abzug bei sehr wenigen FP (Fit 2026: Residuum ≈ 0.092·FP − 0.42 unter ~4.6 FP; Wentz −2.8 FP → −1.4)
+QB_TO_RATE = 0.9
+QB_TO_PTS = 2.0
+QB_TO_LOAD = 0.35
+QB_LOWFP_PENALTY = (0.092, -0.423)
+NEG_RATING_FLOOR = {"QB": -2.5}
+
 # Szenario-Stacks: Team "dominiert", wenn (T_team - T_opp)/√2 + Spread/13.5 > Schwelle
 SCENARIO_MARGIN = 0.8
 SCENARIO_TOP = 6             # so viele Szenario-Lineups im Bericht (grosse Slates)

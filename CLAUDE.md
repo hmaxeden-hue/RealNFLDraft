@@ -413,3 +413,14 @@ Dateiformate:
   Nachtrag 3: Marcs Muster laut User: 2–3 Stars mit ~0 Boost (Cook, Allen, Bass, DJ Moore) + 2–3 BUF-Spieler mit
   mittlerem Boost (Shakir, Coleman, Kincaid, D. Williams, Rousseau) → E 21–27. Damit P(beide schlagen) für das
   finale Lineup **47 %** (P(Leo) 59 %, P(Marc) 60 %); Bishop statt Metellus 48 % (Rauschen) → unverändert gespielt.
+- 2026-11-09 Ergebnis: **13.72 Punkte, Rang 15'252/15.8k** – schlechtester Tag. BUF gewann 23:6, genau das Szenario,
+  gegen das das Duell-Lineup gewettet hatte (MIN-Stack). **Wentz −1.4** (−2.8 FP, zweiter negativer QB nach
+  Fagnano) = −4.2 Pkt., Mason 1.4, Thorson 1.9, Igbinosun 0.5, Metellus 0.6. Leo (Cook 4.6, Bass 4.2, Cashman 2.5,
+  Thorson, Doman) ≈ 40 → Woche verloren. Das E-max-Lineup hätte höchstens ≈ 29.4 geholt (Oliver/Alford ≤ 0.9) und
+  Leo ebenfalls nicht geschlagen; die Duell-Wette kostete also ≈ 15 Punkte im Ranking, aber nicht die Woche.
+  Hindsight 52.1 (Rousseau 3.5, Bernard 3.3, Murphy 3.1, D. Williams 2.5, Thorson). Lehren: (1) Ein Underdog-
+  Offense-Stack (QB + RB) ist hoch korreliert – floppt die Offense, floppen alle Picks zugleich; (2) QBs können
+  deutlich negativ werden. **Modell erweitert:** QB-Turnovers als Poisson-Ereignisse (0.9/Spiel à −2 FP, an
+  schwache Tage gekoppelt, `QB_TO_*`), Real-Abzug bei sehr wenigen FP (`QB_LOWFP_PENALTY`, Fit 2026), kein
+  0-Boden mehr für QBs (`NEG_RATING_FLOOR` −2.5), Flag "Minus-Risiko X %" ab 8 %. Effekt: Ersatz-QB mit 8.5 FP
+  E 1.66 → 1.57, P(< 0) 13 %; Starter mit 18 FP P(< 0) 4 % (beobachtet 2026: 4.5 % ≤ 0). Kicker noch offen.
