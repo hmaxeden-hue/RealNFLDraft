@@ -424,3 +424,6 @@ Dateiformate:
   schwache Tage gekoppelt, `QB_TO_*`), Real-Abzug bei sehr wenigen FP (`QB_LOWFP_PENALTY`, Fit 2026), kein
   0-Boden mehr für QBs (`NEG_RATING_FLOOR` −2.5), Flag "Minus-Risiko X %" ab 8 %. Effekt: Ersatz-QB mit 8.5 FP
   E 1.66 → 1.57, P(< 0) 13 %; Starter mit 18 FP P(< 0) 4 % (beobachtet 2026: 4.5 % ≤ 0). Kicker noch offen.
+  Endstand Woche 9: Leo 110.54, Marc 100.87, User 83.34 (`data/results/duel_weeks.csv`). Marc 27 lag genau im
+  modellierten Bereich (E 21–27); Leo 38 nahe der Schätzung (≈ 40). Auch das E-max-Lineup (≤ 29.4) hätte keinen
+  der beiden um die nötigen 2.92/4.25 geschlagen → Woche war nach dem Sonntag praktisch verloren.
