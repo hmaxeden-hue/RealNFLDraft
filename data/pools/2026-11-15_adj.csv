@@ -1,0 +1,6 @@
+name,team,factor,p_play,note
+Kyle McCord,MIA,0.8125,,"Erster NFL-Start (Willis IR); Prior auf Ersatz-QB-Niveau 13 FP statt Rookie-Default 16"
+Carson Beck,ARI,0.8125,,"Erster NFL-Start (Minshew IR, Brissett getradet); Prior auf Ersatz-QB-Niveau 13 FP"
+Andy Borregales,NE,0.95,,"Spiel in München (Allianz Arena, draussen, ~6 °C) – Modell rechnet mit Dome"
+Jake Bates,DET,0.95,,"Spiel in München (Allianz Arena, draussen, ~6 °C) – Modell rechnet mit Dome"
+Kirk Cousins,MIN,,0.99,"Von LV zu MIN getradet, startet für Kyler Murray (Out)"
