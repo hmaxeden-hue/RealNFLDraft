@@ -2134,3 +2134,63 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-12,00-0041182,Drew Stevens,WAS,NYG,K,1.100,Pool,5.843,1.978,0.395,3.865,0.990,
 2026-11-12,00-0041462,Colton Hood,NYG,WAS,DB,0.000,fehlt (0.0 angenommen),3.911,0.792,0.000,1.752,0.990,Rolle↓; Rückkehr nach 3 verpassten Spielen (×0.85)
 2026-11-12,00-0041509,Arvell Reese,NYG,WAS,LB,0.700,Pool,9.494,1.814,0.233,3.839,0.990,
+2026-11-15,00-0023459,Aaron Rodgers,PIT,CIN,QB,0.000,fehlt (0.0 angenommen),16.910,3.200,0.689,5.877,0.990,Pech -3.5 FP vs xFP
+2026-11-15,00-0026498,Matthew Stafford,LA,ARI,QB,0.000,fehlt (0.0 angenommen),17.887,3.238,0.766,5.964,0.990,
+2026-11-15,00-0029604,Kirk Cousins,MIN,GB,QB,0.000,fehlt (0.0 angenommen),13.319,2.505,0.321,4.796,0.990,QB-Wechsel; startet vermutlich für Kyler Murray
+2026-11-15,00-0029822,Brandon McManus,LA,ARI,K,0.000,fehlt (0.0 angenommen),7.686,2.491,0.546,4.765,0.990,
+2026-11-15,00-0030565,Geno Smith,NYJ,BUF,QB,0.000,fehlt (0.0 angenommen),14.271,2.555,0.379,4.877,0.990,
+2026-11-15,00-0031136,Chris Boswell,PIT,CIN,K,0.000,fehlt (0.0 angenommen),8.244,2.825,0.688,5.469,0.990,
+2026-11-15,00-0032726,Ka'imi Fairbairn,HOU,CLE,K,0.000,fehlt (0.0 angenommen),8.420,2.831,0.642,5.399,0.990,
+2026-11-15,00-0033077,Dak Prescott,DAL,SF,QB,0.000,fehlt (0.0 angenommen),17.061,3.227,0.684,6.073,0.990,
+2026-11-15,00-0033106,Jared Goff,DET,NE,QB,0.000,fehlt (0.0 angenommen),16.036,3.061,0.601,5.752,0.990,Rolle↓; Pech -4.0 FP vs xFP
+2026-11-15,00-0033280,Christian McCaffrey,SF,DAL,RB,0.000,fehlt (0.0 angenommen),21.909,5.602,1.445,10.976,0.990,
+2026-11-15,00-0033537,Deshaun Watson,CLE,HOU,QB,0.000,fehlt (0.0 angenommen),15.198,2.791,0.392,5.280,0.990,QB-Wechsel
+2026-11-15,00-0033873,Patrick Mahomes,KC,ATL,QB,0.000,fehlt (0.0 angenommen),17.948,3.416,0.840,6.314,0.990,
+2026-11-15,00-0034173,Eddy Pineiro,SF,DAL,K,0.000,fehlt (0.0 angenommen),9.060,3.036,0.739,5.785,0.990,
+2026-11-15,00-0034857,Josh Allen,BUF,NYJ,QB,0.000,fehlt (0.0 angenommen),22.176,4.084,1.121,7.351,0.990,Rolle↓; Pech -6.1 FP vs xFP
+2026-11-15,00-0035261,Tony Pollard,TEN,JAX,RB,0.000,fehlt (0.0 angenommen),11.167,2.855,0.727,5.504,0.990,
+2026-11-15,00-0035704,Drew Lock,SEA,LV,QB,0.000,fehlt (0.0 angenommen),14.164,2.594,0.352,4.929,0.990,QB-Wechsel; startet vermutlich für Sam Darnold
+2026-11-15,00-0035710,Daniel Jones,IND,MIA,QB,0.000,fehlt (0.0 angenommen),15.929,3.004,0.622,5.624,0.990,Pech -3.2 FP vs xFP
+2026-11-15,00-0036162,Tyler Bass,BUF,NYJ,K,0.000,fehlt (0.0 angenommen),8.001,2.649,0.605,5.117,0.990,
+2026-11-15,00-0036223,Jonathan Taylor,IND,MIA,RB,0.000,fehlt (0.0 angenommen),15.383,3.941,1.001,7.741,0.990,Rolle↓
+2026-11-15,00-0036264,Jordan Love,GB,MIN,QB,0.000,fehlt (0.0 angenommen),14.668,2.749,0.383,5.327,0.990,
+2026-11-15,00-0036358,CeeDee Lamb,DAL,SF,WR,0.000,fehlt (0.0 angenommen),12.814,3.478,0.739,7.099,0.990,
+2026-11-15,00-0036410,Tee Higgins,CIN,PIT,WR,0.000,fehlt (0.0 angenommen),10.692,2.998,0.625,6.032,0.990,
+2026-11-15,00-0036442,Joe Burrow,CIN,PIT,QB,0.000,fehlt (0.0 angenommen),17.934,3.416,0.828,6.187,0.990,
+2026-11-15,00-0036554,Nico Collins,HOU,CLE,WR,0.000,fehlt (0.0 angenommen),8.919,2.498,0.487,4.985,0.990,Rolle↓
+2026-11-15,00-0036555,Chuba Hubbard,CAR,NO,RB,0.000,fehlt (0.0 angenommen),12.432,3.326,0.849,6.298,0.990,
+2026-11-15,00-0036854,Evan McPherson,CIN,PIT,K,0.000,fehlt (0.0 angenommen),8.666,2.959,0.697,5.689,0.990,
+2026-11-15,00-0036900,Ja'Marr Chase,CIN,PIT,WR,0.000,fehlt (0.0 angenommen),13.609,3.782,0.791,7.761,0.990,
+2026-11-15,00-0036963,Amon-Ra St. Brown,DET,NE,WR,0.000,fehlt (0.0 angenommen),11.886,2.492,0.000,6.098,0.750,Questionable (Rib)
+2026-11-15,00-0036971,Trevor Lawrence,JAX,TEN,QB,0.000,fehlt (0.0 angenommen),21.107,3.727,0.983,6.772,0.990,Rolle↓
+2026-11-15,00-0036997,Javonte Williams,DAL,SF,RB,0.000,fehlt (0.0 angenommen),13.293,3.436,0.837,6.583,0.990,
+2026-11-15,00-0037228,Jaylen Warren,PIT,CIN,RB,0.000,fehlt (0.0 angenommen),14.021,3.678,1.007,7.028,0.990,
+2026-11-15,00-0037238,Drake London,ATL,KC,WR,0.000,fehlt (0.0 angenommen),9.047,2.545,0.520,5.129,0.990,Rolle↓
+2026-11-15,00-0037239,Chris Olave,NO,CAR,WR,0.000,fehlt (0.0 angenommen),10.921,3.056,0.634,6.222,0.990,
+2026-11-15,00-0037248,James Cook,BUF,NYJ,RB,0.000,fehlt (0.0 angenommen),18.747,4.720,1.235,9.099,0.990,
+2026-11-15,00-0037834,Brock Purdy,SF,DAL,QB,0.000,fehlt (0.0 angenommen),22.836,4.348,1.231,7.898,0.990,Pech -3.6 FP vs xFP
+2026-11-15,00-0037840,Kyren Williams,LA,ARI,RB,0.000,fehlt (0.0 angenommen),12.773,3.268,0.855,6.271,0.990,
+2026-11-15,00-0038120,Breece Hall,NYJ,BUF,RB,0.000,fehlt (0.0 angenommen),11.390,2.934,0.728,5.542,0.990,Rolle↓; Pech -3.1 FP vs xFP
+2026-11-15,00-0038124,Christian Watson,GB,MIN,WR,0.000,fehlt (0.0 angenommen),10.222,2.862,0.579,5.812,0.990,
+2026-11-15,00-0038134,Kenneth Walker III,KC,ATL,RB,0.000,fehlt (0.0 angenommen),16.451,3.209,0.000,7.527,0.750,Questionable (Groin)
+2026-11-15,00-0038542,Bijan Robinson,ATL,KC,RB,0.000,fehlt (0.0 angenommen),13.858,3.630,0.948,6.973,0.990,
+2026-11-15,00-0038543,Jaxon Smith-Njigba,SEA,LV,WR,0.000,fehlt (0.0 angenommen),11.387,3.098,0.662,6.379,0.990,Rolle↓; QB-Wechsel; QB1 Sam Darnold fehlt (×0.85)
+2026-11-15,00-0038562,Jake Moody,ATL,KC,K,0.000,fehlt (0.0 angenommen),8.331,2.827,0.672,5.485,0.990,
+2026-11-15,00-0038597,Chase Brown,CIN,PIT,RB,0.000,fehlt (0.0 angenommen),9.474,2.604,0.638,4.941,0.990,Pech -3.1 FP vs xFP
+2026-11-15,00-0038606,Parker Washington,JAX,TEN,WR,0.000,fehlt (0.0 angenommen),9.547,2.556,0.544,5.262,0.990,
+2026-11-15,00-0039067,Rashee Rice,KC,ATL,WR,0.000,fehlt (0.0 angenommen),9.436,2.641,0.528,5.277,0.990,
+2026-11-15,00-0039139,Jahmyr Gibbs,DET,NE,RB,0.000,fehlt (0.0 angenommen),15.645,4.104,1.086,7.807,0.990,Rolle↓
+2026-11-15,00-0039150,Bryce Young,CAR,NO,QB,0.000,fehlt (0.0 angenommen),16.511,3.120,0.618,5.851,0.990,
+2026-11-15,00-0039163,C.J. Stroud,HOU,CLE,QB,0.000,fehlt (0.0 angenommen),15.253,2.873,0.517,5.335,0.990,
+2026-11-15,00-0039165,Zach Charbonnet,SEA,LV,RB,0.000,fehlt (0.0 angenommen),9.463,2.528,0.616,4.797,0.990,QB-Wechsel; QB1 Sam Darnold fehlt (×0.94)
+2026-11-15,00-0039409,Cam Little,JAX,TEN,K,0.000,fehlt (0.0 angenommen),9.908,3.174,0.776,6.085,0.990,
+2026-11-15,00-0039576,Spencer Shrader,IND,MIA,K,0.000,fehlt (0.0 angenommen),8.092,2.712,0.639,5.173,0.990,
+2026-11-15,00-0039851,Drake Maye,NE,DET,QB,0.000,fehlt (0.0 angenommen),21.076,4.008,1.114,7.253,0.990,
+2026-11-15,00-0039917,Michael Penix Jr.,ATL,KC,QB,0.000,fehlt (0.0 angenommen),13.537,2.525,0.332,4.868,0.990,Pech -5.0 FP vs xFP
+2026-11-15,00-0040014,Kyle McCord,MIA,IND,QB,0.000,0 (noch kein Saisonspiel),15.987,2.949,0.515,5.541,0.990,keine Spiele 2026; startet vermutlich für Malik Willis
+2026-11-15,00-0040124,Tetairoa McMillan,CAR,NO,WR,0.000,fehlt (0.0 angenommen),9.422,2.675,0.553,5.427,0.990,
+2026-11-15,00-0040279,Ryan Fitzgerald,CAR,NO,K,0.000,fehlt (0.0 angenommen),8.422,2.841,0.684,5.422,0.990,
+2026-11-15,00-0040667,Matthew Golden,GB,MIN,WR,0.000,fehlt (0.0 angenommen),9.202,2.589,0.549,5.224,0.990,
+2026-11-15,00-0040719,Bhayshul Tuten,JAX,TEN,RB,0.000,fehlt (0.0 angenommen),10.809,2.801,0.701,5.300,0.990,Rolle↓
+2026-11-15,00-0040743,Tyler Shough,NO,CAR,QB,0.000,fehlt (0.0 angenommen),17.520,3.362,0.730,6.256,0.990,
+2026-11-15,00-0040784,Quinshon Judkins,CLE,HOU,RB,0.000,fehlt (0.0 angenommen),9.812,2.650,0.688,5.027,0.990,Rolle↓; QB-Wechsel
