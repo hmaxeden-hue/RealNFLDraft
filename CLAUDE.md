@@ -431,3 +431,7 @@ Dateiformate:
   (meiste Starts W2–W6), obwohl McCarthy die letzten zwei Spiele startete und laut News startet → per `_adj`
   korrigiert (McCarthy E 2.9 statt Winston 2.4, Lineup E 38.4 statt 35.8). Bei QB-Wechseln immer die News prüfen.
   Wochenduell-Stand nach Woche 9: User 4, Leo 3, Marc 1 Wochensiege.
+- 2026-11-12 (TNF WAS @ NYG): **46.09 Punkte, Rang 4'120/13.9k (Top 30 %)**, Modell-Lineup gespielt. Daniels 4.0
+  (E 3.2), **McCarthy 4.0** (E 2.9; die News-Korrektur Winston → McCarthy brachte ≈ +13 Pkt., Winston war nur
+  Backup), Fields 2.2, A. Williams 2.5 (TD) über E; Nabers 1.1 (E 3.0) Ausreisser nach unten. Upside-Variante
+  (Skattebo 6.3 statt Daniels) 54.1, Sicher 49.3. Hindsight 76.0 (Skattebo, Likely 5.6, Diggs 5.0, McCarthy, Reaves).
