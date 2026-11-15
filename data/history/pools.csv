@@ -2137,7 +2137,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-15,00-0023459,Aaron Rodgers,PIT,CIN,QB,0.600,Pool,16.910,3.200,0.689,5.877,0.990,Pech -3.5 FP vs xFP
 2026-11-15,00-0026498,Matthew Stafford,LA,ARI,QB,0.500,Pool,17.887,3.238,0.766,5.964,0.990,
 2026-11-15,00-0029604,Kirk Cousins,MIN,GB,QB,0.400,Pool,13.319,2.505,0.321,4.796,0.990,"QB-Wechsel; startet vermutlich für Kyler Murray; Von LV zu MIN getradet, startet für Kyler Murray (Out)"
-2026-11-15,00-0029822,Brandon McManus,LA,ARI,K,0.000,fehlt (0.0 angenommen),7.686,2.426,0.532,4.641,0.990,
+2026-11-15,00-0029822,Brandon McManus,LA,ARI,K,1.500,Pool,7.686,2.426,0.532,4.641,0.990,
 2026-11-15,00-0030279,Keenan Allen,SF,DAL,WR,2.400,Pool,5.765,1.692,0.286,3.440,0.990,
 2026-11-15,00-0030506,Travis Kelce,KC,ATL,TE,1.100,Pool,6.371,1.690,0.295,3.469,0.990,
 2026-11-15,00-0030565,Geno Smith,NYJ,BUF,QB,0.600,Pool,14.271,2.555,0.379,4.877,0.990,
@@ -2175,9 +2175,11 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-15,00-0034794,Jason Sanders,NYJ,BUF,K,0.800,Pool,6.526,2.026,0.429,3.927,0.990,
 2026-11-15,00-0034805,John Franklin-Myers,TEN,JAX,DL,3.000,Pool,2.819,0.639,0.000,1.543,0.990,
 2026-11-15,00-0034815,Fred Warner,SF,DAL,LB,1.400,Pool,7.623,1.558,0.146,3.364,0.990,
+2026-11-15,00-0034827,DJ Moore,BUF,NYJ,WR,1.200,Pool,7.494,2.085,0.395,4.199,0.990,
 2026-11-15,00-0034829,Mike Gesicki,CIN,PIT,TE,1.600,Pool,5.329,1.441,0.228,2.944,0.990,Rolle↓
 2026-11-15,00-0034857,Josh Allen,BUF,NYJ,QB,0.000,Pool,22.176,4.084,1.121,7.351,0.990,Rolle↓; Pech -6.1 FP vs xFP
 2026-11-15,00-0034869,Sam Darnold,SEA,LV,QB,1.100,Pool,16.765,0.000,0.000,0.000,0.000,Out (Ribs); QB-Wechsel
+2026-11-15,00-0034960,Jakobi Meyers,JAX,TEN,WR,1.900,Pool,7.480,2.023,0.390,4.037,0.990,Pech -3.3 FP vs xFP
 2026-11-15,00-0034974,Julian Love,SEA,LV,DB,2.300,Pool,7.679,1.589,0.098,3.481,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-15,00-0034982,Dre Greenlaw,SF,DAL,LB,3.000,Pool,6.600,1.039,0.000,2.702,0.750,Questionable (Knee)
 2026-11-15,00-0035133,Keisean Nixon,GB,MIN,DB,2.100,Pool,6.560,1.383,0.090,3.043,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
@@ -2202,6 +2204,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-15,00-0035704,Drew Lock,SEA,LV,QB,0.400,Pool,14.164,2.594,0.352,4.929,0.990,QB-Wechsel; startet vermutlich für Sam Darnold
 2026-11-15,00-0035710,Daniel Jones,IND,MIA,QB,2.200,Pool,15.929,3.004,0.622,5.624,0.990,Pech -3.2 FP vs xFP
 2026-11-15,00-0035859,Blake Gillikin,ARI,LA,P,2.400,Pool,25.628,1.854,0.759,3.130,0.990,
+2026-11-15,00-0036139,Rico Dowdle,PIT,CIN,RB,1.700,Pool,7.475,2.118,0.474,3.993,0.990,
 2026-11-15,00-0036162,Tyler Bass,BUF,NYJ,K,0.300,Pool,8.001,2.580,0.589,4.984,0.990,
 2026-11-15,00-0036222,Isaiah Rodgers,MIN,GB,DB,3.000,Pool,5.862,1.216,0.042,2.708,0.990,Rolle↓
 2026-11-15,00-0036223,Jonathan Taylor,IND,MIA,RB,0.200,Pool,15.383,3.941,1.001,7.741,0.990,Rolle↓
@@ -2209,6 +2212,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-15,00-0036281,C.J. Henderson,ATL,KC,DB,2.800,Pool,5.953,1.247,0.077,2.759,0.990,
 2026-11-15,00-0036282,Grant Delpit,CLE,HOU,DB,3.000,Pool,5.531,1.152,0.035,2.537,0.990,
 2026-11-15,00-0036293,Jeremy Chinn,LV,SEA,DB,1.400,Pool,7.519,1.512,0.133,3.219,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
+2026-11-15,00-0036322,Justin Jefferson,MIN,GB,WR,1.100,Pool,7.019,2.028,0.372,4.086,0.990,QB-Wechsel; Pech -3.1 FP vs xFP; QB1 Kyler Murray fehlt (×0.85)
 2026-11-15,00-0036358,CeeDee Lamb,DAL,SF,WR,0.100,Pool,12.814,3.478,0.739,7.099,0.990,
 2026-11-15,00-0036388,Xavier McKinney,GB,MIN,DB,1.600,Pool,8.024,1.259,0.000,3.312,0.750,Questionable (Foot); Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-15,00-0036410,Tee Higgins,CIN,PIT,WR,0.200,Pool,10.692,2.998,0.625,6.032,0.990,
@@ -2265,13 +2269,13 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-15,00-0038543,Jaxon Smith-Njigba,SEA,LV,WR,0.000,Pool,11.387,3.098,0.662,6.379,0.990,Rolle↓; QB-Wechsel; QB1 Sam Darnold fehlt (×0.85)
 2026-11-15,00-0038557,Dorian Williams,BUF,NYJ,LB,2.200,Pool,6.357,1.318,0.046,2.943,0.990,Rolle↓
 2026-11-15,00-0038560,Jordan Battle,CIN,PIT,DB,1.500,Pool,6.827,1.397,0.067,3.161,0.990,
-2026-11-15,00-0038562,Jake Moody,ATL,KC,K,0.000,fehlt (0.0 angenommen),8.331,2.754,0.654,5.342,0.990,
+2026-11-15,00-0038562,Jake Moody,ATL,KC,K,2.100,Pool,8.331,2.754,0.654,5.342,0.990,
 2026-11-15,00-0038563,Tre Tucker,LV,SEA,WR,1.000,Pool,4.893,1.455,0.210,2.967,0.990,QB1 Kirk Cousins fehlt (×0.85)
 2026-11-15,00-0038567,Chad Ryland,ARI,LA,K,0.500,Pool,5.959,1.827,0.397,3.519,0.990,QB1 Jacoby Brissett fehlt (×0.92)
 2026-11-15,00-0038574,Isaiah McGuire,CLE,HOU,DL,3.000,Pool,2.660,0.624,0.000,1.491,0.990,
 2026-11-15,00-0038577,Nick Herbig,PIT,CIN,LB,3.000,Pool,5.797,1.213,0.006,2.723,0.990,
 2026-11-15,00-0038597,Chase Brown,CIN,PIT,RB,1.000,Pool,9.474,2.604,0.638,4.941,0.990,Pech -3.1 FP vs xFP
-2026-11-15,00-0038606,Parker Washington,JAX,TEN,WR,0.000,fehlt (0.0 angenommen),9.547,2.556,0.544,5.262,0.990,
+2026-11-15,00-0038606,Parker Washington,JAX,TEN,WR,0.800,Pool,9.547,2.556,0.544,5.262,0.990,
 2026-11-15,00-0038608,Kayshon Boutte,HOU,CLE,WR,2.300,Pool,4.886,1.468,0.213,2.938,0.990,Rolle↓
 2026-11-15,00-0038611,Chris Rodriguez Jr.,JAX,TEN,RB,2.400,Pool,7.144,1.954,0.432,3.723,0.990,
 2026-11-15,00-0038618,Xavier Hutchinson,HOU,CLE,WR,2.500,Pool,5.118,1.539,0.219,3.097,0.990,
@@ -2294,12 +2298,13 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-15,00-0039139,Jahmyr Gibbs,DET,NE,RB,0.000,Pool,15.645,4.104,1.086,7.807,0.990,Rolle↓
 2026-11-15,00-0039150,Bryce Young,CAR,NO,QB,0.400,Pool,16.511,3.120,0.618,5.851,0.990,
 2026-11-15,00-0039163,C.J. Stroud,HOU,CLE,QB,0.100,Pool,15.253,2.873,0.517,5.335,0.990,
-2026-11-15,00-0039165,Zach Charbonnet,SEA,LV,RB,0.000,fehlt (0.0 angenommen),9.463,2.528,0.616,4.797,0.990,QB-Wechsel; QB1 Sam Darnold fehlt (×0.94)
+2026-11-15,00-0039165,Zach Charbonnet,SEA,LV,RB,1.600,Pool,9.463,2.528,0.616,4.797,0.990,QB-Wechsel; QB1 Sam Darnold fehlt (×0.94)
 2026-11-15,00-0039172,Jake Bates,DET,NE,K,0.500,Pool,6.969,2.301,0.516,4.468,0.990,"Spiel in München (Allianz Arena, draussen, ~6 °C) – Modell rechnet mit Dome"
 2026-11-15,00-0039338,Brock Bowers,LV,SEA,TE,0.300,Pool,7.414,1.881,0.327,3.875,0.990,Rolle↓; QB1 Kirk Cousins fehlt (×0.88)
 2026-11-15,00-0039340,Laiatu Latu,IND,MIA,DL,3.000,Pool,5.849,1.233,0.000,3.007,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-15,00-0039343,Kamari Lassiter,HOU,CLE,DB,1.800,Pool,7.083,1.442,0.135,3.090,0.990,
 2026-11-15,00-0039345,Renardo Green,SF,DAL,DB,1.500,Pool,6.834,1.078,0.000,2.843,0.750,Questionable (Back)
+2026-11-15,00-0039373,Audric Estime,NO,CAR,RB,0.800,Pool,7.912,2.262,0.530,4.253,0.990,
 2026-11-15,00-0039375,Josh Newton,CIN,PIT,DB,1.800,Pool,5.466,1.173,0.005,2.612,0.990,
 2026-11-15,00-0039404,Will Reichard,MIN,GB,K,0.200,Pool,5.790,1.898,0.339,3.632,0.990,QB1 Kyler Murray fehlt (×0.92)
 2026-11-15,00-0039409,Cam Little,JAX,TEN,K,0.500,Pool,9.908,3.092,0.755,5.927,0.990,
@@ -2322,8 +2327,10 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-15,00-0039901,Keon Coleman,BUF,NYJ,WR,1.900,Pool,5.361,1.549,0.256,3.082,0.990,
 2026-11-15,00-0039917,Michael Penix Jr.,ATL,KC,QB,0.600,Pool,13.537,2.525,0.332,4.868,0.990,Pech -5.0 FP vs xFP
 2026-11-15,00-0039924,Dallas Turner,MIN,GB,LB,1.600,Pool,6.299,1.318,0.061,2.865,0.990,
+2026-11-15,00-0040014,Kyle McCord,MIA,IND,QB,0.000,Pool,12.989,2.375,0.184,4.622,0.990,keine Spiele 2026; startet vermutlich für Malik Willis; Erster NFL-Start (Willis IR); Prior auf Ersatz-QB-Niveau 13 FP statt Rookie-Default 16
 2026-11-15,00-0040122,Ashton Jeanty,LV,SEA,RB,0.600,Pool,7.558,2.071,0.446,3.974,0.990,Rolle↓; QB1 Kirk Cousins fehlt (×0.94)
 2026-11-15,00-0040124,Tetairoa McMillan,CAR,NO,WR,0.700,Pool,9.422,2.675,0.553,5.427,0.990,
+2026-11-15,00-0040128,Tyler Warren,IND,MIA,TE,2.100,Pool,7.935,2.055,0.370,4.244,0.990,
 2026-11-15,00-0040170,Elic Ayomanor,TEN,JAX,WR,3.000,Pool,3.465,1.050,0.089,2.108,0.990,
 2026-11-15,00-0040173,Tyrion Ingram-Dawkins,MIN,GB,DL,3.000,Pool,1.212,0.000,0.000,0.000,0.000,Out (Ankle); Rolle↓
 2026-11-15,00-0040198,Ollie Gordon II,MIA,IND,RB,0.800,Pool,7.709,2.169,0.495,4.116,0.990,Pech -4.7 FP vs xFP; QB1 Malik Willis fehlt (×0.94)
@@ -2345,7 +2352,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-15,00-0040738,Demetrius Knight Jr.,CIN,PIT,LB,1.700,Pool,6.412,1.338,0.059,3.012,0.990,
 2026-11-15,00-0040743,Tyler Shough,NO,CAR,QB,0.200,Pool,17.520,3.362,0.730,6.256,0.990,
 2026-11-15,00-0040782,Isaiah Bond,CLE,HOU,WR,3.000,Pool,1.801,0.671,0.000,1.406,0.990,QB-Wechsel
-2026-11-15,00-0040784,Quinshon Judkins,CLE,HOU,RB,0.000,fehlt (0.0 angenommen),9.812,2.650,0.688,5.027,0.990,Rolle↓; QB-Wechsel
+2026-11-15,00-0040784,Quinshon Judkins,CLE,HOU,RB,1.000,Pool,9.812,2.650,0.688,5.027,0.990,Rolle↓; QB-Wechsel
 2026-11-15,00-0040889,Hezekiah Masses,LV,SEA,DB,1.800,Pool,5.293,1.101,0.000,2.756,0.990,Rolle↓; Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-15,00-0040899,Trey Smack,GB,MIN,K,0.500,Pool,6.070,1.974,0.373,3.809,0.990,
 2026-11-15,00-0040957,Xavier Nwankpa,KC,ATL,DB,3.000,Pool,2.521,0.635,0.000,2.117,0.990,Rückkehr nach 3 verpassten Spielen (×0.85)
