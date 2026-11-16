@@ -435,3 +435,15 @@ Dateiformate:
   (E 3.2), **McCarthy 4.0** (E 2.9; die News-Korrektur Winston → McCarthy brachte ≈ +13 Pkt., Winston war nur
   Backup), Fields 2.2, A. Williams 2.5 (TD) über E; Nabers 1.1 (E 3.0) Ausreisser nach unten. Upside-Variante
   (Skattebo 6.3 statt Daniels) 54.1, Sicher 49.3. Hindsight 76.0 (Skattebo, Likely 5.6, Diggs 5.0, McCarthy, Reaves).
+- 2026-11-15 (Sonntag, 12 Spiele inkl. SNF PIT @ CIN, NE @ DET in München): **58.80 Punkte, Rang 3'112/17.7k
+  (Top 20 %)**, Modell-Lineup gespielt (E 52.9). McCaffrey 10.8 (E 5.6), Cole 3.1 (E 1.8), Piñeiro 2.6, Moody 2.3
+  (neu bei ATL, nachgefragter Boost 2.1 brachte +1.9 E und real 8.1 Pkt.), **D. Jones 1.0** (E 3.0; drittes
+  schwaches Spiel in Folge: 2.3/2.1/1.0 bei E ≈ 3 → Jones-Form ernster nehmen). Hindsight 101.8 (McCaffrey, Gibbs
+  10.4, Chase 8.1, E. Johnson 7.6, Pickens 7.5). **München-Korrektur bestätigt:** Borregales 1.4, Bates 1.5
+  (Spielort draussen statt Dome; Modell kennt neutrale Spielorte nicht → bei International Games Dach prüfen).
+  Pool-Lücke: App-Kürzel LAR = nflverse LA (sonst 10 Rams nicht gefunden). Rookie-/Ersatz-QBs ohne NFL-Spiel
+  bekamen den Rookie-Default 16 FP → per `_adj` auf 13 FP (Ersatz-QB-Niveau) gesetzt; Lösung im Code offen.
+  **Duell:** Leo hatte 4 gleiche Spieler + Gibbs (10.4 × 2.0) → 68.90; Marc 60.00 (Cook, O. Gordon, Jefferson,
+  E. Johnson 7.6 × 3.4, E. Jones IV). Tausch-Rechnung am Abend (McCaffrey → Chase o. ä.) ergab: Lassen ist am
+  besten, weil gegen Marc keine gemeinsamen Spieler → eigene Spieler liefern schon Streuung, Tausch kostet E.
+  Stand vor MNF Woche 10: Leo 113.53, User 104.89, Marc 99.09.
