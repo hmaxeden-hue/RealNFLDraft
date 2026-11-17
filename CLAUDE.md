@@ -447,3 +447,13 @@ Dateiformate:
   E. Johnson 7.6 × 3.4, E. Jones IV). Tausch-Rechnung am Abend (McCaffrey → Chase o. ä.) ergab: Lassen ist am
   besten, weil gegen Marc keine gemeinsamen Spieler → eigene Spieler liefern schon Streuung, Tausch kostet E.
   Stand vor MNF Woche 10: Leo 113.53, User 104.89, Marc 99.09.
+- 2026-11-16 (MNF LAC @ BAL, letzter Wochentag, 8.64 hinter Leo): **Duell-Lineup gespielt** (`scratchpad duel3/4`:
+  P(vor Leo + 8.64 und Marc nicht vorbei) über 5 Leo- × 3 Marc-Annahmen gemittelt) → Dicker, Herbert, Hampton,
+  Patterson, Q. Johnston (LAC-Stack, P ≈ 21 % statt 11 % beim E-max-Lineup, E −1.1). Ergebnis **49.98, Rang
+  211/13.8k (Top 2 %)**: Hampton 4.5, Dicker 4.0, Herbert 2.7, Patterson 2.7, Johnston 0.2 (Ausfall). E-max-Lineup
+  hätte nur 31.0 geholt, BAL-D-Variante 37.6. Leo 42.02 → **Woche um 0.68 verloren** (154.87 vs. 155.55); ein
+  Johnston-Rating von ≥ 0.4 hätte gereicht. Lehre: Das Mittel über mehrere Freundes-Annahmen machte das Lineup
+  robust; Variante gegen Leo-Kopien (er hatte am Sonntag 4/5 unserer Spieler) war richtig. Neu verpflichtete
+  Kicker bekommen fälschlich den Rückkehr-Abschlag (`RETURN_FACTOR`) → per `_adj` neutralisiert (Patterson);
+  Code-Fix offen (Abschlag nur für Offense-Spieler mit Snap-Rolle). Hindsight 69.1 (Hampton, M. Green 3.3,
+  T. Harris 3.0, Andrews 2.7, Patterson). Wochensiege jetzt: User 4, Leo 4, Marc 1.
