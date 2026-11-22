@@ -1,6 +1,6 @@
 {
  "date": "2026-11-22",
- "generated": "22.11.2026 14:36",
+ "generated": "22.11.2026 17:06",
  "slate": [
   {
    "game": "MIA @ BUF",
@@ -118,29 +118,9 @@
   "nicht gefunden: Malik Willis",
   "nicht gefunden: Dayo Odeyingbo"
  ],
- "n_pool": 246,
+ "n_pool": 252,
  "n_players": 938,
  "best": [
-  {
-   "name": "Tony Pollard",
-   "pos": "RB",
-   "group": "RB",
-   "team": "TEN",
-   "opp": "DAL",
-   "boost": 0.4,
-   "boost_src": "Pool",
-   "er": 4.357,
-   "p10": 1.12,
-   "p90": 8.39,
-   "mu_fp": 17.2,
-   "risk": "tief",
-   "flags": "",
-   "p_int": 0.0,
-   "slot": 1,
-   "mult": 2.4,
-   "epts": 10.46,
-   "why": "17.2 FP proj., Boost +0.4, Team-Total 23.5 (1.21×), Matchup 1.15×"
-  },
   {
    "name": "Cam Ward",
    "pos": "QB",
@@ -156,9 +136,9 @@
    "risk": "tief",
    "flags": "",
    "p_int": 0.0,
-   "slot": 2,
-   "mult": 3.0,
-   "epts": 11.87,
+   "slot": 1,
+   "mult": 3.2,
+   "epts": 12.66,
    "why": "21.3 FP proj., Boost +1.2, Team-Total 23.5 (1.25×), Matchup 1.15×"
   },
   {
@@ -176,9 +156,9 @@
    "risk": "tief",
    "flags": "",
    "p_int": 0.0,
-   "slot": 3,
-   "mult": 3.8,
-   "epts": 13.07,
+   "slot": 2,
+   "mult": 4.0,
+   "epts": 13.76,
    "why": "17.9 FP proj., Boost +2.2, Team-Total 22.2 (1.06×), Matchup 1.09×"
   },
   {
@@ -196,10 +176,30 @@
    "risk": "tief",
    "flags": "",
    "p_int": 0.0,
-   "slot": 4,
-   "mult": 2.7,
-   "epts": 8.76,
+   "slot": 3,
+   "mult": 2.9,
+   "epts": 9.41,
    "why": "12.1 FP proj., Boost +1.3, Team-Total 22.2 (1.05×), Matchup 1.15×"
+  },
+  {
+   "name": "Riley Patterson",
+   "pos": "K",
+   "group": "K",
+   "team": "BAL",
+   "opp": "CAR",
+   "boost": 2.6,
+   "boost_src": "Pool",
+   "er": 2.766,
+   "p10": 0.66,
+   "p90": 5.26,
+   "mu_fp": 8.0,
+   "risk": "tief",
+   "flags": "Kicker für Loop (IR), seit 2 Wochen aktiv; Rückkehr-Abschlag ×0.85 gilt nicht → neutralisiert",
+   "p_int": 0.0,
+   "slot": 4,
+   "mult": 4.0,
+   "epts": 11.06,
+   "why": "8.0 FP proj., Boost +2.6, Team-Total 20.2 (0.92×), Kicker für Loop (IR), seit 2 Wochen aktiv; Rückkehr-Abschlag ×0.85 gilt nicht → neutralisiert"
   },
   {
    "name": "Jake Elliott",
@@ -223,24 +223,24 @@
   }
  ],
  "dist": {
-  "mean": 53.15,
-  "p25": 40.93,
-  "p95": 83.56
+  "mean": 55.89,
+  "p25": 43.66,
+  "p95": 86.51
  },
  "variants": [
   {
    "key": "mean",
    "label": "Erwartung",
    "lineup": [
-    "Tony Pollard",
     "Cam Ward",
     "Justin Herbert",
     "Omarion Hampton",
+    "Riley Patterson",
     "Jake Elliott"
    ],
-   "mean": 53.15,
-   "p25": 40.93,
-   "p95": 83.56
+   "mean": 55.89,
+   "p25": 43.66,
+   "p95": 86.51
   },
   {
    "key": "safe",
@@ -249,33 +249,67 @@
     "Cam Ward",
     "Bo Nix",
     "Justin Herbert",
-    "Jake Elliott",
-    "AJ Cole"
+    "Riley Patterson",
+    "Jake Elliott"
    ],
-   "mean": 52.41,
-   "p25": 41.87,
-   "p95": 78.22
+   "mean": 55.43,
+   "p25": 44.04,
+   "p95": 84.27
   },
   {
    "key": "upside",
    "label": "Upside (max. P95)",
    "lineup": [
-    "Tony Pollard",
-    "Cam Ward",
     "Justin Herbert",
+    "Cam Ward",
     "Omarion Hampton",
-    "Elic Ayomanor"
+    "Riley Patterson",
+    "Jake Elliott"
    ],
-   "mean": 51.41,
-   "p25": 38.75,
-   "p95": 83.58
+   "mean": 55.79,
+   "p25": 43.56,
+   "p95": 86.53
   }
  ],
  "alts": [
   {
    "slot": 1,
-   "out": "Tony Pollard",
+   "out": "Cam Ward",
    "alt": [
+    {
+     "name": "Kyle McCord",
+     "pos": "QB",
+     "group": "QB",
+     "team": "MIA",
+     "opp": "BUF",
+     "boost": 2.6,
+     "boost_src": "Pool",
+     "er": 2.13,
+     "p10": 0.19,
+     "p90": 4.14,
+     "mu_fp": 12.4,
+     "risk": "tief",
+     "flags": "QB-Wechsel",
+     "p_int": 0.0,
+     "delta": -2.2
+    },
+    {
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "group": "RB",
+     "team": "TEN",
+     "opp": "DAL",
+     "boost": 0.4,
+     "boost_src": "Pool",
+     "er": 4.357,
+     "p10": 1.12,
+     "p90": 8.39,
+     "mu_fp": 17.2,
+     "risk": "tief",
+     "flags": "",
+     "p_int": 0.0,
+     "delta": -2.2
+    },
     {
      "name": "Bo Nix",
      "pos": "QB",
@@ -291,48 +325,48 @@
      "risk": "tief",
      "flags": "",
      "p_int": 0.0,
-     "delta": -0.02
-    },
-    {
-     "name": "Emeka Egbuka",
-     "pos": "WR",
-     "group": "WR",
-     "team": "TB",
-     "opp": "DET",
-     "boost": 2.0,
-     "boost_src": "Pool",
-     "er": 2.441,
-     "p10": 0.47,
-     "p90": 4.88,
-     "mu_fp": 8.7,
-     "risk": "tief",
-     "flags": "Rolle↓",
-     "p_int": 0.0,
-     "delta": -0.03
-    },
-    {
-     "name": "Fernando Mendoza",
-     "pos": "QB",
-     "group": "QB",
-     "team": "LV",
-     "opp": "DEN",
-     "boost": 2.8,
-     "boost_src": "Pool",
-     "er": 1.949,
-     "p10": 0.02,
-     "p90": 3.89,
-     "mu_fp": 11.1,
-     "risk": "tief",
-     "flags": "Minus-Risiko 9%; QB-Wechsel",
-     "p_int": 0.0,
-     "delta": -0.06
+     "delta": -2.27
     }
    ]
   },
   {
    "slot": 2,
-   "out": "Cam Ward",
+   "out": "Justin Herbert",
    "alt": [
+    {
+     "name": "Kyle McCord",
+     "pos": "QB",
+     "group": "QB",
+     "team": "MIA",
+     "opp": "BUF",
+     "boost": 2.6,
+     "boost_src": "Pool",
+     "er": 2.13,
+     "p10": 0.19,
+     "p90": 4.14,
+     "mu_fp": 12.4,
+     "risk": "tief",
+     "flags": "QB-Wechsel",
+     "p_int": 0.0,
+     "delta": -3.99
+    },
+    {
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "group": "RB",
+     "team": "TEN",
+     "opp": "DAL",
+     "boost": 0.4,
+     "boost_src": "Pool",
+     "er": 4.357,
+     "p10": 1.12,
+     "p90": 8.39,
+     "mu_fp": 17.2,
+     "risk": "tief",
+     "flags": "",
+     "p_int": 0.0,
+     "delta": -4.1
+    },
     {
      "name": "Bo Nix",
      "pos": "QB",
@@ -348,81 +382,47 @@
      "risk": "tief",
      "flags": "",
      "p_int": 0.0,
-     "delta": -2.22
-    },
-    {
-     "name": "Emeka Egbuka",
-     "pos": "WR",
-     "group": "WR",
-     "team": "TB",
-     "opp": "DET",
-     "boost": 2.0,
-     "boost_src": "Pool",
-     "er": 2.441,
-     "p10": 0.47,
-     "p90": 4.88,
-     "mu_fp": 8.7,
-     "risk": "tief",
-     "flags": "Rolle↓",
-     "p_int": 0.0,
-     "delta": -2.23
-    },
-    {
-     "name": "Fernando Mendoza",
-     "pos": "QB",
-     "group": "QB",
-     "team": "LV",
-     "opp": "DEN",
-     "boost": 2.8,
-     "boost_src": "Pool",
-     "er": 1.949,
-     "p10": 0.02,
-     "p90": 3.89,
-     "mu_fp": 11.1,
-     "risk": "tief",
-     "flags": "Minus-Risiko 9%; QB-Wechsel",
-     "p_int": 0.0,
-     "delta": -2.26
+     "delta": -4.12
     }
    ]
   },
   {
    "slot": 3,
-   "out": "Justin Herbert",
+   "out": "Omarion Hampton",
    "alt": [
     {
-     "name": "Emeka Egbuka",
-     "pos": "WR",
-     "group": "WR",
-     "team": "TB",
-     "opp": "DET",
-     "boost": 2.0,
-     "boost_src": "Pool",
-     "er": 2.441,
-     "p10": 0.47,
-     "p90": 4.88,
-     "mu_fp": 8.7,
-     "risk": "tief",
-     "flags": "Rolle↓",
-     "p_int": 0.0,
-     "delta": -4.13
-    },
-    {
-     "name": "Fernando Mendoza",
+     "name": "Kyle McCord",
      "pos": "QB",
      "group": "QB",
-     "team": "LV",
-     "opp": "DEN",
-     "boost": 2.8,
+     "team": "MIA",
+     "opp": "BUF",
+     "boost": 2.6,
      "boost_src": "Pool",
-     "er": 1.949,
-     "p10": 0.02,
-     "p90": 3.89,
-     "mu_fp": 11.1,
+     "er": 2.13,
+     "p10": 0.19,
+     "p90": 4.14,
+     "mu_fp": 12.4,
      "risk": "tief",
-     "flags": "Minus-Risiko 9%; QB-Wechsel",
+     "flags": "QB-Wechsel",
      "p_int": 0.0,
-     "delta": -4.16
+     "delta": -0.29
+    },
+    {
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "group": "RB",
+     "team": "TEN",
+     "opp": "DAL",
+     "boost": 0.4,
+     "boost_src": "Pool",
+     "er": 4.357,
+     "p10": 1.12,
+     "p90": 8.39,
+     "mu_fp": 17.2,
+     "risk": "tief",
+     "flags": "",
+     "p_int": 0.0,
+     "delta": -0.44
     },
     {
      "name": "Bo Nix",
@@ -439,64 +439,64 @@
      "risk": "tief",
      "flags": "",
      "p_int": 0.0,
-     "delta": -4.17
+     "delta": -0.46
     }
    ]
   },
   {
    "slot": 4,
-   "out": "Omarion Hampton",
+   "out": "Riley Patterson",
    "alt": [
     {
-     "name": "Emeka Egbuka",
-     "pos": "WR",
-     "group": "WR",
-     "team": "TB",
-     "opp": "DET",
-     "boost": 2.0,
-     "boost_src": "Pool",
-     "er": 2.441,
-     "p10": 0.47,
-     "p90": 4.88,
-     "mu_fp": 8.7,
-     "risk": "tief",
-     "flags": "Rolle↓",
-     "p_int": 0.0,
-     "delta": -0.47
-    },
-    {
-     "name": "Fernando Mendoza",
+     "name": "Kyle McCord",
      "pos": "QB",
      "group": "QB",
-     "team": "LV",
-     "opp": "DEN",
-     "boost": 2.8,
+     "team": "MIA",
+     "opp": "BUF",
+     "boost": 2.6,
      "boost_src": "Pool",
-     "er": 1.949,
-     "p10": 0.02,
-     "p90": 3.89,
-     "mu_fp": 11.1,
+     "er": 2.13,
+     "p10": 0.19,
+     "p90": 4.14,
+     "mu_fp": 12.4,
      "risk": "tief",
-     "flags": "Minus-Risiko 9%; QB-Wechsel",
+     "flags": "QB-Wechsel",
      "p_int": 0.0,
-     "delta": -0.5
+     "delta": -2.5
     },
     {
-     "name": "Bo Nix",
-     "pos": "QB",
-     "group": "QB",
-     "team": "DEN",
-     "opp": "LV",
-     "boost": 0.8,
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "group": "RB",
+     "team": "TEN",
+     "opp": "DAL",
+     "boost": 0.4,
      "boost_src": "Pool",
-     "er": 3.709,
-     "p10": 0.99,
-     "p90": 6.76,
-     "mu_fp": 20.4,
+     "er": 4.357,
+     "p10": 1.12,
+     "p90": 8.39,
+     "mu_fp": 17.2,
      "risk": "tief",
      "flags": "",
      "p_int": 0.0,
-     "delta": -0.55
+     "delta": -2.74
+    },
+    {
+     "name": "Jaylen Waddle",
+     "pos": "WR",
+     "group": "WR",
+     "team": "DEN",
+     "opp": "LV",
+     "boost": 2.3,
+     "boost_src": "Pool",
+     "er": 2.24,
+     "p10": 0.46,
+     "p90": 4.46,
+     "mu_fp": 8.3,
+     "risk": "tief",
+     "flags": "Rolle↓",
+     "p_int": 0.0,
+     "delta": -2.75
     }
    ]
   },
@@ -504,6 +504,40 @@
    "slot": 5,
    "out": "Jake Elliott",
    "alt": [
+    {
+     "name": "Kyle McCord",
+     "pos": "QB",
+     "group": "QB",
+     "team": "MIA",
+     "opp": "BUF",
+     "boost": 2.6,
+     "boost_src": "Pool",
+     "er": 2.13,
+     "p10": 0.19,
+     "p90": 4.14,
+     "mu_fp": 12.4,
+     "risk": "tief",
+     "flags": "QB-Wechsel",
+     "p_int": 0.0,
+     "delta": -0.9
+    },
+    {
+     "name": "Jaylen Waddle",
+     "pos": "WR",
+     "group": "WR",
+     "team": "DEN",
+     "opp": "LV",
+     "boost": 2.3,
+     "boost_src": "Pool",
+     "er": 2.24,
+     "p10": 0.46,
+     "p90": 4.46,
+     "mu_fp": 8.3,
+     "risk": "tief",
+     "flags": "Rolle↓",
+     "p_int": 0.0,
+     "delta": -1.15
+    },
     {
      "name": "Emeka Egbuka",
      "pos": "WR",
@@ -520,40 +554,6 @@
      "flags": "Rolle↓",
      "p_int": 0.0,
      "delta": -1.18
-    },
-    {
-     "name": "Fernando Mendoza",
-     "pos": "QB",
-     "group": "QB",
-     "team": "LV",
-     "opp": "DEN",
-     "boost": 2.8,
-     "boost_src": "Pool",
-     "er": 1.949,
-     "p10": 0.02,
-     "p90": 3.89,
-     "mu_fp": 11.1,
-     "risk": "tief",
-     "flags": "Minus-Risiko 9%; QB-Wechsel",
-     "p_int": 0.0,
-     "delta": -1.2
-    },
-    {
-     "name": "AJ Cole",
-     "pos": "P",
-     "group": "P",
-     "team": "LV",
-     "opp": "DEN",
-     "boost": 2.8,
-     "boost_src": "Pool",
-     "er": 1.894,
-     "p10": 0.77,
-     "p90": 3.22,
-     "mu_fp": 26.8,
-     "risk": "tief",
-     "flags": "",
-     "p_int": 0.0,
-     "delta": -1.42
     }
    ]
   }
@@ -576,6 +576,24 @@
    "p_int": 0.0,
    "fp_last3": 11.5,
    "xfp_last3": 11.4
+  },
+  {
+   "name": "Riley Patterson",
+   "pos": "K",
+   "group": "K",
+   "team": "BAL",
+   "opp": "CAR",
+   "boost": 2.6,
+   "boost_src": "Pool",
+   "er": 2.766,
+   "p10": 0.66,
+   "p90": 5.26,
+   "mu_fp": 8.0,
+   "risk": "tief",
+   "flags": "Kicker für Loop (IR), seit 2 Wochen aktiv; Rückkehr-Abschlag ×0.85 gilt nicht → neutralisiert",
+   "p_int": 0.0,
+   "fp_last3": 4.9,
+   "xfp_last3": null
   },
   {
    "name": "Cam Ward",
@@ -632,6 +650,24 @@
    "xfp_last3": 9.0
   },
   {
+   "name": "Kyle McCord",
+   "pos": "QB",
+   "group": "QB",
+   "team": "MIA",
+   "opp": "BUF",
+   "boost": 2.6,
+   "boost_src": "Pool",
+   "er": 2.13,
+   "p10": 0.19,
+   "p90": 4.14,
+   "mu_fp": 12.4,
+   "risk": "tief",
+   "flags": "QB-Wechsel",
+   "p_int": 0.0,
+   "fp_last3": 12.8,
+   "xfp_last3": 14.1
+  },
+  {
    "name": "Emeka Egbuka",
    "pos": "WR",
    "group": "WR",
@@ -648,6 +684,24 @@
    "p_int": 0.0,
    "fp_last3": 8.6,
    "xfp_last3": 11.1
+  },
+  {
+   "name": "Jaylen Waddle",
+   "pos": "WR",
+   "group": "WR",
+   "team": "DEN",
+   "opp": "LV",
+   "boost": 2.3,
+   "boost_src": "Pool",
+   "er": 2.24,
+   "p10": 0.46,
+   "p90": 4.46,
+   "mu_fp": 8.3,
+   "risk": "tief",
+   "flags": "Rolle↓",
+   "p_int": 0.0,
+   "fp_last3": 6.3,
+   "xfp_last3": 6.6
   },
   {
    "name": "Fernando Mendoza",
@@ -720,138 +774,21 @@
    "p_int": 0.0,
    "fp_last3": 19.7,
    "xfp_last3": null
-  },
-  {
-   "name": "Elic Ayomanor",
-   "pos": "WR",
-   "group": "WR",
-   "team": "TEN",
-   "opp": "DAL",
-   "boost": 3.0,
-   "boost_src": "Pool",
-   "er": 1.727,
-   "p10": 0.31,
-   "p90": 3.41,
-   "mu_fp": 6.1,
-   "risk": "tief",
-   "flags": "",
-   "p_int": 0.0,
-   "fp_last3": 5.2,
-   "xfp_last3": 6.6
-  },
-  {
-   "name": "Harrison Butker",
-   "pos": "K",
-   "group": "K",
-   "team": "KC",
-   "opp": "ARI",
-   "boost": 1.3,
-   "boost_src": "Pool",
-   "er": 2.737,
-   "p10": 0.65,
-   "p90": 5.17,
-   "mu_fp": 8.6,
-   "risk": "tief",
-   "flags": "",
-   "p_int": 0.0,
-   "fp_last3": 4.1,
-   "xfp_last3": null
-  },
-  {
-   "name": "Eddy Pineiro",
-   "pos": "K",
-   "group": "K",
-   "team": "SF",
-   "opp": "MIN",
-   "boost": 2.1,
-   "boost_src": "Pool",
-   "er": 2.136,
-   "p10": 0.45,
-   "p90": 4.08,
-   "mu_fp": 6.3,
-   "risk": "tief",
-   "flags": "",
-   "p_int": 0.0,
-   "fp_last3": 5.9,
-   "xfp_last3": null
   }
  ],
  "warnings": [
+  "**Kyle McCord** (MIA): QB-Wechsel",
   "**Emeka Egbuka** (TB): Rolle↓",
+  "**Jaylen Waddle** (DEN): Rolle↓",
   "**Fernando Mendoza** (LV): Minus-Risiko 9%; QB-Wechsel",
   "**D'Andre Swift** (CHI): Rolle↓",
+  "**Baker Mayfield** (TB): Questionable (Foot); Pech -4.4 FP vs xFP",
   "**J.K. Dobbins** (DEN): Rolle↓",
   "**Rashee Rice** (KC): Rolle↓",
-  "**Saquon Barkley** (PHI): QB-Wechsel",
-  "**Chris Rodriguez Jr.** (JAX): Rolle↓",
   "**MIN**: QB1 Kyler Murray fehlt → Offense abgewertet, gegnerische Defense aufgewertet",
   "Wetter nicht abrufbar (Open-Meteo blockiert) – per Websuche prüfen."
  ],
  "scenarios": [
-  {
-   "team": "CAR",
-   "opp": "BAL",
-   "p_scen": 0.273,
-   "lineup": [
-    "Tony Pollard",
-    "Cam Ward",
-    "Justin Herbert",
-    "Omarion Hampton",
-    "Jake Elliott"
-   ],
-   "cond_mean": 53.54,
-   "mean": 53.15,
-   "p25": 40.93,
-   "p95": 83.56
-  },
-  {
-   "team": "DET",
-   "opp": "TB",
-   "p_scen": 0.282,
-   "lineup": [
-    "Tony Pollard",
-    "Cam Ward",
-    "Justin Herbert",
-    "Omarion Hampton",
-    "Jake Elliott"
-   ],
-   "cond_mean": 52.69,
-   "mean": 53.15,
-   "p25": 40.93,
-   "p95": 83.56
-  },
-  {
-   "team": "MIA",
-   "opp": "BUF",
-   "p_scen": 0.021,
-   "lineup": [
-    "Tony Pollard",
-    "Cam Ward",
-    "Justin Herbert",
-    "Omarion Hampton",
-    "Jake Elliott"
-   ],
-   "cond_mean": 53.08,
-   "mean": 53.15,
-   "p25": 40.93,
-   "p95": 83.56
-  },
-  {
-   "team": "BUF",
-   "opp": "MIA",
-   "p_scen": 0.654,
-   "lineup": [
-    "Tony Pollard",
-    "Cam Ward",
-    "Justin Herbert",
-    "Omarion Hampton",
-    "Jake Elliott"
-   ],
-   "cond_mean": 53.06,
-   "mean": 53.15,
-   "p25": 40.93,
-   "p95": 83.56
-  },
   {
    "team": "LAC",
    "opp": "NYJ",
@@ -860,29 +797,93 @@
     "Justin Herbert",
     "Cam Ward",
     "Omarion Hampton",
-    "Emeka Egbuka",
+    "Riley Patterson",
     "Jake Elliott"
    ],
-   "cond_mean": 58.55,
-   "mean": 53.02,
-   "p25": 41.23,
-   "p95": 83.2
+   "cond_mean": 61.17,
+   "mean": 55.79,
+   "p25": 43.56,
+   "p95": 86.53
   },
   {
-   "team": "TB",
-   "opp": "DET",
-   "p_scen": 0.146,
+   "team": "NO",
+   "opp": "CHI",
+   "p_scen": 0.045,
    "lineup": [
     "Cam Ward",
     "Justin Herbert",
     "Omarion Hampton",
-    "Emeka Egbuka",
+    "Riley Patterson",
     "Jake Elliott"
    ],
-   "cond_mean": 55.79,
-   "mean": 53.12,
-   "p25": 41.46,
-   "p95": 83.12
+   "cond_mean": 54.91,
+   "mean": 55.89,
+   "p25": 43.66,
+   "p95": 86.51
+  },
+  {
+   "team": "MIN",
+   "opp": "SF",
+   "p_scen": 0.136,
+   "lineup": [
+    "Cam Ward",
+    "Justin Herbert",
+    "Omarion Hampton",
+    "Riley Patterson",
+    "Jake Elliott"
+   ],
+   "cond_mean": 56.44,
+   "mean": 55.89,
+   "p25": 43.66,
+   "p95": 86.51
+  },
+  {
+   "team": "KC",
+   "opp": "ARI",
+   "p_scen": 0.641,
+   "lineup": [
+    "Cam Ward",
+    "Justin Herbert",
+    "Omarion Hampton",
+    "Riley Patterson",
+    "Jake Elliott"
+   ],
+   "cond_mean": 55.95,
+   "mean": 55.89,
+   "p25": 43.66,
+   "p95": 86.51
+  },
+  {
+   "team": "DET",
+   "opp": "TB",
+   "p_scen": 0.282,
+   "lineup": [
+    "Cam Ward",
+    "Justin Herbert",
+    "Omarion Hampton",
+    "Riley Patterson",
+    "Jake Elliott"
+   ],
+   "cond_mean": 55.45,
+   "mean": 55.89,
+   "p25": 43.66,
+   "p95": 86.51
+  },
+  {
+   "team": "JAX",
+   "opp": "NYG",
+   "p_scen": 0.364,
+   "lineup": [
+    "Cam Ward",
+    "Justin Herbert",
+    "Omarion Hampton",
+    "Riley Patterson",
+    "Jake Elliott"
+   ],
+   "cond_mean": 55.47,
+   "mean": 55.89,
+   "p25": 43.66,
+   "p95": 86.51
   }
  ],
  "players": [
@@ -1431,6 +1432,22 @@
    "p_int": 0.0
   },
   {
+   "name": "Riley Patterson",
+   "pos": "K",
+   "group": "K",
+   "team": "BAL",
+   "opp": "CAR",
+   "boost": 2.6,
+   "boost_src": "Pool",
+   "er": 2.766,
+   "p10": 0.66,
+   "p90": 5.26,
+   "mu_fp": 8.0,
+   "risk": "tief",
+   "flags": "Kicker für Loop (IR), seit 2 Wochen aktiv; Rückkehr-Abschlag ×0.85 gilt nicht → neutralisiert",
+   "p_int": 0.0
+  },
+  {
    "name": "Jared Goff",
    "pos": "QB",
    "group": "QB",
@@ -1500,8 +1517,8 @@
    "group": "WR",
    "team": "JAX",
    "opp": "NYG",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
+   "boost": 0.6,
+   "boost_src": "Pool",
    "er": 2.695,
    "p10": 0.56,
    "p90": 5.45,
@@ -1740,8 +1757,8 @@
    "group": "QB",
    "team": "TB",
    "opp": "DET",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
+   "boost": 1.7,
+   "boost_src": "Pool",
    "er": 2.404,
    "p10": 0.0,
    "p90": 5.48,
@@ -1788,30 +1805,14 @@
    "group": "QB",
    "team": "NYG",
    "opp": "JAX",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
+   "boost": 1.2,
+   "boost_src": "Pool",
    "er": 2.35,
    "p10": 0.27,
    "p90": 4.59,
    "mu_fp": 13.0,
    "risk": "tief",
    "flags": "QB-Wechsel; Startet laut Giants.com/SI gegen JAX; Winston Backup",
-   "p_int": 0.0
-  },
-  {
-   "name": "Riley Patterson",
-   "pos": "K",
-   "group": "K",
-   "team": "BAL",
-   "opp": "CAR",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
-   "er": 2.345,
-   "p10": 0.52,
-   "p90": 4.49,
-   "mu_fp": 6.8,
-   "risk": "tief",
-   "flags": "",
    "p_int": 0.0
   },
   {
@@ -1932,8 +1933,8 @@
    "group": "WR",
    "team": "DEN",
    "opp": "LV",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
+   "boost": 2.3,
+   "boost_src": "Pool",
    "er": 2.24,
    "p10": 0.46,
    "p90": 4.46,
@@ -2012,8 +2013,8 @@
    "group": "QB",
    "team": "MIA",
    "opp": "BUF",
-   "boost": 0.0,
-   "boost_src": "fehlt (0.0 angenommen)",
+   "boost": 2.6,
+   "boost_src": "Pool",
    "er": 2.13,
    "p10": 0.19,
    "p90": 4.14,
