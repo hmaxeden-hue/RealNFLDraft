@@ -457,3 +457,10 @@ Dateiformate:
   Kicker bekommen fälschlich den Rückkehr-Abschlag (`RETURN_FACTOR`) → per `_adj` neutralisiert (Patterson);
   Code-Fix offen (Abschlag nur für Offense-Spieler mit Snap-Rolle). Hindsight 69.1 (Hampton, M. Green 3.3,
   T. Harris 3.0, Andrews 2.7, Patterson). Wochensiege jetzt: User 4, Leo 4, Marc 1.
+- 2026-11-19 (TNF IND @ HOU): **35.57 Punkte, Rang 392/12.3k (Top 3 %)**. User-Lineup statt Modell: Stroud statt
+  D. Jones (Vertrauensfrage) → richtig: Jones 0.6 (0 TD, 1 INT; viertes schwaches Spiel in Folge 2.3/2.1/1.0/0.6),
+  Modell-Lineup hätte 31.9 geholt (+3.7 für den User). **Montgomery-Override bestätigt:** zurück nach 4 Spielen,
+  Marks out → per `_adj` FP 7.3 → 12.5 (E 1.8 → 3.0), real **4.4** (124 Yds) = bester Spieler des Spiels. Regel:
+  Rückkehrer, der wegen Ausfall des Konkurrenten die Lead-Rolle übernimmt, nicht über alte geteilte Snap-Quote
+  bewerten. Sanchez 1.0 / Pitre 0.4 enttäuschten. Hindsight 58.1 (Montgomery, Haulcy 3.3 INT, Lassiter 2.8 INT,
+  Boutte, C. Allen). **D. Jones:** 4 Spiele klar unter E (Ø 1.5 bei E ≈ 2.5) → bei Jones vorerst Faktor ≈ 0.7.
