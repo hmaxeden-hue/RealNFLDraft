@@ -464,3 +464,7 @@ Dateiformate:
   Rückkehrer, der wegen Ausfall des Konkurrenten die Lead-Rolle übernimmt, nicht über alte geteilte Snap-Quote
   bewerten. Sanchez 1.0 / Pitre 0.4 enttäuschten. Hindsight 58.1 (Montgomery, Haulcy 3.3 INT, Lassiter 2.8 INT,
   Boutte, C. Allen). **D. Jones:** 4 Spiele klar unter E (Ø 1.5 bei E ≈ 2.5) → bei Jones vorerst Faktor ≈ 0.7.
+- 2026-11-22 (Sonntag, 11 Spiele): **62.58 Punkte, Rang 604/16.6k (Top 4 %)**, Modell-Lineup gespielt (E 55.9):
+  Ward 3.5 (E 4.0), Herbert 3.3 (E 3.4), Hampton 3.0 (E 3.2), Patterson 2.2 (E 2.8), **Elliott 5.4** (E 2.4; PHI mit
+  Ersatz-QB → Field Goals). Nachgefragter Patterson-Boost (2.6) brachte +2.8 E. Kein Recap-PDF → nur Draft-Ratings.
+  Rückkehr-Abschlag bei neu verpflichteten Kickern erneut manuell neutralisiert (Code-Fix weiter offen).
