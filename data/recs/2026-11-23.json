@@ -1,6 +1,6 @@
 {
  "date": "2026-11-23",
- "generated": "23.11.2026 13:39",
+ "generated": "23.11.2026 13:41",
  "slate": [
   {
    "game": "CIN @ WAS",
@@ -651,7 +651,7 @@
    "p90": 3.84,
    "mu_fp": 7.9,
    "risk": "mittel",
-   "flags": "Questionable (Heel)",
+   "flags": "Questionable (Heel); Questionable (Ferse), Sa nicht trainiert; Quinn: 'echte Chance zu spielen'. Croskey-Merritt (Stamm-RB vor IR) voll im Training, Aktivierung erwartet → Carries geteilt",
    "p_int": 0.0,
    "fp_last3": 8.0,
    "xfp_last3": 7.9
@@ -679,7 +679,7 @@
   "**Rasul Douglas** (WAS): Rolle↓",
   "**Antonio Williams** (WAS): Rolle↓",
   "**Tee Higgins** (CIN): Rolle↓",
-  "**Rachaad White** (WAS): Questionable (Heel)",
+  "**Rachaad White** (WAS): Questionable (Heel); Questionable (Ferse), Sa nicht trainiert; Quinn: 'echte Chance zu spielen'. Croskey-Merritt (Stamm-RB vor IR) voll im Training, Aktivierung erwartet → Carries geteilt",
   "**Treylon Burks** (WAS): Rolle↓",
   "Wetter nicht abrufbar (Open-Meteo blockiert) – per Websuche prüfen."
  ],
@@ -891,7 +891,7 @@
    "p90": 3.84,
    "mu_fp": 7.9,
    "risk": "mittel",
-   "flags": "Questionable (Heel)",
+   "flags": "Questionable (Heel); Questionable (Ferse), Sa nicht trainiert; Quinn: 'echte Chance zu spielen'. Croskey-Merritt (Stamm-RB vor IR) voll im Training, Aktivierung erwartet → Carries geteilt",
    "p_int": 0.0
   },
   {
