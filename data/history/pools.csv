@@ -2899,7 +2899,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-26,00-0036313,Braden Mann,PHI,DAL,P,1.600,Pool,17.217,1.285,0.520,2.145,0.990,
 2026-11-26,00-0036358,CeeDee Lamb,DAL,PHI,WR,0.100,Pool,14.441,3.811,0.807,7.725,0.990,
 2026-11-26,00-0036621,Nick Bolton,KC,BUF,LB,2.400,Pool,6.991,1.385,0.108,2.932,0.990,Rolle↓
-2026-11-26,00-0036912,DeVonta Smith,PHI,DAL,WR,0.000,fehlt (0.0 angenommen),9.152,2.464,0.496,4.992,0.990,QB-Wechsel
+2026-11-26,00-0036912,DeVonta Smith,PHI,DAL,WR,0.800,Pool,9.152,2.464,0.496,4.992,0.990,QB-Wechsel
 2026-11-26,00-0036914,Greg Rousseau,BUF,KC,LB,0.800,Pool,6.398,1.285,0.065,2.800,0.990,
 2026-11-26,00-0036963,Amon-Ra St. Brown,DET,CHI,WR,0.400,Pool,11.718,3.261,0.692,6.489,0.990,Rolle↓
 2026-11-26,00-0036964,Derrick Barnes,DET,CHI,LB,0.000,fehlt (0.0 angenommen),6.406,1.304,0.039,2.858,0.990,
@@ -2923,7 +2923,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-26,00-0039139,Jahmyr Gibbs,DET,CHI,RB,0.000,Pool,17.827,4.688,1.006,9.255,0.990,
 2026-11-26,00-0039141,Brian Branch,DET,CHI,DB,0.000,fehlt (0.0 angenommen),7.381,1.470,0.160,3.120,0.990,
 2026-11-26,00-0039172,Jake Bates,DET,CHI,K,0.700,Pool,6.470,2.185,0.478,4.196,0.990,
-2026-11-26,00-0039398,Joe Milton III,PHI,DAL,QB,0.000,fehlt (0.0 angenommen),12.918,2.295,0.248,4.460,0.990,Rolle↓; QB-Wechsel; Pech -3.1 FP vs xFP
+2026-11-26,00-0039398,Joe Milton III,PHI,DAL,QB,1.700,Pool,12.918,2.295,0.248,4.460,0.990,Rolle↓; QB-Wechsel; Pech -3.1 FP vs xFP
 2026-11-26,00-0039410,Ryan Flournoy,DAL,PHI,WR,2.200,Pool,5.350,1.547,0.228,3.142,0.990,Rolle↓
 2026-11-26,00-0039840,Austin Booker,CHI,DET,DL,0.000,fehlt (0.0 angenommen),6.294,1.323,0.000,3.149,0.990,
 2026-11-26,00-0039841,Cooper DeJean,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),7.196,1.364,0.132,2.873,0.990,Rolle↓
