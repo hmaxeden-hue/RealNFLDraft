@@ -2872,3 +2872,63 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-25,00-0041399,CJ Daniels,LA,GB,WR,0.000,fehlt (0.0 angenommen),3.662,1.176,0.100,2.338,0.990,
 2026-11-25,00-0041404,Wesley Bailey,LA,GB,LB,3.000,Pool,3.548,0.806,0.000,1.934,0.990,
 2026-11-25,00-0041470,Brandon Cisse,GB,LA,DB,2.600,Pool,6.952,1.433,0.125,3.058,0.990,Rolle↓
+2026-11-26,00-0030506,Travis Kelce,KC,BUF,TE,0.000,fehlt (0.0 angenommen),6.167,1.617,0.259,3.257,0.990,
+2026-11-26,00-0031203,Cairo Santos,CHI,DET,K,0.000,fehlt (0.0 angenommen),7.013,2.345,0.483,4.532,0.990,
+2026-11-26,00-0033077,Dak Prescott,DAL,PHI,QB,0.000,fehlt (0.0 angenommen),20.959,3.894,1.055,7.042,0.990,
+2026-11-26,00-0033106,Jared Goff,DET,CHI,QB,0.000,fehlt (0.0 angenommen),17.339,3.316,0.766,6.173,0.990,Rolle↓
+2026-11-26,00-0033303,Harrison Butker,KC,BUF,K,0.000,fehlt (0.0 angenommen),6.396,2.127,0.407,4.142,0.990,
+2026-11-26,00-0033787,Jake Elliott,PHI,DAL,K,0.000,fehlt (0.0 angenommen),8.507,2.691,0.644,5.202,0.990,
+2026-11-26,00-0033873,Patrick Mahomes,KC,BUF,QB,0.000,fehlt (0.0 angenommen),14.555,2.745,0.472,5.232,0.990,
+2026-11-26,00-0034351,Dallas Goedert,PHI,DAL,TE,0.000,fehlt (0.0 angenommen),5.344,1.370,0.208,2.780,0.990,Rolle↓; QB-Wechsel
+2026-11-26,00-0034384,D.J. Reed,DET,CHI,DB,0.000,fehlt (0.0 angenommen),6.669,1.342,0.068,2.954,0.990,Rückkehr nach 3 verpassten Spielen (×0.85)
+2026-11-26,00-0034827,DJ Moore,BUF,KC,WR,0.000,fehlt (0.0 angenommen),7.669,2.189,0.402,4.394,0.990,
+2026-11-26,00-0034844,Saquon Barkley,PHI,DAL,RB,0.000,fehlt (0.0 angenommen),12.250,2.999,0.553,6.094,0.990,QB-Wechsel
+2026-11-26,00-0034857,Josh Allen,BUF,KC,QB,0.000,fehlt (0.0 angenommen),14.850,2.811,0.468,5.332,0.990,Pech -4.3 FP vs xFP
+2026-11-26,00-0035156,Jack Fox,DET,CHI,P,0.000,fehlt (0.0 angenommen),18.198,1.435,0.582,2.410,0.990,
+2026-11-26,00-0035230,Ed Oliver,BUF,KC,DL,0.000,fehlt (0.0 angenommen),6.522,1.352,0.000,3.257,0.990,
+2026-11-26,00-0035262,Drue Tranquill,KC,BUF,LB,0.000,fehlt (0.0 angenommen),6.525,1.313,0.077,2.822,0.990,
+2026-11-26,00-0035386,T.J. Edwards,CHI,DET,LB,0.000,fehlt (0.0 angenommen),6.178,1.299,0.027,2.851,0.990,
+2026-11-26,00-0035525,Devin Bush,CHI,DET,LB,0.000,fehlt (0.0 angenommen),7.440,1.531,0.099,3.358,0.990,
+2026-11-26,00-0035643,Jeffery Simmons,CHI,DET,DL,0.000,fehlt (0.0 angenommen),10.438,2.103,0.023,4.990,0.990,
+2026-11-26,00-0035647,Montez Sweat,CHI,DET,DL,0.000,fehlt (0.0 angenommen),6.326,1.338,0.000,3.178,0.990,
+2026-11-26,00-0035718,Quinnen Williams,DAL,PHI,DL,0.000,fehlt (0.0 angenommen),10.739,2.083,0.040,4.975,0.990,
+2026-11-26,00-0036162,Tyler Bass,BUF,KC,K,0.000,fehlt (0.0 angenommen),7.410,2.485,0.583,4.690,0.990,
+2026-11-26,00-0036275,D'Andre Swift,CHI,DET,RB,0.000,fehlt (0.0 angenommen),12.380,3.297,0.629,6.629,0.990,Rolle↓
+2026-11-26,00-0036358,CeeDee Lamb,DAL,PHI,WR,0.000,fehlt (0.0 angenommen),14.441,3.811,0.807,7.725,0.990,
+2026-11-26,00-0036621,Nick Bolton,KC,BUF,LB,0.000,fehlt (0.0 angenommen),6.991,1.420,0.111,3.004,0.990,Rolle↓
+2026-11-26,00-0036912,DeVonta Smith,PHI,DAL,WR,0.000,fehlt (0.0 angenommen),9.152,2.464,0.496,4.992,0.990,QB-Wechsel
+2026-11-26,00-0036914,Greg Rousseau,BUF,KC,LB,0.000,fehlt (0.0 angenommen),6.398,1.317,0.067,2.869,0.990,
+2026-11-26,00-0036963,Amon-Ra St. Brown,DET,CHI,WR,0.000,fehlt (0.0 angenommen),11.718,3.261,0.692,6.489,0.990,Rolle↓
+2026-11-26,00-0036964,Derrick Barnes,DET,CHI,LB,0.000,fehlt (0.0 angenommen),6.406,1.337,0.040,2.929,0.990,
+2026-11-26,00-0036997,Javonte Williams,DAL,PHI,RB,0.000,fehlt (0.0 angenommen),14.369,3.622,0.686,7.260,0.990,
+2026-11-26,00-0037192,George Karlaftis,KC,BUF,DL,0.000,fehlt (0.0 angenommen),8.672,1.726,0.000,4.073,0.990,Rolle↓
+2026-11-26,00-0037240,Jameson Williams,DET,CHI,WR,0.000,fehlt (0.0 angenommen),8.486,2.438,0.518,4.945,0.990,Rolle↓
+2026-11-26,00-0037247,George Pickens,DAL,PHI,WR,0.000,fehlt (0.0 angenommen),12.167,3.237,0.696,6.500,0.990,
+2026-11-26,00-0037248,James Cook,BUF,KC,RB,0.000,fehlt (0.0 angenommen),12.358,3.238,0.599,6.509,0.990,
+2026-11-26,00-0037261,Khalil Shakir,BUF,KC,WR,0.000,fehlt (0.0 angenommen),5.472,1.630,0.271,3.262,0.990,
+2026-11-26,00-0037284,Matt Araiza,KC,BUF,P,0.000,fehlt (0.0 angenommen),21.124,1.632,0.671,2.768,0.990,
+2026-11-26,00-0037667,Kerby Joseph,DET,CHI,DB,0.000,fehlt (0.0 angenommen),6.464,1.344,0.035,3.014,0.990,
+2026-11-26,00-0037692,Brandon Aubrey,DAL,PHI,K,0.000,fehlt (0.0 angenommen),8.790,2.842,0.679,5.440,0.990,
+2026-11-26,00-0038125,Roger McCreary,DET,CHI,DB,0.000,fehlt (0.0 angenommen),6.900,1.419,0.124,3.039,0.990,
+2026-11-26,00-0038625,Dee Winters,DAL,PHI,LB,0.000,fehlt (0.0 angenommen),6.816,1.352,0.076,2.990,0.990,Rolle↓
+2026-11-26,00-0038997,Josh Downs,KC,BUF,WR,0.000,fehlt (0.0 angenommen),4.478,1.363,0.168,2.799,0.990,Rolle↓
+2026-11-26,00-0039065,Sam LaPorta,DET,CHI,TE,0.000,fehlt (0.0 angenommen),5.438,1.493,0.233,3.066,0.990,
+2026-11-26,00-0039067,Rashee Rice,KC,BUF,WR,0.000,fehlt (0.0 angenommen),7.851,2.251,0.442,4.522,0.990,Rolle↓
+2026-11-26,00-0039139,Jahmyr Gibbs,DET,CHI,RB,0.000,fehlt (0.0 angenommen),17.827,4.688,1.006,9.255,0.990,
+2026-11-26,00-0039141,Brian Branch,DET,CHI,DB,0.000,fehlt (0.0 angenommen),7.381,1.507,0.164,3.198,0.990,
+2026-11-26,00-0039172,Jake Bates,DET,CHI,K,0.000,fehlt (0.0 angenommen),6.470,2.185,0.478,4.196,0.990,
+2026-11-26,00-0039398,Joe Milton III,PHI,DAL,QB,0.000,fehlt (0.0 angenommen),12.918,2.295,0.248,4.460,0.990,Rolle↓; QB-Wechsel; Pech -3.1 FP vs xFP
+2026-11-26,00-0039410,Ryan Flournoy,DAL,PHI,WR,0.000,fehlt (0.0 angenommen),5.350,1.547,0.228,3.142,0.990,Rolle↓
+2026-11-26,00-0039840,Austin Booker,CHI,DET,DL,0.000,fehlt (0.0 angenommen),6.294,1.356,0.000,3.226,0.990,
+2026-11-26,00-0039841,Cooper DeJean,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),7.196,1.398,0.136,2.944,0.990,Rolle↓
+2026-11-26,00-0039888,Quinyon Mitchell,PHI,DAL,DB,0.000,fehlt (0.0 angenommen),6.734,1.306,0.135,2.772,0.990,
+2026-11-26,00-0039894,Xavier Worthy,KC,BUF,WR,0.000,fehlt (0.0 angenommen),4.844,1.459,0.201,2.956,0.990,
+2026-11-26,00-0039918,Caleb Williams,CHI,DET,QB,0.000,fehlt (0.0 angenommen),21.275,4.088,1.105,7.450,0.990,Rolle↓; Pech -3.4 FP vs xFP
+2026-11-26,00-0039919,Rome Odunze,CHI,DET,WR,0.000,fehlt (0.0 angenommen),7.867,2.253,0.446,4.537,0.990,Rolle↓
+2026-11-26,00-0040126,Colston Loveland,CHI,DET,TE,0.000,fehlt (0.0 angenommen),8.404,2.187,0.374,4.599,0.990,Rolle↓
+2026-11-26,00-0040236,Kyle Monangai,CHI,DET,RB,0.000,fehlt (0.0 angenommen),8.242,2.223,0.296,4.519,0.990,Rolle↓
+2026-11-26,00-0040670,Nohl Williams,KC,BUF,DB,0.000,fehlt (0.0 angenommen),6.831,1.380,0.116,2.970,0.990,
+2026-11-26,00-0040735,Luther Burden III,CHI,DET,WR,0.000,fehlt (0.0 angenommen),7.642,2.224,0.429,4.506,0.990,Rolle↓
+2026-11-26,00-0040867,Makai Lemon,PHI,DAL,WR,0.000,fehlt (0.0 angenommen),4.737,1.372,0.188,2.755,0.990,Rolle↓; QB-Wechsel
+2026-11-26,00-0041013,Emmett Johnson,KC,BUF,RB,0.000,fehlt (0.0 angenommen),8.366,2.147,0.279,4.367,0.990,
+2026-11-26,00-0041126,Tommy Doman Jr.,BUF,KC,P,0.000,fehlt (0.0 angenommen),19.265,1.499,0.570,2.534,0.990,
