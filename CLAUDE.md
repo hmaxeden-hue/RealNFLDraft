@@ -468,3 +468,11 @@ Dateiformate:
   Ward 3.5 (E 4.0), Herbert 3.3 (E 3.4), Hampton 3.0 (E 3.2), Patterson 2.2 (E 2.8), **Elliott 5.4** (E 2.4; PHI mit
   Ersatz-QB → Field Goals). Nachgefragter Patterson-Boost (2.6) brachte +2.8 E. Kein Recap-PDF → nur Draft-Ratings.
   Rückkehr-Abschlag bei neu verpflichteten Kickern erneut manuell neutralisiert (Code-Fix weiter offen).
+- 2026-11-25 (GB @ LA, Mi-Nacht, W12): **34.18 Punkte, Rang 4'439/15.1k**. Gespielt: User-Lineup (Golden, Corum,
+  Kraft, Curl→**Whelan** auf meinen Rat, Evans). **Corum 8.3** (205 Yds, E nur 2.45) trug den Tag; Modell-Lineup
+  (K. Williams, Whelan, Landman, Evans, Bullard) hätte nur **24.3** geholt → User +9.9. Der User schickte die
+  Real-Rating-Balken der letzten 10 Spiele: Corum Ø 3.7 (letzte 6), Golden Ø 3.4 – beide klar über Modell-E 2.3–2.5,
+  Curl Ø 0.8 (real 0.4). Kurz-Backtest (15 Einzelspiel-Tage, 243 Paare): früheres Residuum (Real − E) sagt das
+  nächste kaum voraus (Offense Steigung .16, Defense .01) → noch zu wenig Daten für eine Real-Form-Korrektur; bei
+  Offense-Spielern mit klar höherem Real-Ø als E trotzdem manuell prüfen. Hindsight 74.2 (Corum, McManus 5.3,
+  Hopper 3.3 INT, Forbes 2.9 INT, Mumpfield). Duell W12 nach Tag 1: Leo 58.32, User 34.18, Marc 32.11.
