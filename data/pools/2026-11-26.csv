@@ -1,0 +1,49 @@
+app_order,name,team,boost,app_status
+1,CeeDee Lamb,DAL,0.1,Active
+2,Cairo Santos,CHI,0.5,Active
+3,Luther Burden III,CHI,0.9,Active
+4,Jake Bates,DET,0.7,Active
+5,Emmett Johnson,KC,0.9,Active
+6,Travis Kelce,KC,1.1,Active
+7,Javonte Williams,DAL,0.3,Active
+8,D'Andre Swift,CHI,0.4,Active
+9,Dak Prescott,DAL,0.2,Active
+10,Josh Allen,BUF,0.1,Active
+11,Jahmyr Gibbs,DET,0.0,Active
+12,Kenneth Walker,KC,0.0,Out
+13,Brandon Aubrey,DAL,0.9,Active
+14,James Cook III,BUF,0.0,Active
+15,Jameson Williams,DET,0.8,Active
+16,Amon-Ra St. Brown,DET,0.4,Active
+17,Tyler Bass,BUF,0.3,Active
+18,Patrick Mahomes,KC,0.2,Active
+19,Jared Goff,DET,0.2,Active
+20,George Pickens,DAL,0.6,Active
+21,Caleb Williams,CHI,0.4,Active
+22,Quinnen Williams,DAL,1.2,Active
+23,Greg Rousseau,BUF,0.8,Active
+24,George Karlaftis,KC,1.4,Active
+25,Amani Hooker,BUF,1.1,Active
+26,Harrison Butker,KC,1.1,Active
+27,Jeffery Simmons,CHI,1.4,Active
+28,Rome Odunze,CHI,1.5,Active
+29,Braden Mann,PHI,1.6,Active
+30,DJ Moore,BUF,0.8,Active
+31,Khalil Shakir,BUF,1.6,Active
+32,Jake Elliott,PHI,1.8,Active
+33,Sam LaPorta,DET,1.8,Active
+34,Dalton Kincaid,BUF,1.5,Questionable
+35,Ryan Flournoy,DAL,2.2,Active
+36,Josh Downs,KC,2.3,Active
+37,Nohl Williams,KC,2.0,Active
+38,Saquon Barkley,PHI,1.4,Active
+39,Rashee Rice,KC,1.4,Active
+40,Dillon Thieneman,CHI,2.0,Active
+41,Kyle Monangai,CHI,0.6,Active
+42,Dorian Williams,BUF,2.0,Questionable
+43,Colston Loveland,CHI,2.0,Active
+44,Chuck Clark,DET,2.4,Questionable
+45,Nick Bolton,KC,2.4,Active
+46,Devin Bush,CHI,2.5,Active
+47,Keon Coleman,BUF,2.5,Active
+48,Zack Baun,PHI,1.8,Out
