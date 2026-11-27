@@ -476,3 +476,10 @@ Dateiformate:
   nächste kaum voraus (Offense Steigung .16, Defense .01) → noch zu wenig Daten für eine Real-Form-Korrektur; bei
   Offense-Spielern mit klar höherem Real-Ø als E trotzdem manuell prüfen. Hindsight 74.2 (Corum, McManus 5.3,
   Hopper 3.3 INT, Forbes 2.9 INT, Mumpfield). Duell W12 nach Tag 1: Leo 58.32, User 34.18, Marc 32.11.
+- 2026-11-26 (Thanksgiving, 3 Spiele): **50.94 Punkte, Rang 3'505/28.1k (Top 13 %)**, Modell-Lineup (E 43.0):
+  **Gibbs 11.1** (252 Yds, 3 TD), C. Williams 6.1, Elliott 4.8, aber **Barkley 0.2** und **Loveland −0.3** (TE kann
+  negativ werden – Modell hat Negativ-Ende nur für QBs). Ersatz-QB **Milton 5.4** (331 Yds, 3 TD) bei 1.7x, von der
+  Regel "Ersatz-QB mit tiefem Team-Total meiden" ausgeschlossen (Modell hatte ihn ohnehin 0.3 hinter Loveland);
+  Upside-Variante mit Milton 47.4. Einzelfall, Regel bleibt, aber bei Ersatz-QBs mit ≥ 1.5x Boost nicht pauschal
+  streichen. Hindsight 91.7 (Gibbs, D. Smith 7.7 bei 0.8x, Odunze 5.9, Milton, Elliott). Duell W12 nach 2 Tagen:
+  Leo 116.35, Marc 88.74, User 85.12.
