@@ -1,2 +1,5 @@
 name,team,fp,factor,p_play,note
-Jonah Coleman,DEN,14.0,,,"Dobbins + Harvey laut App Out → Coleman klarer Lead-Back (zuletzt 85 % Snaps, Ø 20.7 FP letzte 3); Modell nutzte Saison-Snap-Ø 48 %"
+Jonah Coleman,DEN,15.5,,,"Dobbins + Harvey Out → Lead-Back; Real-Ratings letzte 5: 4.0/2.4/5.6/4.2/7.2 (Ø 4.7), zuletzt 85 % Snaps"
+Courtland Sutton,DEN,,0.85,,"Real Ø 1.1 (10 Sp.), zuletzt 0.0 (0 Catches) → unter Modell-E 1.6"
+Jaylen Waddle,DEN,,0.9,,"Real Ø 1.7 (10 Sp.) → leicht unter Modell-E 2.0"
+Alex Singleton,DEN,,1.3,,"Real Ø 1.6–1.9 (10/5 Sp.), 100 % Snaps → über Modell-E 1.24"

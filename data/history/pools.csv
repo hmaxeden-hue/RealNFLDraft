@@ -2941,7 +2941,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-26,00-0041538,Dillon Thieneman,CHI,DET,DB,2.000,Pool,5.768,1.159,0.044,2.600,0.990,
 2026-11-27,00-0027969,Cameron Heyward,PIT,DEN,DL,3.000,Pool,4.413,0.897,0.000,2.219,0.990,
 2026-11-27,00-0031136,Chris Boswell,PIT,DEN,K,0.700,Pool,5.907,1.946,0.347,3.796,0.990,QB1 Aaron Rodgers fehlt (×0.92)
-2026-11-27,00-0031898,Alex Singleton,DEN,PIT,LB,2.300,Pool,6.331,1.242,0.001,2.753,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
+2026-11-27,00-0031898,Alex Singleton,DEN,PIT,LB,2.300,Pool,8.230,1.598,0.115,3.441,0.990,"Gegner ohne QB1 (INT-Rate ×1.3); Real Ø 1.6–1.9 (10/5 Sp.), 100 % Snaps → über Modell-E 1.24"
 2026-11-27,00-0032569,Wil Lutz,DEN,PIT,K,0.800,Pool,8.344,2.762,0.657,5.237,0.990,
 2026-11-27,00-0033055,Jalen Ramsey,PIT,DEN,DB,3.000,Pool,5.984,1.180,0.043,2.559,0.990,
 2026-11-27,00-0033297,D.J. Jones,DEN,PIT,DL,0.000,fehlt (0.0 angenommen),2.612,0.587,0.000,1.458,0.990,Rolle↓; Gegner ohne QB1 (INT-Rate ×1.3)
@@ -2949,7 +2949,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-27,00-0033881,Evan Engram,DEN,PIT,TE,3.000,Pool,3.538,1.034,0.114,2.136,0.990,
 2026-11-27,00-0033886,T.J. Watt,PIT,DEN,LB,0.700,Pool,6.224,1.232,0.000,2.810,0.990,
 2026-11-27,00-0034277,DeShon Elliott,PIT,DEN,DB,0.000,fehlt (0.0 angenommen),4.563,0.902,0.000,2.130,0.990,
-2026-11-27,00-0034348,Courtland Sutton,DEN,PIT,WR,3.000,Pool,5.438,1.599,0.227,3.216,0.990,Rolle↓
+2026-11-27,00-0034348,Courtland Sutton,DEN,PIT,WR,3.000,Pool,4.622,1.396,0.159,2.789,0.990,"Rolle↓; Real Ø 1.1 (10 Sp.), zuletzt 0.0 (0 Catches) → unter Modell-E 1.6"
 2026-11-27,00-0034771,Mason Rudolph,PIT,DEN,QB,0.000,fehlt (0.0 angenommen),10.811,1.975,0.034,3.976,0.990,Minus-Risiko 9%; startet vermutlich für Aaron Rodgers
 2026-11-27,00-0035248,Zach Allen,DEN,PIT,DL,2.900,Pool,4.808,0.981,0.000,2.399,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-27,00-0035406,Lil'Jordan Humphrey,DEN,PIT,WR,0.000,fehlt (0.0 angenommen),0.837,0.493,0.000,1.108,0.990,Rückkehr nach 2 verpassten Spielen (×0.85)
@@ -2964,7 +2964,7 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-27,00-0036428,Justin Strnad,DEN,PIT,LB,3.000,Pool,5.356,1.078,0.000,2.474,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-27,00-0036504,Brandin Echols,PIT,DEN,DB,0.000,fehlt (0.0 angenommen),3.428,0.718,0.000,1.836,0.990,
 2026-11-27,00-0036564,Talanoa Hufanga,DEN,PIT,DB,1.000,Pool,7.337,1.458,0.097,3.181,0.990,Rolle↓; Gegner ohne QB1 (INT-Rate ×1.3)
-2026-11-27,00-0036613,Jaylen Waddle,DEN,PIT,WR,2.200,Pool,6.926,1.985,0.360,3.970,0.990,
+2026-11-27,00-0036613,Jaylen Waddle,DEN,PIT,WR,2.200,Pool,6.233,1.811,0.304,3.629,0.990,Real Ø 1.7 (10 Sp.) → leicht unter Modell-E 2.0
 2026-11-27,00-0036617,Asante Samuel Jr.,PIT,DEN,DB,3.000,Pool,5.419,1.097,0.031,2.411,0.990,Rolle↓
 2026-11-27,00-0036683,Devon Key,DEN,PIT,DB,3.000,Pool,5.532,1.099,0.000,2.520,0.990,Gegner ohne QB1 (INT-Rate ×1.3)
 2026-11-27,00-0036727,Adam Prentice,DEN,PIT,RB,0.000,fehlt (0.0 angenommen),0.407,0.486,0.000,1.186,0.990,
@@ -2999,4 +2999,4 @@ date,player_id,name,team,opp,group,boost,boost_src,mu_fp,er,p10,p90,p_play,flags
 2026-11-27,00-0041398,Riley Nowakowski,PIT,DEN,RB,0.000,fehlt (0.0 angenommen),0.546,0.508,0.000,1.210,0.990,QB1 Aaron Rodgers fehlt (×0.94)
 2026-11-27,00-0041401,Robert Spears-Jennings,PIT,DEN,DB,3.000,Pool,4.959,1.000,0.000,2.401,0.990,
 2026-11-27,00-0041489,Germie Bernard,PIT,DEN,WR,2.600,Pool,3.598,1.163,0.127,2.284,0.990,Pech -3.7 FP vs xFP; QB1 Aaron Rodgers fehlt (×0.85)
-2026-11-27,00-0041496,Jonah Coleman,DEN,PIT,RB,0.000,Pool,14.000,3.688,0.902,7.094,0.990,"Dobbins + Harvey laut App Out → Coleman klarer Lead-Back (zuletzt 85 % Snaps, Ø 20.7 FP letzte 3); Modell nutzte Saison-Snap-Ø 48 %"
+2026-11-27,00-0041496,Jonah Coleman,DEN,PIT,RB,0.000,Pool,15.500,4.052,1.004,7.796,0.990,"Dobbins + Harvey Out → Lead-Back; Real-Ratings letzte 5: 4.0/2.4/5.6/4.2/7.2 (Ø 4.7), zuletzt 85 % Snaps"
